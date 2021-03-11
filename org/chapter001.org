@@ -224,11 +224,11 @@ formulation because of these advantages.
   freedom; later we will learn how to handle systems with redundant coordinates
   and explicit constraints.
 
-  In general, the configurations form a space /M/ of some dimension /n/. The
-  /n/-dimensional configuration space can be parameterized by choosing a
-  coordinate function /χ/ that maps elements of the configuration space to
-  /n/-tuples of real numbers.[fn:5] If there is more than one dimension, the
-  function /χ/ is a tuple of /n/ independent coordinate functions[fn:6] /χ^{i}, i/
+  In general, the configurations form a space $M$ of some dimension $n$. The
+  $n$-dimensional configuration space can be parameterized by choosing a
+  coordinate function $\chi$ that maps elements of the configuration space to
+  $n$-tuples of real numbers.[fn:5] If there is more than one dimension, the
+  function $\chi$ is a tuple of $n$ independent coordinate functions[fn:6] /χ^{i}, i/
   = 0, ..., /n/ − 1, where each /χ^{i}/ is a real-valued function defined on
   some region of the configuration space.[fn:7] For a given configuration /m/ in
   the configuration space /M/ the values /χ^{i}/(/m/) of the coordinate
@@ -242,14 +242,14 @@ formulation because of these advantages.
 
   The motion of the system can be described by a configuration path /γ/ mapping
   time to configuration-space points. Corresponding to the configuration path is
-  a /coordinate path q/ = /χ/ ∘ /γ/ mapping time to tuples of generalized
-  coordinates.[fn:9] If there is more than one degree of freedom the coordinate
-  path is a structured object: /q/ is a tuple of component coordinate path
-  functions /q^{i}/ = /χ^{i}/ ∘ /γ/. At each instant of time /t/, the values
-  /q/(/t/) = (/q/^{0}(/t/), ..., /q/^{/n/−1}(/t/)) are the generalized
-  coordinates of a configuration.
+  a /coordinate path/ $q = $\chi \circ \gamma$ mapping time to tuples of
+  generalized coordinates.[fn:9] If there is more than one degree of freedom the
+  coordinate path is a structured object: $q$ is a tuple of component coordinate
+  path functions $q^i = \chi^i \circ \gamma$. At each instant of time $t$, the
+  values $q(t) = \left(q^0(t),\, \ldots,\, q^{n−1}(t) \right)$ are the
+  generalized coordinates of a configuration.
 
-  The derivative /Dq/ of the coordinate path /q/ is a function[fn:10] that gives
+  The derivative $Dq$ of the coordinate path $q$ is a function[fn:10] that gives
   the rate of change of the configuration coordinates at a given time: /Dq/(/t/)
   = (/Dq/^{0}(/t/), ..., /Dq/^{/n/−1}(/t/)). The rate of change of a generalized
   coordinate is called a /generalized velocity/.
@@ -5763,14 +5763,14 @@ to a disk, with a strip near the equator common to both coordinate systems. A
 space that can be locally parameterized by smooth coordinate functions is called
 a /differentiable manifold/.
 
-[fn:9] Here ∘ denotes composition of functions:
+[fn:9] Here $\circ$ denotes composition of functions:
 
-$$(f \circ g)(t) = f(g(t)).$$
+$$(f \circ g)(t) = f(g(t))$$
 
-[fn:10] The derivative of a function /f/ is a function, denoted /Df/. Our
-notational convention is that /D/ is a high-precedence operator. Thus /D/
-operates on the adjacent function before any other application occurs: /Df/(/x/)
-is the same as (/Df/)(/x/).
+[fn:10] The derivative of a function $f$ is a function, denoted $Df$. Our
+notational convention is that $D$ is a high-precedence operator. Thus $D$
+operates on the adjacent function before any other application occurs: $Df(x)$
+is the same as $(Df)(x)$.
 
 [fn:11] Experience with systems on an atomic scale suggests that at this scale
 systems do not travel along well-defined configuration paths. To describe the
