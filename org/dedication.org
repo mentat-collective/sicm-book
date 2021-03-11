@@ -1,0 +1,25 @@
+--- title: Dedication next: title: Preface url: preface.html layout:
+main --- <<dedication>>
+
+This book is dedicated,
+
+in respect and admiration,
+
+to
+
+The Principle of Least Action
+
+#+begin_quote
+  “The author has spared himself no pains in his endeavour to present
+  the main ideas in the simplest and most intelligible form, and on the
+  whole, in the sequence and connection in which they actually
+  originated. In the interest of clearness, it appeared to me inevitable
+  that I should repeat myself frequently, without paying the slightest
+  attention to the elegance of the presentation. I adhered scrupulously
+  to the precept of that brilliant theoretical physicist L. Boltzmann,
+  according to whom matters of elegance ought be left to the tailor and
+  to the cobbler.”
+
+  Albert Einstein, in /Relativity, the Special and General Theory/,
+  (1961), p. v
+#+end_quote

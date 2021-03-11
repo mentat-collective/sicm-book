@@ -1,0 +1,4175 @@
+[Go to [[file:book.html][first]], [[file:appendix.html][previous]]
+section;    [[file:toc.html][contents]];    [[file:index.html][index]]]
+
+<<p531>>
+* [[file:toc.html#indx-1][*Index*]]
+  :PROPERTIES:
+  :CUSTOM_ID: index
+  :CLASS: front-title
+  :END:
+
+Any inaccuracies in this index may be explained by the fact that it has
+been prepared with the help of a computer.
+
+Donald E. Knuth, /Fundamental Algorithms/
+
+(Volume 1 of /The Art of Computer Programming/)
+
+Page numbers for Scheme procedure definitions are in italics.
+
+Page numbers followed by /n/ indicate footnotes.
+
+0, for all practical purposes, [[file:chapter001.html#p20][20]] /n/.
+/See also/ Zero-based indexing
+
+∘ (composition), [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter009.html#p510][510]]
+
+Γ[/q/]
+
+for local tuple, [[file:chapter001.html#p11][11]]
+
+Lagrangian state path, [[file:chapter003.html#p203][203]]
+
+/γ/ (configuration-path function), [[file:chapter001.html#p7][7]]
+
+/δ/ function, [[file:chapter006.html#p454][454]] (ex.
+[[file:chapter006.html#Exe_6-12][6.12]])
+
+/δ_{η}/ (variation operator), [[file:chapter001.html#p26][26]]
+
+/λ/-calculus, [[file:chapter009.html#p509][509]]
+
+/λ/-expression,
+[[file:chapter008.html#p498][498]]--[[file:chapter008.html#p499][499]]
+
+/λ/-notation, [[file:chapter008.html#p498][498]] /n/
+
+Π/_{L}/[/q/] (Hamiltonian state path),
+[[file:chapter003.html#p203][203]]
+
+/χ/ (coordinate function), [[file:chapter001.html#p7][7]]
+
+/σ/ (phase-space path), [[file:chapter003.html#p218][218]]
+
+*/ω/* matrix, [[file:chapter002.html#p124][124]]
+
+$\overset{\rightarrow}{\omega}$
+(angular velocity), [[file:chapter002.html#p124][124]]
+/ω/ (symplectic 2-form), [[file:chapter005.html#p359][359]]
+
+/C/ (local-tuple transformation), [[file:chapter001.html#p44][44]]
+
+/C/_{H} (canonical phase-space transformation),
+[[file:chapter005.html#p337][337]] /n/
+
+/D/. /See/ Derivative
+
+/D_{t}/ (total time derivative), [[file:chapter001.html#p64][64]]
+
+∂. /See/ Partial derivative
+
+E
+(Euler--Lagrange operator), [[file:chapter001.html#p98][98]]
+/ℰ/ (energy state function), [[file:chapter001.html#p82][82]]
+
+/F/_{1}--/F/_{4}. /See also/ Generating functions
+
+/F/_{1}(/t/, /q/, /q/′), [[file:chapter005.html#p373][373]]
+
+/F/_{2}(/t/, /q/, /p/′), [[file:chapter005.html#p373][373]]
+
+/F/_{3}(/t/, /p/, /q/′), [[file:chapter005.html#p374][374]]
+
+/F/_{4}(/t/, /p/, /p/′), [[file:chapter005.html#p374][374]]
+
+/H/ (Hamiltonian), [[file:chapter003.html#p199][199]]
+
+/I/ (identity operator), [[file:chapter009.html#p517][517]]
+
+/I/ with subscript (selector), [[file:chapter001.html#p64][64]] /n/,
+[[file:chapter009.html#p513][513]]
+
+$\widetilde{J}$
+(shuffle function), [[file:chapter005.html#p350][350]]
+*J*, *J*/_{n}/ (symplectic unit), [[file:chapter004.html#p301][301]],
+[[file:chapter005.html#p355][355]]
+
+/L/ (Lagrangian), [[file:chapter001.html#p11][11]]
+
+/L/ (Lie derivative), [[file:chapter006.html#p447][447]]
+
+/P/ (momentum selector), [[file:chapter003.html#p199][199]],
+[[file:chapter003.html#p220][220]]
+
+$\mathcal{P}$
+(momentum state function), [[file:chapter001.html#p79][79]]
+/Q/ (coordinate selector), [[file:chapter003.html#p220][220]]
+
+$\overset{˙}{Q}$
+(velocity selector), [[file:chapter001.html#p64][64]]
+/q/ (coordinate path), [[file:chapter001.html#p7][7]]
+
+/S/ (action), [[file:chapter001.html#p10][10]]
+
+Lagrangian, [[file:chapter001.html#p12][12]]
+
+' (quote in Scheme), [[file:chapter008.html#p505][505]]
+
+, in tuple, [[file:chapter009.html#p520][520]]
+
+:, names starting with, [[file:chapter001.html#p21][21]] /n/
+
+; in tuple, [[file:chapter001.html#p31][31]] /n/,
+[[file:chapter009.html#p520][520]]
+
+# in Scheme, [[file:chapter008.html#p504][504]]
+
+{ } for Poisson brackets, [[file:chapter003.html#p218][218]]
+
+[ ] for down tuples, [[file:chapter009.html#p512][512]]
+
+[ ] for functional arguments, [[file:chapter001.html#p10][10]] /n/
+
+( ) for up tuples, [[file:chapter009.html#p512][512]]
+
+() in Scheme, [[file:chapter008.html#p497][497]],
+[[file:chapter008.html#p498][498]] /n/,
+[[file:chapter008.html#p503][503]]
+
+Action, [[file:chapter001.html#p9][9]]--[[file:chapter001.html#p13][13]]
+
+computing,
+[[file:chapter001.html#p14][14]]--[[file:chapter001.html#p23][23]]
+
+coordinate-independence of, [[file:chapter001.html#p17][17]]
+
+free particle,
+[[file:chapter001.html#p14][14]]--[[file:chapter001.html#p20][20]]
+
+<<p532>>
+generating functions and,
+[[file:chapter006.html#p421][421]]--[[file:chapter006.html#p425][425]]
+
+Hamilton--Jacobi equation and,
+[[file:chapter006.html#p421][421]]--[[file:chapter006.html#p425][425]]
+
+Lagrangian, [[file:chapter001.html#p12][12]]
+
+minimizing,
+[[file:chapter001.html#p18][18]]--[[file:chapter001.html#p23][23]]
+
+parametric, [[file:chapter001.html#p21][21]]
+
+principles (/see/ Principle of stationary action)
+
+/S/, [[file:chapter001.html#p10][10]]
+
+time evolution and,
+[[file:chapter006.html#p423][423]]--[[file:chapter006.html#p425][425]],
+[[file:chapter006.html#p435][435]]--[[file:chapter006.html#p437][437]]
+
+variation of, [[file:chapter001.html#p28][28]]
+
+Action-angle coordinates, [[file:chapter004.html#p311][311]]
+
+Hamiltonian in, [[file:chapter004.html#p311][311]]
+
+Hamilton--Jacobi equation and, [[file:chapter006.html#p413][413]]
+
+Hamilton's equations in, [[file:chapter004.html#p311][311]]
+
+harmonic oscillator in, [[file:chapter005.html#p346][346]]
+([[file:chapter005.html#disp_5.31][eq. 5.31]])
+
+perturbation of Hamiltonian, [[file:chapter004.html#p316][316]],
+[[file:chapter007.html#p458][458]]
+
+surfaces of section in, [[file:chapter004.html#p313][313]]
+
+Action principle. /See/ Principle of stationary action
+
+Alphabet, insufficient size of, [[file:chapter001.html#p15][15]] /n/
+
+Alternative in conditional, [[file:chapter008.html#p501][501]]
+
+angle-axis->rotation-matrix, /[[file:chapter002.html#p184][184]]/
+
+Angles, Euler. /See/ Euler angles
+
+Angular momentum. /See also/ Vector angular momentum
+
+conservation of, [[file:chapter001.html#p43][43]],
+[[file:chapter001.html#p80][80]], [[file:chapter001.html#p86][86]],
+[[file:chapter002.html#p142][142]]--[[file:chapter002.html#p143][143]]
+
+equilibrium points for, [[file:chapter002.html#p149][149]]
+
+Euler's equations and,
+[[file:chapter002.html#p151][151]]--[[file:chapter002.html#p153][153]]
+
+in terms of principal moments and angular velocity,
+[[file:chapter002.html#p136][136]]
+
+kinetic energy in terms of, [[file:chapter002.html#p148][148]]
+
+Lie commutation relations for, [[file:chapter006.html#p452][452]] (ex.
+[[file:chapter006.html#Exe_6-10][6.10]])
+
+as Lie generator of rotations, [[file:chapter006.html#p440][440]]
+
+of free rigid body,
+[[file:chapter002.html#p146][146]]--[[file:chapter002.html#p150][150]],
+[[file:chapter002.html#p151][151]]--[[file:chapter002.html#p153][153]]
+
+of rigid body,
+[[file:chapter002.html#p135][135]]--[[file:chapter002.html#p137][137]]
+
+sphere of, [[file:chapter002.html#p148][148]]
+
+/z/ component of, [[file:chapter001.html#p85][85]]
+
+Angular velocity vector (
+$\overset{\rightarrow}{\omega}$
+), [[file:chapter002.html#p124][124]],
+[[file:chapter002.html#p139][139]]
+Euler's equations for,
+[[file:chapter002.html#p151][151]]--[[file:chapter002.html#p153][153]]
+
+kinetic energy in terms of, [[file:chapter002.html#p131][131]],
+[[file:chapter002.html#p134][134]]
+
+representation of,
+[[file:chapter002.html#p123][123]]--[[file:chapter002.html#p126][126]]
+
+Anomaly, true, [[file:chapter002.html#p171][171]] /n/
+
+antisymmetric->column-matrix, [[file:chapter002.html#p126][126]]
+
+Antisymmetry of Poisson bracket, [[file:chapter003.html#p220][220]]
+
+Area preservation
+
+by maps, [[file:chapter003.html#p278][278]]
+
+Liouville's theorem and, [[file:chapter003.html#p272][272]]
+
+Poincaré--Cartan integral invariant and,
+[[file:chapter006.html#p434][434]]--[[file:chapter006.html#p435][435]]
+
+of surfaces of section, [[file:chapter003.html#p272][272]],
+[[file:chapter006.html#p434][434]]--[[file:chapter006.html#p435][435]]
+
+Arguments. /See also/ Function(s); Functional arguments
+
+active vs. passive in Legendre transformation,
+[[file:chapter003.html#p208][208]]
+
+in Scheme, [[file:chapter008.html#p497][497]]
+
+Arithmetic
+
+generic, [[file:chapter001.html#p16][16]] /n/,
+[[file:chapter009.html#p509][509]]
+
+on functions, [[file:chapter001.html#p18][18]] /n/,
+[[file:chapter009.html#p511][511]]
+
+on operators, [[file:chapter001.html#p34][34]] /n/,
+[[file:chapter009.html#p517][517]]
+
+on procedures, [[file:chapter001.html#p19][19]] /n/
+
+on symbolic values, [[file:chapter009.html#p511][511]]
+
+on tuples, [[file:chapter009.html#p509][509]],
+[[file:chapter009.html#p513][513]]--[[file:chapter009.html#p516][516]]
+
+Arnold, V. I., [[file:preface.html#pxiii][xiii]],
+[[file:preface.html#pxv][xv]] /n/, [[file:chapter001.html#p113][113]].
+/See also/ Kolmogorov--Arnold--Moser theorem
+
+Assignment in Scheme,
+[[file:chapter008.html#p506][506]]--[[file:chapter008.html#p508][508]]
+
+Associativity and non-associativity of tuple multiplication,
+[[file:chapter009.html#p515][515]], [[file:chapter009.html#p516][516]]
+
+Asteroids, rotational alignment of, [[file:chapter002.html#p151][151]]
+
+Astronomy. /See/ Celestial objects
+
+Asymptotic trajectories, [[file:chapter003.html#p223][223]],
+[[file:chapter004.html#p287][287]], [[file:chapter004.html#p302][302]]
+
+Atomic scale, [[file:chapter001.html#p8][8]] /n/
+
+Attractor, [[file:chapter003.html#p274][274]]
+
+Autonomous systems, [[file:chapter001.html#p82][82]]. /See also/
+Extended phase space
+
+surfaces of section for,
+[[file:chapter003.html#p248][248]]--[[file:chapter003.html#p263][263]]
+
+Awake top, [[file:chapter003.html#p231][231]]
+
+<<p533>>
+Axes, principal, [[file:chapter002.html#p133][133]]
+
+of this dense book, [[file:chapter002.html#p135][135]] (ex.
+[[file:chapter002.html#Exe_2-7][2.7]]),
+[[file:chapter002.html#p150][150]]
+
+Axisymmetric potential of galaxy, [[file:chapter003.html#p250][250]]
+
+Axisymmetric top
+
+awake, [[file:chapter003.html#p231][231]]
+
+behavior of,
+[[file:chapter002.html#p161][161]]--[[file:chapter002.html#p165][165]],
+[[file:chapter003.html#p231][231]]--[[file:chapter003.html#p232][232]]
+
+conserved quantities for, [[file:chapter002.html#p160][160]]
+
+degrees of freedom of, [[file:chapter001.html#p5][5]] (ex.
+[[file:chapter001.html#Exe_1-1][1.1]])
+
+Euler angles for, [[file:chapter002.html#p159][159]]
+
+Hamiltonian treatment of,
+[[file:chapter003.html#p228][228]]--[[file:chapter003.html#p233][233]]
+
+kinetic energy of, [[file:chapter002.html#p159][159]]
+
+Lagrangian treatment of,
+[[file:chapter002.html#p157][157]]--[[file:chapter002.html#p165][165]]
+
+nutation of, [[file:chapter002.html#p162][162]]
+([[file:chapter002.html#Fig_2-5][fig. 2.5]]),
+[[file:chapter002.html#p164][164]] (ex.
+[[file:chapter002.html#Exe_2-15][2.15]])
+
+potential energy of, [[file:chapter002.html#p160][160]]
+
+precession of, [[file:chapter002.html#p119][119]],
+[[file:chapter002.html#p162][162]] ([[file:chapter002.html#Fig_2-6][fig.
+2.6]]), [[file:chapter002.html#p164][164]] (ex.
+[[file:chapter002.html#Exe_2-16][2.16]])
+
+rotation of, [[file:chapter002.html#p119][119]]
+
+sleeping, [[file:chapter003.html#p231][231]]
+
+symmetries of, [[file:chapter003.html#p228][228]]
+
+Baker, Henry. /See/ Baker--Campbell--Hausdorff formula
+
+Baker--Campbell--Hausdorff formula, [[file:chapter006.html#p453][453]]
+(ex. [[file:chapter006.html#Exe_6-11][6.11]])
+
+Banana. /See/ Book
+
+Barrow-Green, June, [[file:chapter007.html#p457][457]]
+
+Basin of attraction, [[file:chapter003.html#p274][274]]
+
+Bicycle wheel, [[file:chapter002.html#p156][156]] (ex.
+[[file:chapter002.html#Exe_2-13][2.13]])
+
+Birkhoff, George David. /See/ Poincaré--Birkhoff theorem
+
+bisect (bisection search), [[file:chapter004.html#p321][321]],
+[[file:chapter004.html#p326][326]]
+
+Body components of vector, [[file:chapter002.html#p134][134]]
+
+Boltzmann, Ludwig, [[file:chapter001.html#p12][12]] /n/,
+[[file:chapter003.html#p203][203]] /n/,
+[[file:chapter003.html#p274][274]] /n/
+
+Book
+
+banana-like behavior of, [[file:chapter002.html#p128][128]]
+
+rotation of, [[file:chapter002.html#p119][119]],
+[[file:chapter002.html#p150][150]]
+
+Brackets. /See also/ Poisson brackets
+
+for down tuples, [[file:chapter009.html#p512][512]]
+
+for functional arguments, [[file:chapter001.html#p10][10]] /n/
+
+bulirsch-stoer, [[file:chapter002.html#p145][145]]
+
+Bulirsch--Stoer integration method, [[file:chapter001.html#p74][74]] /n/
+
+Butterfly effect, [[file:chapter003.html#p241][241]] /n/
+
+/C/ (local-tuple transformation), [[file:chapter001.html#p44][44]]
+
+/C/_{H} (canonical phase-space transformation),
+[[file:chapter005.html#p337][337]] /n/
+
+Campbell, John. /See/ Baker--Campbell--Hausdorff formula
+
+canonical?, /[[file:chapter005.html#p344][344]]/
+
+Canonical-H?, /[[file:chapter005.html#p348][348]]/
+
+Canonical-K?, /[[file:chapter005.html#p348][348]]/
+
+canonical-transform?, /[[file:chapter005.html#p351][351]]/
+
+Canonical condition,
+[[file:chapter005.html#p342][342]]--[[file:chapter005.html#p352][352]]
+
+Poisson brackets and,
+[[file:chapter005.html#p352][352]]--[[file:chapter005.html#p353][353]]
+
+Canonical equations. /See/ Hamilton's equations
+
+Canonical heliocentric coordinates, [[file:chapter005.html#p409][409]]
+(ex. [[file:chapter005.html#Exe_5-21][5.21]])
+
+Canonical perturbation theory. /See/ Perturbation theory
+
+Canonical plane, [[file:chapter005.html#p362][362]] /n/
+
+Canonical transformations,
+[[file:chapter005.html#p335][335]]--[[file:chapter005.html#p336][336]].
+/See also/ Generating functions; Symplectic transformations
+
+composition of, [[file:chapter005.html#p346][346]] (ex.
+[[file:chapter005.html#Exe_5-4][5.4]]),
+[[file:chapter005.html#p381][381]], [[file:chapter005.html#p393][393]]
+(ex. [[file:chapter005.html#Exe_5-12][5.12]])
+
+conditions for,
+[[file:chapter005.html#p342][342]]--[[file:chapter005.html#p357][357]]
+
+for driven pendulum, [[file:chapter005.html#p392][392]]
+
+general,
+[[file:chapter005.html#p342][342]]--[[file:chapter005.html#p357][357]]
+
+group properties of, [[file:chapter005.html#p346][346]] (ex.
+[[file:chapter005.html#Exe_5-4][5.4]])
+
+for harmonic oscillator, [[file:chapter005.html#p344][344]]
+
+invariance of antisymmetric bilinear form under,
+[[file:chapter005.html#p359][359]]--[[file:chapter005.html#p362][362]]
+
+invariance of phase volume under,
+[[file:chapter005.html#p358][358]]--[[file:chapter005.html#p359][359]]
+
+invariance of Poisson brackets under, [[file:chapter005.html#p358][358]]
+
+invariants of,
+[[file:chapter005.html#p357][357]]--[[file:chapter005.html#p364][364]]
+(/see also/ Integral invariants)
+
+as Lie series, [[file:chapter006.html#p448][448]]
+
+Lie transforms (/see/ Lie transforms)
+
+<<p534>>
+point transformations (/see/ Point transformations)
+
+polar-canonical (/see/ Polar-canonical transformation)
+
+to rotating coordinates,
+[[file:chapter005.html#p348][348]]--[[file:chapter005.html#p349][349]],
+[[file:chapter005.html#p377][377]]--[[file:chapter005.html#p378][378]]
+
+time evolution as,
+[[file:chapter006.html#p426][426]]--[[file:chapter006.html#p437][437]]
+
+total time derivative and,
+[[file:chapter005.html#p390][390]]--[[file:chapter005.html#p393][393]]
+
+Cantorus, cantori, [[file:chapter003.html#p244][244]] /n/,
+[[file:chapter004.html#p330][330]]
+
+car, [[file:chapter008.html#p503][503]]
+
+Cartan, Élie. /See/ Poincaré--Cartan integral invariant
+
+Cauchy, Augustin Louis, [[file:chapter001.html#p39][39]] /n/
+
+cdr, [[file:chapter008.html#p503][503]]
+
+Celestial objects. /See also/ Asteroids; Comets; Earth; Galaxy;
+Hyperion; Jupiter; Mercury; Moon; Phobos; Planets
+
+rotation of, [[file:chapter002.html#p151][151]],
+[[file:chapter002.html#p165][165]],
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p171][171]]
+
+Center of mass, [[file:chapter002.html#p121][121]]
+
+in two-body problem, [[file:chapter005.html#p381][381]]
+
+Jacobi coordinates and, [[file:chapter005.html#p409][409]] (ex.
+[[file:chapter005.html#Exe_5-21][5.21]])
+
+kinetic energy and, [[file:chapter002.html#p121][121]]
+
+vector angular momentum and, [[file:chapter002.html#p135][135]]
+
+Central force
+
+collapsing orbits, [[file:chapter005.html#p389][389]] (ex.
+[[file:chapter005.html#Exe_5-11][5.11]])
+
+epicyclic motion,
+[[file:chapter005.html#p381][381]]--[[file:chapter005.html#p389][389]]
+
+gravitational, [[file:chapter001.html#p31][31]]
+
+in 2 dimensions, [[file:chapter001.html#p40][40]],
+[[file:chapter003.html#p227][227]]--[[file:chapter003.html#p228][228]],
+[[file:chapter005.html#p381][381]]--[[file:chapter005.html#p389][389]]
+
+in 3 dimensions, [[file:chapter001.html#p47][47]] (ex.
+[[file:chapter001.html#Exe_1-16][1.16]]),
+[[file:chapter001.html#p84][84]]
+
+Lie series for motion in, [[file:chapter006.html#p450][450]]
+
+orbits, [[file:chapter001.html#p78][78]] (ex.
+[[file:chapter001.html#Exe_1-30][1.30]])
+
+reduced phase space for motion in,
+[[file:chapter005.html#p405][405]]--[[file:chapter005.html#p407][407]]
+
+Central potential. /See/ Central force
+
+Centrifugal force, [[file:chapter001.html#p47][47]],
+[[file:chapter001.html#p49][49]]
+
+Chain rule
+
+for derivatives, [[file:chapter009.html#p517][517]],
+[[file:chapter009.html#p523][523]] (ex.
+[[file:chapter009.html#Exe_9-1][9.1]])
+
+for partial derivatives, [[file:chapter009.html#p519][519]],
+[[file:chapter009.html#p523][523]] (ex.
+[[file:chapter009.html#Exe_9-1][9.1]])
+
+for total time derivatives, [[file:chapter001.html#p64][64]] (ex.
+[[file:chapter001.html#Exe_1-26][1.26]])
+
+in traditional notation, [[file:preface.html#pxiv][xiv]] /n/
+
+for variations, [[file:chapter001.html#p27][27]]
+([[file:chapter001.html#disp_1.26][eq. 1.26]])
+
+Chaotic motion, [[file:chapter003.html#p241][241]]. /See also/
+Exponential divergence
+
+homoclinic tangle and, [[file:chapter004.html#p307][307]]
+
+in Hénon--Heiles problem, [[file:chapter003.html#p259][259]]
+
+in restricted three-body problem, [[file:chapter003.html#p283][283]]
+(ex. [[file:chapter003.html#Exe_3-16][3.16]])
+
+in spin-orbit coupling, [[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-15][3.15]]),
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+near separatrices, [[file:chapter004.html#p290][290]],
+[[file:chapter007.html#p484][484]], [[file:chapter007.html#p486][486]]
+
+of Hyperion, [[file:chapter002.html#p151][151]],
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p176][176]]
+
+of non-axisymmetric top, [[file:chapter003.html#p263][263]]
+
+of periodically driven pendulum, [[file:chapter001.html#p76][76]],
+[[file:chapter003.html#p243][243]]
+
+overlapping resonances and, [[file:chapter007.html#p488][488]]
+
+Characteristic exponent, [[file:chapter004.html#p293][293]]
+
+Characteristic multiplier, [[file:chapter004.html#p296][296]]
+
+Chirikov, Boris V., [[file:chapter003.html#p278][278]] /n/
+
+Chirikov--Taylor map, [[file:chapter003.html#p278][278]] /n/
+
+Church, Alonzo, [[file:chapter008.html#p498][498]] /n/
+
+Colon, names starting with, [[file:chapter001.html#p21][21]] /n/
+
+Comets, rotation of, [[file:chapter002.html#p151][151]]
+
+Comma in tuple, [[file:chapter009.html#p520][520]]
+
+Commensurability, [[file:chapter004.html#p312][312]]. /See also/
+Resonance
+
+islands and, [[file:chapter004.html#p309][309]]
+
+of pendulum period with drive, [[file:chapter004.html#p289][289]],
+[[file:chapter004.html#p290][290]]
+
+periodic orbits and, [[file:chapter004.html#p309][309]],
+[[file:chapter004.html#p316][316]]
+
+rational rotation number and, [[file:chapter004.html#p316][316]]
+
+small denominators and, [[file:chapter007.html#p475][475]]
+
+Commutativity. /See also/ Non-commutativity
+
+of some tuple multiplication, [[file:chapter009.html#p515][515]]
+
+of variation (/δ/) with differentiation and integration,
+[[file:chapter001.html#p27][27]]
+
+<<p535>>
+Commutator, [[file:chapter006.html#p451][451]]
+
+of angular-momentum Lie operators, [[file:chapter006.html#p452][452]]
+(ex. [[file:chapter006.html#Exe_6-10][6.10]])
+
+Jacobi identity for, [[file:chapter006.html#p451][451]]
+
+of Lie derivative, [[file:chapter006.html#p452][452]] (ex.
+[[file:chapter006.html#Exe_6-10][6.10]])
+
+Poisson brackets and, [[file:chapter006.html#p452][452]] (ex.
+[[file:chapter006.html#Exe_6-10][6.10]])
+
+compatible-shape, [[file:chapter005.html#p351][351]] /n/
+
+Compatible shape, [[file:chapter005.html#p351][351]] /n/
+
+component, [[file:chapter001.html#p15][15]] /n/,
+[[file:chapter009.html#p514][514]]
+
+compose, /[[file:chapter008.html#p500][500]]/
+
+Composition
+
+of canonical transformations, [[file:chapter005.html#p346][346]] (ex.
+[[file:chapter005.html#Exe_5-4][5.4]]),
+[[file:chapter005.html#p381][381]], [[file:chapter005.html#p393][393]]
+(ex. [[file:chapter005.html#Exe_5-12][5.12]])
+
+of functions, [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter009.html#p510][510]], [[file:chapter009.html#p523][523]]
+(ex. [[file:chapter009.html#Exe_9-2][9.2]])
+
+of Lie transforms, [[file:chapter006.html#p451][451]]
+
+of linear transformations, [[file:chapter009.html#p516][516]]
+
+of operators, [[file:chapter009.html#p517][517]]
+
+of rotations, [[file:chapter002.html#p123][123]],
+[[file:chapter002.html#p187][187]]
+
+Compound data in Scheme,
+[[file:chapter008.html#p502][502]]--[[file:chapter008.html#p504][504]]
+
+cond, [[file:chapter008.html#p500][500]]
+
+Conditionals in Scheme,
+[[file:chapter008.html#p500][500]]--[[file:chapter008.html#p501][501]]
+
+Configuration, [[file:chapter001.html#p4][4]]
+
+Configuration manifold, [[file:chapter001.html#p7][7]] /n/
+
+Configuration path. /See/ Path
+
+Configuration space,
+[[file:chapter001.html#p4][4]]--[[file:chapter001.html#p5][5]]
+
+Conjugate momentum, [[file:chapter001.html#p79][79]]
+
+non-uniqueness of, [[file:chapter003.html#p239][239]]
+
+cons, [[file:chapter008.html#p503][503]]
+
+Consequent in conditional, [[file:chapter008.html#p500][500]]
+
+Conserved quantities, [[file:chapter001.html#p78][78]],
+[[file:chapter003.html#p195][195]]. /See also/ Hénon--Heiles problem,
+integrals of motion
+
+angular momentum, [[file:chapter001.html#p43][43]],
+[[file:chapter001.html#p80][80]], [[file:chapter001.html#p86][86]],
+[[file:chapter002.html#p142][142]]--[[file:chapter002.html#p143][143]]
+
+coordinate choice and,
+[[file:chapter001.html#p79][79]]--[[file:chapter001.html#p81][81]]
+
+cyclic coordinates and, [[file:chapter001.html#p80][80]]
+
+energy,
+[[file:chapter001.html#p81][81]]--[[file:chapter001.html#p83][83]],
+[[file:chapter002.html#p142][142]], [[file:chapter003.html#p211][211]]
+
+Jacobi constant, [[file:chapter001.html#p89][89]] /n/,
+[[file:chapter005.html#p383][383]], [[file:chapter005.html#p400][400]]
+
+Lyapunov exponents and, [[file:chapter003.html#p267][267]]
+
+momentum,
+[[file:chapter001.html#p79][79]]--[[file:chapter001.html#p81][81]]
+
+Noether's theorem,
+[[file:chapter001.html#p90][90]]--[[file:chapter001.html#p91][91]]
+
+phase space reduction and,
+[[file:chapter003.html#p224][224]]--[[file:chapter003.html#p226][226]]
+
+phase volume (/see/ Phase-volume conservation)
+
+Poisson brackets of, [[file:chapter003.html#p221][221]]
+
+symmetry and, [[file:chapter001.html#p79][79]],
+[[file:chapter001.html#p90][90]]
+
+for top, [[file:chapter002.html#p160][160]]
+
+Constant of motion (integral of motion),
+[[file:chapter001.html#p78][78]]. /See also/ Conserved quantities;
+Hénon--Heiles problem
+
+Constraint(s)
+
+augmented Lagrangian and, [[file:chapter001.html#p102][102]],
+[[file:chapter001.html#p109][109]]
+
+configuration space and, [[file:chapter001.html#p4][4]]
+
+as coordinate transformations,
+[[file:chapter001.html#p59][59]]--[[file:chapter001.html#p63][63]]
+
+explicit,
+[[file:chapter001.html#p99][99]]--[[file:chapter001.html#p103][103]]
+
+in extended bodies, [[file:chapter001.html#p4][4]]
+
+holonomic, [[file:chapter001.html#p4][4]] /n/,
+[[file:chapter001.html#p109][109]]
+
+integrable, [[file:chapter001.html#p4][4]] /n/,
+[[file:chapter001.html#p109][109]]
+
+linear in velocities, [[file:chapter001.html#p112][112]]
+
+nonholonomic (non-integrable), [[file:chapter001.html#p112][112]]
+
+on coordinates, [[file:chapter001.html#p101][101]]
+
+rigid,
+[[file:chapter001.html#p49][49]]--[[file:chapter001.html#p63][63]]
+
+as subsystem couplers, [[file:chapter001.html#p105][105]]
+
+total time derivative and, [[file:chapter001.html#p108][108]]
+
+velocity-dependent, [[file:chapter001.html#p108][108]]
+
+velocity-independent, [[file:chapter001.html#p101][101]]
+
+Constraint force, [[file:chapter001.html#p104][104]]
+
+Constructors in Scheme, [[file:chapter008.html#p503][503]]
+
+Contact transformation. /See/ Canonical transformations
+
+Continuation procedure, [[file:chapter003.html#p247][247]]
+
+Continued-fraction
+
+approximation of irrational number, [[file:chapter004.html#p325][325]]
+
+Contraction of tuples, [[file:chapter009.html#p514][514]]
+
+coordinate, [[file:chapter001.html#p15][15]] /n/
+
+Coordinate(s). /See also/ Generalized coordinates
+
+action-angle (/see/ Action-angle coordinates)
+
+conserved quantities and choice of,
+[[file:chapter001.html#p79][79]]--[[file:chapter001.html#p81][81]]
+
+constraints on, [[file:chapter001.html#p101][101]]
+
+cyclic, [[file:chapter001.html#p80][80]],
+[[file:chapter003.html#p224][224]] /n/
+
+heliocentric, [[file:chapter005.html#p409][409]] (ex.
+[[file:chapter005.html#Exe_5-21][5.21]])
+
+<<p536>>
+ignorable (cyclic), [[file:chapter001.html#p80][80]]
+
+Jacobi, [[file:chapter005.html#p409][409]] (ex.
+[[file:chapter005.html#Exe_5-21][5.21]])
+
+polar (/see/ Polar coordinates)
+
+redundant, and initial conditions, [[file:chapter001.html#p69][69]] /n/
+
+rotating (/see/ Rotating coordinates)
+
+spherical, [[file:chapter001.html#p84][84]]
+
+Coordinate function (/χ/), [[file:chapter001.html#p7][7]]
+
+Coordinate-independence
+
+of action, [[file:chapter001.html#p17][17]]
+
+of Lagrange equations, [[file:chapter001.html#p30][30]],
+[[file:chapter001.html#p43][43]] (ex.
+[[file:chapter001.html#Exe_1-14][1.14]])
+
+of variational formulation, [[file:chapter001.html#p3][3]],
+[[file:chapter001.html#p39][39]]
+
+Coordinate path (/q/), [[file:chapter001.html#p7][7]]. /See also/ Local
+tuple
+
+Coordinate selector (/Q/), [[file:chapter003.html#p220][220]]
+
+Coordinate singularity, [[file:chapter002.html#p144][144]]
+
+Coordinate transformations,
+[[file:chapter001.html#p44][44]]--[[file:chapter001.html#p47][47]]
+
+constraints as,
+[[file:chapter001.html#p59][59]]--[[file:chapter001.html#p63][63]]
+
+Coriolis force, [[file:chapter001.html#p47][47]],
+[[file:chapter001.html#p49][49]]
+
+Correction fluid, [[file:chapter002.html#p150][150]]
+
+Cotangent space, bundle, [[file:chapter003.html#p203][203]] /n/
+
+Coupling, spin-orbit. /See/ Spin-orbit coupling
+
+Coupling systems,
+[[file:chapter001.html#p105][105]]--[[file:chapter001.html#p106][106]]
+
+Curves, invariant. /See/ Invariant curves
+
+Cyclic coordinate, [[file:chapter001.html#p80][80]],
+[[file:chapter003.html#p224][224]] /n/
+
+/D/. /See/ Derivative
+
+D (Scheme procedure for derivative), [[file:chapter001.html#p16][16]]
+/n/, [[file:chapter009.html#p516][516]]
+
+D-as-matrix, /[[file:chapter005.html#p355][355]] n/
+
+D-phase-space, /[[file:chapter005.html#p347][347]]/
+
+∂. /See/ Partial derivative
+
+/D_{t}/ (total time derivative), [[file:chapter001.html#p64][64]]
+
+d'Alembert--Lagrange principle (Jean leRond d'Alembert),
+[[file:chapter001.html#p113][113]]
+
+Damped harmonic oscillator, [[file:chapter003.html#p274][274]]
+
+define, [[file:chapter008.html#p499][499]]
+
+definite-integral, [[file:chapter001.html#p17][17]]
+
+Definite integral, [[file:chapter001.html#p10][10]] /n/
+
+Definitions in Scheme,
+[[file:chapter008.html#p499][499]]--[[file:chapter008.html#p500][500]]
+
+Degrees of freedom,
+[[file:chapter001.html#p4][4]]--[[file:chapter001.html#p5][5]]
+
+Delta function, [[file:chapter006.html#p454][454]] (ex.
+[[file:chapter006.html#Exe_6-12][6.12]])
+
+Derivative, [[file:chapter001.html#p8][8]] /n/,
+[[file:chapter009.html#p516][516]]--[[file:chapter009.html#p521][521]].
+/See also/ Total time derivative
+
+as operator, [[file:chapter009.html#p517][517]]
+
+as Poisson bracket, [[file:chapter006.html#p446][446]]
+
+chain rule, [[file:chapter009.html#p517][517]],
+[[file:chapter009.html#p523][523]] (ex.
+[[file:chapter009.html#Exe_9-1][9.1]])
+
+in Scheme programs: D, [[file:chapter001.html#p16][16]] /n/,
+[[file:chapter009.html#p516][516]]
+
+notation: /D/, [[file:chapter001.html#p8][8]] /n/,
+[[file:chapter009.html#p516][516]]
+
+of function of multiple arguments, [[file:chapter001.html#p29][29]] /n/,
+[[file:chapter009.html#p518][518]]--[[file:chapter009.html#p521][521]]
+
+of function with structured arguments, [[file:chapter001.html#p24][24]]
+/n/
+
+of function with structured inputs and outputs,
+[[file:chapter009.html#p522][522]]
+
+of state, [[file:chapter001.html#p71][71]]
+
+partial (/see/ Partial derivative)
+
+precedence of, [[file:chapter001.html#p8][8]] /n/,
+[[file:chapter009.html#p516][516]]
+
+with respect to a tuple, [[file:chapter001.html#p29][29]] /n/
+
+determinant, [[file:chapter002.html#p144][144]]
+
+Differentiable manifold, [[file:chapter001.html#p7][7]] /n/
+
+Dimension of configuration space,
+[[file:chapter001.html#p4][4]]--[[file:chapter001.html#p5][5]]
+
+Dirac, Paul Adrien Maurice, [[file:chapter001.html#p12][12]] /n/
+
+Dissipation of energy
+
+in free-body rotation, [[file:chapter002.html#p150][150]]
+
+tidal friction, [[file:chapter002.html#p170][170]]
+
+Dissipative system, phase-volume conservation,
+[[file:chapter003.html#p274][274]]
+
+Dissolution of invariant curves,
+[[file:chapter004.html#p329][329]]--[[file:chapter004.html#p330][330]],
+[[file:chapter007.html#p486][486]]
+
+Distribution functions, [[file:chapter003.html#p276][276]]
+
+Divided phase space, [[file:chapter003.html#p244][244]],
+[[file:chapter003.html#p258][258]],
+[[file:chapter004.html#p286][286]]--[[file:chapter004.html#p290][290]]
+
+Dot notation, [[file:chapter001.html#p32][32]] /n/
+
+Double pendulum. /See/ Pendulum, double
+
+down, [[file:chapter001.html#p15][15]] /n/,
+[[file:chapter009.html#p513][513]]
+
+Down tuples, [[file:chapter009.html#p512][512]]
+
+Driven harmonic oscillator, [[file:chapter006.html#p430][430]] (ex.
+[[file:chapter006.html#Exe_6-6][6.6]])
+
+Driven pendulum. /See/ Pendulum (driven)
+
+Driven rotor, [[file:chapter004.html#p317][317]],
+[[file:chapter004.html#p321][321]]
+
+Dt (total time derivative), /[[file:chapter001.html#p97][97]]/
+
+Dynamical state. /See/ State
+
+$\mathcal{E}$
+(Euler--Lagrange operator), [[file:chapter001.html#p98][98]]
+/ℰ/ (energy state function), [[file:chapter001.html#p82][82]]
+
+<<p537>>
+Earth
+
+precession of, [[file:chapter002.html#p176][176]] (ex.
+[[file:chapter002.html#Exe_2-18][2.18]])
+
+rotational alignment of, [[file:chapter002.html#p151][151]]
+
+Effective Hamiltonian, [[file:chapter003.html#p230][230]]
+
+Effects in Scheme,
+[[file:chapter008.html#p505][505]]--[[file:chapter008.html#p508][508]]
+
+Eigenvalues and eigenvectors
+
+for equilibria, [[file:chapter004.html#p293][293]]
+
+for fixed points, [[file:chapter004.html#p296][296]]
+
+for Hamiltonian systems, [[file:chapter004.html#p298][298]]
+
+of inertia tensor, [[file:chapter002.html#p132][132]]
+
+for unstable fixed point, [[file:chapter004.html#p303][303]]
+
+Einstein, Albert, [[file:chapter001.html#p1][1]]
+
+Einstein summation convention, [[file:chapter005.html#p367][367]] /n/
+
+else, [[file:chapter008.html#p500][500]]
+
+Empty list, [[file:chapter008.html#p503][503]]
+
+Energy, [[file:chapter001.html#p81][81]]
+
+as sum of kinetic and potential energies,
+[[file:chapter001.html#p82][82]]
+
+conservation of,
+[[file:chapter001.html#p81][81]]--[[file:chapter001.html#p83][83]],
+[[file:chapter002.html#p142][142]], [[file:chapter003.html#p211][211]]
+
+dissipation of (/see/ Dissipation of energy)
+
+Energy state function (/ℰ/), [[file:chapter001.html#p82][82]]
+
+Hamiltonian and, [[file:chapter003.html#p200][200]]
+
+Epicyclic motion,
+[[file:chapter005.html#p381][381]]--[[file:chapter005.html#p389][389]]
+
+eq?, [[file:chapter008.html#p505][505]]
+
+Equilibria,
+[[file:chapter003.html#p222][222]]--[[file:chapter003.html#p223][223]],
+[[file:chapter004.html#p291][291]]--[[file:chapter004.html#p295][295]].
+/See also/ Fixed points
+
+for angular momentum, [[file:chapter002.html#p149][149]]
+
+inverted, for pendulum, [[file:chapter003.html#p246][246]],
+[[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-14][3.14]]),
+[[file:chapter007.html#p491][491]]--[[file:chapter007.html#p494][494]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-4][7.4]])
+
+linear stability of,
+[[file:chapter004.html#p291][291]]--[[file:chapter004.html#p295][295]]
+
+relative, [[file:chapter002.html#p149][149]]
+
+stable and unstable, [[file:chapter004.html#p287][287]]
+
+Equinox, precession of, [[file:chapter002.html#p176][176]] (ex.
+[[file:chapter002.html#Exe_2-18][2.18]])
+
+Ergodic motion, [[file:chapter004.html#p312][312]] /n/
+
+Ergodic theorem, [[file:chapter003.html#p251][251]]
+
+Euler, Leonhard, [[file:chapter001.html#p13][13]] /n/
+
+Euler->M, /[[file:chapter002.html#p139][139]]/
+
+Euler-state->omega-body, /[[file:chapter002.html#p140][140]]/
+
+Euler angles,
+[[file:chapter002.html#p137][137]]--[[file:chapter002.html#p141][141]]
+
+for axisymmetric top, [[file:chapter002.html#p159][159]]
+
+kinetic energy in terms of, [[file:chapter002.html#p141][141]]
+
+singularities and, [[file:chapter002.html#p143][143]],
+[[file:chapter002.html#p154][154]]
+
+Euler--Lagrange equations. /See/ Lagrange equations
+
+Euler-Lagrange-operator (
+$\mathcal{E}$
+), /[[file:chapter001.html#p98][98]]/
+Euler--Lagrange operator (
+$\mathcal{E}$
+), [[file:chapter001.html#p98][98]]
+Euler's equations,
+[[file:chapter002.html#p151][151]]--[[file:chapter002.html#p157][157]]
+
+singularities in, [[file:chapter002.html#p154][154]]
+
+Euler's theorem on homogeneous functions,
+[[file:chapter001.html#p83][83]] /n/
+
+Euler's theorem on rotations, [[file:chapter002.html#p123][123]]
+
+Euler angles and, [[file:chapter002.html#p182][182]]
+
+Evolution. /See/ Time evolution of state
+
+evolve, [[file:chapter001.html#p75][75]],
+[[file:chapter002.html#p145][145]], [[file:chapter003.html#p238][238]]
+
+explore-map, [[file:chapter003.html#p248][248]]
+
+Exponential(s)
+
+of differential operator, [[file:chapter006.html#p443][443]]
+
+of Lie derivative, [[file:chapter006.html#p447][447]]
+([[file:chapter006.html#disp_6.147][eq. 6.147]])
+
+of noncommuting operators,
+[[file:chapter006.html#p451][451]]--[[file:chapter006.html#p453][453]]
+
+Exponential divergence, [[file:chapter003.html#p241][241]],
+[[file:chapter003.html#p243][243]],
+[[file:chapter003.html#p263][263]]--[[file:chapter003.html#p267][267]].
+/See also/ Chaotic motion; Lyapunov exponent
+
+homoclinic tangle and, [[file:chapter004.html#p307][307]]
+
+Expressions in Scheme, [[file:chapter008.html#p497][497]]
+
+Extended phase space,
+[[file:chapter005.html#p394][394]]--[[file:chapter005.html#p402][402]]
+
+generating functions in, [[file:chapter005.html#p407][407]]
+
+/F/_{1}--/F/_{4}. /See also/ Generating functions
+
+/F/_{1}(/t/, /q/, /q/′), [[file:chapter005.html#p373][373]]
+
+/F/_{2}(/t/, /q/, /p/′), [[file:chapter005.html#p373][373]]
+
+/F/_{3}(/t, p, q/′), [[file:chapter005.html#p374][374]]
+
+/F/_{4}(/t, p, p/′), [[file:chapter005.html#p374][374]]
+
+F->C, /[[file:chapter001.html#p46][46]]/,
+/[[file:chapter001.html#p96][96]]/
+
+F->CH, /[[file:chapter005.html#p339][339]]/
+
+F->K, /[[file:chapter005.html#p340][340]]/
+
+Fermat, Pierre, [[file:chapter001.html#p13][13]] (ex.
+[[file:chapter001.html#Exe_1-3][1.3]])
+
+Fermat's principle (optics), [[file:chapter001.html#p13][13]] (ex.
+[[file:chapter001.html#Exe_1-3][1.3]]), [[file:chapter001.html#p13][13]]
+/n/
+
+Fermi, Enrico, [[file:chapter003.html#p251][251]]
+
+Feynman, Richard P., [[file:chapter001.html#p12][12]] /n/
+
+find-path, /[[file:chapter001.html#p21][21]]/
+
+First amendment. /See/ Degrees of freedom
+
+First integral, [[file:chapter001.html#p78][78]]
+
+Fixed points, [[file:chapter004.html#p295][295]]. /See also/ Equilibria
+
+elliptic, [[file:chapter004.html#p299][299]],
+[[file:chapter004.html#p320][320]]
+
+<<p538>>
+equilibria or periodic motion and, [[file:chapter004.html#p290][290]],
+[[file:chapter004.html#p295][295]]
+
+for Hamiltonian systems, [[file:chapter004.html#p298][298]]
+
+hyperbolic, [[file:chapter004.html#p299][299]],
+[[file:chapter004.html#p320][320]]
+
+linear stability of,
+[[file:chapter004.html#p295][295]]--[[file:chapter004.html#p297][297]]
+
+manifolds for, [[file:chapter004.html#p303][303]]
+
+parabolic, [[file:chapter004.html#p299][299]]
+
+Poincaré--Birkhoff fixed points, [[file:chapter004.html#p320][320]]
+
+Poincaré--Birkhoff theorem,
+[[file:chapter004.html#p316][316]]--[[file:chapter004.html#p321][321]]
+
+rational rotation number and, [[file:chapter004.html#p316][316]]
+
+Floating-point numbers in Scheme, [[file:chapter001.html#p18][18]] /n/
+
+Floquet multiplier, [[file:chapter004.html#p296][296]] /n/
+
+Flow, defined by vector field, [[file:chapter006.html#p447][447]] /n/
+
+Force
+
+central (/see/ Central force)
+
+exerted by constraint, [[file:chapter001.html#p104][104]]
+
+Forced libration of the Moon, [[file:chapter002.html#p175][175]]
+
+Forced rigid body. /See/ Rigid body, forced
+
+Formal parameters
+
+of a function, [[file:chapter001.html#p14][14]] /n/
+
+of a procedure, [[file:chapter008.html#p499][499]]
+
+Foucault pendulum, [[file:chapter001.html#p62][62]] (ex.
+[[file:chapter001.html#Exe_1-25][1.25]]),
+[[file:chapter001.html#p78][78]] (ex.
+[[file:chapter001.html#Exe_1-31][1.31]])
+
+frame, [[file:chapter001.html#p76][76]] /n/
+
+Free libration of the Moon, [[file:chapter002.html#p175][175]]
+
+Free particle
+
+action,
+[[file:chapter001.html#p14][14]]--[[file:chapter001.html#p20][20]]
+
+Lagrange equations for, [[file:chapter001.html#p33][33]]
+
+Lagrangian for,
+[[file:chapter001.html#p14][14]]--[[file:chapter001.html#p15][15]]
+
+Free rigid body. /See/ Rigid body (free)
+
+Freudenthal, Hans, [[file:preface.html#pxiv][xiv]] /n/
+
+Friction
+
+internal, [[file:chapter002.html#p150][150]]
+
+tidal, [[file:chapter002.html#p170][170]]
+
+Function(s),
+[[file:chapter009.html#p510][510]]--[[file:chapter009.html#p511][511]]
+
+arithmetic operations on, [[file:chapter001.html#p18][18]] /n/,
+[[file:chapter009.html#p511][511]]
+
+composition of, [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter009.html#p510][510]], [[file:chapter009.html#p523][523]]
+(ex. [[file:chapter009.html#Exe_9-2][9.2]])
+
+homogeneous, [[file:chapter001.html#p83][83]] /n/
+
+operator vs., [[file:chapter006.html#p448][448]] /n/,
+[[file:chapter009.html#p517][517]]
+
+orthogonal, tuple-valued, [[file:chapter001.html#p101][101]] /n/
+
+parallel, tuple-valued, [[file:chapter001.html#p101][101]] /n/
+
+selector (/see/ Selector function)
+
+tuple of, [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter009.html#p521][521]]
+
+vs. value when applied, [[file:chapter009.html#p509][509]],
+[[file:chapter009.html#p510][510]]
+
+with multiple arguments, [[file:chapter009.html#p518][518]],
+[[file:chapter009.html#p519][519]], [[file:chapter009.html#p523][523]]
+(ex. [[file:chapter009.html#Exe_9-2][9.2]])
+
+with structured arguments, [[file:chapter001.html#p24][24]] /n/,
+[[file:chapter009.html#p519][519]], [[file:chapter009.html#p523][523]]
+(ex. [[file:chapter009.html#Exe_9-2][9.2]])
+
+with structured output, [[file:chapter009.html#p521][521]],
+[[file:chapter009.html#p523][523]] (ex.
+[[file:chapter009.html#Exe_9-2][9.2]])
+
+Functional arguments, [[file:chapter001.html#p10][10]] /n/
+
+Functional mathematical notation, [[file:preface.html#pxiv][xiv]],
+[[file:chapter009.html#p509][509]]
+
+Function definition, [[file:chapter001.html#p14][14]] /n/
+
+Fundamental Poisson brackets, [[file:chapter005.html#p352][352]]
+
+Γ[/q/]
+
+for local tuple, [[file:chapter001.html#p11][11]]
+
+Lagrangian state path, [[file:chapter003.html#p203][203]]
+
+Galaxy,
+[[file:chapter003.html#p248][248]]--[[file:chapter003.html#p252][252]]
+
+axisymmetric potential of, [[file:chapter003.html#p250][250]]
+
+Galilean invariance, [[file:chapter001.html#p68][68]] (ex.
+[[file:chapter001.html#Exe_1-29][1.29]]),
+[[file:chapter005.html#p341][341]] (ex.
+[[file:chapter005.html#Exe_5-1][5.1]])
+
+Gamma (Scheme procedure for Γ), [[file:chapter001.html#p16][16]]
+
+optional argument, [[file:chapter001.html#p36][36]] (ex.
+[[file:chapter001.html#Exe_1-13][1.13]])
+
+Gamma-bar, /[[file:chapter001.html#p95][95]]/
+
+Gas in corner of room, [[file:chapter003.html#p273][273]]
+
+Generalized coordinates,
+[[file:chapter001.html#p6][6]]--[[file:chapter001.html#p8][8]],
+[[file:chapter001.html#p39][39]]. /See also/ Coordinate(s)
+
+Euler angles as, [[file:chapter002.html#p138][138]] (/see also/ Euler
+angles)
+
+Generalized momentum, [[file:chapter001.html#p79][79]]
+
+transformation of, [[file:chapter005.html#p337][337]]
+([[file:chapter005.html#disp_5.5][eq. 5.5]])
+
+Generalized velocity, [[file:chapter001.html#p8][8]]
+
+transformation of, [[file:chapter001.html#p45][45]]
+
+Generating functions,
+[[file:chapter005.html#p364][364]]--[[file:chapter005.html#p394][394]]
+
+in extended phase space, [[file:chapter005.html#p407][407]]
+
+/F/_{1}--/F/_{4},
+[[file:chapter005.html#p373][373]]--[[file:chapter005.html#p374][374]]
+
+/F/_{1},
+[[file:chapter005.html#p364][364]]--[[file:chapter005.html#p368][368]]
+
+/F/_{2},
+[[file:chapter005.html#p371][371]]--[[file:chapter005.html#p373][373]]
+
+/F/_{2} and point transformations,
+[[file:chapter005.html#p375][375]]--[[file:chapter005.html#p376][376]]
+
+/F/_{2} for polar coordinate transformation,
+[[file:chapter005.html#p376][376]]--[[file:chapter005.html#p377][377]]
+
+<<p539>>
+/F/_{2} for rotating coordinates,
+[[file:chapter005.html#p377][377]]--[[file:chapter005.html#p378][378]]
+
+integral invariants and,
+[[file:chapter005.html#p368][368]]--[[file:chapter005.html#p373][373]]
+
+Lagrangian action and,
+[[file:chapter006.html#p421][421]]--[[file:chapter006.html#p425][425]]
+
+Legendre transformation between /F/_{1} and /F/_{2},
+[[file:chapter005.html#p373][373]]
+
+mixed-variable, [[file:chapter005.html#p374][374]]
+
+Generic arithmetic, [[file:chapter001.html#p16][16]] /n/,
+[[file:chapter009.html#p509][509]]
+
+Gibbs, Josiah Willard, [[file:chapter001.html#p12][12]] /n/,
+[[file:chapter003.html#p203][203]] /n/
+
+Golden number, [[file:chapter004.html#p325][325]]
+
+Golden ratio, a most irrational number,
+[[file:chapter004.html#p325][325]]
+
+Golden rotation number, [[file:chapter004.html#p328][328]]
+
+Goldstein, Herbert, [[file:chapter002.html#p119][119]]
+
+Goldstein's hoop, [[file:chapter001.html#p110][110]]
+
+Golf ball, tiny, [[file:chapter001.html#p108][108]] (ex.
+[[file:chapter001.html#Exe_1-41][1.41]])
+
+Grand Old Duke of York. /See/ neither up nor down
+
+Graphing, [[file:chapter001.html#p23][23]] (ex.
+[[file:chapter001.html#Exe_1-5][1.5]]),
+[[file:chapter001.html#p75][75]], [[file:chapter003.html#p248][248]]
+
+Gravitational potential
+
+central, [[file:chapter001.html#p31][31]]
+
+of galaxy, [[file:chapter003.html#p250][250]]
+
+multipole expansion of,
+[[file:chapter002.html#p165][165]]--[[file:chapter002.html#p169][169]]
+
+rigid-body, [[file:chapter002.html#p166][166]]
+
+Group properties
+
+of canonical transformations, [[file:chapter005.html#p346][346]] (ex.
+[[file:chapter005.html#Exe_5-4][5.4]])
+
+of rotations, [[file:chapter002.html#p187][187]] (/see also/ Euler's
+theorem on rotations)
+
+/H/ (Hamiltonian), [[file:chapter003.html#p199][199]]
+
+H-central, /[[file:chapter005.html#p339][339]]/
+
+H-harmonic, /[[file:chapter006.html#p448][448]]/
+
+H-pend-sysder, /[[file:chapter003.html#p237][237]]/
+
+Hamilton, Sir William Rowan, [[file:chapter001.html#p39][39]] /n/,
+[[file:chapter002.html#p183][183]]
+
+Hamiltonian, [[file:chapter003.html#p199][199]]
+
+in action-angle coordinates, [[file:chapter004.html#p311][311]]
+
+computing (/see/ H-...)
+
+cyclic in coordinate, [[file:chapter003.html#p224][224]] /n/
+
+energy state function and, [[file:chapter003.html#p200][200]]
+
+for axisymmetric potential, [[file:chapter003.html#p250][250]]
+
+for central potential, [[file:chapter003.html#p227][227]],
+[[file:chapter005.html#p339][339]], [[file:chapter005.html#p381][381]],
+[[file:chapter005.html#p382][382]]
+
+for damped harmonic oscillator, [[file:chapter003.html#p275][275]]
+
+for driven pendulum, [[file:chapter005.html#p392][392]]
+
+for driven rotor, [[file:chapter004.html#p317][317]]
+
+for harmonic oscillator, [[file:chapter005.html#p344][344]]
+
+for harmonic oscillator, in action-angle coordinates,
+[[file:chapter005.html#p346][346]]
+([[file:chapter005.html#disp_5.31][eq. 5.31]])
+
+for Kepler problem, [[file:chapter006.html#p418][418]]
+
+for pendulum, [[file:chapter007.html#p460][460]]
+
+for periodically driven pendulum, [[file:chapter003.html#p236][236]],
+[[file:chapter007.html#p476][476]]
+
+for restricted three-body problem, [[file:chapter005.html#p399][399]],
+[[file:chapter005.html#p400][400]]
+
+for spin-orbit coupling, [[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+for top, [[file:chapter003.html#p230][230]]
+
+for two-body problem, [[file:chapter005.html#p378][378]]
+
+Hénon--Heiles, [[file:chapter003.html#p252][252]],
+[[file:chapter006.html#p455][455]] (ex.
+[[file:chapter006.html#Exe_6-12][6.12]])
+
+Lagrangian and, [[file:chapter003.html#p200][200]]
+([[file:chapter003.html#disp_3.19][eq. 3.19]]),
+[[file:chapter003.html#p210][210]]
+
+perturbation of action-angle, [[file:chapter004.html#p316][316]],
+[[file:chapter007.html#p458][458]]
+
+time-dependent, and dissipation, [[file:chapter003.html#p276][276]]
+
+Hamiltonian->Lagrangian, /[[file:chapter003.html#p213][213]]/
+
+Hamiltonian->state-derivative, /[[file:chapter003.html#p204][204]]/
+
+Hamiltonian flow, [[file:chapter006.html#p447][447]] /n/
+
+Hamiltonian formulation, [[file:chapter003.html#p195][195]]
+
+Lagrangian formulation and, [[file:chapter003.html#p217][217]]
+
+Hamiltonian state,
+[[file:chapter003.html#p202][202]]--[[file:chapter003.html#p203][203]]
+
+Hamiltonian state derivative, [[file:chapter003.html#p202][202]],
+[[file:chapter003.html#p204][204]]
+
+Hamiltonian state path Π/_{L}/[/q/], [[file:chapter003.html#p203][203]]
+
+Hamilton--Jacobi equation,
+[[file:chapter006.html#p411][411]]--[[file:chapter006.html#p413][413]]
+
+action-angle coordinates and, [[file:chapter006.html#p413][413]]
+
+action at endpoints and, [[file:chapter006.html#p425][425]]
+
+for harmonic oscillator,
+[[file:chapter006.html#p413][413]]--[[file:chapter006.html#p417][417]]
+
+for Kepler problem,
+[[file:chapter006.html#p417][417]]--[[file:chapter006.html#p421][421]]
+
+separation in spherical coordinates,
+[[file:chapter006.html#p418][418]]--[[file:chapter006.html#p421][421]]
+
+time-independent, [[file:chapter006.html#p413][413]]
+
+Hamilton-equations, /[[file:chapter003.html#p203][203]]/
+
+<<p540>>
+Hamilton's equations,
+[[file:chapter003.html#p197][197]]--[[file:chapter003.html#p200][200]]
+
+in action-angle coordinates, [[file:chapter004.html#p311][311]]
+
+computation of,
+[[file:chapter003.html#p203][203]]--[[file:chapter003.html#p205][205]]
+
+dynamical, [[file:chapter003.html#p217][217]]
+
+for central potential, [[file:chapter003.html#p227][227]]
+
+for damped harmonic oscillator, [[file:chapter003.html#p275][275]]
+
+for harmonic oscillator, [[file:chapter005.html#p344][344]]
+
+from action principle,
+[[file:chapter003.html#p215][215]]--[[file:chapter003.html#p217][217]]
+
+from Legendre transformation,
+[[file:chapter003.html#p210][210]]--[[file:chapter003.html#p211][211]]
+
+numerical integration of, [[file:chapter003.html#p236][236]]
+
+Poisson bracket form, [[file:chapter003.html#p220][220]]
+
+Hamilton's principle, [[file:chapter001.html#p38][38]]
+
+for systems with rigid constraints,
+[[file:chapter001.html#p49][49]]--[[file:chapter001.html#p50][50]]
+
+Harmonic oscillator
+
+coupled, [[file:chapter001.html#p105][105]]
+
+damped, [[file:chapter003.html#p274][274]]
+
+decoupling via Lie transform, [[file:chapter006.html#p442][442]]
+
+driven, [[file:chapter006.html#p430][430]] (ex.
+[[file:chapter006.html#Exe_6-6][6.6]])
+
+first-order equations for, [[file:chapter001.html#p72][72]]
+
+Hamiltonian for, [[file:chapter005.html#p344][344]]
+
+Hamiltonian in action-angle coordinates,
+[[file:chapter005.html#p346][346]]
+([[file:chapter005.html#disp_5.31][eq. 5.31]])
+
+Hamilton's equations for, [[file:chapter005.html#p344][344]]
+
+Lagrange equations for, [[file:chapter001.html#p30][30]],
+[[file:chapter001.html#p72][72]]
+
+Lagrangian for, [[file:chapter001.html#p21][21]]
+
+Lie series for, [[file:chapter006.html#p448][448]]
+
+solution of, [[file:chapter001.html#p34][34]],
+[[file:chapter005.html#p344][344]]
+
+solution via canonical transformation,
+[[file:chapter005.html#p344][344]]
+
+solution via Hamilton--Jacobi,
+[[file:chapter006.html#p413][413]]--[[file:chapter006.html#p417][417]]
+
+Hausdorff, Felix. /See/ Baker--Campbell--Hausdorff formula
+
+Heiles, Carl, [[file:chapter003.html#p241][241]],
+[[file:chapter003.html#p248][248]]. /See also/ Hénon
+
+Heisenberg, Werner, [[file:chapter001.html#p12][12]] /n/,
+[[file:chapter003.html#p203][203]] /n/
+
+Heliocentric coordinates, [[file:chapter005.html#p409][409]] (ex.
+[[file:chapter005.html#Exe_5-21][5.21]])
+
+Hénon, Michel, [[file:chapter003.html#p195][195]],
+[[file:chapter003.html#p241][241]], [[file:chapter003.html#p248][248]]
+
+Hénon--Heiles problem,
+[[file:chapter003.html#p248][248]]--[[file:chapter003.html#p263][263]]
+
+computing surfaces of section,
+[[file:chapter003.html#p261][261]]--[[file:chapter003.html#p263][263]]
+
+Hamiltonian for, [[file:chapter003.html#p252][252]]
+
+history of,
+[[file:chapter003.html#p248][248]]--[[file:chapter003.html#p252][252]]
+
+integrals of motion, [[file:chapter003.html#p251][251]],
+[[file:chapter003.html#p254][254]],
+[[file:chapter003.html#p256][256]]--[[file:chapter003.html#p260][260]]
+
+interpretation of model,
+[[file:chapter003.html#p256][256]]--[[file:chapter003.html#p260][260]]
+
+model of,
+[[file:chapter003.html#p252][252]]--[[file:chapter003.html#p254][254]]
+
+potential energy, [[file:chapter003.html#p253][253]]
+
+surface of section,
+[[file:chapter003.html#p254][254]]--[[file:chapter003.html#p263][263]]
+
+Hénon's quadratic map, [[file:chapter003.html#p280][280]] (ex.
+[[file:chapter003.html#Exe_3-13][3.13]])
+
+Heteroclinic intersection, [[file:chapter004.html#p305][305]]
+
+Higher-order perturbation theory,
+[[file:chapter007.html#p468][468]]--[[file:chapter007.html#p473][473]],
+[[file:chapter007.html#p489][489]]--[[file:chapter007.html#p494][494]]
+
+History
+
+Hénon--Heiles problem,
+[[file:chapter003.html#p248][248]]--[[file:chapter003.html#p252][252]]
+
+variational principles, [[file:chapter001.html#p10][10]] /n/,
+[[file:chapter001.html#p13][13]] /n/, [[file:chapter001.html#p39][39]]
+/n/
+
+Holonomic system, [[file:chapter001.html#p4][4]] /n/,
+[[file:chapter001.html#p109][109]]
+
+Homoclinic intersection, [[file:chapter004.html#p304][304]]
+
+Homoclinic tangle,
+[[file:chapter004.html#p302][302]]--[[file:chapter004.html#p309][309]]
+
+chaotic regions and, [[file:chapter004.html#p307][307]]
+
+computing,
+[[file:chapter004.html#p307][307]]--[[file:chapter004.html#p309][309]]
+
+exponential divergence and, [[file:chapter004.html#p307][307]]
+
+Homogeneous function, Euler's theorem, [[file:chapter001.html#p83][83]]
+/n/
+
+Huygens, Christiaan, [[file:chapter001.html#p10][10]] /n/
+
+Hyperion, chaotic tumbling of, [[file:chapter002.html#p151][151]],
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p176][176]]
+
+/I/ (identity operator), [[file:chapter009.html#p517][517]]
+
+/I/ with subscript (selector), [[file:chapter001.html#p64][64]] /n/,
+[[file:chapter009.html#p513][513]]
+
+if, [[file:chapter008.html#p501][501]]
+
+Ignorable coordinate. /See/ Cyclic coordinate
+
+Indexing, zero-based. /See/ Zero-based indexing
+
+Inertia, moments of. /See/ Moment(s) of inertia
+
+Inertia matrix, [[file:chapter002.html#p128][128]]. /See also/ Inertia
+tensor
+
+Inertia tensor, [[file:chapter002.html#p127][127]]
+
+diagonalization of,
+[[file:chapter002.html#p132][132]]--[[file:chapter002.html#p133][133]]
+
+kinetic energy in terms of, [[file:chapter002.html#p131][131]]
+
+principal axes of, [[file:chapter002.html#p133][133]]
+
+transformation of,
+[[file:chapter002.html#p130][130]]--[[file:chapter002.html#p132][132]]
+
+Initial conditions. /See/ Sensitivity to initial conditions; State
+
+<<p541>>
+Inner product of tuples, [[file:chapter009.html#p515][515]]
+
+Instability. /See also/ Equilibria; Linear stability
+
+free-body rotation,
+[[file:chapter002.html#p149][149]]--[[file:chapter002.html#p151][151]]
+
+Integers in Scheme, [[file:chapter001.html#p18][18]] /n/
+
+Integrable constraints, [[file:chapter001.html#p4][4]] /n/,
+[[file:chapter001.html#p109][109]]
+
+Integrable systems, [[file:chapter004.html#p285][285]],
+[[file:chapter004.html#p309][309]]--[[file:chapter004.html#p316][316]]
+
+periodic orbits of near-integrable systems,
+[[file:chapter004.html#p316][316]]
+
+perturbation of, [[file:chapter004.html#p316][316]],
+[[file:chapter004.html#p322][322]], [[file:chapter007.html#p457][457]]
+
+reduction to quadrature and, [[file:chapter004.html#p311][311]] (/see
+also/ Quadrature)
+
+surfaces of section for,
+[[file:chapter004.html#p313][313]]--[[file:chapter004.html#p316][316]]
+
+Integral, definite, [[file:chapter001.html#p10][10]] /n/
+
+Integral invariant
+
+generating functions and,
+[[file:chapter005.html#p368][368]]--[[file:chapter005.html#p373][373]]
+
+Poincaré,
+[[file:chapter005.html#p362][362]]--[[file:chapter005.html#p364][364]]
+
+Poincaré--Cartan, [[file:chapter005.html#p402][402]],
+[[file:chapter006.html#p431][431]]--[[file:chapter006.html#p434][434]]
+
+Integral of motion, [[file:chapter001.html#p78][78]]. /See also/
+Conserved quantities; Hénon--Heiles problem
+
+Integration. /See/ Numerical integration
+
+Invariant curves, [[file:chapter003.html#p243][243]],
+[[file:chapter004.html#p322][322]]--[[file:chapter004.html#p330][330]]
+
+dissolution of,
+[[file:chapter004.html#p329][329]]--[[file:chapter004.html#p330][330]],
+[[file:chapter007.html#p486][486]]
+
+finding (computing),
+[[file:chapter004.html#p326][326]]--[[file:chapter004.html#p329][329]]
+
+finding (strategy),
+[[file:chapter004.html#p322][322]]--[[file:chapter004.html#p325][325]]
+
+irrational rotation number and, [[file:chapter004.html#p322][322]]
+
+Kolmogorov--Arnold--Moser theorem, [[file:chapter004.html#p322][322]]
+
+Invariants of canonical transformations,
+[[file:chapter005.html#p357][357]]--[[file:chapter005.html#p364][364]].
+/See also/ Integral invariants
+
+Irrational number, continued-fraction approximation,
+[[file:chapter004.html#p325][325]]
+
+Islands in surfaces of section. /See also/ Resonance
+
+for Hénon--Heiles problem, [[file:chapter003.html#p259][259]]
+
+for periodically driven pendulum,
+[[file:chapter003.html#p244][244]]--[[file:chapter003.html#p246][246]],
+[[file:chapter004.html#p289][289]]--[[file:chapter004.html#p290][290]],
+[[file:chapter007.html#p483][483]]--[[file:chapter007.html#p486][486]]
+
+for standard map, [[file:chapter003.html#p279][279]]
+
+perturbative vs. actual,
+[[file:chapter007.html#p483][483]]--[[file:chapter007.html#p486][486]]
+
+in Poincaré--Birkhoff construction, [[file:chapter004.html#p321][321]]
+
+Poisson series and, [[file:chapter007.html#p488][488]]
+
+secondary, [[file:chapter003.html#p260][260]],
+[[file:chapter004.html#p290][290]]
+
+size of, [[file:chapter004.html#p322][322]],
+[[file:chapter007.html#p488][488]]
+
+small denominators and, [[file:chapter004.html#p322][322]],
+[[file:chapter007.html#p488][488]]
+
+iterated-map, [[file:chapter004.html#p308][308]] /n/
+
+Iteration in Scheme, [[file:chapter008.html#p502][502]]
+
+$\widetilde{J}$
+(shuffle function), [[file:chapter005.html#p350][350]]
+*J*, *J*/_{n}/ (symplectic unit), [[file:chapter004.html#p301][301]],
+[[file:chapter005.html#p355][355]]
+
+J-func, /[[file:chapter005.html#p351][351]]/
+
+J-matrix, [[file:chapter005.html#p353][353]]
+
+Jac (Jacobian of map), [[file:chapter003.html#p270][270]]
+
+Jacobi, Carl Gustav Jacob, [[file:chapter001.html#p39][39]] /n/. /See
+also/ Hamilton--Jacobi equation
+
+Jacobian, [[file:chapter003.html#p270][270]]
+
+Jacobi constant, [[file:chapter001.html#p89][89]] /n/,
+[[file:chapter005.html#p383][383]], [[file:chapter005.html#p400][400]]
+
+Jacobi coordinates, [[file:chapter005.html#p409][409]] (ex.
+[[file:chapter005.html#Exe_5-21][5.21]])
+
+Jacobi identity
+
+for commutators, [[file:chapter006.html#p451][451]]
+
+for Poisson brackets, [[file:chapter003.html#p221][221]]
+
+Jeans, Sir James, “theorem” of, [[file:chapter003.html#p251][251]]
+
+Jupiter, [[file:chapter002.html#p129][129]] (ex.
+[[file:chapter002.html#Exe_2-4][2.4]])
+
+KAM theorem. /See/ Kolmogorov--Arnold--Moser theorem
+
+Kepler, Johannes. /See/ Kepler...
+
+Kepler problem, [[file:chapter001.html#p31][31]],
+[[file:chapter001.html#p35][35]] (ex.
+[[file:chapter001.html#Exe_1-11][1.11]])
+
+in reduced phase space, [[file:chapter005.html#p406][406]]
+
+reduction to,
+[[file:chapter005.html#p378][378]]--[[file:chapter005.html#p381][381]]
+
+solution via Hamilton--Jacobi equation,
+[[file:chapter006.html#p417][417]]--[[file:chapter006.html#p421][421]]
+
+Kepler's third law, [[file:chapter001.html#p35][35]] (ex.
+[[file:chapter001.html#Exe_1-11][1.11]]),
+[[file:chapter002.html#p173][173]]
+
+Kinematics of rotation,
+[[file:chapter002.html#p122][122]]--[[file:chapter002.html#p126][126]]
+
+Kinetic energy
+
+ellipsoid of, [[file:chapter002.html#p148][148]]
+
+in Lagrangian,
+[[file:chapter001.html#p38][38]]--[[file:chapter001.html#p39][39]]
+
+as Lagrangian for free body, [[file:chapter002.html#p122][122]],
+[[file:chapter002.html#p141][141]]
+
+as Lagrangian for free particle, [[file:chapter001.html#p14][14]]
+
+of axisymmetric top, [[file:chapter002.html#p159][159]]
+
+of free rigid body,
+[[file:chapter002.html#p148][148]]--[[file:chapter002.html#p150][150]]
+
+of rigid body,
+[[file:chapter002.html#p120][120]]--[[file:chapter002.html#p122][122]]
+(/see also/ Rigid body, kinetic energy...)
+
+<<p542>>
+rotational and translational, [[file:chapter002.html#p122][122]]
+
+in spherical coordinates, [[file:chapter001.html#p84][84]]
+
+Knuth, Donald E., [[file:index.html#p531][531]]
+
+Kolmogorov, A. N.. /See/ Kolmogorov--Arnold--Moser theorem
+
+Kolmogorov--Arnold--Moser theorem, [[file:chapter004.html#p302][302]],
+[[file:chapter004.html#p322][322]]
+
+/L/ (Lagrangian), [[file:chapter001.html#p11][11]]
+
+/L/ (Lie derivative), [[file:chapter006.html#p447][447]]
+
+L-axisymmetric-top, /[[file:chapter003.html#p229][229]]/
+
+L-body, /[[file:chapter002.html#p137][137]]/
+
+L-body-Euler, /[[file:chapter002.html#p141][141]]/
+
+L-central-polar, /[[file:chapter001.html#p43][43]]/,
+/[[file:chapter001.html#p47][47]]/
+
+L-central-rectangular, /[[file:chapter001.html#p41][41]]/
+
+L-free-particle, /[[file:chapter001.html#p14][14]]/
+
+L-harmonic, /[[file:chapter001.html#p22][22]]/
+
+L-pend, /[[file:chapter001.html#p52][52]]/
+
+L-periodically-driven-pendulum, /[[file:chapter001.html#p74][74]]/
+
+L-rectangular, /[[file:chapter003.html#p213][213]]/
+
+L-space, /[[file:chapter002.html#p137][137]]/
+
+L-space-Euler, /[[file:chapter002.html#p141][141]]/
+
+L-uniform-acceleration, /[[file:chapter001.html#p40][40]]/,
+/[[file:chapter001.html#p61][61]]/
+
+Lagrange, Joseph Louis, [[file:chapter001.html#p13][13]] /n/,
+[[file:chapter001.html#p39][39]] /n/
+
+Lagrange-equations, /[[file:chapter001.html#p33][33]]/
+
+Lagrange equations,
+[[file:chapter001.html#p23][23]]--[[file:chapter001.html#p25][25]]
+
+at a moment, [[file:chapter001.html#p97][97]]
+
+computing,
+[[file:chapter001.html#p33][33]]--[[file:chapter001.html#p36][36]]
+
+coordinate-independence of, [[file:chapter001.html#p30][30]],
+[[file:chapter001.html#p43][43]] (ex.
+[[file:chapter001.html#Exe_1-14][1.14]])
+
+derivation of,
+[[file:chapter001.html#p25][25]]--[[file:chapter001.html#p30][30]]
+
+as first-order system, [[file:chapter001.html#p72][72]]
+
+for central potential (polar), [[file:chapter001.html#p43][43]]
+
+for central potential (rectangular), [[file:chapter001.html#p41][41]]
+
+for damped harmonic oscillator, [[file:chapter003.html#p275][275]]
+
+for driven pendulum, [[file:chapter001.html#p52][52]]
+
+for free particle, [[file:chapter001.html#p33][33]]
+
+for free rigid body, [[file:chapter002.html#p141][141]]
+
+for gravitational potential, [[file:chapter001.html#p32][32]]
+
+for harmonic oscillator, [[file:chapter001.html#p30][30]],
+[[file:chapter001.html#p72][72]]
+
+for periodically driven pendulum, [[file:chapter001.html#p74][74]]
+
+for spin-orbit coupling, [[file:chapter002.html#p173][173]]
+
+from Newton's equations,
+[[file:chapter001.html#p36][36]]--[[file:chapter001.html#p38][38]],
+[[file:chapter001.html#p54][54]]--[[file:chapter001.html#p58][58]]
+
+vs. Newton's equations, [[file:chapter001.html#p39][39]]
+
+numerical integration of, [[file:chapter001.html#p73][73]]
+
+off the beaten path, [[file:chapter001.html#p97][97]]
+
+singularities in, [[file:chapter002.html#p143][143]]
+
+traditional notation for, [[file:preface.html#pxiv][xiv]],
+[[file:chapter001.html#p24][24]]
+
+uniqueness of solution, [[file:chapter001.html#p69][69]]
+
+Lagrange-interpolation-function, [[file:chapter001.html#p20][20]] /n/
+
+Lagrange interpolation polynomial, [[file:chapter001.html#p20][20]]
+
+Lagrange multiplier. /See/ Lagrangian, augmented
+
+Lagrangian, [[file:chapter001.html#p12][12]]
+
+adding total time derivatives to, [[file:chapter001.html#p65][65]]
+
+augmented, [[file:chapter001.html#p102][102]],
+[[file:chapter001.html#p109][109]]
+
+computing,
+[[file:chapter001.html#p14][14]]--[[file:chapter001.html#p15][15]] (/see
+also/ L-...)
+
+coordinate transformations of, [[file:chapter001.html#p44][44]]
+
+cyclic in coordinate, [[file:chapter001.html#p80][80]]
+
+energy and, [[file:chapter001.html#p12][12]]
+
+for axisymmetric top, [[file:chapter002.html#p159][159]]
+
+for central potential (polar),
+[[file:chapter001.html#p42][42]]--[[file:chapter001.html#p43][43]],
+[[file:chapter003.html#p227][227]]
+
+for central potential (rectangular), [[file:chapter001.html#p41][41]]
+
+for central potential (spherical), [[file:chapter001.html#p84][84]]
+
+for constant acceleration, [[file:chapter001.html#p40][40]]
+
+for damped harmonic oscillator, [[file:chapter003.html#p275][275]]
+
+for driven pendulum, [[file:chapter001.html#p51][51]],
+[[file:chapter001.html#p66][66]]
+
+for free particle,
+[[file:chapter001.html#p14][14]]--[[file:chapter001.html#p15][15]]
+
+for free rigid body, [[file:chapter002.html#p122][122]],
+[[file:chapter002.html#p141][141]]
+
+for gravitational potential, [[file:chapter001.html#p31][31]]
+
+for harmonic oscillator, [[file:chapter001.html#p21][21]]
+
+for spin-orbit coupling, [[file:chapter002.html#p173][173]]
+
+for systems with rigid constraints, [[file:chapter001.html#p49][49]]
+
+generating functions and,
+[[file:chapter006.html#p421][421]]--[[file:chapter006.html#p423][423]]
+
+Hamiltonian and, [[file:chapter003.html#p200][200]]
+([[file:chapter003.html#disp_3.19][eq. 3.19]]),
+[[file:chapter003.html#p210][210]]
+
+kinetic energy as, [[file:chapter001.html#p14][14]],
+[[file:chapter002.html#p122][122]], [[file:chapter002.html#p141][141]]
+
+<<p543>>
+kinetic minus potential energy as,
+[[file:chapter001.html#p38][38]]--[[file:chapter001.html#p39][39]] (/see
+also/ Hamilton's principle)
+
+non-uniqueness of,
+[[file:chapter001.html#p63][63]]--[[file:chapter001.html#p66][66]]
+
+parameter names in, [[file:chapter001.html#p14][14]] /n/
+
+rotational and translational, [[file:chapter002.html#p141][141]]
+
+symmetry of, [[file:chapter001.html#p90][90]]
+
+Lagrangian-action, /[[file:chapter001.html#p17][17]]/
+
+Lagrangian->energy, /[[file:chapter001.html#p82][82]]/
+
+Lagrangian->Hamiltonian, /[[file:chapter003.html#p213][213]]/
+
+Lagrangian->state-derivative, /[[file:chapter001.html#p71][71]]/
+
+Lagrangian action, [[file:chapter001.html#p12][12]]
+
+Lagrangian formulation, [[file:chapter003.html#p195][195]]
+
+Hamiltonian formulation and, [[file:chapter003.html#p217][217]]
+
+Lagrangian reduction,
+[[file:chapter003.html#p233][233]]--[[file:chapter003.html#p236][236]]
+
+Lagrangian state. /See/ State tuple
+
+Lagrangian state derivative, [[file:chapter001.html#p71][71]]
+
+Lagrangian state path Γ[/q/], [[file:chapter003.html#p203][203]]
+
+lambda, [[file:chapter008.html#p498][498]]
+
+Lambda calculus, [[file:chapter009.html#p509][509]]
+
+Lambda expression,
+[[file:chapter008.html#p498][498]]--[[file:chapter008.html#p499][499]]
+
+Lanczos, Cornelius, [[file:chapter005.html#p335][335]]
+
+Least action, principle of. /See/ Principle of stationary action
+
+Legendre, Adrien Marie. /See/ Legendre...
+
+Legendre polynomials, [[file:chapter002.html#p167][167]]
+
+Legendre-transform, /[[file:chapter003.html#p212][212]]/
+
+Legendre transformation,
+[[file:chapter003.html#p205][205]]--[[file:chapter003.html#p212][212]]
+
+active arguments in, [[file:chapter003.html#p208][208]]
+
+passive arguments in,
+[[file:chapter003.html#p208][208]]--[[file:chapter003.html#p209][209]]
+
+of quadratic functions, [[file:chapter003.html#p211][211]]
+
+Leibniz, Gottfried, [[file:chapter001.html#p10][10]] /n/
+
+let, [[file:chapter008.html#p501][501]]
+
+let_{*}, [[file:chapter008.html#p502][502]]
+
+Libration of the Moon, [[file:chapter002.html#p174][174]],
+[[file:chapter002.html#p175][175]]
+
+Lie, Sophus. /See/ Lie...
+
+Lie-derivative, /[[file:chapter006.html#p448][448]]/,
+/[[file:chapter006.html#p448][448]] n/
+
+Lie derivative, [[file:chapter006.html#p447][447]] /n/
+
+commutator for, [[file:chapter006.html#p452][452]] (ex.
+[[file:chapter006.html#Exe_6-10][6.10]])
+
+Lie transform and, [[file:chapter006.html#p447][447]]
+([[file:chapter006.html#disp_6.147][eq. 6.147]])
+
+operator /L_{H}/, [[file:chapter006.html#p447][447]]
+
+Lie series,
+[[file:chapter006.html#p443][443]]--[[file:chapter006.html#p451][451]]
+
+computing,
+[[file:chapter006.html#p448][448]]--[[file:chapter006.html#p451][451]]
+
+for central field, [[file:chapter006.html#p450][450]]
+
+for harmonic oscillator, [[file:chapter006.html#p448][448]]
+
+in perturbation theory,
+[[file:chapter007.html#p458][458]]--[[file:chapter007.html#p460][460]]
+
+Lie-transform, /[[file:chapter006.html#p448][448]]/
+
+Lie transforms,
+[[file:chapter006.html#p437][437]]--[[file:chapter006.html#p443][443]]
+
+advantage of, [[file:chapter006.html#p441][441]]
+
+composition of, [[file:chapter006.html#p451][451]]
+
+computing, [[file:chapter006.html#p448][448]]
+
+exponential identities,
+[[file:chapter006.html#p451][451]]--[[file:chapter006.html#p453][453]]
+
+for finding normal modes, [[file:chapter006.html#p442][442]]
+
+Lie derivative and, [[file:chapter006.html#p447][447]]
+([[file:chapter006.html#disp_6.147][eq. 6.147]])
+
+in perturbation theory, [[file:chapter007.html#p458][458]]
+
+Lindstedt, A., [[file:chapter007.html#p471][471]]
+
+linear-interpolants, [[file:chapter001.html#p20][20]] /n/
+
+Linear momentum, [[file:chapter001.html#p80][80]]
+
+Linear separation of regular trajectories,
+[[file:chapter003.html#p263][263]]
+
+Linear stability, [[file:chapter004.html#p290][290]]
+
+equilibria and fixed points,
+[[file:chapter004.html#p297][297]]--[[file:chapter004.html#p302][302]]
+
+nonlinear stability and, [[file:chapter004.html#p302][302]]
+
+of equilibria,
+[[file:chapter004.html#p291][291]]--[[file:chapter004.html#p295][295]]
+
+of fixed points,
+[[file:chapter004.html#p295][295]]--[[file:chapter004.html#p297][297]]
+
+of inverted equilibrium of pendulum, [[file:chapter007.html#p492][492]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-4][7.4]])
+
+Linear transformations
+
+as tuples, [[file:chapter009.html#p515][515]]
+
+composition of, [[file:chapter009.html#p516][516]]
+
+Liouville, Joseph. /See/ Liouville...
+
+Liouville equation, [[file:chapter003.html#p276][276]]
+
+Liouville's theorem,
+[[file:chapter003.html#p268][268]]--[[file:chapter003.html#p272][272]]
+
+from canonical transformation, [[file:chapter006.html#p428][428]]
+
+Lipschitz condition (Rudolf Lipschitz), [[file:chapter001.html#p69][69]]
+/n/
+
+Lisp, [[file:chapter008.html#p503][503]] /n/
+
+list, [[file:chapter008.html#p503][503]]
+
+list-ref, [[file:chapter008.html#p503][503]]
+
+Lists in Scheme,
+[[file:chapter008.html#p502][502]]--[[file:chapter008.html#p504][504]]
+
+literal-function, [[file:chapter001.html#p15][15]],
+[[file:chapter009.html#p512][512]], [[file:chapter009.html#p521][521]]
+
+Literal symbol in Scheme,
+[[file:chapter008.html#p504][504]]--[[file:chapter008.html#p505][505]]
+
+Local names in Scheme,
+[[file:chapter008.html#p501][501]]--[[file:chapter008.html#p502][502]]
+
+Local state tuple, [[file:chapter001.html#p71][71]]
+
+Local tuple, [[file:chapter001.html#p11][11]]
+
+component names, [[file:chapter001.html#p14][14]] /n/
+
+functions of, [[file:chapter001.html#p14][14]] /n/
+
+in Scheme programs, [[file:chapter001.html#p15][15]] /n/
+
+transformation of (/C/), [[file:chapter001.html#p44][44]]
+
+<<p544>>
+Log, falling off, [[file:chapter001.html#p84][84]] (ex.
+[[file:chapter001.html#Exe_1-33][1.33]])
+
+Loops in Scheme, [[file:chapter008.html#p502][502]]
+
+Lorentz, Hendrik Antoon. /See/ Lorentz transformations
+
+Lorentz transformations as point transformations,
+[[file:chapter005.html#p399][399]] (ex.
+[[file:chapter005.html#Exe_5-18][5.18]])
+
+Lorenz, Edward, [[file:chapter003.html#p241][241]] /n/
+
+Lyapunov, Alexey M.. /See/ Lyapunov exponent
+
+Lyapunov exponent, [[file:chapter003.html#p267][267]]. /See also/
+Chaotic motion
+
+conserved quantities and, [[file:chapter003.html#p267][267]]
+
+exponential divergence and, [[file:chapter003.html#p267][267]]
+
+Hamiltonian constraints, [[file:chapter004.html#p302][302]]
+
+linear stability and, [[file:chapter004.html#p297][297]]
+
+M-of-q->omega-body-of-t, /[[file:chapter002.html#p126][126]]/
+
+M-of-q->omega-of-t, /[[file:chapter002.html#p126][126]]/
+
+M->omega, /[[file:chapter002.html#p126][126]]/
+
+M->omega-body, /[[file:chapter002.html#p126][126]]/,
+[[file:chapter002.html#p185][185]]
+
+MacCullagh's formula, [[file:chapter002.html#p168][168]] /n/
+
+make-path, [[file:chapter001.html#p20][20]],
+/[[file:chapter001.html#p20][20]] n/
+
+Manifold
+
+differentiable, [[file:chapter001.html#p7][7]] /n/
+
+stable and unstable,
+[[file:chapter004.html#p303][303]]--[[file:chapter004.html#p309][309]]
+
+Map
+
+area-preserving, [[file:chapter003.html#p278][278]]
+
+Chirikov--Taylor, [[file:chapter003.html#p278][278]] /n/
+
+fixed points of,
+[[file:chapter004.html#p295][295]]--[[file:chapter004.html#p297][297]]
+(/see also/ Fixed points)
+
+Hénon's quadratic, [[file:chapter003.html#p280][280]] (ex.
+[[file:chapter003.html#Exe_3-13][3.13]])
+
+Poincaré, [[file:chapter003.html#p242][242]]
+
+representation in programs, [[file:chapter003.html#p247][247]]
+
+standard,
+[[file:chapter003.html#p277][277]]--[[file:chapter003.html#p280][280]]
+
+symplectic, [[file:chapter004.html#p301][301]]
+
+twist, [[file:chapter004.html#p315][315]]
+
+Mars. /See/ Phobos
+
+Mass point. /See/ Point mass
+
+Mathematical notation. /See/ Notation
+
+Mather, John N. (discoverer of sets named /cantori/ by Ian Percival),
+[[file:chapter003.html#p244][244]] /n/
+
+Matrix
+
+inertia, [[file:chapter002.html#p128][128]] (/see also/ Inertia tensor)
+
+orthogonal, [[file:chapter002.html#p124][124]],
+[[file:chapter002.html#p130][130]] /n/
+
+symplectic, [[file:chapter004.html#p301][301]],
+[[file:chapter005.html#p355][355]], [[file:chapter005.html#p356][356]]
+(ex. [[file:chapter005.html#Exe_5-6][5.6]])
+
+as tuple, [[file:chapter009.html#p515][515]]
+
+Maupertuis, Pierre-Louis Moreau de, [[file:chapter001.html#p13][13]] /n/
+
+Mean motion, [[file:chapter002.html#p175][175]] /n/
+
+Mechanics,
+[[file:chapter001.html#p1][1]]--[[file:chapter007.html#p496][496]]
+
+Newtonian vs. variational formulation, [[file:chapter001.html#p3][3]],
+[[file:chapter001.html#p39][39]]
+
+Mercury, resonant rotation of, [[file:chapter002.html#p171][171]],
+[[file:chapter002.html#p193][193]] (ex.
+[[file:chapter002.html#Exe_2-21][2.21]])
+
+Minimization
+
+of action,
+[[file:chapter001.html#p18][18]]--[[file:chapter001.html#p23][23]]
+
+in Scmutils, [[file:chapter001.html#p19][19]] /n/,
+[[file:chapter001.html#p21][21]] /n/
+
+minimize, [[file:chapter001.html#p19][19]] /n/
+
+Mixed-variable generating functions, [[file:chapter005.html#p374][374]]
+
+Moment(s) of inertia,
+[[file:chapter002.html#p126][126]]--[[file:chapter002.html#p130][130]]
+
+about a line, [[file:chapter002.html#p128][128]]
+
+about a pivot point, [[file:chapter002.html#p159][159]]
+
+principal,
+[[file:chapter002.html#p132][132]]--[[file:chapter002.html#p135][135]]
+
+of top, [[file:chapter002.html#p159][159]]
+
+Momentum. /See also/ Angular momentum
+
+conjugate to coordinate (/see/ Conjugate momentum)
+
+conservation of,
+[[file:chapter001.html#p79][79]]--[[file:chapter001.html#p81][81]]
+
+generalized (/see/ Generalized momentum)
+
+variation of, [[file:chapter003.html#p216][216]] /n/
+
+momentum, [[file:chapter003.html#p204][204]]
+
+Momentum path, [[file:chapter001.html#p80][80]]
+
+Momentum selector (/P/), [[file:chapter003.html#p199][199]],
+[[file:chapter003.html#p220][220]]
+
+Momentum state function (
+$\mathcal{P}$
+), [[file:chapter001.html#p79][79]]
+Moon
+
+head-shaking, [[file:chapter002.html#p174][174]]
+
+history of, [[file:chapter001.html#p9][9]] /n/
+
+libration of, [[file:chapter002.html#p174][174]],
+[[file:chapter002.html#p175][175]]
+
+rotation of, [[file:chapter002.html#p119][119]],
+[[file:chapter002.html#p151][151]],
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p176][176]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+Moser, Jürgen. /See/ Kolmogorov--Arnold--Moser theorem
+
+Motion
+
+atomic-scale, [[file:chapter001.html#p8][8]] /n/
+
+<<p545>>
+chaotic (/see/ Chaotic motion)
+
+constrained,
+[[file:chapter001.html#p99][99]]--[[file:chapter001.html#p103][103]]
+(/see also/ Constraint(s))
+
+dense, on torus, [[file:chapter004.html#p312][312]] /n/
+
+deterministic, [[file:chapter001.html#p9][9]]
+
+epicyclic,
+[[file:chapter005.html#p381][381]]--[[file:chapter005.html#p389][389]]
+
+ergodic, [[file:chapter004.html#p312][312]] /n/
+
+periodic (/see/ Periodic motion)
+
+quasiperiodic, [[file:chapter003.html#p243][243]],
+[[file:chapter004.html#p312][312]]
+
+realizable vs. conceivable, [[file:chapter001.html#p2][2]]
+
+regular vs. chaotic, [[file:chapter003.html#p241][241]] (/see also/
+Regular motion)
+
+smoothness of, [[file:chapter001.html#p8][8]]
+
+tumbling (/see/ Chaotic motion, of Hyperion; Rotation(s), (in)stability
+of)
+
+multidimensional-minimize, [[file:chapter001.html#p21][21]],
+[[file:chapter001.html#p21][21]] /n/
+
+Multiplication of operators as composition,
+[[file:chapter009.html#p517][517]]
+
+Multiplication of tuples,
+[[file:chapter009.html#p514][514]]--[[file:chapter009.html#p516][516]]
+
+as composition, [[file:chapter009.html#p516][516]]
+
+as contraction, [[file:chapter009.html#p514][514]]
+
+Multiply periodic functions, Poisson series for,
+[[file:chapter007.html#p474][474]]
+
+Multipole expansion of potential energy,
+[[file:chapter002.html#p165][165]]--[[file:chapter002.html#p169][169]]
+
+/n/-body problem, [[file:chapter005.html#p408][408]] (ex.
+[[file:chapter005.html#Exe_5-21][5.21]]). /See also/ Three-body problem,
+restricted; Two-body problem
+
+Nelder--Mead minimization method, [[file:chapter001.html#p21][21]] /n/
+
+Newton, Sir Isaac, [[file:chapter001.html#p3][3]]
+
+Newtonian formulation of mechanics, [[file:chapter001.html#p3][3]],
+[[file:chapter001.html#p39][39]]
+
+Newton's equations
+
+as Lagrange equations,
+[[file:chapter001.html#p36][36]]--[[file:chapter001.html#p38][38]],
+[[file:chapter001.html#p54][54]]--[[file:chapter001.html#p58][58]]
+
+vs. Lagrange equations, [[file:chapter001.html#p39][39]]
+
+Noether, Emmy, [[file:chapter001.html#p81][81]] /n/
+
+Noether's integral, [[file:chapter001.html#p91][91]]
+
+Noether's theorem,
+[[file:chapter001.html#p90][90]]--[[file:chapter001.html#p91][91]]
+
+angular momentum and, [[file:chapter002.html#p143][143]]
+
+Non-associativity and associativity of tuple multiplication,
+[[file:chapter009.html#p515][515]], [[file:chapter009.html#p516][516]]
+
+Non-axisymmetric top, [[file:chapter003.html#p263][263]]
+
+Non-commutativity. /See also/ Commutativity
+
+exponential(s) of noncommuting operators,
+[[file:chapter006.html#p451][451]]--[[file:chapter006.html#p453][453]]
+
+of some partial derivatives, [[file:chapter006.html#p427][427]] /n/,
+[[file:chapter009.html#p520][520]]
+
+of some tuple multiplication, [[file:chapter009.html#p516][516]]
+
+Nonholonomic system, [[file:chapter001.html#p112][112]]
+
+Nonsingular structure, [[file:chapter005.html#p368][368]] /n/
+
+Notation,
+[[file:chapter009.html#p509][509]]--[[file:chapter009.html#p523][523]].
+/See also/ Subscripts; Superscripts; Tuples
+
+{ } for Poisson brackets, [[file:chapter003.html#p218][218]]
+
+( ) for up tuples, [[file:chapter009.html#p512][512]]
+
+[ ] for down tuples, [[file:chapter009.html#p512][512]]
+
+[ ] for functional arguments, [[file:chapter001.html#p10][10]] /n/
+
+ambiguous,
+[[file:preface.html#pxiv][xiv]]--[[file:preface.html#pxv][xv]]
+
+composition of functions, [[file:chapter001.html#p7][7]] /n/
+
+definite integral, [[file:chapter001.html#p10][10]] /n/
+
+derivative, partial: ∂, [[file:preface.html#pxiv][xv]],
+[[file:chapter001.html#p24][24]], [[file:chapter009.html#p520][520]]
+
+derivative: /D/, [[file:chapter001.html#p8][8]] /n/,
+[[file:chapter009.html#p516][516]]
+
+functional, [[file:preface.html#pxiv][xiv]],
+[[file:chapter009.html#p509][509]]
+
+functional arguments, [[file:chapter001.html#p10][10]] /n/
+
+function of local tuple, [[file:chapter001.html#p14][14]] /n/
+
+selector function: /I/ with subscript, [[file:chapter001.html#p64][64]]
+/n/, [[file:chapter009.html#p513][513]]
+
+total time derivative: /D_{t}/, [[file:chapter001.html#p64][64]]
+
+traditional,
+[[file:preface.html#pxiv][xiv]]--[[file:preface.html#pxv][xv]],
+[[file:chapter001.html#p24][24]], [[file:chapter003.html#p200][200]]
+/n/, [[file:chapter003.html#p218][218]] /n/,
+[[file:chapter009.html#p509][509]]
+
+Numbers in Scheme, [[file:chapter001.html#p18][18]] /n/
+
+Numerical integration
+
+of Hamilton's equations, [[file:chapter003.html#p236][236]]
+
+of Lagrange equations, [[file:chapter001.html#p73][73]]
+
+in Scmutils, [[file:chapter001.html#p17][17]] /n/,
+[[file:chapter001.html#p74][74]] /n/, [[file:chapter002.html#p145][145]]
+
+symplectic, [[file:chapter006.html#p453][453]] (ex.
+[[file:chapter006.html#Exe_6-12][6.12]])
+
+Numerical minimization in Scmutils, [[file:chapter001.html#p19][19]]
+/n/, [[file:chapter001.html#p21][21]] /n/
+
+Nutation of top, [[file:chapter002.html#p162][162]]
+([[file:chapter002.html#Fig_2-5][fig. 2.5]]),
+[[file:chapter002.html#p164][164]] (ex.
+[[file:chapter002.html#Exe_2-15][2.15]])
+
+Oblateness, [[file:chapter002.html#p170][170]]
+
+omega (symplectic 2-form), /[[file:chapter005.html#p361][361]]/
+
+omega-cross, [[file:chapter002.html#p126][126]]
+
+<<p546>>
+Operator, [[file:chapter009.html#p517][517]]
+
+arithmetic operations on, [[file:chapter001.html#p34][34]] /n/,
+[[file:chapter009.html#p517][517]]
+
+composition of, [[file:chapter009.html#p517][517]]
+
+exponential identities,
+[[file:chapter006.html#p451][451]]--[[file:chapter006.html#p453][453]]
+
+function vs., [[file:chapter006.html#p448][448]] /n/,
+[[file:chapter009.html#p517][517]]
+
+generic, [[file:chapter001.html#p16][16]] /n/
+
+Operators
+
+derivative (/D/) (/see/ Derivative)
+
+Euler--Lagrange (
+E
+), [[file:chapter001.html#p98][98]]
+Lie derivative (/L_{H}/), [[file:chapter006.html#p447][447]]
+
+Lie transform (
+$E_{\mathit{\epsilon},W}^{\prime}$
+), [[file:chapter006.html#p439][439]]
+partial derivative (∂) (/see/ Partial derivative)
+
+variation (/δ_{η}/), [[file:chapter001.html#p26][26]]
+
+Optical libration of the Moon, [[file:chapter002.html#p174][174]]
+
+Optics
+
+Fermat, [[file:chapter001.html#p13][13]] (ex.
+[[file:chapter001.html#Exe_1-3][1.3]])
+
+Snell's law, [[file:chapter001.html#p13][13]] /n/
+
+Orbit. /See/ Orbital motion; Phase-space trajectory
+
+Orbital elements, [[file:chapter006.html#p421][421]]
+
+Orbital motion. /See also/ Epicyclic motion; Kepler problem
+
+in a central potential, [[file:chapter001.html#p78][78]] (ex.
+[[file:chapter001.html#Exe_1-30][1.30]])
+
+Lagrange equations for,
+[[file:chapter001.html#p31][31]]--[[file:chapter001.html#p32][32]]
+
+retrodiction of, [[file:chapter001.html#p9][9]] /n/
+
+Orientation. /See also/ Rotation(s)
+
+Euler's equations and,
+[[file:chapter002.html#p153][153]]--[[file:chapter002.html#p154][154]]
+
+nonsingular coordinates for,
+[[file:chapter002.html#p181][181]]--[[file:chapter002.html#p191][191]]
+
+specified by Euler angles, [[file:chapter002.html#p138][138]]
+
+specified by rotations, [[file:chapter002.html#p123][123]]
+
+Orientation vector, [[file:chapter002.html#p182][182]]
+
+Orthogonal matrix, [[file:chapter002.html#p124][124]],
+[[file:chapter002.html#p130][130]] /n/
+
+Orthogonal transformation. /See/ Orthogonal matrix
+
+Orthogonal tuple-valued functions, [[file:chapter001.html#p101][101]]
+/n/
+
+Oscillator. /See/ Harmonic oscillator
+
+osculating-path, [[file:chapter001.html#p96][96]]
+
+Osculation of paths, [[file:chapter001.html#p94][94]]
+
+Ostrogradsky, M. V., [[file:chapter001.html#p39][39]] /n/
+
+Out-of-roundness parameter, [[file:chapter002.html#p173][173]]
+
+/P/ (momentum selector), [[file:chapter003.html#p199][199]],
+[[file:chapter003.html#p220][220]]
+
+$\mathcal{P}$
+(momentum state function), [[file:chapter001.html#p79][79]]
+p->r (polar-to-rectangular), /[[file:chapter001.html#p46][46]]/
+
+pair?, [[file:chapter008.html#p504][504]]
+
+Pairs in Scheme, [[file:chapter008.html#p503][503]]
+
+Parallel tuple-valued functions, [[file:chapter001.html#p101][101]] /n/
+
+Parameters, formal. /See/ Formal parameters
+
+Parametric path, [[file:chapter001.html#p20][20]]
+
+parametric-path-action, /[[file:chapter001.html#p21][21]]/
+
+with graph, /[[file:chapter001.html#p23][23]]/ (ex.
+[[file:chapter001.html#Exe_1-5][1.5]])
+
+Parentheses
+
+in Scheme, [[file:chapter008.html#p497][497]],
+[[file:chapter008.html#p498][498]] /n/
+
+for up tuples, [[file:chapter009.html#p512][512]]
+
+partial, [[file:chapter001.html#p33][33]] /n/
+
+Partial derivative, [[file:chapter001.html#p24][24]],
+[[file:chapter009.html#p518][518]]--[[file:chapter009.html#p519][519]],
+[[file:chapter009.html#p520][520]]
+
+chain rule, [[file:chapter009.html#p519][519]],
+[[file:chapter009.html#p523][523]] (ex.
+[[file:chapter009.html#Exe_9-1][9.1]])
+
+notation: ∂, [[file:preface.html#pxiv][xv]],
+[[file:chapter001.html#p24][24]], [[file:chapter009.html#p520][520]]
+
+Particle, free. /See/ Free particle
+
+Path, [[file:chapter001.html#p2][2]]
+
+coordinate path (/q/), [[file:chapter001.html#p7][7]] (/see also/ Local
+tuple)
+
+finding,
+[[file:chapter001.html#p20][20]]--[[file:chapter001.html#p23][23]]
+
+momentum path, [[file:chapter001.html#p80][80]]
+
+osculation of, [[file:chapter001.html#p94][94]]
+
+parametric, [[file:chapter001.html#p20][20]]
+
+realizable (/see/ Realizable path)
+
+variation of, [[file:chapter001.html#p12][12]],
+[[file:chapter001.html#p18][18]], [[file:chapter001.html#p26][26]]
+
+Path-distinguishing function, [[file:chapter001.html#p2][2]],
+[[file:chapter001.html#p8][8]]. /See also/ Action
+
+Path functions, abstraction of, [[file:chapter001.html#p94][94]]
+
+Peak, [[file:chapter003.html#p222][222]]
+
+Pendulum. /See also/ Pendulum (driven); Periodically driven pendulum
+
+behavior of, [[file:chapter003.html#p223][223]],
+[[file:chapter004.html#p286][286]]--[[file:chapter004.html#p287][287]]
+
+constraints and, [[file:chapter001.html#p103][103]]
+
+degrees of freedom of, [[file:chapter001.html#p5][5]] (ex.
+[[file:chapter001.html#Exe_1-1][1.1]])
+
+double (planar), [[file:chapter001.html#p6][6]],
+[[file:chapter001.html#p117][117]] (ex.
+[[file:chapter001.html#Exe_1-44][1.44]])
+
+double (spherical), [[file:chapter001.html#p5][5]] (ex.
+[[file:chapter001.html#Exe_1-1][1.1]])
+
+equilibria, stable and unstable, [[file:chapter004.html#p287][287]]
+
+Foucault, [[file:chapter001.html#p62][62]] (ex.
+[[file:chapter001.html#Exe_1-25][1.25]]),
+[[file:chapter001.html#p78][78]] (ex.
+[[file:chapter001.html#Exe_1-31][1.31]])
+
+<<p547>>
+Hamiltonian for, [[file:chapter007.html#p460][460]]
+
+Lagrangian for, [[file:chapter001.html#p32][32]] (ex.
+[[file:chapter001.html#Exe_1-9][1.9]])
+
+periodically driven pendulum vs., [[file:chapter003.html#p244][244]]
+
+as perturbed rotor,
+[[file:chapter007.html#p460][460]]--[[file:chapter007.html#p473][473]]
+
+phase plane of, [[file:chapter003.html#p223][223]],
+[[file:chapter004.html#p286][286]]
+
+phase-volume conservation for, [[file:chapter003.html#p268][268]]
+
+spherical, [[file:chapter001.html#p5][5]] (ex.
+[[file:chapter001.html#Exe_1-1][1.1]]), [[file:chapter001.html#p86][86]]
+(ex. [[file:chapter001.html#Exe_1-34][1.34]])
+
+width of oscillation region, [[file:chapter007.html#p466][466]]
+
+Pendulum (driven),
+[[file:chapter001.html#p50][50]]--[[file:chapter001.html#p52][52]]. /See
+also/ Pendulum; Periodically driven pendulum
+
+drive as modification of gravity, [[file:chapter001.html#p66][66]]
+
+Hamiltonian for, [[file:chapter005.html#p392][392]]
+
+Lagrange equations for, [[file:chapter001.html#p52][52]]
+
+Lagrangian for, [[file:chapter001.html#p51][51]],
+[[file:chapter001.html#p66][66]]
+
+Pericenter, [[file:chapter002.html#p171][171]] /n/
+
+Period doubling, [[file:chapter003.html#p245][245]]
+
+Periodically driven pendulum. /See also/ Pendulum (driven); Pendulum
+
+behavior of, [[file:chapter003.html#p196][196]],
+[[file:chapter003.html#p244][244]]--[[file:chapter003.html#p246][246]]
+
+chaotic behavior of, [[file:chapter001.html#p76][76]],
+[[file:chapter003.html#p243][243]]
+
+emergence of divided phase space,
+[[file:chapter004.html#p286][286]]--[[file:chapter004.html#p290][290]]
+
+Hamiltonian for, [[file:chapter003.html#p236][236]],
+[[file:chapter007.html#p476][476]]
+
+inverted equilibrium, [[file:chapter003.html#p246][246]],
+[[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-14][3.14]]),
+[[file:chapter007.html#p491][491]]--[[file:chapter007.html#p494][494]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-4][7.4]])
+
+islands in sections for,
+[[file:chapter003.html#p244][244]]--[[file:chapter003.html#p246][246]],
+[[file:chapter004.html#p289][289]]--[[file:chapter004.html#p290][290]],
+[[file:chapter007.html#p483][483]]--[[file:chapter007.html#p486][486]]
+
+Lagrange equations for, [[file:chapter001.html#p74][74]]
+
+linear stability analysis, [[file:chapter007.html#p492][492]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-4][7.4]])
+
+as perturbed rotor,
+[[file:chapter007.html#p476][476]]--[[file:chapter007.html#p478][478]]
+
+phase-space descriptions for, [[file:chapter003.html#p239][239]]
+
+phase space evolution of, [[file:chapter003.html#p236][236]]
+
+resonances for,
+[[file:chapter007.html#p481][481]]--[[file:chapter007.html#p491][491]]
+
+spin-orbit coupling and, [[file:chapter002.html#p173][173]]
+
+surface of section for,
+[[file:chapter003.html#p242][242]]--[[file:chapter003.html#p248][248]],
+[[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-14][3.14]]),
+[[file:chapter004.html#p287][287]]--[[file:chapter004.html#p290][290]],
+[[file:chapter007.html#p483][483]]--[[file:chapter007.html#p494][494]]
+
+undriven pendulum vs., [[file:chapter003.html#p244][244]]
+
+with zero-amplitude drive,
+[[file:chapter004.html#p286][286]]--[[file:chapter004.html#p289][289]]
+
+Periodically driven systems, surfaces of section,
+[[file:chapter003.html#p241][241]]--[[file:chapter003.html#p248][248]]
+
+Periodic motion, [[file:chapter004.html#p312][312]]
+
+fixed points and, [[file:chapter004.html#p295][295]]
+
+integrable systems and, [[file:chapter004.html#p309][309]],
+[[file:chapter004.html#p316][316]]
+
+Periodic points, [[file:chapter004.html#p295][295]]
+
+Poincaré--Birkhoff theorem,
+[[file:chapter004.html#p316][316]]--[[file:chapter004.html#p321][321]]
+
+rational rotation number and, [[file:chapter004.html#p316][316]]
+
+resonance islands and, [[file:chapter004.html#p290][290]]
+
+Perturbation of action-angle Hamiltonian,
+[[file:chapter004.html#p316][316]], [[file:chapter007.html#p458][458]]
+
+Perturbation theory, [[file:chapter007.html#p457][457]]
+
+for many degrees of freedom,
+[[file:chapter007.html#p473][473]]--[[file:chapter007.html#p478][478]]
+
+for pendulum,
+[[file:chapter007.html#p466][466]]--[[file:chapter007.html#p468][468]]
+
+for periodically driven pendulum,
+[[file:chapter007.html#p491][491]]--[[file:chapter007.html#p494][494]]
+
+for spin-orbit coupling, [[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+higher-order,
+[[file:chapter007.html#p468][468]]--[[file:chapter007.html#p473][473]],
+[[file:chapter007.html#p489][489]]--[[file:chapter007.html#p494][494]]
+
+Lie series in,
+[[file:chapter007.html#p458][458]]--[[file:chapter007.html#p460][460]]
+
+nonlinear resonance,
+[[file:chapter007.html#p478][478]]--[[file:chapter007.html#p494][494]]
+
+secular-term elimination,
+[[file:chapter007.html#p471][471]]--[[file:chapter007.html#p473][473]]
+
+secular terms in, [[file:chapter007.html#p470][470]]
+
+small denominators in, [[file:chapter007.html#p475][475]],
+[[file:chapter007.html#p476][476]]
+
+Phase portrait, [[file:chapter003.html#p231][231]],
+[[file:chapter003.html#p248][248]] (ex.
+[[file:chapter003.html#Exe_3-10][3.10]])
+
+Phase space, [[file:chapter003.html#p203][203]]. /See also/ Surface of
+section
+
+chaotic regions, [[file:chapter003.html#p241][241]]
+
+divided, [[file:chapter003.html#p244][244]],
+[[file:chapter003.html#p258][258]],
+[[file:chapter004.html#p286][286]]--[[file:chapter004.html#p290][290]]
+
+evolution in,
+[[file:chapter003.html#p236][236]]--[[file:chapter003.html#p238][238]]
+(/see also/ Time evolution of state)
+
+extended,
+[[file:chapter005.html#p394][394]]--[[file:chapter005.html#p402][402]]
+
+non-uniqueness,
+[[file:chapter003.html#p238][238]]--[[file:chapter003.html#p239][239]]
+
+of pendulum, [[file:chapter003.html#p223][223]],
+[[file:chapter004.html#p286][286]]
+
+qualitative features,
+[[file:chapter003.html#p242][242]]--[[file:chapter003.html#p246][246]],
+[[file:chapter003.html#p258][258]]--[[file:chapter003.html#p260][260]],
+[[file:chapter004.html#p285][285]]--[[file:chapter004.html#p286][286]]
+
+reduced,
+[[file:chapter005.html#p402][402]]--[[file:chapter005.html#p407][407]]
+
+regular regions, [[file:chapter003.html#p241][241]]
+
+two-dimensional, [[file:chapter003.html#p222][222]]
+
+volume (/see/ Phase-volume conservation)
+
+<<p548>>
+Phase space reduction,
+[[file:chapter003.html#p224][224]]--[[file:chapter003.html#p226][226]]
+
+conserved quantities and,
+[[file:chapter003.html#p224][224]]--[[file:chapter003.html#p226][226]]
+
+Lagrangian,
+[[file:chapter003.html#p233][233]]--[[file:chapter003.html#p236][236]]
+
+Phase-space state function, [[file:chapter009.html#p519][519]]
+
+in Scheme, [[file:chapter009.html#p521][521]]
+
+Phase-space trajectory (orbit)
+
+asymptotic, [[file:chapter003.html#p223][223]],
+[[file:chapter004.html#p287][287]], [[file:chapter004.html#p302][302]]
+
+chaotic, [[file:chapter003.html#p243][243]],
+[[file:chapter003.html#p259][259]]
+
+periodic, [[file:chapter004.html#p309][309]],
+[[file:chapter004.html#p312][312]], [[file:chapter004.html#p316][316]]
+
+quasiperiodic, [[file:chapter003.html#p243][243]],
+[[file:chapter004.html#p312][312]]
+
+regular, [[file:chapter003.html#p243][243]],
+[[file:chapter003.html#p258][258]]
+
+regular vs. chaotic, [[file:chapter003.html#p241][241]]
+
+Phase-volume conservation, [[file:chapter003.html#p268][268]],
+[[file:chapter006.html#p428][428]]
+
+for damped harmonic oscillator, [[file:chapter003.html#p274][274]]
+
+for pendulum, [[file:chapter003.html#p268][268]]
+
+under canonical transformations,
+[[file:chapter005.html#p358][358]]--[[file:chapter005.html#p359][359]]
+
+Phobos, rotation of, [[file:chapter002.html#p171][171]]
+
+Pit, [[file:chapter003.html#p222][222]]
+
+Planets. /See also/ Earth; Jupiter; Mercury
+
+moment of inertia of, [[file:chapter002.html#p129][129]] (ex.
+[[file:chapter002.html#Exe_2-4][2.4]])
+
+rotational alignment of, [[file:chapter002.html#p151][151]]
+
+rotation of, [[file:chapter002.html#p165][165]]
+
+plot-parametric-fill, /[[file:chapter004.html#p308][308]]/
+
+plot-point, [[file:chapter001.html#p76][76]] /n/
+
+Plotting, [[file:chapter001.html#p23][23]] (ex.
+[[file:chapter001.html#Exe_1-5][1.5]]),
+[[file:chapter001.html#p75][75]], [[file:chapter003.html#p248][248]]
+
+Poe, Edgar Allan. /See/ Pit; Pendulum
+
+Poincaré, Henri, [[file:chapter003.html#p239][239]] /n/,
+[[file:chapter003.html#p251][251]], [[file:chapter004.html#p285][285]],
+[[file:chapter004.html#p302][302]], [[file:chapter007.html#p471][471]]
+
+Poincaré--Birkhoff theorem,
+[[file:chapter004.html#p316][316]]--[[file:chapter004.html#p321][321]]
+
+computing fixed points,
+[[file:chapter004.html#p321][321]]--[[file:chapter004.html#p322][322]]
+
+recursive nature of, [[file:chapter004.html#p321][321]]
+
+Poincaré--Cartan integral invariant, [[file:chapter005.html#p402][402]]
+
+time evolution and,
+[[file:chapter006.html#p431][431]]--[[file:chapter006.html#p434][434]]
+
+Poincaré integral invariant,
+[[file:chapter005.html#p362][362]]--[[file:chapter005.html#p364][364]]
+
+generating functions and,
+[[file:chapter005.html#p368][368]]--[[file:chapter005.html#p373][373]]
+
+Poincaré map, [[file:chapter003.html#p242][242]]
+
+Poincaré recurrence, [[file:chapter003.html#p272][272]]
+
+Poincaré section. /See/ Surface of section
+
+Point mass, [[file:chapter001.html#p4][4]] /n/. /See also/ Golf ball,
+tiny
+
+Point transformations,
+[[file:chapter005.html#p336][336]]--[[file:chapter005.html#p341][341]].
+/See also/ Canonical transformations
+
+computing,
+[[file:chapter005.html#p339][339]]--[[file:chapter005.html#p341][341]]
+
+general canonical transformations vs.,
+[[file:chapter005.html#p357][357]]
+
+generating functions for,
+[[file:chapter005.html#p375][375]]--[[file:chapter005.html#p376][376]]
+
+polar-rectangular conversion, [[file:chapter005.html#p339][339]],
+[[file:chapter005.html#p376][376]]--[[file:chapter005.html#p377][377]]
+
+to rotating coordinates,
+[[file:chapter005.html#p348][348]]--[[file:chapter005.html#p349][349]],
+[[file:chapter005.html#p377][377]]--[[file:chapter005.html#p378][378]]
+
+time-independent, [[file:chapter005.html#p338][338]]
+
+Poisson, Siméon Denis, [[file:chapter001.html#p33][33]] (ex.
+[[file:chapter001.html#Exe_1-10][1.10]])
+
+Poisson brackets,
+[[file:chapter003.html#p218][218]]--[[file:chapter003.html#p222][222]]
+
+canonical condition and,
+[[file:chapter005.html#p352][352]]--[[file:chapter005.html#p353][353]]
+
+commutator and, [[file:chapter006.html#p452][452]] (ex.
+[[file:chapter006.html#Exe_6-10][6.10]])
+
+of conserved quantities, [[file:chapter003.html#p221][221]]
+
+as derivations, [[file:chapter006.html#p446][446]]
+
+fundamental, [[file:chapter005.html#p352][352]]
+
+Hamilton's equations in terms of, [[file:chapter003.html#p220][220]]
+
+in terms of
+$\widetilde{J}$
+, [[file:chapter005.html#p352][352]]
+in terms of symplectic 2-form, /ω/, [[file:chapter005.html#p360][360]]
+
+invariance under canonical transformations,
+[[file:chapter005.html#p358][358]]
+
+Jacobi identity for, [[file:chapter003.html#p221][221]]
+
+Lie derivative and, [[file:chapter006.html#p447][447]]
+
+Poisson series
+
+for multiply periodic function, [[file:chapter007.html#p474][474]]
+
+resonance islands and, [[file:chapter007.html#p488][488]]
+
+polar-canonical, /[[file:chapter005.html#p345][345]]/
+
+Polar-canonical transformation, [[file:chapter005.html#p344][344]]
+
+generating function for, [[file:chapter005.html#p365][365]]
+
+harmonic oscillator and, [[file:chapter005.html#p346][346]]
+
+Polar coordinates
+
+Lagrangian in,
+[[file:chapter001.html#p42][42]]--[[file:chapter001.html#p43][43]]
+
+point transformation to rectangular, [[file:chapter005.html#p339][339]],
+[[file:chapter005.html#p376][376]]--[[file:chapter005.html#p377][377]]
+
+<<p549>>
+transformation to rectangular, [[file:chapter001.html#p46][46]]
+
+Potential. /See/ Central force; Gravitational potential
+
+Potential energy
+
+of axisymmetric top, [[file:chapter002.html#p160][160]]
+
+Hénon--Heiles, [[file:chapter003.html#p253][253]]
+
+in Lagrangian,
+[[file:chapter001.html#p38][38]]--[[file:chapter001.html#p39][39]]
+
+multipole expansion of,
+[[file:chapter002.html#p165][165]]--[[file:chapter002.html#p169][169]]
+
+Precession
+
+of equinox, [[file:chapter002.html#p176][176]] (ex.
+[[file:chapter002.html#Exe_2-18][2.18]])
+
+of top, [[file:chapter002.html#p119][119]],
+[[file:chapter002.html#p162][162]] ([[file:chapter002.html#Fig_2-6][fig.
+2.6]]), [[file:chapter002.html#p164][164]] (ex.
+[[file:chapter002.html#Exe_2-16][2.16]])
+
+Predicate in conditional, [[file:chapter008.html#p500][500]]
+
+Predicting the past, [[file:chapter001.html#p9][9]] /n/
+
+principal-value, [[file:chapter001.html#p76][76]] /n/
+
+Principal axes, [[file:chapter002.html#p133][133]]
+
+of this dense book, [[file:chapter002.html#p135][135]] (ex.
+[[file:chapter002.html#Exe_2-7][2.7]]),
+[[file:chapter002.html#p150][150]]
+
+Principal moments of inertia,
+[[file:chapter002.html#p132][132]]--[[file:chapter002.html#p135][135]]
+
+kinetic energy in terms of, [[file:chapter002.html#p134][134]],
+[[file:chapter002.html#p141][141]], [[file:chapter002.html#p148][148]]
+
+Principle of d'Alembert--Lagrange, [[file:chapter001.html#p113][113]]
+
+Principle of least action. /See/ Principle of stationary action
+
+Principle of stationary action (action principle),
+[[file:chapter001.html#p8][8]]--[[file:chapter001.html#p13][13]]
+
+Hamilton's equations and,
+[[file:chapter003.html#p215][215]]--[[file:chapter003.html#p217][217]]
+
+principle of least action, [[file:chapter001.html#p10][10]] /n/,
+[[file:chapter001.html#p13][13]] /n/, [[file:chapter001.html#p39][39]]
+/n/
+
+statement of, [[file:chapter001.html#p12][12]]
+
+used to find paths, [[file:chapter001.html#p20][20]]
+
+print-expression, [[file:chapter006.html#p444][444]],
+[[file:chapter009.html#p511][511]] /n/
+
+Probability density in phase space, [[file:chapter003.html#p276][276]]
+
+Procedure calls,
+[[file:chapter008.html#p497][497]]--[[file:chapter008.html#p498][498]]
+
+Procedures
+
+arithmetic operations on, [[file:chapter001.html#p19][19]] /n/
+
+generic, [[file:chapter001.html#p16][16]] /n/
+
+Products of inertia, [[file:chapter002.html#p128][128]]
+
+/Q/ (coordinate selector), [[file:chapter003.html#p220][220]]
+
+$\overset{˙}{Q}$
+(velocity selector), [[file:chapter001.html#p64][64]]
+/q/ (coordinate path), [[file:chapter001.html#p7][7]]
+
+qcrk4 (quality-controlled Runge--Kutta),
+[[file:chapter002.html#p145][145]]
+
+Quadratic functions, Legendre transformation of,
+[[file:chapter003.html#p211][211]]
+
+Quadrature, [[file:chapter002.html#p161][161]] /n/,
+[[file:chapter003.html#p222][222]]. /See also/ Integrable systems
+
+integrable systems and, [[file:chapter004.html#p311][311]]
+
+reduction to, [[file:chapter003.html#p224][224]] /n/
+
+Quartet, [[file:chapter004.html#p300][300]]
+([[file:chapter004.html#Fig_4-5][fig. 4.5]])
+
+Quasiperiodic motion, [[file:chapter003.html#p243][243]],
+[[file:chapter004.html#p312][312]]
+
+quaternion->angle-axis, /[[file:chapter002.html#p184][184]]/
+
+quaternion->RM, /[[file:chapter002.html#p184][184]]/
+
+quaternion->rotation-matrix, /[[file:chapter002.html#p185][185]]/
+
+quaternion-state->omega-body, /[[file:chapter002.html#p186][186]]/
+
+Quaternions,
+[[file:chapter002.html#p181][181]]--[[file:chapter002.html#p191][191]]
+
+Hamilton's discovery of, [[file:chapter001.html#p39][39]] /n/
+
+quaternion units, [[file:chapter002.html#p188][188]]
+
+Quotation in Scheme,
+[[file:chapter008.html#p504][504]]--[[file:chapter008.html#p505][505]]
+
+qw-state->L-space, /[[file:chapter002.html#p190][190]]/
+
+qw-sysder, /[[file:chapter002.html#p189][189]]/
+
+Radial momentum, [[file:chapter001.html#p80][80]]
+
+Reaction force. /See/ Constraint force
+
+Realizable path, [[file:chapter001.html#p9][9]]
+
+conserved quantities and, [[file:chapter001.html#p78][78]]
+
+as solution of Hamilton's equations, [[file:chapter003.html#p202][202]]
+
+as solution of Lagrange equations, [[file:chapter001.html#p23][23]]
+
+stationary action and,
+[[file:chapter001.html#p9][9]]--[[file:chapter001.html#p13][13]]
+
+uniqueness, [[file:chapter001.html#p12][12]]
+
+Recurrence theorem of Poincaré, [[file:chapter003.html#p272][272]]
+
+Recursive procedures, [[file:chapter008.html#p501][501]]
+
+Reduced mass, [[file:chapter001.html#p35][35]] (ex.
+[[file:chapter001.html#Exe_1-11][1.11]]),
+[[file:chapter005.html#p380][380]]
+
+Reduced phase space,
+[[file:chapter005.html#p402][402]]--[[file:chapter005.html#p407][407]]
+
+Reduction
+
+Lagrangian,
+[[file:chapter003.html#p233][233]]--[[file:chapter003.html#p236][236]]
+
+of phase space (/see/ Phase space reduction)
+
+to quadrature, [[file:chapter003.html#p224][224]] /n/
+
+ref, [[file:chapter001.html#p15][15]] /n/,
+[[file:chapter009.html#p514][514]]
+
+Regular motion, [[file:chapter003.html#p241][241]],
+[[file:chapter003.html#p243][243]], [[file:chapter003.html#p258][258]]
+
+linear separation of trajectories, [[file:chapter003.html#p263][263]]
+
+<<p550>>
+Renormalization, [[file:chapter003.html#p267][267]] /n/
+
+Resonance. /See also/ Commensurability
+
+center, [[file:chapter007.html#p480][480]]
+
+islands (/see/ Islands in surfaces of section)
+
+nonlinear,
+[[file:chapter007.html#p478][478]]--[[file:chapter007.html#p494][494]]
+
+of Mercury's rotation, [[file:chapter002.html#p171][171]],
+[[file:chapter002.html#p193][193]] (ex.
+[[file:chapter002.html#Exe_2-21][2.21]])
+
+overlap criterion,
+[[file:chapter007.html#p488][488]]--[[file:chapter007.html#p489][489]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+for periodically driven pendulum,
+[[file:chapter007.html#p481][481]]--[[file:chapter007.html#p491][491]]
+
+spin-orbit,
+[[file:chapter002.html#p177][177]]--[[file:chapter002.html#p181][181]]
+
+width, [[file:chapter007.html#p483][483]] (ex.
+[[file:chapter007.html#Exe_7-2][7.2]]),
+[[file:chapter007.html#p488][488]]
+
+Restricted three-body problem. /See/ Three-body problem, restricted
+
+Rigid body, [[file:chapter002.html#p120][120]]
+
+forced,
+[[file:chapter002.html#p154][154]]--[[file:chapter002.html#p157][157]]
+(/see also/ Spin-orbit coupling; Top)
+
+free (/see/ Rigid body (free))
+
+kinetic energy,
+[[file:chapter002.html#p120][120]]--[[file:chapter002.html#p122][122]]
+
+kinetic energy in terms of inertia tensor and angular velocity,
+[[file:chapter002.html#p126][126]]--[[file:chapter002.html#p129][129]],
+[[file:chapter002.html#p131][131]]
+
+kinetic energy in terms of principal moments and angular momentum,
+[[file:chapter002.html#p148][148]]
+
+kinetic energy in terms of principal moments and angular velocity,
+[[file:chapter002.html#p134][134]]
+
+kinetic energy in terms of principal moments and Euler angles,
+[[file:chapter002.html#p141][141]]
+
+vector angular momentum,
+[[file:chapter002.html#p135][135]]--[[file:chapter002.html#p137][137]]
+
+Rigid body (free), [[file:chapter002.html#p141][141]]
+
+angular momentum,
+[[file:chapter002.html#p151][151]]--[[file:chapter002.html#p153][153]]
+
+angular momentum and kinetic energy,
+[[file:chapter002.html#p146][146]]--[[file:chapter002.html#p150][150]]
+
+computing motion of,
+[[file:chapter002.html#p143][143]]--[[file:chapter002.html#p145][145]]
+
+Euler's equations and,
+[[file:chapter002.html#p151][151]]--[[file:chapter002.html#p154][154]]
+
+(in)stability,
+[[file:chapter002.html#p149][149]]--[[file:chapter002.html#p151][151]]
+
+orientation,
+[[file:chapter002.html#p153][153]]--[[file:chapter002.html#p154][154]]
+
+Rigid constraints,
+[[file:chapter001.html#p49][49]]--[[file:chapter001.html#p63][63]]
+
+as coordinate transformations,
+[[file:chapter001.html#p59][59]]--[[file:chapter001.html#p63][63]]
+
+Rotating coordinates
+
+in extended phase space,
+[[file:chapter005.html#p400][400]]--[[file:chapter005.html#p402][402]]
+
+generating function for,
+[[file:chapter005.html#p377][377]]--[[file:chapter005.html#p378][378]]
+
+point transformation for,
+[[file:chapter005.html#p348][348]]--[[file:chapter005.html#p349][349]],
+[[file:chapter005.html#p377][377]]--[[file:chapter005.html#p378][378]]
+
+Rotation(s). /See also/ Orientation
+
+active, [[file:chapter002.html#p130][130]]
+
+composition of, [[file:chapter002.html#p123][123]],
+[[file:chapter002.html#p187][187]]
+
+computing, [[file:chapter001.html#p93][93]]
+
+group property of, [[file:chapter002.html#p187][187]]
+
+(in)stability of,
+[[file:chapter002.html#p149][149]]--[[file:chapter002.html#p151][151]]
+
+kinematics of,
+[[file:chapter002.html#p122][122]]--[[file:chapter002.html#p126][126]]
+
+kinetic energy of (/see/ Rigid body, kinetic energy...)
+
+Lie generator for, [[file:chapter006.html#p440][440]]
+
+matrices for, [[file:chapter002.html#p138][138]]
+
+of celestial objects, [[file:chapter002.html#p151][151]],
+[[file:chapter002.html#p165][165]],
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p171][171]]
+
+of Hyperion,
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p176][176]]
+
+of Mercury, [[file:chapter002.html#p171][171]],
+[[file:chapter002.html#p193][193]] (ex.
+[[file:chapter002.html#Exe_2-21][2.21]])
+
+of Moon, [[file:chapter002.html#p119][119]],
+[[file:chapter002.html#p151][151]],
+[[file:chapter002.html#p170][170]]--[[file:chapter002.html#p176][176]],
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+of Phobos, [[file:chapter002.html#p171][171]]
+
+of top, book, and Moon, [[file:chapter002.html#p119][119]]
+
+orientation as, [[file:chapter002.html#p123][123]]
+
+orientation vector and, [[file:chapter002.html#p182][182]]
+
+passive, [[file:chapter002.html#p130][130]]
+
+as tuples, [[file:chapter009.html#p515][515]]
+
+Rotation number, [[file:chapter004.html#p315][315]]
+
+golden, [[file:chapter004.html#p328][328]]
+
+irrational, and invariant curves, [[file:chapter004.html#p322][322]]
+
+rational, and commensurability, [[file:chapter004.html#p316][316]]
+
+rational, and fixed and periodic points,
+[[file:chapter004.html#p316][316]]
+
+Rotor
+
+driven, [[file:chapter004.html#p317][317]],
+[[file:chapter004.html#p321][321]]
+
+pendulum as perturbation of,
+[[file:chapter007.html#p460][460]]--[[file:chapter007.html#p473][473]]
+
+periodically driven pendulum as perturbation of,
+[[file:chapter007.html#p476][476]]--[[file:chapter007.html#p478][478]]
+
+Routh, Edward John
+
+Routhian, [[file:chapter003.html#p234][234]]
+
+Routhian equations, [[file:chapter003.html#p236][236]] (ex.
+[[file:chapter003.html#Exe_3-9][3.9]])
+
+<<p551>>
+Runge--Kutta integration method, [[file:chapter001.html#p74][74]] /n/
+
+qcrk4, [[file:chapter002.html#p145][145]]
+
+Rx, 63 (ex. [[file:chapter001.html#Exe_1-25][1.25]]),
+/[[file:chapter001.html#p93][93]] n/
+
+Rx-matrix, /[[file:chapter002.html#p139][139]]/
+
+Ry, 63 (ex. [[file:chapter001.html#Exe_1-25][1.25]]),
+/[[file:chapter001.html#p93][93]] n/
+
+Rz, 63 (ex. [[file:chapter001.html#Exe_1-25][1.25]]),
+/[[file:chapter001.html#p93][93]] n/
+
+Rz-matrix, /[[file:chapter002.html#p139][139]]/
+
+/S/ (action), [[file:chapter001.html#p10][10]]
+
+Lagrangian, [[file:chapter001.html#p12][12]]
+
+s->m (structure to matrix), [[file:chapter005.html#p353][353]]
+
+s->r (spherical-to-rectangular), /[[file:chapter001.html#p85][85]]/
+
+Saddle point, [[file:chapter003.html#p222][222]]
+
+Salam, Abdus, [[file:chapter009.html#p509][509]]
+
+Saturn. /See/ Hyperion
+
+Scheme, [[file:preface.html#pxvi][xvi]],
+[[file:chapter008.html#p497][497]]--[[file:chapter008.html#p508][508]],
+[[file:chapter009.html#p509][509]]. /See also/ Scmutils
+
+for Gnu/Linux, where to get it, [[file:preface.html#pxvi][xvi]]
+
+Schrödinger, Erwin, [[file:chapter001.html#p12][12]] /n/,
+[[file:chapter003.html#p203][203]] /n/
+
+Scmutils, [[file:preface.html#pxvi][xvi]],
+[[file:chapter009.html#p509][509]]--[[file:chapter009.html#p523][523]].
+/See also/ Scheme
+
+generic arithmetic, [[file:chapter001.html#p16][16]] /n/,
+[[file:chapter009.html#p509][509]]
+
+minimization, [[file:chapter001.html#p19][19]] /n/,
+[[file:chapter001.html#p21][21]] /n/
+
+numerical integration, [[file:chapter001.html#p17][17]] /n/,
+[[file:chapter001.html#p74][74]] /n/, [[file:chapter002.html#p145][145]]
+
+operations on operators, [[file:chapter001.html#p34][34]] /n/
+
+simplification of expressions, [[file:chapter009.html#p511][511]]
+
+where to get it, [[file:preface.html#pxvi][xvi]]
+
+Second law of thermodynamics, [[file:chapter003.html#p274][274]]
+
+Section, surface of. /See/ Surface of section
+
+Secular terms in perturbation theory, [[file:chapter007.html#p470][470]]
+
+elimination of,
+[[file:chapter007.html#p471][471]]--[[file:chapter007.html#p473][473]]
+
+Selector function, [[file:chapter001.html#p64][64]] /n/,
+[[file:chapter009.html#p513][513]]
+
+coordinate selector (/Q/), [[file:chapter003.html#p220][220]]
+
+momentum selector (/P/), [[file:chapter003.html#p199][199]],
+[[file:chapter003.html#p220][220]]
+
+velocity selector (
+$\overset{˙}{Q}$
+), [[file:chapter001.html#p64][64]]
+Selectors in Scheme, [[file:chapter008.html#p503][503]]
+
+Semicolon in tuple, [[file:chapter001.html#p31][31]] /n/,
+[[file:chapter009.html#p520][520]]
+
+Sensitivity to initial conditions, [[file:chapter003.html#p241][241]]
+/n/, [[file:chapter003.html#p243][243]],
+[[file:chapter003.html#p263][263]]. /See also/ Chaotic motion
+
+Separatrix, [[file:chapter002.html#p147][147]],
+[[file:chapter003.html#p222][222]]. /See also/ Asymptotic trajectories
+
+chaos near, [[file:chapter004.html#p290][290]],
+[[file:chapter007.html#p484][484]], [[file:chapter007.html#p486][486]]
+
+motion near, [[file:chapter004.html#p302][302]]
+
+series, /[[file:chapter007.html#p462][462]]/
+
+series:for-each, [[file:chapter006.html#p444][444]]
+
+series:sum, [[file:chapter007.html#p463][463]]
+
+set-ode-integration-method!, [[file:chapter002.html#p145][145]]
+
+show-expression, [[file:chapter001.html#p16][16]],
+[[file:chapter001.html#p46][46]] /n/
+
+Shuffle function
+$\widetilde{J}$
+, [[file:chapter005.html#p350][350]]
+Simplification of expressions, [[file:chapter009.html#p511][511]]
+
+Singularities, [[file:chapter003.html#p202][202]] /n/
+
+Euler angles and, [[file:chapter002.html#p143][143]],
+[[file:chapter002.html#p154][154]]
+
+in Euler's equations, [[file:chapter002.html#p154][154]]
+
+quaternions,
+[[file:chapter002.html#p181][181]]--[[file:chapter002.html#p191][191]]
+
+Sleeping top, [[file:chapter003.html#p231][231]]
+
+Small denominators
+
+for periodically driven pendulum, [[file:chapter007.html#p477][477]]
+
+in perturbation theory, [[file:chapter007.html#p475][475]],
+[[file:chapter007.html#p476][476]]
+
+resonance islands and, [[file:chapter004.html#p322][322]],
+[[file:chapter007.html#p488][488]]
+
+Small divisors. /See/ Small denominators
+
+Snell's law, [[file:chapter001.html#p13][13]] /n/
+
+Solvable systems. /See/ Integrable systems
+
+solve-linear-left, [[file:chapter001.html#p71][71]] /n/
+
+solve-linear-right, [[file:chapter005.html#p339][339]] /n/
+
+Spherical coordinates
+
+kinetic energy in, [[file:chapter001.html#p84][84]]
+
+Lagrangian in, [[file:chapter001.html#p84][84]]
+
+Spin-orbit coupling,
+[[file:chapter002.html#p165][165]]--[[file:chapter002.html#p181][181]]
+
+chaotic motion, [[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-15][3.15]]),
+[[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+Hamiltonian for, [[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+Lagrange equations for, [[file:chapter002.html#p173][173]]
+
+Lagrangian for, [[file:chapter002.html#p173][173]]
+
+periodically driven pendulum and, [[file:chapter002.html#p173][173]]
+
+perturbation theory for, [[file:chapter007.html#p496][496]] (ex.
+[[file:chapter007.html#Exe_7-5][7.5]])
+
+resonances,
+[[file:chapter002.html#p177][177]]--[[file:chapter002.html#p181][181]]
+
+surface of section for, [[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-15][3.15]])
+
+Spivak, Michael, [[file:preface.html#pxvi][xiv]] /n/,
+[[file:chapter009.html#p509][509]]
+
+Spring--mass system. /See/ Harmonic oscillator
+
+<<p552>>
+square, [[file:chapter001.html#p21][21]] /n/,
+/[[file:chapter008.html#p499][499]]/
+
+for tuples, [[file:chapter001.html#p40][40]] /n/,
+[[file:chapter008.html#p499][499]] /n/
+
+Stability. /See/ Equilibria; Instability; Linear stability
+
+Stable manifold,
+[[file:chapter004.html#p303][303]]--[[file:chapter004.html#p309][309]]
+
+computing,
+[[file:chapter004.html#p307][307]]--[[file:chapter004.html#p309][309]]
+
+standard-map, /[[file:chapter003.html#p278][278]]/
+
+Standard map,
+[[file:chapter003.html#p277][277]]--[[file:chapter003.html#p280][280]]
+
+Stars. /See/ Galaxy
+
+State,
+[[file:chapter001.html#p68][68]]--[[file:chapter001.html#p71][71]]
+
+evolution of (/see/ Time evolution of state)
+
+Hamiltonian vs. Lagrangian,
+[[file:chapter003.html#p202][202]]--[[file:chapter003.html#p203][203]]
+
+in terms of coordinates and momenta (Hamiltonian),
+[[file:chapter003.html#p196][196]]
+
+in terms of coordinates and velocities (Lagrangian),
+[[file:chapter001.html#p69][69]]
+
+state-advancer, [[file:chapter001.html#p74][74]]
+
+State derivative
+
+Hamiltonian, [[file:chapter003.html#p204][204]]
+
+Hamiltonian vs. Lagrangian, [[file:chapter003.html#p202][202]]
+
+Lagrangian, [[file:chapter001.html#p71][71]]
+
+State path
+
+Hamiltonian, [[file:chapter003.html#p203][203]]
+
+Lagrangian, [[file:chapter003.html#p203][203]]
+
+State tuple, [[file:chapter001.html#p71][71]]
+
+Stationarity condition, [[file:chapter001.html#p28][28]]
+
+Stationary action. /See/ Principle of stationary action
+
+Stationary point, [[file:chapter001.html#p2][2]] /n/
+
+Steiner's theorem, [[file:chapter002.html#p129][129]] (ex.
+[[file:chapter002.html#Exe_2-2][2.2]])
+
+String theory, [[file:chapter002.html#p119][119]] /n/,
+[[file:chapter002.html#p150][150]]. /See also/ Quartet
+
+Stroboscopic surface of section,
+[[file:chapter003.html#p241][241]]--[[file:chapter003.html#p248][248]].
+/See also/ Surface of section
+
+computing, [[file:chapter003.html#p246][246]]
+
+Subscripts
+
+down and, [[file:chapter001.html#p15][15]] /n/
+
+for down-tuple components, [[file:chapter009.html#p513][513]]
+
+for momentum components, [[file:chapter001.html#p79][79]] /n/,
+[[file:chapter005.html#p338][338]] /n/
+
+for selectors, [[file:chapter009.html#p513][513]]
+
+Summation convention, [[file:chapter005.html#p367][367]] /n/
+
+Superscripts
+
+for coordinate components, [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter001.html#p15][15]] /n/, [[file:chapter001.html#p79][79]]
+/n/
+
+for up-tuple components, [[file:chapter009.html#p513][513]]
+
+for velocity components, [[file:chapter001.html#p15][15]] /n/,
+[[file:chapter005.html#p338][338]] /n/
+
+up and, [[file:chapter001.html#p15][15]] /n/
+
+Surface of section,
+[[file:chapter003.html#p239][239]]--[[file:chapter003.html#p248][248]]
+
+in action-angle coordinates, [[file:chapter004.html#p313][313]]
+
+area preservation of, [[file:chapter003.html#p272][272]],
+[[file:chapter006.html#p434][434]]--[[file:chapter006.html#p435][435]]
+
+computing (Hénon--Heiles),
+[[file:chapter003.html#p261][261]]--[[file:chapter003.html#p263][263]]
+
+computing (stroboscopic), [[file:chapter003.html#p246][246]]
+
+fixed points (/see/ Fixed points)
+
+for autonomous systems,
+[[file:chapter003.html#p248][248]]--[[file:chapter003.html#p263][263]]
+
+for Hénon--Heiles problem,
+[[file:chapter003.html#p254][254]]--[[file:chapter003.html#p263][263]]
+
+for integrable system,
+[[file:chapter004.html#p313][313]]--[[file:chapter004.html#p316][316]]
+
+for non-axisymmetric top, [[file:chapter003.html#p263][263]]
+
+for periodically driven pendulum,
+[[file:chapter003.html#p242][242]]--[[file:chapter003.html#p248][248]],
+[[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-14][3.14]]),
+[[file:chapter004.html#p287][287]]--[[file:chapter004.html#p290][290]],
+[[file:chapter007.html#p483][483]]--[[file:chapter007.html#p494][494]]
+
+for restricted three-body problem, [[file:chapter003.html#p283][283]]
+(ex. [[file:chapter003.html#Exe_3-16][3.16]])
+
+for spin-orbit coupling, [[file:chapter003.html#p282][282]] (ex.
+[[file:chapter003.html#Exe_3-15][3.15]])
+
+for standard map,
+[[file:chapter003.html#p277][277]]--[[file:chapter003.html#p280][280]]
+
+invariant curves (/see/ Invariant curves)
+
+islands (/see/ Islands in surfaces of section)
+
+stroboscopic,
+[[file:chapter003.html#p241][241]]--[[file:chapter003.html#p248][248]]
+
+Symbolic values,
+[[file:chapter009.html#p511][511]]--[[file:chapter009.html#p512][512]]
+
+Symbols in Scheme,
+[[file:chapter008.html#p504][504]]--[[file:chapter008.html#p505][505]]
+
+Symmetry
+
+conserved quantities and, [[file:chapter001.html#p79][79]],
+[[file:chapter001.html#p90][90]]
+
+continuous, [[file:chapter003.html#p195][195]]
+
+of Lagrangian, [[file:chapter001.html#p90][90]]
+
+of top, [[file:chapter003.html#p228][228]]
+
+symplectic-matrix?, /[[file:chapter005.html#p355][355]]/
+
+symplectic-transform?, /[[file:chapter005.html#p355][355]]/
+
+symplectic-unit, [[file:chapter005.html#p355][355]]
+
+Symplectic bilinear form (2-form),
+[[file:chapter005.html#p359][359]]--[[file:chapter005.html#p362][362]]
+
+invariance under canonical transformations,
+[[file:chapter005.html#p359][359]]
+
+Symplectic condition. /See/ Symplectic transformations
+
+Symplectic integration, [[file:chapter006.html#p453][453]] (ex.
+[[file:chapter006.html#Exe_6-12][6.12]])
+
+<<p553>>
+Symplectic map, [[file:chapter004.html#p301][301]]
+
+Symplectic matrix, [[file:chapter004.html#p301][301]],
+[[file:chapter005.html#p356][356]] (ex.
+[[file:chapter005.html#Exe_5-6][5.6]]),
+[[file:chapter005.html#p353][353]]--[[file:chapter005.html#p357][357]]
+
+Symplectic transformations, [[file:chapter005.html#p355][355]]. /See
+also/ Canonical transformations
+
+antisymmetric bilinear form and,
+[[file:chapter005.html#p359][359]]--[[file:chapter005.html#p362][362]]
+
+Symplectic unit *J*, *J*/_{n}/, [[file:chapter004.html#p301][301]],
+[[file:chapter005.html#p355][355]]
+
+Syntactic sugar, [[file:chapter008.html#p499][499]]
+
+System derivative. /See/ State derivative
+
+T-body, /[[file:chapter002.html#p134][134]]/
+
+T-body-Euler, /[[file:chapter002.html#p141][141]]/
+
+T-func, /[[file:chapter005.html#p347][347]]/
+
+Taylor, J. B., [[file:chapter003.html#p278][278]] /n/
+
+Tensor. /See/ Inertia tensor
+
+Tensor arithmetic
+
+notation and, [[file:chapter001.html#p79][79]] /n/,
+[[file:chapter005.html#p338][338]] /n/
+
+summation convention, [[file:chapter005.html#p367][367]] /n/
+
+tuple arithmetic vs., [[file:chapter009.html#p509][509]],
+[[file:chapter009.html#p513][513]]
+
+Theology and principle of least action, [[file:chapter001.html#p13][13]]
+/n/
+
+Thermodynamics, second law, [[file:chapter003.html#p274][274]]
+
+Three-body problem, restricted,
+[[file:chapter001.html#p86][86]]--[[file:chapter001.html#p90][90]],
+[[file:chapter003.html#p283][283]] (ex.
+[[file:chapter003.html#Exe_3-16][3.16]]),
+[[file:chapter005.html#p399][399]]--[[file:chapter005.html#p402][402]]
+
+chaotic motion, [[file:chapter003.html#p283][283]] (ex.
+[[file:chapter003.html#Exe_3-16][3.16]])
+
+surface of section for, [[file:chapter003.html#p283][283]] (ex.
+[[file:chapter003.html#Exe_3-16][3.16]])
+
+Tidal friction, [[file:chapter002.html#p170][170]]
+
+time, [[file:chapter001.html#p15][15]] /n/
+
+Time-dependent transformations,
+[[file:chapter005.html#p347][347]]--[[file:chapter005.html#p349][349]]
+
+Time evolution of state,
+[[file:chapter001.html#p68][68]]--[[file:chapter001.html#p78][78]]
+
+action and,
+[[file:chapter006.html#p423][423]]--[[file:chapter006.html#p425][425]],
+[[file:chapter006.html#p435][435]]--[[file:chapter006.html#p437][437]]
+
+as canonical transformation,
+[[file:chapter006.html#p426][426]]--[[file:chapter006.html#p437][437]]
+
+in phase space,
+[[file:chapter003.html#p236][236]]--[[file:chapter003.html#p238][238]]
+
+Poincaré--Cartan integral invariant and,
+[[file:chapter006.html#p431][431]]--[[file:chapter006.html#p434][434]]
+
+Time-independence. /See also/ Extended phase space
+
+energy conservation and, [[file:chapter001.html#p81][81]]
+
+Top
+
+axisymmetric (/see/ Axisymmetric top)
+
+non-axisymmetric, [[file:chapter003.html#p263][263]]
+
+Top banana. /See/ Non-axisymmetric top
+
+Torque, [[file:chapter002.html#p165][165]] (ex.
+[[file:chapter002.html#Exe_2-16][2.16]])
+
+in Euler's equations, [[file:chapter002.html#p154][154]]
+
+in spin-orbit coupling, [[file:chapter002.html#p173][173]]
+
+Total time derivative,
+[[file:chapter001.html#p63][63]]--[[file:chapter001.html#p65][65]]
+
+adding to Lagrangians, [[file:chapter001.html#p65][65]]
+
+affecting conjugate momentum, [[file:chapter003.html#p239][239]]
+
+canonical transformation and,
+[[file:chapter005.html#p390][390]]--[[file:chapter005.html#p393][393]]
+
+commutativity of, [[file:chapter001.html#p91][91]] /n/
+
+computing, [[file:chapter001.html#p97][97]]
+
+constraints and, [[file:chapter001.html#p108][108]]
+
+identifying, [[file:chapter001.html#p68][68]] (ex.
+[[file:chapter001.html#Exe_1-28][1.28]])
+
+notation: /D_{t}/, [[file:chapter001.html#p64][64]]
+
+properties, [[file:chapter001.html#p67][67]]
+
+Trajectory. /See/ Path; Phase-space trajectory
+
+Transformation
+
+canonical (/see/ Canonical transformations)
+
+coordinate (/see/ Coordinate transformations)
+
+Legendre (/see/ Legendre transformation)
+
+Lie (/see/ Lie transforms)
+
+orthogonal (/see/ Orthogonal matrix)
+
+point (/see/ Point transformations)
+
+symplectic (/see/ Symplectic transformations)
+
+time-dependent,
+[[file:chapter005.html#p347][347]]--[[file:chapter005.html#p349][349]]
+
+Transpose, [[file:chapter005.html#p351][351]] /n/
+
+transpose, [[file:chapter002.html#p126][126]],
+[[file:chapter005.html#p351][351]] /n/
+
+True anomaly, [[file:chapter002.html#p171][171]] /n/
+
+Tumbling. /See/ Chaotic motion, of Hyperion; Rotation(s), (in)stability
+of
+
+Tuples,
+[[file:chapter009.html#p512][512]]--[[file:chapter009.html#p516][516]]
+
+arithmetic on, [[file:chapter009.html#p509][509]],
+[[file:chapter009.html#p513][513]]--[[file:chapter009.html#p516][516]]
+
+commas and semicolons in, [[file:chapter009.html#p520][520]]
+
+component selector: /I/ with subscript, [[file:chapter001.html#p64][64]]
+/n/, [[file:chapter009.html#p513][513]]
+
+composition and, [[file:chapter009.html#p516][516]]
+
+contraction, [[file:chapter009.html#p514][514]]
+
+of coordinates, [[file:chapter001.html#p7][7]]
+
+down and up, [[file:chapter009.html#p512][512]]
+
+<<p554>>
+of functions, [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter009.html#p521][521]]
+
+inner product, [[file:chapter009.html#p515][515]]
+
+linear transformations as, [[file:chapter009.html#p515][515]]
+
+local (/see/ Local tuple)
+
+matrices as, [[file:chapter009.html#p515][515]]
+
+multiplication of,
+[[file:chapter009.html#p514][514]]--[[file:chapter009.html#p516][516]]
+
+rotations as, [[file:chapter009.html#p515][515]]
+
+semicolons and commas in, [[file:chapter009.html#p520][520]]
+
+squaring, [[file:chapter008.html#p499][499]] /n/,
+[[file:chapter009.html#p514][514]]
+
+state tuple, [[file:chapter001.html#p71][71]]
+
+up and down, [[file:chapter009.html#p512][512]]
+
+Twist map, [[file:chapter004.html#p315][315]]
+
+Two-body problem,
+[[file:chapter005.html#p378][378]]--[[file:chapter005.html#p381][381]]
+
+Two-trajectory method, [[file:chapter003.html#p265][265]]
+
+Undriven pendulum. /See/ Pendulum
+
+Uniform circle map, [[file:chapter004.html#p326][326]]
+
+Uniqueness
+
+of Lagrangian---not!,
+[[file:chapter001.html#p63][63]]--[[file:chapter001.html#p66][66]]
+
+of phase-space description---not!,
+[[file:chapter003.html#p238][238]]--[[file:chapter003.html#p239][239]]
+
+of realizable path, [[file:chapter001.html#p12][12]]
+
+of solution to Lagrange equations, [[file:chapter001.html#p69][69]]
+
+unstable-manifold, /[[file:chapter004.html#p308][308]]/
+
+Unstable manifold,
+[[file:chapter004.html#p303][303]]--[[file:chapter004.html#p309][309]]
+
+computing,
+[[file:chapter004.html#p307][307]]--[[file:chapter004.html#p309][309]]
+
+up, [[file:chapter001.html#p15][15]] /n/,
+[[file:chapter009.html#p513][513]]
+
+Up tuples, [[file:chapter009.html#p512][512]]
+
+Vakonomic mechanics, [[file:chapter001.html#p114][114]] /n/
+
+Variation
+
+chain rule, [[file:chapter001.html#p27][27]]
+([[file:chapter001.html#disp_1.26][eq. 1.26]])
+
+of action, [[file:chapter001.html#p28][28]]
+
+of a function, [[file:chapter001.html#p26][26]]
+
+of a path, [[file:chapter001.html#p12][12]],
+[[file:chapter001.html#p18][18]], [[file:chapter001.html#p26][26]]
+
+operator: /δ_{η}/, [[file:chapter001.html#p26][26]]
+
+Variational equations, [[file:chapter003.html#p266][266]]
+
+Variational formulation of mechanics,
+[[file:chapter001.html#p2][2]]--[[file:chapter001.html#p3][3]],
+[[file:chapter001.html#p39][39]]
+
+Variational principle. /See/ Principle of stationary action
+
+Vector
+
+body components of, [[file:chapter002.html#p134][134]]
+
+in Scheme,
+[[file:chapter008.html#p502][502]]--[[file:chapter008.html#p504][504]]
+
+square of, [[file:chapter001.html#p18][18]] /n/,
+[[file:chapter001.html#p21][21]] /n/
+
+vector, [[file:chapter008.html#p504][504]]
+
+vector?, [[file:chapter008.html#p504][504]]
+
+vector-ref, [[file:chapter008.html#p504][504]]
+
+Vector angular momentum,
+[[file:chapter002.html#p135][135]]--[[file:chapter002.html#p137][137]].
+/See also/ Angular momentum
+
+center-of-mass decomposition, [[file:chapter002.html#p135][135]]
+
+in terms of angular velocity and inertia tensor,
+[[file:chapter002.html#p136][136]]
+
+in terms of principal moments and Euler angles,
+[[file:chapter002.html#p141][141]]
+
+Vector space of tuples, [[file:chapter009.html#p514][514]]
+
+Vector torque. /See/ Torque
+
+Velocity. /See/ Angular velocity vector; Generalized velocity
+
+velocity, [[file:chapter001.html#p15][15]] /n/
+
+Velocity dispersion in galaxy, [[file:chapter003.html#p248][248]]
+
+Velocity selector (
+$\overset{˙}{Q}$
+), [[file:chapter001.html#p64][64]]
+Web site for this book, [[file:preface.html#pxvi][xvi]]
+
+Wheel, [[file:chapter002.html#p156][156]] (ex.
+[[file:chapter002.html#Exe_2-13][2.13]])
+
+Whittaker transform (Sir Edmund Whittaker),
+[[file:chapter005.html#p357][357]] (ex.
+[[file:chapter005.html#Exe_5-9][5.9]])
+
+Width of oscillation region, [[file:chapter007.html#p466][466]] /n/
+
+write-line, [[file:chapter008.html#p505][505]] /n/
+
+Zero-amplitude drive for pendulum,
+[[file:chapter004.html#p286][286]]--[[file:chapter004.html#p289][289]]
+
+Zero-based indexing, [[file:chapter001.html#p7][7]] /n/,
+[[file:chapter001.html#p15][15]] /n/,
+[[file:chapter008.html#p503][503]], [[file:chapter009.html#p513][513]],
+[[file:chapter009.html#p514][514]], [[file:index.html#p531][531]]

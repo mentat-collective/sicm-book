@@ -1,0 +1,303 @@
+--- ---
+{% include toplink.html %}
+
+* Structure and Interpretation\\
+of Classical Mechanics
+  :PROPERTIES:
+  :CUSTOM_ID: structure-and-interpretation-of-classical-mechanics
+  :CLASS: titlefont
+  :END:
+
+Second Edition\\
+Unofficial HTML Version
+
+*Gerald Jay Sussman and Jack Wisdom*\\
+©2014 by The Massachusetts Institute of Technology
+
+[[https://creativecommons.org/licenses/by-nc-sa/3.0/][[[file:images/by-nc-sa.svg]]]]
+This work is licensed under a Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported License
+([[http://creativecommons.org/licenses/by-sa/3.0/][CC BY-SA 3.0]]).
+Based on a work at
+[[https://mitpress.mit.edu/sites/default/files/titles/content/sicm_edition_2/book.html][mitpress.mit.edu]].
+
+The MIT Press\\
+Cambridge, Massachusetts\\
+London, England
+
+Title page image credit: [[https://wellcomeimages.org/][Wellcome
+Library, London]]. Licensed under a Creative Commons Attribution only
+license ([[http://creativecommons.org/licenses/by/4.0/][CC BY 4.0]]).
+
+<<SEC_Overview>>
+** Short Table of Contents
+   :PROPERTIES:
+   :CUSTOM_ID: short-table-of-contents
+   :CLASS: shortcontents-heading
+   :END:
+
+- [[#toc-dedication][Dedication]]
+- [[#toc-preface][Preface]]
+- [[#toc-acknowledgments][Acknowledgments]]
+- [[#toc-chap-1][Lagrangian Mechanics]]
+- [[#toc-chap-2][Rigid Bodies]]
+- [[#toc-chap-3][Hamiltonian Mechanics]]
+- [[#toc-chap-4][Phase Space Structure]]
+- [[#toc-chap-5][Canonical Transformations]]
+- [[#toc-chap-6][Canonical Evolution]]
+- [[#toc-chap-7][Canonical Perturbation Theory]]
+- [[#toc-chap-8][Appendix: Scheme]]
+- [[#toc-chap-9][Appendix: Our Notation]]
+
+<<SEC_Contents>>
+** Table of Contents
+   :PROPERTIES:
+   :CUSTOM_ID: table-of-contents
+   :CLASS: contents-heading
+   :END:
+
+- [[file:dedication.html][Dedication]]
+- [[file:preface.html][Preface]]
+- [[file:acknowledgments.html][Acknowledgments]]
+- [[file:chapter001.html][*1 Lagrangian Mechanics*]]
+
+  - [[file:chapter001.html#h1-2][1.1 Configuration Spaces]]
+  - [[file:chapter001.html#h1-3][1.2 Generalized Coordinates]]
+  - [[file:chapter001.html#h1-4][1.3 The Principle of Stationary
+    Action]]
+  - [[file:chapter001.html#h1-5][1.4 Computing Actions]]
+  - [[file:chapter001.html#h1-6][1.5 The Euler--Lagrange Equations]]
+
+    - [[file:chapter001.html#h3_1-5-1][1.5.1 Derivation of the Lagrange
+      Equations]]
+    - [[file:chapter001.html#h3_1-5-2][1.5.2 Computing Lagrange's
+      Equations]]
+
+  - [[file:chapter001.html#h1-6a][1.6 How to Find Lagrangians]]
+
+    - [[file:chapter001.html#h3_1-6-1][1.6.1 Coordinate
+      Transformations]]
+    - [[file:chapter001.html#h3_1-6-2][1.6.2 Systems with Rigid
+      Constraints]]
+    - [[file:chapter001.html#h3_1-6-3][1.6.3 Constraints as Coordinate
+      Transformations]]
+    - [[file:chapter001.html#h3_1-6-4][1.6.4 The Lagrangian Is Not
+      Unique]]
+
+  - [[file:chapter001.html#h1-6b][1.7 Evolution of Dynamical State]]
+  - [[file:chapter001.html#h1-6c][1.8 Conserved Quantities]]
+
+    - [[file:chapter001.html#h3_1-8-1][1.8.1 Conserved Momenta]]
+    - [[file:chapter001.html#h3_1-8-2][1.8.2 Energy Conservation]]
+    - [[file:chapter001.html#h3_1-8-3][1.8.3 Central Forces in Three
+      Dimensions]]
+    - [[file:chapter001.html#h3_1-8-4][1.8.4 The Restricted Three-Body
+      Problem]]
+    - [[file:chapter001.html#h3_1-8-5][1.8.5 Noether's Theorem]]
+
+  - [[file:chapter001.html#h1-6d][1.9 Abstraction of Path Functions]]
+  - [[file:chapter001.html#h1-6e][1.10 Constrained Motion]]
+
+    - [[file:chapter001.html#h3_1-10-1][1.10.1 Coordinate Constraints]]
+    - [[file:chapter001.html#h3_1-10-2][1.10.2 Derivative Constraints]]
+    - [[file:chapter001.html#h3_1-10-3][1.10.3 Nonholonomic Systems]]
+
+  - [[file:chapter001.html#h1-6f][1.11 Summary]]
+  - [[file:chapter001.html#h1-6g][1.12 Projects]]
+
+- [[file:chapter002.html][*2 Rigid Bodies*]]
+
+  - [[file:chapter002.html#h1-7][2.1 Rotational Kinetic Energy]]
+  - [[file:chapter002.html#h1-8][2.2 Kinematics of Rotation]]
+  - [[file:chapter002.html#h1-8a][2.3 Moments of Inertia]]
+  - [[file:chapter002.html#h1-9][2.4 Inertia Tensor]]
+  - [[file:chapter002.html#h1-9a][2.5 Principal Moments of Inertia]]
+  - [[file:chapter002.html#h1-10][2.6 Vector Angular Momentum]]
+  - [[file:chapter002.html#h1-11][2.7 Euler Angles]]
+  - [[file:chapter002.html#h1-12][2.8 Motion of a Free Rigid Body]]
+
+    - [[file:chapter002.html#h3_2-8-1][2.8.1 Computing the Motion of
+      Free Rigid Bodies]]
+    - [[file:chapter002.html#h3_2-8-2][2.8.2 Qualitative Features]]
+
+  - [[file:chapter002.html#h1-12a][2.9 Euler's Equations]]
+  - [[file:chapter002.html#h1-12b][2.10 Axisymmetric Tops]]
+  - [[file:chapter002.html#h1-12c][2.11 Spin-Orbit Coupling]]
+
+    - [[file:chapter002.html#h3_2-11-1][2.11.1 Development of the
+      Potential Energy]]
+    - [[file:chapter002.html#h3_2-11-2][2.11.2 Rotation of the Moon and
+      Hyperion]]
+    - [[file:chapter002.html#h3_2-11-3][2.11.3 Spin-Orbit Resonances]]
+
+  - [[file:chapter002.html#h1-12d][2.12 Nonsingular Coordinates and
+    Quaternions]]
+
+    - [[file:chapter002.html#h3_2-12-1][2.12.1 Motion in Terms of
+      Quaternions]]
+
+  - [[file:chapter002.html#h1-13][2.13 Summary]]
+  - [[file:chapter002.html#h1-14][2.14 Projects]]
+
+- [[file:chapter003.html][*3 Hamiltonian Mechanics*]]
+
+  - [[file:chapter003.html#h1-15][3.1 Hamilton's Equations]]
+
+    - [[file:chapter003.html#h3_3-1-1][3.1.1 The Legendre
+      Transformation]]
+    - [[file:chapter003.html#h3_3-1-2][3.1.2 Hamilton's Equations from
+      the Action Principle]]
+    - [[file:chapter003.html#h3_3-1-3][3.1.3 A Wiring Diagram]]
+
+  - [[file:chapter003.html#h1-16][3.2 Poisson Brackets]]
+  - [[file:chapter003.html#h1-17][3.3 One Degree of Freedom]]
+  - [[file:chapter003.html#h1-18][3.4 Phase Space Reduction]]
+
+    - [[file:chapter003.html#h3_3-4-1][3.4.1 Lagrangian Reduction]]
+
+  - [[file:chapter003.html#h1-19][3.5 Phase Space Evolution]]
+
+    - [[file:chapter003.html#h3_3-5-1][3.5.1 Phase-Space Description Is
+      Not Unique]]
+
+  - [[file:chapter003.html#h1-20][3.6 Surfaces of Section]]
+
+    - [[file:chapter003.html#h3_3-6-1][3.6.1 Periodically Driven
+      Systems]]
+    - [[file:chapter003.html#h3_3-6-2][3.6.2 Computing Stroboscopic
+      Surfaces of Section]]
+    - [[file:chapter003.html#h3_3-6-3][3.6.3 Autonomous Systems]]
+    - [[file:chapter003.html#h3_3-6-4][3.6.4 Computing Hénon--Heiles
+      Surfaces of Section]]
+    - [[file:chapter003.html#h3_3-6-5][3.6.5 Non-Axisymmetric Top]]
+
+  - [[file:chapter003.html#h1-21][3.7 Exponential Divergence]]
+  - [[file:chapter003.html#h1-21a][3.8 Liouville's Theorem]]
+  - [[file:chapter003.html#h1-21b][3.9 Standard Map]]
+  - [[file:chapter003.html#h1-22][3.10 Summary]]
+  - [[file:chapter003.html#h1-23][3.11 Projects]]
+
+- [[file:chapter004.html][*4 Phase Space Structure*]]
+
+  - [[file:chapter004.html#h1-24a][4.1 Emergence of the Divided Phase
+    Space]]
+  - [[file:chapter004.html#h1-24][4.2 Linear Stability]]
+
+    - [[file:chapter004.html#h3_4-2-1][4.2.1 Equilibria of Differential
+      Equations]]
+    - [[file:chapter004.html#h3_4-2-2][4.2.2 Fixed Points of Maps]]
+    - [[file:chapter004.html#h3_4-2-3][4.2.3 Relations Among Exponents]]
+
+  - [[file:chapter004.html#h1-25][4.3 Homoclinic Tangle]]
+
+    - [[file:chapter004.html#h3_4-3-1][4.3.1 Computation of Stable and
+      Unstable Manifolds]]
+
+  - [[file:chapter004.html#h1-26][4.4 Integrable Systems]]
+  - [[file:chapter004.html#h1-26a][4.5 Poincaré--Birkhoff Theorem]]
+
+    - [[file:chapter004.html#h3_4-5-1][4.5.1 Computing the
+      Poincaré--Birkhoff Construction]]
+
+  - [[file:chapter004.html#h1-26b][4.6 Invariant Curves]]
+
+    - [[file:chapter004.html#h3_4-6-1][4.6.1 Finding Invariant Curves]]
+    - [[file:chapter004.html#h3_4-6-2][4.6.2 Dissolution of Invariant
+      Curves]]
+
+  - [[file:chapter004.html#h1-27][4.7 Summary]]
+  - [[file:chapter004.html#h1-28][4.8 Projects]]
+
+- [[file:chapter005.html][*5 Canonical Transformations*]]
+
+  - [[file:chapter005.html#h1-29][5.1 Point Transformations]]
+  - [[file:chapter005.html#h1-29a][5.2 General Canonical
+    Transformations]]
+
+    - [[file:chapter005.html#h3_5-2-1][5.2.1 Time-Dependent
+      Transformations]]
+    - [[file:chapter005.html#h3_5-2-2][5.2.2 Abstracting the Canonical
+      Condition]]
+
+  - [[file:chapter005.html#h1-30][5.3 Invariants of Canonical
+    Transformations]]
+  - [[file:chapter005.html#h1-31][5.4 Generating Functions]]
+
+    - [[file:chapter005.html#h3_5-4-1][5.4.1 /F/_{1} Generates Canonical
+      Transformations]]
+    - [[file:chapter005.html#h3_5-4-2][5.4.2 Generating Functions and
+      Integral Invariants]]
+    - [[file:chapter005.html#h3_5-4-3][5.4.3 Types of Generating
+      Functions]]
+    - [[file:chapter005.html#h3_5-4-4][5.4.4 Point Transformations]]
+    - [[file:chapter005.html#h3_5-4-5][5.4.5 Total Time Derivatives]]
+
+  - [[file:chapter005.html#h1-32][5.5 Extended Phase Space]]
+
+    - [[file:chapter005.html#h3_5-5-1][5.5.1 Poincaré--Cartan Integral
+      Invariant]]
+
+  - [[file:chapter005.html#h1-33][5.6 Reduced Phase Space]]
+  - [[file:chapter005.html#h1-34][5.7 Summary]]
+  - [[file:chapter005.html#h1-35][5.8 Projects]]
+
+- [[file:chapter006.html][*6 Canonical Evolution*]]
+
+  - [[file:chapter006.html#h1-36][6.1 Hamilton--Jacobi Equation]]
+
+    - [[file:chapter006.html#h3_6-1-1][6.1.1 Harmonic Oscillator]]
+    - [[file:chapter006.html#h3_6-1-2][6.1.2 Hamilton--Jacobi Solution
+      of the Kepler Problem]]
+    - [[file:chapter006.html#h3_6-1-3][6.1.3 /F/_{2} and the
+      Lagrangian]]
+    - [[file:chapter006.html#h3_6-1-3][6.1.4 The Action Generates Time
+      Evolution]]
+
+  - [[file:chapter006.html#h1-37][6.2 Time Evolution is Canonical]]
+
+    - [[file:chapter006.html#h3_6-2-1][6.2.1 Another View of Time
+      Evolution]]
+    - [[file:chapter006.html#h3_6-2-2][6.2.2 Yet Another View of Time
+      Evolution]]
+
+  - [[file:chapter006.html#h1-38][6.3 Lie Transforms]]
+  - [[file:chapter006.html#h1-39][6.4 Lie Series]]
+  - [[file:chapter006.html#h1-39a][6.5 Exponential Identities]]
+  - [[file:chapter006.html#h1-40][6.6 Summary]]
+  - [[file:chapter006.html#h1-41][6.7 Projects]]
+
+- [[file:chapter007.html][*7 Canonical Perturbation Theory*]]
+
+  - [[file:chapter007.html#h1-42][7.1 Perturbation Theory with Lie
+    Series]]
+  - [[file:chapter007.html#h1-42a][7.2 Pendulum as a Perturbed Rotor]]
+
+    - [[file:chapter007.html#h3_7-2-1][7.2.1 Higher Order]]
+    - [[file:chapter007.html#h3_7-2-2][7.2.2 Eliminating Secular Terms]]
+
+  - [[file:chapter007.html#h1-43][7.3 Many Degrees of Freedom]]
+
+    - [[file:chapter007.html#h3_7-3-1][7.3.1 Driven Pendulum as a
+      Perturbed Rotor]]
+
+  - [[file:chapter007.html#h1-44][7.4 Nonlinear Resonance]]
+
+    - [[file:chapter007.html#h3_7-4-1][7.4.1 Pendulum Approximation]]
+    - [[file:chapter007.html#h3_7-4-2][7.4.2 Reading the Hamiltonian]]
+    - [[file:chapter007.html#h3_7-4-3][7.4.3 Resonance-Overlap
+      Criterion]]
+    - [[file:chapter007.html#h3_7-4-4][7.4.4 Higher-Order Perturbation
+      Theory]]
+    - [[file:chapter007.html#h3_7-4-5][7.4.5 Stability of the Inverted
+      Vertical Equilibrium]]
+
+  - [[file:chapter007.html#h1-45][7.5 Summary]]
+  - [[file:chapter007.html#h1-46][7.6 Projects]]
+
+- [[file:chapter008.html][*8 Appendix: Scheme*]]
+- [[file:chapter009.html][*9 Appendix: Our Notation*]]
+- [[file:bibliography.html][References]]
+- [[file:appendix.html][List of Exercises]]
+- [[file:keyword_index.html][Index]]
+
+{% include bottomlink.html %}

@@ -1,0 +1,18 @@
+[Go to [[file:book.html][first]], [[file:book.html][previous]],
+[[file:preface.html][next]] section;    [[file:toc.html][contents]];   
+[[file:index.html][index]]]
+
+<<piii>>
+*Structure and Interpretation of Classical Mechanics*
+
+second edition
+
+Gerald Jay Sussman and Jack Wisdom
+
+The MIT Press\\
+Cambridge, Massachusetts\\
+London, England
+
+[Go to [[file:book.html][first]], [[file:book.html][previous]],
+[[file:preface.html][next]] section;    [[file:toc.html][contents]];   
+[[file:index.html][index]]]
