@@ -336,9 +336,9 @@ formulation because of these advantages.
    the configuration at time /t/. Then the action of a segment of the path in
    the time interval from /t/_{1} to /t/_{2} is[fn:15]
 
-   \begin{array}{ll}
-   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{F\lbrack q\rbrack.}}} & {(1.1)} \\
-   \end{array}
+   \begin{equation}
+   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{F\lbrack q\rbrack.}}} & {(1.1)}
+   \end{equation}
 
    where /F/[/q/] is a function of time that measures some local property of the
    path. It may depend upon the value of the function /q/ at that time and the
@@ -359,9 +359,9 @@ formulation because of these advantages.
    of a local description of a path from a path is the same for any system. We
    can write /F/[/q/] as a composition of these two functions:[fn:18]
 
-   \begin{array}{ll}
-   {F\lbrack q\rbrack = L \circ \Gamma\lbrack q\rbrack.} & {(1.2)} \\
-   \end{array}
+   \begin{equation}
+   {F\lbrack q\rbrack = L \circ \Gamma\lbrack q\rbrack.} & {(1.2)}
+   \end{equation}
 
    The function Γ takes the coordinate path and produces a function of time
    whose value is an ordered tuple containing the time, the coordinates at that
@@ -369,9 +369,9 @@ formulation because of these advantages.
    higher derivatives of the coordinates evaluated at that time. For the path
    /q/ and time /t/:
 
-   \begin{array}{ll}
-   {\Gamma\lbrack q\rbrack(t) = (t,q(t),Dq(t),\ldots).} & {(1.3)} \\
-   \end{array}
+   \begin{equation}
+   {\Gamma\lbrack q\rbrack(t) = (t,q(t),Dq(t),\ldots).} & {(1.3)}
+   \end{equation}
 
    We refer to this tuple, which includes as many derivatives as are needed, as
    the /local tuple/. The function Γ[/q/] depends only on the coordinate path
@@ -394,16 +394,16 @@ formulation because of these advantages.
    The function /L/ is called a /Lagrangian/[fn:20] for the system, and the
    resulting action,
 
-   \begin{array}{ll}
-   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{L \circ \Gamma\lbrack q\rbrack,}}} & {(1.4)} \\
-   \end{array}
+   \begin{equation}
+   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{L \circ \Gamma\lbrack q\rbrack,}}} & {(1.4)}
+   \end{equation}
 
    is called the /Lagrangian action/. For Lagrangians that depend only on time,
    positions, and velocities the action can also be written
 
-   \begin{array}{ll}
-   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{L(t,q(t),Dq(t))\, dt.}}} & {(1.5)} \\
-   \end{array}
+   \begin{equation}
+   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{L(t,q(t),Dq(t))\, dt.}}} & {(1.5)}
+   \end{equation}
 
    Lagrangians can be found for a great variety of systems. We will see that for
    many systems the Lagrangian can be taken to be the difference between kinetic
@@ -471,9 +471,9 @@ formulation because of these advantages.
 
   Following Euler and Lagrange, the Lagrangian for the free particle is[fn:24]
 
-  \begin{array}{ll}
-  {L(t,x,v) = \frac{1}{2}m(v \cdot v),} & {(1.6)} \\
-  \end{array}
+  \begin{equation}
+  {L(t,x,v) = \frac{1}{2}m(v \cdot v),} & {(1.6)}
+  \end{equation}
 
   where the formal parameter /x/ names a tuple of components of the position
   with respect to a given rectangular coordinate system, and the formal
@@ -495,9 +495,9 @@ formulation because of these advantages.
   Suppose we let /q/ denote a coordinate path function that maps time to
   position components:[fn:27]
 
-  \begin{array}{ll}
-  {q(t) = (x(t),y(t),z(t)).} & {(1.7)} \\
-  \end{array}
+  \begin{equation}
+  {q(t) = (x(t),y(t),z(t)).} & {(1.7)}
+  \end{equation}
 
   We can make this definition[fn:28]
 
@@ -516,7 +516,7 @@ formulation because of these advantages.
 
   #+begin_src scheme
 (q 't)
-;;=> (up (x t) (y t) (z t))
+(up (x t) (y t) (z t))
   #+end_src
 
   The derivative of the coordinate path /Dq/ is the function that maps time to
@@ -529,7 +529,7 @@ formulation because of these advantages.
 
   #+begin_src scheme
 ((D q) 't)
-;;=> (up ((D x) t) ((D y) t) ((D z) t))
+(up ((D x) t) ((D y) t) ((D z) t))
   #+end_src
 
   The function Γ takes a coordinate path and returns a function of time that
@@ -538,7 +538,8 @@ formulation because of these advantages.
 
   #+begin_src scheme
 ((Gamma q) 't)
-;;=> (up t (up (x t) (y t) (z t)) (up ((D x) t) ((D y) t) ((D z) t)))
+
+(up t (up (x t) (y t) (z t)) (up ((D x) t) ((D y) t) ((D z) t)))
   #+end_src
 
   So the composition /L/ ∘ Γ is a function of time that returns the value of the
@@ -546,8 +547,7 @@ formulation because of these advantages.
 
   #+begin_src scheme
 ((compose (L-free-particle 'm) (Gamma q)) 't)
-;;=> (+ (* 1/2 m (expt ((D x) t) 2)) (* 1/2 m (expt ((D y) t) 2)) (* 1/2 m (expt
-;;((D z) t) 2)))
+(+ (* 1/2 m (expt ((D x) t) 2)) (* 1/2 m (expt ((D y) t) 2)) (* 1/2 m (expt ((D z) t) 2)))
   #+end_src
 
   The procedure =show-expression= simplifies the expression and uses T_{E}X to
@@ -599,24 +599,24 @@ formulation because of these advantages.
 
   #+begin_src scheme
 (Lagrangian-action (L-free-particle 3.0) test-path 0.0 10.0)
-;;=> 435
+435
   #+end_src
 
 *** Exercise 1.4: Lagrangian actions
 
     For a free particle an appropriate Lagrangian is[fn:36]
 
-    \begin{array}{ll}
-    {L(t,x,v) = \frac{1}{2}mv^{2}.} & {(1.8)} \\
-    \end{array}
+    \begin{equation}
+    {L(t,x,v) = \frac{1}{2}mv^{2}.} & {(1.8)}
+    \end{equation}
 
     Suppose that /x/ is the constant-velocity straight-line path of a free
     particle, such that /x/_{/a/} = /x/(/t/_{/a/}) and /x/_{/b/} =
     /x/(/t/_{/b/}). Show that the action on the solution path is
 
-    \begin{array}{ll}
-    {\frac{m}{2}\frac{{(x_{b} - x_{a})}^{2}}{t_{b} - t_{a}}.} & {(1.9)} \\
-    \end{array}
+    \begin{equation}
+    {\frac{m}{2}\frac{{(x_{b} - x_{a})}^{2}}{t_{b} - t_{a}}.} & {(1.9)}
+    \end{equation}
 
 ** Paths of minimum action
    :PROPERTIES:
@@ -625,19 +625,20 @@ formulation because of these advantages.
    :END:
    We already know that the actual path of a free particle is uniform motion in
    a straight line. According to Euler and Lagrange, the action is smaller along
-   a straight-line test path than along nearby paths. Let /q/ be a straight-line
-   test path with action /S/[/q/](/t/_{1}, /t/_{2}). Let /q/ + /ϵη/ be a nearby
-   path, obtained from /q/ by adding a path variation /η/ scaled by the real
-   parameter /ϵ/.[fn:37] The action on the varied path is /S/[/q/ + /ϵη/](/t/_{1},
-   /t/_{2}). Euler and Lagrange found that /S/[/q/ + /ϵη/](/t/_{1}, /t/_{2}) >
-   /S/[/q/](/t/_{1}, /t/_{2}) for any /η/ that is zero at the endpoints and for
-   any small nonzero /ϵ/.
+   a straight-line test path than along nearby paths. Let $q$ be a straight-line
+   test path with action $S\left[q\right](t_1, t_2)$. Let $q + \varepsilon \eta$
+   be a nearby path, obtained from $q$ by adding a path variation $\eta$ scaled
+   by the real parameter $\varepsilon$.[fn:37] The action on the varied path is
+   $S\left[q + \varepsilon \eta\right](t_1, t_2)$. Euler and Lagrange found that
+   $S\left[q + \varepsilon \eta\right](t_1, t_2) > S\left[q\right](t_1, t_2)$
+   for any $\eta$ that is zero at the endpoints and for any small nonzero
+   $\eta$.
 
    Let's check this numerically by varying the test path, adding some amount of
-   a test function that is zero at the endpoints /t/ = /t/_{1} and /t/ =
-   /t/_{2}. To make a function /η/ that is zero at the endpoints, given a
-   sufficiently well-behaved function /ν/, we can use /η/(/t/) = (/t/ −
-   /t/_{1})(/t/ − /t/_{2})/ν/(/t/). This can be implemented:
+   a test function that is zero at the endpoints $t = t_1$ and $t = t_2$. To
+   make a function $\eta$ that is zero at the endpoints, given a sufficiently
+   well-behaved function /ν/, we can use /η/(/t/) = (/t/ − /t/_{1})(/t/ −
+   /t/_{2})/ν/(/t/). This can be implemented:
 
    #+begin_src scheme
 (define ((make-eta nu t1 t2) t)
@@ -740,9 +741,9 @@ formulation because of these advantages.
    To illustrate the use of this strategy, we will find trajectories of the
    harmonic oscillator, with Lagrangian[fn:44]
 
-   \begin{array}{ll}
-   {L(t,q,v) = \frac{1}{2}mv^{2} - \frac{1}{2}kq^{2},} & {(1.10)} \\
-   \end{array}
+   \begin{equation}
+   {L(t,q,v) = \frac{1}{2}mv^{2} - \frac{1}{2}kq^{2},} & {(1.10)}
+   \end{equation}
 
    for mass /m/ and spring constant /k/. This Lagrangian is implemented by[fn:45]
 
@@ -770,9 +771,9 @@ formulation because of these advantages.
    We know that the trajectories of this harmonic oscillator, for /m/ = 1 and
    /k/ = 1, are
 
-   \begin{array}{ll}
-   {q(t) = A\,\,\text{cos}(t + \varphi)} & {(1.11)} \\
-   \end{array}
+   \begin{equation}
+   {q(t) = A\,\,\text{cos}(t + \varphi)} & {(1.11)}
+   \end{equation}
 
    where the amplitude /A/ and the phase /φ/ are determined by the initial
    conditions. For the chosen endpoint conditions the solution is /q/(/t/) =
@@ -838,9 +839,9 @@ formulation because of these advantages.
    action /S/[/q/](/t/_{1}, /t/_{2}) is stationary (with respect to any
    variation in the path that keeps the endpoints of the path fixed), then
 
-   \begin{array}{ll}
-   {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack = 0.} & {(1.12)} \\
-   \end{array}
+   \begin{equation}
+   {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack = 0.} & {(1.12)}
+   \end{equation}
 
    Here /L/ is a real-valued function of a local tuple; ∂_{1}/L/ and ∂_{2}/L/
    denote the partial derivatives of /L/ with respect to its generalized
@@ -858,9 +859,9 @@ formulation because of these advantages.
    Lagrange's equations are traditionally written as a separate equation for
    each component of /q/:
 
-   $\begin{array}{ll} {\frac{d}{dt}\frac{\partial
+   $\begin{equation} {\frac{d}{dt}\frac{\partial
    L}{\partial{\overset{˙}{q}}^{i}} - \frac{\partial L}{\partial q^{i}} = 0} &
-   {i = 0,\ldots,n - 1.} \\ \end{array}$
+   {i = 0,\ldots,n - 1.} \end{equation}$
 
    In this way of writing Lagrange's equations the notation does not distinguish
    between /L/, which is a real-valued function of three variables (/t/, /q/,
@@ -892,11 +893,11 @@ formulation because of these advantages.
    $\frac{d}{dt}\left( \left. \frac{\partial L\left( {t,w,\overset{˙}{w}}
    \right)}{\partial{\overset{˙}{w}}^{i}} \right|_{\begin{array}{l} {w = q{(t)}}
    \\
-   {\overset{˙}{w} = \frac{dq{(t)}}{dt}} \\
-   \end{array}} \right) - \left. \frac{\partial L\left( {t,w,\overset{˙}{w}}
-   \right)}{\partial w^{i}} \right|_{\begin{array}{l} {w = q{(t)}} \\
-   {\overset{˙}{w} = \frac{dq{(t)}}{dt}} \\
-   \end{array}} = 0,$
+   {\overset{˙}{w} = \frac{dq{(t)}}{dt}}
+   \end{equation}} \right) - \left. \frac{\partial L\left( {t,w,\overset{˙}{w}}
+   \right)}{\partial w^{i}} \right|_{\begin{array}{l} {w = q{(t)}}
+   {\overset{˙}{w} = \frac{dq{(t)}}{dt}}
+   \end{equation}} = 0,$
 
    where /i/ = 0, ..., /n/ − 1. In these equations we see that the partial
    derivatives of the Lagrangian function are taken, then the path and its
@@ -923,22 +924,22 @@ formulation because of these advantages.
    $$\begin{array}{lll} {g(\mathit{\epsilon})} & {= S\lbrack q +
    \mathit{\epsilon}\eta\rbrack(t_{1},\,\, t_{2})} & \\
    & {= {\int_{t_{1}}^{t_{2}}{L(t,q(t) + \mathit{\epsilon}\eta(t),Dq(t) +
-   \mathit{\epsilon}D\eta(t))dt.}}} & {(1.13)} \\
-   \end{array}
+   \mathit{\epsilon}D\eta(t))dt.}}} & {(1.13)}
+   \end{equation}
 
    Expanding as a power series in /ϵ/
 
-   \begin{array}{ll}
-   {g(\mathit{\epsilon}) = g(0) + \mathit{\epsilon}Dg(0) + \cdots} & {(1.14)} \\
-   \end{array}
+   \begin{equation}
+   {g(\mathit{\epsilon}) = g(0) + \mathit{\epsilon}Dg(0) + \cdots} & {(1.14)}
+   \end{equation}
 
    and using the chain rule we get
 
    $$\begin{array}{lll} {Dg(0)} & {=
    {\int_{t_{1}}^{t_{2}}{(\partial_{1}L(t,q(t),Dq(t))\eta(t))\,\, dt}}} & \\
    & {+ {\int_{t_{1}}^{t_{2}}{(\partial_{2}L(t,q(t),Dq(t))D\eta(t))\,\, dt.}}} &
-   {(1.15)} \\
-   \end{array}
+   {(1.15)}
+   \end{equation}
 
    Integrating the second term by parts we obtain
 
@@ -947,33 +948,33 @@ formulation because of these advantages.
    & {+ \,\partial_{2}L(t,q(t),Dq(t)D\eta(t))\eta(t)|_{t_{1}}^{t_{2}}} & \\
    & {-
    {\int_{t_{1}}^{t_{2}}{\frac{d}{dt}(\partial_{2}L(t,q(t),Dq(t)))\eta(t)dt}}.}
-   & {(1.16)} \\
-   \end{array}
+   & {(1.16)}
+   \end{equation}
 
 
 
    The increment Δ/S/ in the action due to the variation in the path is, to
-   first order in /ϵ/, /ϵDg/(0). Because /η/ is zero at the endpoints the
+   first order in /ϵ/, /ϵDg/(0). Because $\eta$ is zero at the endpoints the
    integrated term is zero. Collecting together the other two terms, and
    reverting to functional notation, we find the increment to be
 
-   \begin{array}{ll}
-   {\Delta S = \mathit{\epsilon}{\int_{t_{1}}^{t_{2}}\left\{ \partial_{1}L \circ \Gamma\lbrack q\rbrack\, - \, D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) \right\}}\eta.} & {(1.17)} \\
-   \end{array}
+   \begin{equation}
+   {\Delta S = \mathit{\epsilon}{\int_{t_{1}}^{t_{2}}\left\{ \partial_{1}L \circ \Gamma\lbrack q\rbrack\, - \, D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) \right\}}\eta.} & {(1.17)}
+   \end{equation}
 
    If Δ/S/ is zero the action is stationary. We retain enough freedom in the
-   choice of the variation that the factor in the integrand multiplying /η/ is
+   choice of the variation that the factor in the integrand multiplying $\eta$ is
    forced to be zero at each point along the path. We argue by contradiction:
    Suppose this factor were nonzero at some particular time. Then it would have
-   to be nonzero in at least one of its components. But if we choose our /η/ to
+   to be nonzero in at least one of its components. But if we choose our $\eta$ to
    be a bump that is nonzero only in that component in a neighborhood of that
    time, and zero everywhere else, then the integral will be nonzero. So we may
    conclude that the factor in curly brackets is identically zero and thus
    obtain Lagrange's equations:[fn:48]
 
-   \begin{array}{ll}
-   {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)\, - \,\partial_{1}L \circ \Gamma\lbrack q\rbrack = 0.} & {(1.18)} \\
-   \end{array}
+   \begin{equation}
+   {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)\, - \,\partial_{1}L \circ \Gamma\lbrack q\rbrack = 0.} & {(1.18)}
+   \end{equation}
 
 ** The Variation Operator
    :PROPERTIES:
@@ -986,81 +987,81 @@ formulation because of these advantages.
 
    Suppose that we have a function /f/[/q/] that depends on a path /q/. How does
    the function vary as the path is varied? Let /q/ be a coordinate path and
-   /q/ + /ϵη/ be a varied path, where the function /η/ is a path-like function
+   /q/ + /ϵη/ be a varied path, where the function $\eta$ is a path-like function
    that can be added to the path /q/, and the factor /ϵ/ is a scale factor. We
    define the /variation δ_{η}f/[/q/] of the function /f/ on the path /q/
    by[fn:49]
 
-   \begin{array}{ll}
-   {\delta_{\eta}f\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{f\lbrack q + \mathit{\epsilon}\eta\rbrack - f\lbrack q\rbrack}{\mathit{\epsilon}} \right).} & {(1.19)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}f\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{f\lbrack q + \mathit{\epsilon}\eta\rbrack - f\lbrack q\rbrack}{\mathit{\epsilon}} \right).} & {(1.19)}
+   \end{equation}
 
    The variation of /f/ is a linear approximation to the change in the function
-   /f/ for small variations in the path. The variation of /f/ depends on /η/.
+   /f/ for small variations in the path. The variation of /f/ depends on $\eta$.
 
 
 
    A simple example is the variation of the identity path function: /I/[/q/] =
    /q/. Applying the definition, we find
 
-   \begin{array}{ll}
-   {\delta_{\eta}I\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{(q + \mathit{\epsilon}\eta) - q}{\mathit{\epsilon}} \right) = \eta.} & {(1.20)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}I\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{(q + \mathit{\epsilon}\eta) - q}{\mathit{\epsilon}} \right) = \eta.} & {(1.20)}
+   \end{equation}
 
    It is traditional to write /δ_{η}I/[/q/] simply as /δq/. Another example is
    the variation of the path function that returns the derivative of the path.
    We have[fn:50]
 
-   \begin{array}{ll}
-   {\delta_{\eta}g\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{D(q + \mathit{\epsilon}\eta) - Dq}{\mathit{\epsilon}} \right) = D\eta\,\,\,\,\text{with}\,\,\,\, g\lbrack q\rbrack = Dq.} & {(1.21)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}g\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{D(q + \mathit{\epsilon}\eta) - Dq}{\mathit{\epsilon}} \right) = D\eta\,\,\,\,\text{with}\,\,\,\, g\lbrack q\rbrack = Dq.} & {(1.21)}
+   \end{equation}
 
    It is traditional to write /δ_{η}g/[/q/] as /δDq/.
 
    The variation may be represented in terms of a derivative. Let /g/(/ϵ/) =
    /f/[/q/ + /ϵη/]; then
 
-   \begin{array}{ll}
-   {\delta_{\eta}f\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{g(\mathit{\epsilon}) - g(0)}{\mathit{\epsilon}} \right) = Dg(0).} & {(1.22)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}f\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{g(\mathit{\epsilon}) - g(0)}{\mathit{\epsilon}} \right) = Dg(0).} & {(1.22)}
+   \end{equation}
 
    Variations have the following derivative-like properties. For path-dependent
    functions /f/ and /g/ and constant /c/:
 
-   \begin{array}{ll}
-   {\delta_{\eta}(f\, g)\lbrack q\rbrack = \delta_{\eta}f\lbrack q\rbrack\,\, g\lbrack q\rbrack + f\lbrack q\rbrack\,\,\delta_{\eta}g\lbrack q\rbrack} & {(1.23)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}(f\, g)\lbrack q\rbrack = \delta_{\eta}f\lbrack q\rbrack\,\, g\lbrack q\rbrack + f\lbrack q\rbrack\,\,\delta_{\eta}g\lbrack q\rbrack} & {(1.23)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {\delta_{\eta}(f + g)\lbrack q\rbrack = \delta_{\eta}f\lbrack q\rbrack\, + \,\,\delta_{\eta}g\lbrack q\rbrack} & {(1.24)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}(f + g)\lbrack q\rbrack = \delta_{\eta}f\lbrack q\rbrack\, + \,\,\delta_{\eta}g\lbrack q\rbrack} & {(1.24)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {\delta_{\eta}(cf)\lbrack q\rbrack = c\,\,\delta_{\eta}f\lbrack q\rbrack.} & {(1.25)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}(cf)\lbrack q\rbrack = c\,\,\delta_{\eta}f\lbrack q\rbrack.} & {(1.25)}
+   \end{equation}
 
    Let /F/ be a path-independent function and /g/ be a path-dependent function;
    then
 
-   \begin{array}{ll}
-   {\delta_{\eta}h\lbrack q\rbrack = (DF \circ g\lbrack q\rbrack)\,\,\delta_{\eta}g\lbrack q\rbrack\,\,\,\text{with}\,\,\,\, h\lbrack q\rbrack = F \circ g\lbrack q\rbrack.} & {(1.26)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}h\lbrack q\rbrack = (DF \circ g\lbrack q\rbrack)\,\,\delta_{\eta}g\lbrack q\rbrack\,\,\,\text{with}\,\,\,\, h\lbrack q\rbrack = F \circ g\lbrack q\rbrack.} & {(1.26)}
+   \end{equation}
 
    The operators /D/ (differentiation) and /δ/ (variation) commute in the
    following sense:
 
-   $$D\begin{array}{ll} {\delta_{\eta}f\lbrack q\rbrack = \delta_{\eta}g\lbrack
+   $$D\begin{equation} {\delta_{\eta}f\lbrack q\rbrack = \delta_{\eta}g\lbrack
    q\rbrack\,\,\,\text{with}\,\,\,\, g\lbrack q\rbrack = D(f\lbrack q\rbrack).}
-   & {(1.27)} \\
-   \end{array}
+   & {(1.27)}
+   \end{equation}
 
    Variations also commute with integration in a similar sense.
 
    If a path-dependent function /f/ is stationary for a particular path /q/ with
    respect to small changes in that path, then it must be stationary for a
    subset of those variations that results from adding small multiples of a
-   particular function /η/ to /q/. So the statement /δ_{η}f/[/q/] = 0 for
-   arbitrary /η/ implies the function /f/ is stationary for small variations of
+   particular function $\eta$ to /q/. So the statement /δ_{η}f/[/q/] = 0 for
+   arbitrary $\eta$ implies the function /f/ is stationary for small variations of
    the path around /q/.
 
    *Exercise 1.7: Properties of* /δ/
@@ -1104,31 +1105,31 @@ formulation because of these advantages.
    :END:
    The action is the integral of the Lagrangian along a path:
 
-   \begin{array}{ll}
-   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{L \circ \Gamma\lbrack q\rbrack.}}} & {(1.28)} \\
-   \end{array}
+   \begin{equation}
+   {S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{L \circ \Gamma\lbrack q\rbrack.}}} & {(1.28)}
+   \end{equation}
 
 
 
    For a realizable path /q/ the variation of the action with respect to any
-   variation /η/ that preserves the endpoints, /η/(/t/_{1}) = /η/(/t/_{2}) = 0,
+   variation $\eta$ that preserves the endpoints, /η/(/t/_{1}) = /η/(/t/_{2}) = 0,
    is zero:
 
-   \begin{array}{ll}
-   {\delta_{\eta}S\lbrack q\rbrack(t_{1},t_{2}) = 0.} & {(1.29)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}S\lbrack q\rbrack(t_{1},t_{2}) = 0.} & {(1.29)}
+   \end{equation}
 
    Variation commutes with integration, so the variation of the action is
 
-   \begin{array}{ll}
-   {\delta_{\eta}S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{\delta_{\eta}h\lbrack q\rbrack\,\,\,\,\text{where}\,\,\,\, h\lbrack q\rbrack = L \circ \Gamma\lbrack q\rbrack.}}} & {(1.30)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}S\lbrack q\rbrack(t_{1},t_{2}) = {\int_{t_{1}}^{t_{2}}{\delta_{\eta}h\lbrack q\rbrack\,\,\,\,\text{where}\,\,\,\, h\lbrack q\rbrack = L \circ \Gamma\lbrack q\rbrack.}}} & {(1.30)}
+   \end{equation}
 
    Using the fact that
 
-   \begin{array}{ll}
-   {\delta_{\eta}\Gamma\lbrack q\rbrack(t) = (0,\eta(t),D\eta(t)),} & {(1.31)} \\
-   \end{array}
+   \begin{equation}
+   {\delta_{\eta}\Gamma\lbrack q\rbrack(t) = (0,\eta(t),D\eta(t)),} & {(1.31)}
+   \end{equation}
 
    which follows from equations ([[file:chapter001.html#disp_1.20][1.20]]) and ([[file:chapter001.html#disp_1.21][1.21]]), and using the chain rule for
    variations ([[file:chapter001.html#disp_1.26][1.26]]), we get[fn:52]
@@ -1138,8 +1139,8 @@ formulation because of these advantages.
    q\rbrack)\delta_{\eta}\Gamma\lbrack q\rbrack}}} & \\
    & {= {\int_{t_{1}}^{t_{2}}{((\partial_{1}L \circ \Gamma\lbrack
    q\rbrack)\eta + (\partial_{2}L \circ \Gamma\lbrack q\rbrack)D\eta).}}} &
-   {(1.32)} \\
-   \end{array}
+   {(1.32)}
+   \end{equation}
 
    Integrating the last term of equation ([[file:chapter001.html#disp_1.32][1.32]]) by parts gives
 
@@ -1147,28 +1148,28 @@ formulation because of these advantages.
    {(\partial_{2}L \circ \Gamma\lbrack q\rbrack)\eta|_{t_{1}}^{t_{2}}} & \\
    & {+ {\int_{t_{1}}^{t_{2}}{\left\{ (\partial_{1}L \circ \Gamma\lbrack
    q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) \right\}\eta.}}} &
-   {(1.33)} \\
-   \end{array}
+   {(1.33)}
+   \end{equation}
 
-   For our variation /η/ we have /η/(/t/_{1}) = /η/(/t/_{2}) = 0, so the first
+   For our variation $\eta$ we have /η/(/t/_{1}) = /η/(/t/_{2}) = 0, so the first
    term vanishes.
 
    Thus the variation of the action is zero if and only if
 
-   \begin{array}{ll}
-   {0 = {\int_{t_{1}}^{t_{2}}{\left\{ (\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) \right\}\,\eta.}}} & {(1.34)} \\
-   \end{array}
+   \begin{equation}
+   {0 = {\int_{t_{1}}^{t_{2}}{\left\{ (\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) \right\}\,\eta.}}} & {(1.34)}
+   \end{equation}
 
 
 
    The variation of the action is zero because, by assumption, /q/ is a
-   realizable path. Thus ([[file:chapter001.html#disp_1.34][1.34]]) must be true for /any/ function /η/ that is zero
-   at the endpoints. Since /η/ is arbitrary, except for being zero at the
+   realizable path. Thus ([[file:chapter001.html#disp_1.34][1.34]]) must be true for /any/ function $\eta$ that is zero
+   at the endpoints. Since $\eta$ is arbitrary, except for being zero at the
    endpoints, the bracketed factor of the integrand is zero. So
 
-   \begin{array}{ll}
-   {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - (\partial_{1}L \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.35)} \\
-   \end{array}
+   \begin{equation}
+   {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - (\partial_{1}L \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.35)}
+   \end{equation}
 
    This is just what we set out to obtain, the Lagrange equations.
 
@@ -1188,15 +1189,15 @@ formulation because of these advantages.
    :END:
    For an example, consider the harmonic oscillator. A Lagrangian is
 
-   \begin{array}{ll}
-   {L(t,x,v) = \frac{1}{2}mv^{2} - \frac{1}{2}kx^{2}.} & {(1.36)} \\
-   \end{array}
+   \begin{equation}
+   {L(t,x,v) = \frac{1}{2}mv^{2} - \frac{1}{2}kx^{2}.} & {(1.36)}
+   \end{equation}
 
    Then
 
-   \begin{array}{ll}
-   {\partial_{1}L(t,x,v) = - kx\,\,\,\,\,\,\text{and}\,\,\,\,\partial_{2}L(t,x,v) = mv.} & {(1.37)} \\
-   \end{array}
+   \begin{equation}
+   {\partial_{1}L(t,x,v) = - kx\,\,\,\,\,\,\text{and}\,\,\,\,\partial_{2}L(t,x,v) = mv.} & {(1.37)}
+   \end{equation}
 
    The Lagrangian is applied to a tuple of the time, a coordinate, and a
    velocity. The symbols /t/, /x/, and /v/ are arbitrary; they are used to
@@ -1206,27 +1207,27 @@ formulation because of these advantages.
    the oscillator /y/(/t/) for each time /t/. The initial segment of the
    corresponding local tuple at time /t/ is
 
-   \begin{array}{ll}
-   {\Gamma\lbrack y\rbrack(t) = (t,y(t),Dy(t)).} & {(1.38)} \\
-   \end{array}
+   \begin{equation}
+   {\Gamma\lbrack y\rbrack(t) = (t,y(t),Dy(t)).} & {(1.38)}
+   \end{equation}
 
    So
 
-   \begin{array}{ll}
-   {(\partial_{1}L \circ \Gamma\lbrack y\rbrack)(t) = - ky(t)\,\,\,\,\,\text{and}\,\,\,\,\,(\partial_{2}L \circ \Gamma\lbrack y\rbrack)(t) = mDy(t),} & {(1.39)} \\
-   \end{array}
+   \begin{equation}
+   {(\partial_{1}L \circ \Gamma\lbrack y\rbrack)(t) = - ky(t)\,\,\,\,\,\text{and}\,\,\,\,\,(\partial_{2}L \circ \Gamma\lbrack y\rbrack)(t) = mDy(t),} & {(1.39)}
+   \end{equation}
 
    and
 
-   \begin{array}{ll}
-   {D(\partial_{2}L \circ \Gamma\lbrack y\rbrack)(t) = mD^{2}y(t),} & {(1.40)} \\
-   \end{array}
+   \begin{equation}
+   {D(\partial_{2}L \circ \Gamma\lbrack y\rbrack)(t) = mD^{2}y(t),} & {(1.40)}
+   \end{equation}
 
    so the Lagrange equation is
 
 
 
-   \begin{array}{ll} {mD^{2}y(t) + ky(t) = 0,} & {(1.41)} \\ \end{array}
+   \begin{equation} {mD^{2}y(t) + ky(t) = 0,} & {(1.41)} \end{equation}
 
    which is the equation of motion of the harmonic oscillator.
 
@@ -1242,11 +1243,11 @@ formulation because of these advantages.
 
    A Lagrangian for this problem is[fn:53]
 
-   \begin{array}{ll}
-   {L(t;\xi,\eta;v_{\xi},v_{\eta}) = \frac{1}{2}m(v_{\xi}^{2} + v_{\eta}^{2}) + \frac{\mu}{\sqrt{\xi^{2} + \eta^{2}}},} & {(1.42)} \\
-   \end{array}
+   \begin{equation}
+   {L(t;\xi,\eta;v_{\xi},v_{\eta}) = \frac{1}{2}m(v_{\xi}^{2} + v_{\eta}^{2}) + \frac{\mu}{\sqrt{\xi^{2} + \eta^{2}}},} & {(1.42)}
+   \end{equation}
 
-   where /ξ/ and /η/ are formal parameters for rectangular coordinates of the
+   where $\xi$ and $\eta$ are formal parameters for rectangular coordinates of the
    particle, and /v_{ξ}/ and /v_{η}/ are formal parameters for corresponding
    rectangular velocity components. Then
 
@@ -1254,22 +1255,22 @@ formulation because of these advantages.
    \lbrack\partial_{1,0}L(t;\xi,\eta;v_{\xi},v_{\eta}),\partial_{1,1}L(t;\xi,\eta;v_{\xi},v_{\eta})\rbrack}
    & \\
    & {{= \left\lbrack {\frac{- \mu\xi}{{(\xi^{2} + \eta^{2})}^{3/2}},\frac{-
-   \mu\eta}{{(\xi^{2} + \eta^{2})}^{3/2}}} \right\rbrack}.} & {(1.43)} \\
-   \end{array}
+   \mu\eta}{{(\xi^{2} + \eta^{2})}^{3/2}}} \right\rbrack}.} & {(1.43)}
+   \end{equation}
 
    Similarly,
 
-   \begin{array}{ll}
-   {\partial_{2}L(t;\xi,\eta;v_{\xi},v_{\eta}) = \lbrack mv_{\xi},mv_{\eta}\rbrack.} & {(1.44)} \\
-   \end{array}
+   \begin{equation}
+   {\partial_{2}L(t;\xi,\eta;v_{\xi},v_{\eta}) = \lbrack mv_{\xi},mv_{\eta}\rbrack.} & {(1.44)}
+   \end{equation}
 
    Now suppose we have a configuration path /q/ = (/x/, /y/), so that the
    coordinate tuple at time /t/ is /q/(/t/) = (/x/(/t/), /y/(/t/)). The initial
    segment of the local tuple at time /t/ is
 
-   \begin{array}{ll}
-   {\Gamma\lbrack q\rbrack(t) = (t;x(t),y(t);Dx(t),Dy(t)).} & {(1.45)} \\
-   \end{array}
+   \begin{equation}
+   {\Gamma\lbrack q\rbrack(t) = (t;x(t),y(t);Dx(t),Dy(t)).} & {(1.45)}
+   \end{equation}
 
    So
 
@@ -1278,23 +1279,23 @@ formulation because of these advantages.
    {(y(t))}^{2})}^{3/2}},\frac{- \mu y(t)}{{({(x(t))}^{2} +
    {(y(t))}^{2})}^{3/2}}} \right\rbrack} & \\
    {(\partial_{2}\, L \circ \Gamma\lbrack q\rbrack)(t)} & {= \lbrack
-   mDx(t),mDy(t)\rbrack} & {(1.46)} \\
-   \end{array}
+   mDx(t),mDy(t)\rbrack} & {(1.46)}
+   \end{equation}
 
    and
 
-   \begin{array}{ll}
-   {D(\partial_{2}\, L \circ \Gamma\lbrack q\rbrack)(t) = \lbrack mD^{2}x(t),mD^{2}y(t)\rbrack.} & {(1.47)} \\
-   \end{array}
+   \begin{equation}
+   {D(\partial_{2}\, L \circ \Gamma\lbrack q\rbrack)(t) = \lbrack mD^{2}x(t),mD^{2}y(t)\rbrack.} & {(1.47)}
+   \end{equation}
 
 
 
    The component Lagrange equations at time /t/ are
 
-   \begin{array}{ll}
+   \begin{equation}
    {mD^{2}x(t) + \frac{\mu x(t)}{{({(x(t))}^{2} + {(y(t))}^{2})}^{3/2}} = 0} & \\
-   {mD^{2}y(t) + \frac{\mu y(t)}{{({(x(t))}^{2} + {(y(t))}^{2})}^{3/2}} = 0.} & {(1.48)} \\
-   \end{array}
+   {mD^{2}y(t) + \frac{\mu y(t)}{{({(x(t))}^{2} + {(y(t))}^{2})}^{3/2}} = 0.} & {(1.48)}
+   \end{equation}
 
    *Exercise 1.9: Lagrange's equations*
 
@@ -1355,9 +1356,9 @@ formulation because of these advantages.
 
    terms are[fn:55]
 
-   \begin{array}{ll}
-   {D^{2}(\partial_{3}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) + \partial_{1}L \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.49)} \\
-   \end{array}
+   \begin{equation}
+   {D^{2}(\partial_{3}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) + \partial_{1}L \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.49)}
+   \end{equation}
 
    In general, these equations, first derived by Poisson, will involve the
    fourth derivative of /q/. Note that the derivation is completely analogous to
@@ -1449,9 +1450,9 @@ formulation because of these advantages.
    the motion of a harmonic oscillator is a sinusoid with a given amplitude,
    frequency, and phase:
 
-   \begin{array}{ll}
-   {x(t) = a\,\,\cos(\omega t + \varphi).} & {(1.50)} \\
-   \end{array}
+   \begin{equation}
+   {x(t) = a\,\,\cos(\omega t + \varphi).} & {(1.50)}
+   \end{equation}
 
 
 
@@ -1492,9 +1493,9 @@ formulation because of these advantages.
 
    The argument m is the /reduced mass/ of the system
 
-   \begin{array}{ll}
-   {m = \frac{m_{1}m_{2}}{m_{1} + m_{2}}.} & {(1.51)} \\
-   \end{array}
+   \begin{equation}
+   {m = \frac{m_{1}m_{2}}{m_{1} + m_{2}}.} & {(1.51)}
+   \end{equation}
 
    For gravity, the potential energy function is
 
@@ -1509,9 +1510,9 @@ formulation because of these advantages.
    their common center of mass. Construct a circular orbit and plug it into the
    Lagrange equations. Show that the residual gives Kepler's law:
 
-   \begin{array}{ll}
-   {n^{2}a^{3} = G(m_{1} + m_{2})} & {(1.52)} \\
-   \end{array}
+   \begin{equation}
+   {n^{2}a^{3} = G(m_{1} + m_{2})} & {(1.52)}
+   \end{equation}
 
    where /n/ is the angular frequency of the orbit and /a/ is the distance
    between the particles.
@@ -1589,9 +1590,9 @@ formulation because of these advantages.
   with respect to the position of the particle with index /α/. We can write
   Newton's equations as
 
-  \begin{array}{ll}
-  {D(m_{\alpha}\, D{\overset{\rightarrow}{x}}_{\alpha})(t) + {\overset{\rightarrow}{\nabla}}_{{\overset{\rightarrow}{x}}_{\alpha}}\,\mathcal{V}(t,{\overset{\rightarrow}{x}}_{0}(t),\ldots,{\overset{\rightarrow}{x}}_{N - 1}(t)) = 0.} & {(1.53)} \\
-  \end{array}
+  \begin{equation}
+  {D(m_{\alpha}\, D{\overset{\rightarrow}{x}}_{\alpha})(t) + {\overset{\rightarrow}{\nabla}}_{{\overset{\rightarrow}{x}}_{\alpha}}\,\mathcal{V}(t,{\overset{\rightarrow}{x}}_{0}(t),\ldots,{\overset{\rightarrow}{x}}_{N - 1}(t)) = 0.} & {(1.53)}
+  \end{equation}
 
   Vectors can be represented as tuples of components of the vectors on a
   rectangular basis. So
@@ -1601,15 +1602,15 @@ formulation because of these advantages.
   is represented as the tuple *x*_{1}(/t/). Let /V/ be the potential energy
   function expressed in terms of components:
 
-  \begin{array}{ll}
-  {V(t;\mathbf{x}_{0}(t),\ldots,\mathbf{x}_{N - 1}(t)) = \mathcal{V}(t,{\overset{\rightarrow}{x}}_{0}(t),\ldots,{\overset{\rightarrow}{x}}_{N - 1}(t)).} & {(1.54)} \\
-  \end{array}
+  \begin{equation}
+  {V(t;\mathbf{x}_{0}(t),\ldots,\mathbf{x}_{N - 1}(t)) = \mathcal{V}(t,{\overset{\rightarrow}{x}}_{0}(t),\ldots,{\overset{\rightarrow}{x}}_{N - 1}(t)).} & {(1.54)}
+  \end{equation}
 
   Newton's equations are
 
-  \begin{array}{ll}
-  {D(m_{\alpha}\, D\mathbf{x}_{\alpha})(t) + \partial_{1,\alpha}V(t;\mathbf{x}_{0}(t),\ldots,\mathbf{x}_{\alpha}(t),\ldots,\mathbf{x}_{N - 1}(t)) = 0,} & {(1.55)} \\
-  \end{array}
+  \begin{equation}
+  {D(m_{\alpha}\, D\mathbf{x}_{\alpha})(t) + \partial_{1,\alpha}V(t;\mathbf{x}_{0}(t),\ldots,\mathbf{x}_{\alpha}(t),\ldots,\mathbf{x}_{N - 1}(t)) = 0,} & {(1.55)}
+  \end{equation}
 
   where ∂_{1,/α/}/V/ is the partial derivative of /V/ with respect to the
   *x*_{/α/}(/t/) argument slot.
@@ -1618,9 +1619,9 @@ formulation because of these advantages.
   the particles into one tuple /x/(/t/), so /x/(/t/) = (*x*_{0}(/t/), ...,
   *x*_{/N/−1}(/t/)). The Lagrange equations for the coordinate path /x/ are
 
-  \begin{array}{ll}
-  {D(\partial_{2}L \circ \Gamma\lbrack x\rbrack) - \partial_{1}L \circ \Gamma\lbrack x\rbrack = 0.} & {(1.56)} \\
-  \end{array}
+  \begin{equation}
+  {D(\partial_{2}L \circ \Gamma\lbrack x\rbrack) - \partial_{1}L \circ \Gamma\lbrack x\rbrack = 0.} & {(1.56)}
+  \end{equation}
 
   Observe that Newton's equations ([[file:chapter001.html#disp_1.55][1.55]]) are just the components of the Lagrange
   equations ([[file:chapter001.html#disp_1.56][1.56]]) if we choose /L/ to have the properties
@@ -1630,8 +1631,8 @@ formulation because of these advantages.
   & \\
   {(\partial_{1}L \circ \Gamma\lbrack x\rbrack)(t)} & {= \lbrack -
   \partial_{1,0}V(t,x(t)),\ldots, - \partial_{1,N - 1}V(t,x(t))\rbrack;} &
-  {(1.57)} \\
-  \end{array}
+  {(1.57)}
+  \end{equation}
 
   here /V/ (/t/, /x/(/t/)) = /V/ (/t/; *x*_{0}(/t/), ..., *x*_{/N/−1}(/t/)) and
   ∂_{1,/α/}/V/ (/t/, /x/(/t/)) is the tuple of the components of the derivative
@@ -1641,24 +1642,24 @@ formulation because of these advantages.
 
 
 
-  \begin{array}{ll} {\partial_{2}L(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N -
+  \begin{equation} {\partial_{2}L(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N -
   1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1})} & \\ {\,\,\,\,\,\,\,\,\,\,{=
   \lbrack m_{0}\mathbf{v}_{0},\ldots,m_{N - 1}\mathbf{v}_{N - 1}\rbrack}} &
-  {(1.58)} \\ \end{array}
+  {(1.58)} \end{equation}
 
   and
 
-  \begin{array}{ll}
+  \begin{equation}
   {\partial_{1}L(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1})} & \\
-  {\text{           } = \lbrack - \partial_{1,0}V(t,x),\ldots, - \partial_{1,N - 1}V(t,x)\rbrack,} & {(1.59)} \\
-  \end{array}
+  {\text{           } = \lbrack - \partial_{1,0}V(t,x),\ldots, - \partial_{1,N - 1}V(t,x)\rbrack,} & {(1.59)}
+  \end{equation}
 
   where /x/ = (*x*_{0}, ..., *x*_{/N/−1}). One choice for /L/ that has the
   required properties ([[file:chapter001.html#disp_1.58][1.58]]--[[file:chapter001.html#disp_1.59][1.59]]) is
 
-  \begin{array}{ll}
-  {L(t,x,v) = \frac{1}{2}{\sum\limits_{\alpha}{m_{\alpha}v_{\alpha}^{2} - V(t,x),}}} & {(1.60)} \\
-  \end{array}
+  \begin{equation}
+  {L(t,x,v) = \frac{1}{2}{\sum\limits_{\alpha}{m_{\alpha}v_{\alpha}^{2} - V(t,x),}}} & {(1.60)}
+  \end{equation}
 
   where
 
@@ -1757,7 +1758,7 @@ formulation because of these advantages.
    'y))) 't))
     #+end_src
 
-   $$\begin{bmatrix} {mD^{2}x\,(t)} \\ {gm + mD^{2}y\,(t)} \\ \end{bmatrix}$$
+   $$\begin{bmatrix} {mD^{2}x\,(t)} {gm + mD^{2}y\,(t)} \end{bmatrix}$$
 
    This equation describes unaccelerated motion in the horizontal direction
    (/mD/^{2}/x/(/t/) = 0) and constant acceleration in the vertical direction
@@ -1784,9 +1785,9 @@ formulation because of these advantages.
 
    . A Lagrangian for the system is /L/ = /T/ − /V/:
 
-   \begin{array}{ll}
-   {L(t;x,y;v_{x},v_{y}) = \frac{1}{2}m\left( {v_{x}^{2} + v_{y}^{2}} \right) - U(\sqrt{x^{2} + y^{2}}).} & {(1.61)} \\
-   \end{array}
+   \begin{equation}
+   {L(t;x,y;v_{x},v_{y}) = \frac{1}{2}m\left( {v_{x}^{2} + v_{y}^{2}} \right) - U(\sqrt{x^{2} + y^{2}}).} & {(1.61)}
+   \end{equation}
 
    As a procedure:
 
@@ -1806,20 +1807,20 @@ formulation because of these advantages.
 
    $$\left\lbrack \begin{array}{l} {mD^{2}x(t) + \frac{DU\left(
    \sqrt{{(y\,\,(t))}^{2} + {(x\,\,(t))}^{2}} \right)\,
-   x(t)}{\sqrt{{(y\,\,(t))}^{2} + {(x\,\,(t))}^{2}}}} \\ {mD^{2}y(t) +
+   x(t)}{\sqrt{{(y\,\,(t))}^{2} + {(x\,\,(t))}^{2}}}} {mD^{2}y(t) +
    \frac{DU\left( \sqrt{{(x\,\,(t))}^{2} + {(y\,\,(t))}^{2}} \right)\,
-   y(t)}{\sqrt{{(x\,\,(t))}^{2} + {(y\,\,(t))}^{2}}}} \\ \end{array}
+   y(t)}{\sqrt{{(x\,\,(t))}^{2} + {(y\,\,(t))}^{2}}}} \end{equation}
    \right\rbrack$$
 
    We can rewrite these Lagrange equations as:
 
-   \begin{array}{ll}
-   {mD^{2}x(t) = - \frac{x(t)}{r(t)}DU(r(t))} & {(1.62)} \\
-   \end{array}
+   \begin{equation}
+   {mD^{2}x(t) = - \frac{x(t)}{r(t)}DU(r(t))} & {(1.62)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {mD^{2}y(t) = - \frac{y(t)}{r(t)}DU(r(t)),} & {(1.63)} \\
-   \end{array}
+   \begin{equation}
+   {mD^{2}y(t) = - \frac{y(t)}{r(t)}DU(r(t)),} & {(1.63)}
+   \end{equation}
 
    where
 
@@ -1833,12 +1834,15 @@ formulation because of these advantages.
 
 
    We can describe the same system in polar coordinates. The relationship
-   between rectangular coordinates (/x/, /y/) and polar coordinates (/r, φ/) is
+   between rectangular coordinates $(x, y)$ and polar coordinates $(r, \varphi)$
+   is
 
-   \begin{array}{ll}
-   {x = r\cos\varphi} & \\
-   {y = r\sin\varphi.} & {(1.64)} \\
-   \end{array}
+   \begin{equation}
+   \begin{aligned}
+   {x = r\cos \varphi} & \\
+   {y = r\sin \varphi} & {(1.64)}
+   \end{aligned}
+   \end{equation}
 
    The relationship of the generalized velocities is derived from the coordinate
    transformation. Consider a configuration path that is represented in both
@@ -1869,10 +1873,10 @@ formulation because of these advantages.
 
    . They are related by ([[file:chapter001.html#disp_1.64][1.64]]):
 
-   \begin{array}{ll}
+   \begin{equation}
    {\widetilde{x}(t) = \widetilde{r}(t)\cos\widetilde{\varphi}(t)} & \\
-   {\widetilde{y}(t) = \widetilde{r}(t)\sin\widetilde{\varphi}(t).} & {(1.65)} \\
-   \end{array}
+   {\widetilde{y}(t) = \widetilde{r}(t)\sin\widetilde{\varphi}(t).} & {(1.65)}
+   \end{equation}
 
    The rectangular velocity at time /t/ is
 
@@ -1885,8 +1889,8 @@ formulation because of these advantages.
    \widetilde{r}(t)D\widetilde{\varphi}(t)\,\sin\,\widetilde{\varphi}(t)} & \\
    {D\widetilde{y}(t)} & {= D\widetilde{r}(t)\,\sin\,\widetilde{\varphi}(t) +
    \widetilde{r}(t)D\widetilde{\varphi}(t)\,\cos\,\widetilde{\varphi}(t).} &
-   {(1.66)} \\
-   \end{array}
+   {(1.66)}
+   \end{equation}
 
    These relations are valid for any configuration path at any moment, so we can
    abstract them to relations among coordinate representations of an arbitrary
@@ -1901,10 +1905,10 @@ formulation because of these advantages.
 
    be the rate of change of /r/ and /φ/. Then
 
-   \begin{array}{ll}
+   \begin{equation}
    {v_{x} = \overset{˙}{r}\cos\varphi - r\overset{˙}{\varphi}\sin\varphi} & \\
-   {v_{y} = \overset{˙}{r}\sin\varphi + r\overset{˙}{\varphi}\cos\varphi.} & {(1.67)} \\
-   \end{array}
+   {v_{y} = \overset{˙}{r}\sin\varphi + r\overset{˙}{\varphi}\cos\varphi.} & {(1.67)}
+   \end{equation}
 
    The kinetic energy is
 
@@ -1912,38 +1916,46 @@ formulation because of these advantages.
 
    :
 
-   \begin{array}{ll}
-   {T(t;r,\varphi;\overset{˙}{r},\overset{˙}{\varphi}) = \frac{1}{2}m\left( {{\overset{˙}{r}}^{2} + r^{2}{\overset{˙}{\varphi}}^{2}} \right),} & {(1.68)} \\
-   \end{array}
+   \begin{equation}
+   {T(t;r,\varphi;\overset{˙}{r},\overset{˙}{\varphi}) = \frac{1}{2}m\left( {{\overset{˙}{r}}^{2} + r^{2}{\overset{˙}{\varphi}}^{2}} \right),} & {(1.68)}
+   \end{equation}
 
    and the Lagrangian is
 
-   \begin{array}{ll}
-   {L(t;r,\varphi;\overset{˙}{r},\overset{˙}{\varphi}) = \frac{1}{2}m\left( {{\overset{˙}{r}}^{2} + r^{2}{\overset{˙}{\varphi}}^{2}} \right) - U(r).} & {(1.69)} \\
-   \end{array}
+   \begin{equation}
+   {L(t;r,\varphi;\overset{˙}{r},\overset{˙}{\varphi}) = \frac{1}{2}m\left( {{\overset{˙}{r}}^{2} + r^{2}{\overset{˙}{\varphi}}^{2}} \right) - U(r).} & {(1.69)}
+   \end{equation}
 
 
 
    We express this Lagrangian as follows:
 
     #+begin_src scheme
-(define ((L-central-polar m U) local) (let ((q
-   (coordinate local)) (qdot (velocity local))) (let ((r (ref q 0)) (phi (ref q
-   1)) (rdot (ref qdot 0)) (phidot (ref qdot 1))) (- (* 1/2 m (+ (square rdot)
-   (square (* r phidot))) ) (U r)))))
+(define ((L-central-polar m U) local)
+  (let ((q (coordinate local))
+        (qdot (velocity local)))
+    (let ((r (ref q 0))
+          (phi (ref q 1))
+          (rdot (ref qdot 0))
+          (phidot (ref qdot 1)))
+      (- (* 1/2 m (+ (square rdot)
+                     (square (* r phidot))) )
+         (U r)))))
     #+end_src
 
    Lagrange's equations are
 
     #+begin_src scheme
-(show-expression (((Lagrange-equations
-   (L-central-polar 'm (literal-function 'U))) (up (literal-function 'r)
-   (literal-function 'phi))) 't))
+(show-expression
+ (((Lagrange-equations
+    (L-central-polar 'm (literal-function 'U)))
+   (up (literal-function 'r)
+       (literal-function 'phi))) 't))
     #+end_src
 
    $$\left\lbrack \begin{array}{l} {mD^{2}r\,(t) -
-   mr\,(t)\,{(D\varphi\,\,(t))}^{2} + DU\,(r\,(t))} \\ {2mDr\,(t)\, r\,(t)\,
-   D\varphi\,(t) + mD^{2}\varphi\,(t)\,{(r\,(t))}^{2}} \\ \end{array}
+   mr\,(t)\,{(D\varphi\,\,(t))}^{2} + DU\,(r\,(t))} {2mDr\,(t)\, r\,(t)\,
+   D\varphi\,(t) + mD^{2}\varphi\,(t)\,{(r\,(t))}^{2}} \end{equation}
    \right\rbrack$$
 
    We can interpret the first equation as saying that the product of the mass
@@ -1991,9 +2003,9 @@ formulation because of these advantages.
     the corresponding path in primed coordinates, then the Lagrangians must
     satisfy:
 
-    \begin{array}{ll}
-    {L\prime \circ \Gamma\lbrack q\prime\rbrack = L \circ \Gamma\lbrack q\rbrack.} & {(1.70)} \\
-    \end{array}
+    \begin{equation}
+    {L\prime \circ \Gamma\lbrack q\prime\rbrack = L \circ \Gamma\lbrack q\rbrack.} & {(1.70)}
+    \end{equation}
 
     We have seen that the transformation from rectangular to polar coordinates
     implies that the generalized velocities transform in a certain way. The
@@ -2006,9 +2018,9 @@ formulation because of these advantages.
     the corresponding function that maps local tuples in the primed coordinate
     system to corresponding local tuples in the unprimed coordinate system:
 
-    \begin{array}{ll}
-    {C \circ \Gamma\lbrack q\prime\rbrack = \Gamma\lbrack q\rbrack.} & {(1.71)} \\
-    \end{array}
+    \begin{equation}
+    {C \circ \Gamma\lbrack q\prime\rbrack = \Gamma\lbrack q\rbrack.} & {(1.71)}
+    \end{equation}
 
     We will deduce the general form of /C/ below.
 
@@ -2017,41 +2029,41 @@ formulation because of these advantages.
     Given such a local-tuple transformation /C/, a Lagrangian /L/′ that
     satisfies equation ([[file:chapter001.html#disp_1.70][1.70]]) is
 
-    \begin{array}{ll}
-    {L\prime = L \circ C.} & {(1.72)} \\
-    \end{array}
+    \begin{equation}
+    {L\prime = L \circ C} & {(1.72)}
+    \end{equation}
 
     We can see this by substituting for /L/′ in equation ([[file:chapter001.html#disp_1.70][1.70]]):
 
-    \begin{array}{ll}
-    {L\prime \circ \Gamma\lbrack q\prime\rbrack = L \circ C \circ \Gamma\lbrack q\prime\rbrack = L \circ \Gamma\lbrack q\rbrack.} & {(1.73)} \\
-    \end{array}
+    \begin{equation}
+    {L\prime \circ \Gamma\lbrack q\prime\rbrack = L \circ C \circ \Gamma\lbrack q\prime\rbrack = L \circ \Gamma\lbrack q\rbrack.} & {(1.73)}
+    \end{equation}
 
     To find the local-tuple transformation /C/ given a coordinate transformation
     /F/, we deduce how each component of the local tuple transforms. The
     coordinate transformation specifies how the coordinate component of the
     local tuple transforms
 
-    \begin{array}{ll}
-    {x = F(t,x\prime).} & {(1.74)} \\
-    \end{array}
+    \begin{equation}
+    {x = F(t,x\prime).} & {(1.74)}
+    \end{equation}
 
     The generalized-velocity component of the local-tuple transformation can be
     deduced as follows. Let /q/ and /q/′ be the same configuration path
     expressed in the two coordinate systems. Substituting these paths into the
     coordinate transformation and computing the derivative, we find
 
-    \begin{array}{ll}
-    {Dq(t) = \partial_{0}F(t,q\prime(t)) + \partial_{1}F(t,q\prime(t))Dq\prime(t).} & {(1.75)} \\
-    \end{array}
+    \begin{equation}
+    {Dq(t) = \partial_{0}F(t,q\prime(t)) + \partial_{1}F(t,q\prime(t))Dq\prime(t).} & {(1.75)}
+    \end{equation}
 
     Through any point there is always a path of any given velocity, so we may
     generalize and conclude that along corresponding coordinate paths the
     generalized velocities satisfy
 
-    \begin{array}{ll}
-    {v = \partial_{0}F(t,x\prime) + \partial_{1}F(t,x\prime)v\prime.} & {(1.76)} \\
-    \end{array}
+    \begin{equation}
+    {v = \partial_{0}F(t,x\prime) + \partial_{1}F(t,x\prime)v\prime.} & {(1.76)}
+    \end{equation}
 
     If needed, rules for higher-derivative components of the local tuple can be
     determined in a similar fashion. The local-tuple transformation that takes a
@@ -2060,14 +2072,14 @@ formulation because of these advantages.
 
     $$\begin{array}{lll} {(t,x,v,\ldots)} & {= C(t,x\prime,v\prime,\ldots)} & \\
     & {= (t,F(t,x\prime),\,\,\partial_{0}F(t,x\prime) +
-    \partial_{1}F(t,x\prime)v\prime,\ldots).} & {(1.77)} \\
-    \end{array}
+    \partial_{1}F(t,x\prime)v\prime,\ldots).} & {(1.77)}
+    \end{equation}
 
     So if we take the Lagrangian /L/′ to be
 
-    \begin{array}{ll}
-    {L\prime = L \circ C,} & {(1.78)} \\
-    \end{array}
+    \begin{equation}
+    {L\prime = L \circ C,} & {(1.78)}
+    \end{equation}
 
 
 
@@ -2113,8 +2125,8 @@ formulation because of these advantages.
      #+end_src
 
     $$\begin{pmatrix} {- \overset{˙}{\varphi}r\sin\,(\varphi) +
-    \overset{˙}{r}\cos\,(\varphi)} \\ {\overset{˙}{\varphi}r\cos\,(\varphi) +
-    \overset{˙}{r}\sin\,(\varphi)} \\ \end{pmatrix}$$
+    \overset{˙}{r}\cos\,(\varphi)} {\overset{˙}{\varphi}r\cos\,(\varphi) +
+    \overset{˙}{r}\sin\,(\varphi)} \end{pmatrix}$$
 
     We can use F->C to find the Lagrangian for central force motion in polar
     coordinates from the Lagrangian in rectangular components, using equation
@@ -2243,9 +2255,9 @@ formulation because of these advantages.
    terms of these. In terms of the generalized coordinates the rectangular
    coordinates of particle /α/ are
 
-   \begin{array}{ll}
-   {\mathbf{x}_{\alpha} = f_{\alpha}(t,q).} & {(1.79)} \\
-   \end{array}
+   \begin{equation}
+   {\mathbf{x}_{\alpha} = f_{\alpha}(t,q).} & {(1.79)}
+   \end{equation}
 
    For irredundant coordinates /q/ all the coordinate constraints are built into
    the functions /f_{α}/. We deduce the relationship of the generalized
@@ -2253,9 +2265,9 @@ formulation because of these advantages.
    inserting path functions into equation ([[file:chapter001.html#disp_1.79][1.79]]), differentiating, and
    abstracting to arbitrary velocities (see [[file:chapter001.html#h3_1-6-1][section 1.6.1]]). We find
 
-   \begin{array}{ll}
-   {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q) + \partial_{1}f_{\alpha}(t,q)v.} & {(1.80)} \\
-   \end{array}
+   \begin{equation}
+   {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q) + \partial_{1}f_{\alpha}(t,q)v.} & {(1.80)}
+   \end{equation}
 
    We use equations ([[file:chapter001.html#disp_1.79][1.79]]) and ([[file:chapter001.html#disp_1.80][1.80]]) to express the kinetic energy in terms of
    the generalized coordinates and velocities. Let
@@ -2265,9 +2277,9 @@ formulation because of these advantages.
    be the kinetic energy as a function of the rectangular coordinates and
    velocities:
 
-   \begin{array}{ll}
-   {\widetilde{T}(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1}) = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}\mathbf{v}_{\alpha}^{2},}}} & {(1.81)} \\
-   \end{array}
+   \begin{equation}
+   {\widetilde{T}(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1}) = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}\mathbf{v}_{\alpha}^{2},}}} & {(1.81)}
+   \end{equation}
 
    where
 
@@ -2281,8 +2293,8 @@ formulation because of these advantages.
    \widetilde{T}(t,f(t,q),\partial_{0}f(t,q) + \partial_{1}f(t,q)v)} & \\
    & {=
    {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}{(\partial_{0}f_{\alpha}(t,q) +
-   \partial_{1}f_{\alpha}(t,q)v)}^{2}.}}} & {(1.82)} \\
-   \end{array}
+   \partial_{1}f_{\alpha}(t,q)v)}^{2}.}}} & {(1.82)}
+   \end{equation}
 
    Similarly, we use equation ([[file:chapter001.html#disp_1.79][1.79]]) to reexpress the potential energy in terms
    of the generalized coordinates. Let
@@ -2293,9 +2305,9 @@ formulation because of these advantages.
    tuple of rectangular coordinates /x/. Expressed in generalized coordinates
    the potential energy is
 
-   \begin{array}{ll}
-   {V(t,q,v) = \widetilde{V}(t,f(t,q)).} & {(1.83)} \\
-   \end{array}
+   \begin{equation}
+   {V(t,q,v) = \widetilde{V}(t,f(t,q)).} & {(1.83)}
+   \end{equation}
 
    We take the Lagrangian to be the difference of the kinetic energy and the
    potential energy: /L/ = /T/ − /V/.
@@ -2315,14 +2327,14 @@ formulation because of these advantages.
    The position of the bob is given, in rectangular coordinates, by
 
    $$\begin{array}{llll} {x = l\sin\theta} & \text{and} & {y = y_{s}(t) -
-   l\cos\theta.} & {(1.84)} \\
-   \end{array}
+   l\cos\theta.} & {(1.84)}
+   \end{equation}
 
    The velocities are
 
    $$\begin{array}{llll} {v_{x} = l\overset{˙}{\theta}\cos\theta} & \text{and} &
-   {v_{y} = Dy_{s}(t) + l\overset{˙}{\theta}\sin\theta,} & {(1.85)} \\
-   \end{array}
+   {v_{y} = Dy_{s}(t) + l\overset{˙}{\theta}\sin\theta,} & {(1.85)}
+   \end{equation}
 
 
 
@@ -2341,9 +2353,9 @@ formulation because of these advantages.
 
    . Expressed in generalized coordinates the kinetic energy is
 
-   \begin{array}{ll}
-   {T(t,\theta,\overset{˙}{\theta}) = \frac{1}{2}m(l^{2}{\overset{˙}{\theta}}^{2} + {(Dy_{s}(t))}^{2} + 2lDy_{s}(t)\overset{˙}{\theta}\sin\theta).} & {(1.86)} \\
-   \end{array}
+   \begin{equation}
+   {T(t,\theta,\overset{˙}{\theta}) = \frac{1}{2}m(l^{2}{\overset{˙}{\theta}}^{2} + {(Dy_{s}(t))}^{2} + 2lDy_{s}(t)\overset{˙}{\theta}\sin\theta).} & {(1.86)}
+   \end{equation}
 
    The potential energy is
 
@@ -2351,17 +2363,17 @@ formulation because of these advantages.
 
    . Expressed in generalized coordinates the potential energy is
 
-   \begin{array}{ll}
-   {V(t,\theta,\overset{˙}{\theta}) = gm(y_{s}(t) - l\cos\theta).} & {(1.87)} \\
-   \end{array}
+   \begin{equation}
+   {V(t,\theta,\overset{˙}{\theta}) = gm(y_{s}(t) - l\cos\theta).} & {(1.87)}
+   \end{equation}
 
    A Lagrangian is /L/ = /T/ − /V/ :
 
    $$\begin{array}{lll} {L(t,\theta,\overset{˙}{\theta})} & {=
    \frac{1}{2}m(l^{2}{\overset{˙}{\theta}}^{2} + {(Dy_{s}(t))}^{2} + 2l\,
    Dy_{s}(t)\overset{˙}{\theta}\sin\theta)} & \\
-   & {\text{   } - gm(y_{s}(t) - l\cos\theta).} & {(1.88)} \\
-   \end{array}
+   & {\text{   } - gm(y_{s}(t) - l\cos\theta).} & {(1.88)}
+   \end{equation}
 
 
 
@@ -2400,9 +2412,9 @@ formulation because of these advantages.
    A bead of mass /m/ moves without friction on a triaxial ellipsoidal surface.
    In rectangular coordinates the surface satisfies
 
-   \begin{array}{ll}
-   {\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = 1} & {(1.89)} \\
-   \end{array}
+   \begin{equation}
+   {\frac{x^{2}}{a^{2}} + \frac{y^{2}}{b^{2}} + \frac{z^{2}}{c^{2}} = 1} & {(1.89)}
+   \end{equation}
 
    for some constants /a/, /b/, and /c/. Identify suitable generalized
    coordinates, formulate a Lagrangian, and find Lagrange's equations.
@@ -2459,9 +2471,9 @@ formulation because of these advantages.
    constraints among some of the particles. We assume that all of these
    constraints are of the form
 
-   \begin{array}{ll}
-   {({\overset{\rightarrow}{x}}_{\alpha}(t) - {\overset{\rightarrow}{x}}_{\beta}(t)) \cdot ({\overset{\rightarrow}{x}}_{\alpha}(t) - {\overset{\rightarrow}{x}}_{\beta}(t)) = l_{\alpha\beta}^{2};} & {(1.90)} \\
-   \end{array}
+   \begin{equation}
+   {({\overset{\rightarrow}{x}}_{\alpha}(t) - {\overset{\rightarrow}{x}}_{\beta}(t)) \cdot ({\overset{\rightarrow}{x}}_{\alpha}(t) - {\overset{\rightarrow}{x}}_{\beta}(t)) = l_{\alpha\beta}^{2};} & {(1.90)}
+   \end{equation}
 
    that is, the distance between particles /α/ and /β/ is /l_{αβ}/.
 
@@ -2476,10 +2488,10 @@ formulation because of these advantages.
    are the vector constraint forces associated with the rigid constraint between
    particle /α/ and particle /β/. So
 
-   \begin{array}{ll}
+   \begin{equation}
    {D(m_{\alpha}D{\overset{\rightarrow}{x}}_{\alpha})(t)} & \\
-   {\text{       } = - {\overset{\rightarrow}{\nabla}}_{\overset{\rightarrow}{x}\alpha}\mathcal{V}(t,{\overset{\rightarrow}{x}}_{0}(t),\ldots,{\overset{\rightarrow}{x}}_{N - 1}(t)) + {\sum\limits_{\{\beta|\beta\leftrightarrow\alpha\}}{{\overset{\rightarrow}{F}}_{\alpha\beta}(t),}}} & {(1.91)} \\
-   \end{array}
+   {\text{       } = - {\overset{\rightarrow}{\nabla}}_{\overset{\rightarrow}{x}\alpha}\mathcal{V}(t,{\overset{\rightarrow}{x}}_{0}(t),\ldots,{\overset{\rightarrow}{x}}_{N - 1}(t)) + {\sum\limits_{\{\beta|\beta\leftrightarrow\alpha\}}{{\overset{\rightarrow}{F}}_{\alpha\beta}(t),}}} & {(1.91)}
+   \end{equation}
 
    where in the summation /β/ ranges over only those particle indices for which
    there are rigid constraints with the particle indexed by /α/; we use the
@@ -2491,9 +2503,9 @@ formulation because of these advantages.
    The force of constraint is directed along the line between the particles, so
    we may write
 
-   \begin{array}{ll}
-   {{\overset{\rightarrow}{F}}_{\alpha\beta}(t) = F_{\alpha\beta}(t)\frac{{\overset{\rightarrow}{x}}_{\beta}(t) - {\overset{\rightarrow}{x}}_{\alpha}(t)}{l_{\alpha\beta}}} & {(1.92)} \\
-   \end{array}
+   \begin{equation}
+   {{\overset{\rightarrow}{F}}_{\alpha\beta}(t) = F_{\alpha\beta}(t)\frac{{\overset{\rightarrow}{x}}_{\beta}(t) - {\overset{\rightarrow}{x}}_{\alpha}(t)}{l_{\alpha\beta}}} & {(1.92)}
+   \end{equation}
 
    where /F_{αβ}/(/t/) is the scalar magnitude of the tension in the constraint
    at time /t/. Note that
@@ -2510,8 +2522,8 @@ formulation because of these advantages.
    V(t,x)}} & \\
    & {- {\sum\limits_{\{\alpha,\beta|\alpha <
    \beta,\alpha\leftrightarrow\beta\}}{\frac{F_{\alpha\beta}}{2l_{\alpha\beta}}\lbrack{(\mathbf{x}_{\beta} -
-   \mathbf{x}_{\alpha})}^{2} - l_{\alpha\beta}^{2}\rbrack}}} & {(1.93)} \\
-   \end{array}
+   \mathbf{x}_{\alpha})}^{2} - l_{\alpha\beta}^{2}\rbrack}}} & {(1.93)}
+   \end{equation}
 
    where the constraint forces are being treated as additional generalized
    coordinates. Here /x/ is a structure composed of all the rectangular
@@ -2531,9 +2543,9 @@ formulation because of these advantages.
    does not appear in the Lagrangian, and /F/ itself appears only linearly. So
    the Lagrange equations associated with /F/ are
 
-   \begin{array}{ll}
-   {{(\mathbf{x}_{\beta}(t) - \mathbf{x}_{\alpha}(t))}^{2} - l_{\alpha\beta}^{2} = 0} & {(1.94)} \\
-   \end{array}
+   \begin{equation}
+   {{(\mathbf{x}_{\beta}(t) - \mathbf{x}_{\alpha}(t))}^{2} - l_{\alpha\beta}^{2} = 0} & {(1.94)}
+   \end{equation}
 
    but this is just a restatement of the constraints. The Lagrange equations for
    the coordinates of the particles are Newton's equations ([[file:chapter001.html#disp_1.91][1.91]])
@@ -2542,8 +2554,8 @@ formulation because of these advantages.
    \partial_{1,\alpha}V(t,x(t))} & \\
    & {\,\,\,\,\,\,\,\, +
    {\sum\limits_{\{\beta|\alpha\leftrightarrow\beta\}}{F_{\alpha\beta}(t)\frac{\mathbf{x}_{\beta}(t) -
-   \mathbf{x}_{\alpha}(t)}{l_{\alpha\beta}}}}.} & {(1.95)} \\
-   \end{array}
+   \mathbf{x}_{\alpha}(t)}{l_{\alpha\beta}}}}.} & {(1.95)}
+   \end{equation}
 
 
 
@@ -2565,9 +2577,9 @@ formulation because of these advantages.
    There exist functions /f_{α}/ that give the rectangular coordinates of the
    constituent particles in terms of /q/ and /c/:
 
-   \begin{array}{ll}
-   {\mathbf{x}_{\alpha} = f_{\alpha}(t,q,c).} & {(1.96)} \\
-   \end{array}
+   \begin{equation}
+   {\mathbf{x}_{\alpha} = f_{\alpha}(t,q,c).} & {(1.96)}
+   \end{equation}
 
    To reexpress the Lagrangian in terms of /q/, /c/, and /F/, we need to find
    *v*_{/α/} in terms of the generalized velocities
@@ -2581,23 +2593,23 @@ formulation because of these advantages.
    : we do this by differentiating /f_{α}/ along a path and abstracting to
    arbitrary velocities (see [[file:chapter001.html#h3_1-6-1][section 1.6.1]]):
 
-   \begin{array}{ll}
-   {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q,c) + \partial_{1}f_{\alpha}(t,q,c)\,\,\overset{˙}{q} + \partial_{2}f_{\alpha}(t,q,c)\,\,\overset{˙}{c}.} & {(1.97)} \\
-   \end{array}
+   \begin{equation}
+   {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q,c) + \partial_{1}f_{\alpha}(t,q,c)\,\,\overset{˙}{q} + \partial_{2}f_{\alpha}(t,q,c)\,\,\overset{˙}{c}.} & {(1.97)}
+   \end{equation}
 
    Substituting these into Lagrangian ([[file:chapter001.html#disp_1.93][1.93]]), and using
 
-   \begin{array}{ll}
-   {c_{\alpha\beta}^{2} = {(\mathbf{x}_{\beta} - \mathbf{x}_{\alpha})}^{2},} & {(1.98)} \\
-   \end{array}
+   \begin{equation}
+   {c_{\alpha\beta}^{2} = {(\mathbf{x}_{\beta} - \mathbf{x}_{\alpha})}^{2},} & {(1.98)}
+   \end{equation}
 
    we find
 
-   \begin{array}{ll}
+   \begin{equation}
    {L\prime(t;q,c,F;\overset{˙}{q},\overset{˙}{c},\overset{˙}{F})} & \\
    {\,\,\,\,\,\,\,\,\,\, = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}{(\partial_{0}f_{\alpha}(t,q,c) + \partial_{1}f_{\alpha}(t,q,c)\,\,\overset{˙}{q} + \partial_{2}f_{\alpha}(t,q,c)\,\,\overset{˙}{c})}^{2}}}} & \\
-   {\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, - V(t,f(t,q,c)) - {\sum\limits_{\{\alpha,\beta|\alpha < \beta,\alpha\leftrightarrow\beta\}}{\frac{F_{\alpha\beta}}{2l_{\alpha\beta}}\lbrack c_{\alpha\beta}^{2} - l_{\alpha\beta}^{2}\rbrack.}}} & {(1.99)} \\
-   \end{array}
+   {\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\,\, - V(t,f(t,q,c)) - {\sum\limits_{\{\alpha,\beta|\alpha < \beta,\alpha\leftrightarrow\beta\}}{\frac{F_{\alpha\beta}}{2l_{\alpha\beta}}\lbrack c_{\alpha\beta}^{2} - l_{\alpha\beta}^{2}\rbrack.}}} & {(1.99)}
+   \end{equation}
 
 
 
@@ -2606,9 +2618,9 @@ formulation because of these advantages.
 
    The Lagrange equations associated with /F/ just restate the constraints:
 
-   \begin{array}{ll}
-   {0 = c_{\alpha\beta}^{2}(t) - l_{\alpha\beta}^{2}} & {(1.100)} \\
-   \end{array}
+   \begin{equation}
+   {0 = c_{\alpha\beta}^{2}(t) - l_{\alpha\beta}^{2}} & {(1.100)}
+   \end{equation}
 
    and consequently we know that along a solution path, /c/(/t/) = /l/ and
    /Dc/(/t/) = /D/^{2}/c/(/t/) = 0. We can use this result to simplify the
@@ -2620,8 +2632,8 @@ formulation because of these advantages.
    $$\begin{array}{lll} {L''(t,q,\overset{˙}{q})} & {=
    {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}{(\partial_{0}f_{\alpha}(t,q,l) +
    \partial_{1}f_{\alpha}(t,q,l)\,\,\overset{˙}{q})}^{2}}}} & \\
-   & {\,\,\, - V(t,f(t,q,l)),} & {(1.101)} \\
-   \end{array}
+   & {\,\,\, - V(t,f(t,q,l)),} & {(1.101)}
+   \end{equation}
 
    but this is exactly /T/ − /V/ where /T/ and /V/ are computed from the
    generalized coordinates /q/, with fixed constraints. Notice that the
@@ -2752,10 +2764,10 @@ formulation because of these advantages.
     Let *x*_{/α/} be the tuple of rectangular components of the constituent
     particle with index /α/, and let *v*_{/α/} be its velocity. The Lagrangian
 
-    \begin{array}{ll}
+    \begin{equation}
     {L_{f}(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1})} & \\
-    {\,\,\,\,\,\,\, = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}\mathbf{v}_{\alpha}^{2} - V(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1})}}} & {(1.102)} \\
-    \end{array}
+    {\,\,\,\,\,\,\, = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}\mathbf{v}_{\alpha}^{2} - V(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1})}}} & {(1.102)}
+    \end{equation}
 
     is the difference of kinetic and potential energies of the constituent
     particles. This is a suitable Lagrangian for a set of unconstrained free
@@ -2771,18 +2783,18 @@ formulation because of these advantages.
     the dimension of /q/. From this coordinate transformation we can find the
     local-tuple transformation function (see [[file:chapter001.html#h3_1-6-1][section 1.6.1]])
 
-    \begin{array}{ll}
-    {(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1}) = C(t,q,v).} & {(1.103)} \\
-    \end{array}
+    \begin{equation}
+    {(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1}) = C(t,q,v).} & {(1.103)}
+    \end{equation}
 
     A Lagrangian for the constrained system can be obtained from the Lagrangian
     for the unconstrained system by composing it with the local-tuple
     transformation function from constrained coordinates to unconstrained
     coordinates:
 
-    \begin{array}{ll}
-    {L = L_{f} \circ C.} & {(1.104)} \\
-    \end{array}
+    \begin{equation}
+    {L = L_{f} \circ C.} & {(1.104)}
+    \end{equation}
 
     The constraints enter only in the transformation.
 
@@ -2791,9 +2803,9 @@ formulation because of these advantages.
     for a free particle of mass /m/ in a vertical plane subject to a
     gravitational potential with acceleration /g/ is
 
-    \begin{array}{ll}
-    {L_{f}\left( {t;x,y;v_{x},v_{y}} \right) = \frac{1}{2}m(v_{x}^{2} + v_{y}^{2}) - mgy,} & {(1.105)} \\
-    \end{array}
+    \begin{equation}
+    {L_{f}\left( {t;x,y;v_{x},v_{y}} \right) = \frac{1}{2}m(v_{x}^{2} + v_{y}^{2}) - mgy,} & {(1.105)}
+    \end{equation}
 
     where /y/ measures the height of the point mass. A program that computes
     this Lagrangian is
@@ -2917,35 +2929,35 @@ formulation because of these advantages.
    Let's first explain what we mean by a “total time derivative.” Let /F/ be a
    function of time and coordinates. The function /F/ on the path at time /t/ is
 
-   \begin{array}{ll}
-   {(F \circ \Gamma\lbrack q\rbrack)(t) = F(t,q(t)).} & {(1.106)} \\
-   \end{array}
+   \begin{equation}
+   {(F \circ \Gamma\lbrack q\rbrack)(t) = F(t,q(t)).} & {(1.106)}
+   \end{equation}
 
    So, by the chain rule
 
-   \begin{array}{ll}
-   {D(F \circ \Gamma\lbrack q\rbrack)(t) = \partial_{0}F(t,q(t)) + \partial_{1}F(t,q(t))Dq(t).} & {(1.107)} \\
-   \end{array}
+   \begin{equation}
+   {D(F \circ \Gamma\lbrack q\rbrack)(t) = \partial_{0}F(t,q(t)) + \partial_{1}F(t,q(t))Dq(t).} & {(1.107)}
+   \end{equation}
 
    More formally, the time derivative of /F/ along a path /q/ is
 
-   \begin{array}{ll}
-   {D(F \circ \Gamma\lbrack q\rbrack) = (DF \circ \Gamma\lbrack q\rbrack)\, D\Gamma\lbrack q\rbrack.} & {(1.108)} \\
-   \end{array}
+   \begin{equation}
+   {D(F \circ \Gamma\lbrack q\rbrack) = (DF \circ \Gamma\lbrack q\rbrack)\, D\Gamma\lbrack q\rbrack.} & {(1.108)}
+   \end{equation}
 
    Because /F/ depends only on time and coordinates, we have
 
-   \begin{array}{ll}
-   {DF \circ \Gamma\lbrack q\rbrack = \lbrack\partial_{0}F \circ \Gamma\lbrack q\rbrack,\partial_{1}F \circ \Gamma\lbrack q\rbrack\rbrack.} & {(1.109)} \\
-   \end{array}
+   \begin{equation}
+   {DF \circ \Gamma\lbrack q\rbrack = \lbrack\partial_{0}F \circ \Gamma\lbrack q\rbrack,\partial_{1}F \circ \Gamma\lbrack q\rbrack\rbrack.} & {(1.109)}
+   \end{equation}
 
 
 
    So we need only the first two components of /D/Γ[/q/],
 
-   \begin{array}{ll}
-   {(D\Gamma\lbrack q\rbrack)(t) = (1,Dq(t),D^{2}q(t),\ldots),} & {(1.110)} \\
-   \end{array}
+   \begin{equation}
+   {(D\Gamma\lbrack q\rbrack)(t) = (1,Dq(t),D^{2}q(t),\ldots),} & {(1.110)}
+   \end{equation}
 
    to form the product
 
@@ -2953,8 +2965,8 @@ formulation because of these advantages.
    \circ \Gamma\lbrack q\rbrack + (\partial_{1}F \circ \Gamma\lbrack
    q\rbrack)Dq} & \\
    & {= (\partial_{0}F + (\partial_{1}F)\overset{˙}{Q}) \circ \Gamma\lbrack
-   q\rbrack,} & {(1.111)} \\
-   \end{array}
+   q\rbrack,} & {(1.111)}
+   \end{equation}
 
    where
 
@@ -2972,9 +2984,9 @@ formulation because of these advantages.
 
    The function
 
-   \begin{array}{ll}
-   {D_{t}F = \partial_{0}F + (\partial_{1}F)\overset{˙}{Q}} & {(1.112)} \\
-   \end{array}
+   \begin{equation}
+   {D_{t}F = \partial_{0}F + (\partial_{1}F)\overset{˙}{Q}} & {(1.112)}
+   \end{equation}
 
    is called the /total time derivative/ of /F/ ; it is a function of three
    arguments: the time, the generalized coordinates, and the generalized
@@ -2985,17 +2997,17 @@ formulation because of these advantages.
    derivative of the composition of the function /F/ with the same local-tuple
    path:
 
-   \begin{array}{ll}
-   {D_{t}F \circ \Gamma\lbrack q\rbrack = D(F \circ \Gamma\lbrack q\rbrack).} & {(1.113)} \\
-   \end{array}
+   \begin{equation}
+   {D_{t}F \circ \Gamma\lbrack q\rbrack = D(F \circ \Gamma\lbrack q\rbrack).} & {(1.113)}
+   \end{equation}
 
    The total time derivative /D_{t}F/ is explicitly given by
 
    $$\begin{array}{lll} {D_{t}F(t,q,v,a,\ldots) =} &
    {\partial_{0}F(t,q,v,a,\ldots)} & \\
    & {+ \partial_{1}F(t,q,v,a,\ldots)v} & \\
-   & {+ \partial_{2}F(t,q,v,a,\ldots)a + \cdots,} & {(1.114)} \\
-   \end{array}
+   & {+ \partial_{2}F(t,q,v,a,\ldots)a + \cdots,} & {(1.114)}
+   \end{equation}
 
    where we take as many terms as needed to exhaust the arguments of /F/.
 
@@ -3026,9 +3038,9 @@ formulation because of these advantages.
    time derivative of a function /F/ that depends only on the time and the
    coordinates
 
-   \begin{array}{ll}
-   {L\prime = L + D_{t}F.} & {(1.115)} \\
-   \end{array}
+   \begin{equation}
+   {L\prime = L + D_{t}F.} & {(1.115)}
+   \end{equation}
 
    The corresponding action integral is
 
@@ -3038,17 +3050,17 @@ formulation because of these advantages.
    & {= {\int_{t_{1}}^{t_{2}}{L \circ \Gamma\lbrack q\rbrack +
    {\int_{t_{1}}^{t_{2}}{D(F \circ \Gamma\lbrack q\rbrack)}}}}} & \\
    & {= S\lbrack q\rbrack(t_{1},t_{2}) + (F \circ \Gamma\lbrack
-   q\rbrack)|_{t_{1}}^{t_{2}}.} & {(1.116)} \\
-   \end{array}
+   q\rbrack)|_{t_{1}}^{t_{2}}.} & {(1.116)}
+   \end{equation}
 
    The variational principle states that the action integral along a realizable
    trajectory is stationary with respect to variations of the trajectory that
    leave the configuration at the endpoints fixed. The action integrals
    /S/[/q/](/t/_{1}, /t/_{2}) and /S/′[/q/](/t/_{1}, /t/_{2}) differ by a term
 
-   \begin{array}{ll}
-   {(F \circ \Gamma\lbrack q\rbrack)|_{t_{1}}^{t_{2}} = F(t_{2},q(t_{2})) - F(t_{1},q(t_{1}))} & {(1.117)} \\
-   \end{array}
+   \begin{equation}
+   {(F \circ \Gamma\lbrack q\rbrack)|_{t_{1}}^{t_{2}} = F(t_{2},q(t_{2})) - F(t_{1},q(t_{1}))} & {(1.117)}
+   \end{equation}
 
    that depends only on the coordinates and time at the endpoints and these are
    not allowed to vary. Thus, if /S/[/q/](/t/_{1}, /t/_{2}) is stationary for a
@@ -3070,9 +3082,9 @@ formulation because of these advantages.
    Let /F/ (/t/, /q/) be a function of /t/ and /q/ only, with total time
    derivative
 
-   \begin{array}{ll}
-   {D_{t}F = \partial_{0}F + (\partial_{1}F)\overset{˙}{Q}.} & {(1.118)} \\
-   \end{array}
+   \begin{equation}
+   {D_{t}F = \partial_{0}F + (\partial_{1}F)\overset{˙}{Q}.} & {(1.118)}
+   \end{equation}
 
    Show explicitly that the Lagrange equations for /D_{t}F/ are identically
    zero, and thus that the addition of /D_{t}F/ to a Lagrangian does not affect
@@ -3082,9 +3094,9 @@ formulation because of these advantages.
    derivatives to Lagrangians. The equation of motion for the driven pendulum
    (see [[file:chapter001.html#h3_1-6-2][section 1.6.2]]),
 
-   \begin{array}{ll}
-   {ml^{2}D^{2}\theta(t) + ml(g + D^{2}y_{s}(t))\,\sin\theta(t) = 0,} & {(1.119)} \\
-   \end{array}
+   \begin{equation}
+   {ml^{2}D^{2}\theta(t) + ml(g + D^{2}y_{s}(t))\,\sin\theta(t) = 0,} & {(1.119)}
+   \end{equation}
 
    has an interesting and suggestive interpretation: it is the same as the
    equation of motion of an undriven pendulum, except that the acceleration of
@@ -3094,9 +3106,9 @@ formulation because of these advantages.
    However, we can write an alternate Lagrangian with the same equation of
    motion that is as easy to interpret as the equation of motion:
 
-   \begin{array}{ll}
-   {L\prime(t,\theta,\overset{˙}{\theta}) = \frac{1}{2}ml^{2}{\overset{˙}{\theta}}^{2} + ml(g + D^{2}y_{s}(t))\,\cos\theta.} & {(1.120)} \\
-   \end{array}
+   \begin{equation}
+   {L\prime(t,\theta,\overset{˙}{\theta}) = \frac{1}{2}ml^{2}{\overset{˙}{\theta}}^{2} + ml(g + D^{2}y_{s}(t))\,\cos\theta.} & {(1.120)}
+   \end{equation}
 
    With this Lagrangian it is apparent that the effect of the accelerating pivot
    is to modify the acceleration of gravity. Note, however, that it is not the
@@ -3106,8 +3118,8 @@ formulation because of these advantages.
    $$\begin{array}{lll} {\Delta L(t,\theta,\overset{˙}{\theta}) =} &
    {\frac{1}{2}m{(Dy_{s}(t))}^{2} + mlDy_{s}(t)\overset{˙}{\theta}\,\sin\theta}
    & \\
-   & {- gmy_{s}(t) - mlD^{2}y_{s}(t)\,\cos\theta.} & {(1.121)} \\
-   \end{array}
+   & {- gmy_{s}(t) - mlD^{2}y_{s}(t)\,\cos\theta.} & {(1.121)}
+   \end{equation}
 
    The two terms in Δ/L/ that depend on neither /θ/ nor
 
@@ -3134,9 +3146,9 @@ formulation because of these advantages.
    From equation ([[file:chapter001.html#disp_1.112][1.112]]), we see that /G/ must be linear in the generalized
    velocities
 
-   \begin{array}{ll}
-   {G(t,q,v) = G_{0}(t,q,v) + G_{1}(t,q,v)\, v} & {(1.122)} \\
-   \end{array}
+   \begin{equation}
+   {G(t,q,v) = G_{0}(t,q,v) + G_{1}(t,q,v)\, v} & {(1.122)}
+   \end{equation}
 
    where neither /G/_{1} nor /G/_{0} depends on the generalized velocities:
    ∂_{2}/G/_{1} = ∂_{2}/G/_{0} = 0.
@@ -3144,24 +3156,24 @@ formulation because of these advantages.
    If /G/ is the total time derivative of /F/ then /G/_{1} = ∂_{1}/F/ and
    /G/_{0} = ∂_{0}/F/, so
 
-   \begin{array}{ll}
+   \begin{equation}
    {\partial_{0}G_{1} = \partial_{0}\partial_{1}F} & \\
-   {\partial_{1}G_{0} = \partial_{1}\partial_{0}F.} & {(1.123)} \\
-   \end{array}
+   {\partial_{1}G_{0} = \partial_{1}\partial_{0}F.} & {(1.123)}
+   \end{equation}
 
    The partial derivative with respect to the time argument does not have
    structure, so ∂_{0}∂_{1}/F/ = ∂_{1}∂_{0}/F/. So if /G/ is the total time
    derivative of /F/ then
 
-   \begin{array}{ll}
-   {\partial_{0}G_{1} = \partial_{1}G_{0}.} & {(1.124)} \\
-   \end{array}
+   \begin{equation}
+   {\partial_{0}G_{1} = \partial_{1}G_{0}.} & {(1.124)}
+   \end{equation}
 
    Furthermore, /G/_{1} = ∂_{1}/F/, so
 
-   \begin{array}{ll}
-   {\partial_{1}G_{1} = \partial_{1}\partial_{1}F.} & {(1.125)} \\
-   \end{array}
+   \begin{equation}
+   {\partial_{1}G_{1} = \partial_{1}\partial_{1}F.} & {(1.125)}
+   \end{equation}
 
    If there is more than one degree of freedom these partials are actually
    structures of partial derivatives with respect to each coordinate. The
@@ -3205,16 +3217,16 @@ formulation because of these advantages.
    *a.* Start with a Lagrangian for free particles, which is only the sum of
    their kinetic energies:
 
-   \begin{array}{ll}
-   {L(t,x,v) = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}v_{\alpha}^{2}.}}} & {(1.126)} \\
-   \end{array}
+   \begin{equation}
+   {L(t,x,v) = {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}v_{\alpha}^{2}.}}} & {(1.126)}
+   \end{equation}
 
    Carry out a coordinate transformation from old to new coordinates that
    consists of a shift and a uniform translation
 
-   \begin{array}{ll}
-   {x_{\alpha} = x_{\alpha}^{\prime} + \Delta x + \Delta vt.} & {(1.127)} \\
-   \end{array}
+   \begin{equation}
+   {x_{\alpha} = x_{\alpha}^{\prime} + \Delta x + \Delta vt.} & {(1.127)}
+   \end{equation}
 
    Derive the Lagrangian in new coordinates.
 
@@ -3274,15 +3286,15 @@ formulation because of these advantages.
   the tuple (/t/, /q/, /v/). If we are given a prescription for computing the
   acceleration /a/ = /A/(/t/, /q/, /v/), then
 
-  \begin{array}{ll}
-  {D^{2}q = A \circ \Gamma\lbrack q\rbrack,} & {(1.128)} \\
-  \end{array}
+  \begin{equation}
+  {D^{2}q = A \circ \Gamma\lbrack q\rbrack,} & {(1.128)}
+  \end{equation}
 
   and we have as a consequence
 
-  \begin{array}{ll}
-  {D^{3}q = D(A \circ \Gamma\lbrack q\rbrack) = D_{t}A \circ \Gamma\lbrack q\rbrack,} & {(1.129)} \\
-  \end{array}
+  \begin{equation}
+  {D^{3}q = D(A \circ \Gamma\lbrack q\rbrack) = D_{t}A \circ \Gamma\lbrack q\rbrack,} & {(1.129)}
+  \end{equation}
 
   and so on. So the higher-derivative components of the local tuple are given by
   functions
@@ -3305,7 +3317,7 @@ formulation because of these advantages.
   \\ {\,\,\,\,\,\,\,\,\, = \partial_{0}\partial_{2}L \circ \Gamma\lbrack
   q\rbrack + (\partial_{1}\partial_{2}L \circ \Gamma\lbrack q\rbrack)\, Dq +
   (\partial_{2}\partial_{2}L \circ \Gamma\lbrack q\rbrack)\, D^{2}q.}
-  \\ \end{array}$
+  \\ \end{equation}$
 
   Solving this system for /D/^{2}/q/, one obtains the generalized acceleration
   along a solution path /q/:
@@ -3314,15 +3326,15 @@ formulation because of these advantages.
   \\ {\,\,\,\,\,\,\,\,\,{\lbrack\partial_{2}\partial_{2}L \circ \Gamma\lbrack
   q\rbrack\rbrack}^{- 1}\lbrack\partial_{1}L \circ \Gamma\lbrack q\rbrack -
   (\partial_{1}\partial_{2}L \circ \Gamma\lbrack q\rbrack)\, Dq -
-  \partial_{0}\partial_{2}L \circ \Gamma\lbrack q\rbrack\rbrack} \\ \end{array}$
+  \partial_{0}\partial_{2}L \circ \Gamma\lbrack q\rbrack\rbrack} \end{equation}$
 
   where [∂_{2}∂_{2}/L/ ∘ Γ] is a structure that can be represented by a
   symmetric square matrix, so we can compute its inverse.[fn:73] The function that
   gives the acceleration is
 
-  \begin{array}{ll}
-  {A = {(\partial_{2}\partial_{2}L)}^{- 1}\lbrack\partial_{1}L - \partial_{0}\partial_{2}L - (\partial_{1}\partial_{2}L)\overset{˙}{Q}\rbrack,} & {(1.130)} \\
-  \end{array}
+  \begin{equation}
+  {A = {(\partial_{2}\partial_{2}L)}^{- 1}\lbrack\partial_{1}L - \partial_{0}\partial_{2}L - (\partial_{1}\partial_{2}L)\overset{˙}{Q}\rbrack,} & {(1.130)}
+  \end{equation}
 
   where
 
@@ -3396,9 +3408,9 @@ formulation because of these advantages.
   (literal-function 'v_x) (literal-function 'v_y))) 't))
    #+end_src
 
-  $$\begin{pmatrix} 0 \\ \begin{pmatrix} {Dx(t) - v_{x}(t)} \\ {Dy(t) -
-  v_{y}(t)} \\ \end{pmatrix} \\ \begin{pmatrix} {\frac{kx(t)}{m} + Dv_{x}(t)}
-  \\ {\frac{ky(t)}{m} + Dv_{y}(t)} \\ \end{pmatrix} \\ \end{pmatrix}$$
+  $$\begin{pmatrix} 0 \\ \begin{pmatrix} {Dx(t) - v_{x}(t)} {Dy(t) -
+  v_{y}(t)} \end{pmatrix} \begin{pmatrix} {\frac{kx(t)}{m} + Dv_{x}(t)}
+  \\ {\frac{ky(t)}{m} + Dv_{y}(t)} \end{pmatrix} \end{pmatrix}$$
 
 
 
@@ -3481,8 +3493,8 @@ formulation because of these advantages.
    'theta 'thetadot)))
     #+end_src
 
-   $$\begin{pmatrix} 1 \\ \overset{˙}{\theta} \\ {\frac{A\omega^{2}\cos\,(\omega
-   t)\,\sin\,(\theta)}{l} - \frac{g\sin\,(\theta)}{l}} \\ \end{pmatrix}$$
+   $$\begin{pmatrix} 1 \\ \overset{˙}{\theta} {\frac{A\omega^{2}\cos\,(\omega
+   t)\,\sin\,(\theta)}{l} - \frac{g\sin\,(\theta)}{l}} \end{pmatrix}$$
 
    To examine the evolution of the driven pendulum we need a mechanism that
    evolves a system for some interval while monitoring aspects of the system as
@@ -3581,9 +3593,9 @@ formulation because of these advantages.
   is called a /conserved quantity/ or a /constant of motion/.[fn:79] If /C/ is a
   conserved quantity, then
 
-  \begin{array}{ll}
-  {D(C \circ \Gamma\lbrack q\rbrack) = D_{t}C \circ \Gamma\lbrack q\rbrack = 0} & {(1.131)} \\
-  \end{array}
+  \begin{equation}
+  {D(C \circ \Gamma\lbrack q\rbrack) = D_{t}C \circ \Gamma\lbrack q\rbrack = 0} & {(1.131)}
+  \end{equation}
 
 
 
@@ -3604,28 +3616,28 @@ formulation because of these advantages.
     If a Lagrangian /L/(/t/, /q/, /v/) does not depend on some particular
     coordinate /q^{i}/, then
 
-    \begin{array}{ll}
-    {{(\partial_{1}L)}_{i} = 0,} & {(1.132)} \\
-    \end{array}
+    \begin{equation}
+    {{(\partial_{1}L)}_{i} = 0,} & {(1.132)}
+    \end{equation}
 
     and the corresponding /i/th component of the Lagrange equations is
 
-    \begin{array}{ll}
-    {{(D(\partial_{2}L \circ \Gamma\lbrack q\rbrack))}_{i} = 0.} & {(1.133)} \\
-    \end{array}
+    \begin{equation}
+    {{(D(\partial_{2}L \circ \Gamma\lbrack q\rbrack))}_{i} = 0.} & {(1.133)}
+    \end{equation}
 
     The derivative of a component is equal to the component of the derivative,
     so this is the same as
 
-    \begin{array}{ll}
-    {D({(\partial_{2}L)}_{i} \circ \Gamma\lbrack q\rbrack) = 0,} & {(1.134)} \\
-    \end{array}
+    \begin{equation}
+    {D({(\partial_{2}L)}_{i} \circ \Gamma\lbrack q\rbrack) = 0,} & {(1.134)}
+    \end{equation}
 
     and we can see that
 
-    \begin{array}{ll}
-    {\mathcal{P}_{i} = {(\partial_{2}L)}_{i}} & {(1.135)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{P}_{i} = {(\partial_{2}L)}_{i}} & {(1.135)}
+    \end{equation}
 
     is a conserved quantity. The function
 
@@ -3645,23 +3657,23 @@ formulation because of these advantages.
     Given the coordinate path /q/ and the Lagrangian /L/, the momentum path /p/
     is
 
-    \begin{array}{ll}
-    {p = \partial_{2}L \circ \Gamma\lbrack q\rbrack = \mathcal{P} \circ \Gamma\lbrack q\rbrack,} & {(1.136)} \\
-    \end{array}
+    \begin{equation}
+    {p = \partial_{2}L \circ \Gamma\lbrack q\rbrack = \mathcal{P} \circ \Gamma\lbrack q\rbrack,} & {(1.136)}
+    \end{equation}
 
     with components
 
-    \begin{array}{ll}
-    {p_{i} = \mathcal{P}_{i} \circ \Gamma\lbrack q\rbrack.} & {(1.137)} \\
-    \end{array}
+    \begin{equation}
+    {p_{i} = \mathcal{P}_{i} \circ \Gamma\lbrack q\rbrack.} & {(1.137)}
+    \end{equation}
 
     The momentum path is well defined for any path /q/. If the path is
     realizable and the Lagrangian does not depend on /q^{i}/, then /p_{i}/ is a
     constant function
 
-    \begin{array}{ll}
-    {Dp_{i} = 0.} & {(1.138)} \\
-    \end{array}
+    \begin{equation}
+    {Dp_{i} = 0.} & {(1.138)}
+    \end{equation}
 
     The constant value of /p_{i}/ may be different for different trajectories.
 
@@ -3729,15 +3741,15 @@ formulation because of these advantages.
 
     Consider the time derivative of the Lagrangian along a solution path /q/:
 
-    \begin{array}{ll}
-    {D(L \circ \Gamma\lbrack q\rbrack) = \partial_{0}L \circ \Gamma\lbrack q\rbrack + (\partial_{1}L \circ \Gamma\lbrack q\rbrack)Dq + (\partial_{2}L \circ \Gamma\lbrack q\rbrack)D^{2}q.} & {(1.139)} \\
-    \end{array}
+    \begin{equation}
+    {D(L \circ \Gamma\lbrack q\rbrack) = \partial_{0}L \circ \Gamma\lbrack q\rbrack + (\partial_{1}L \circ \Gamma\lbrack q\rbrack)Dq + (\partial_{2}L \circ \Gamma\lbrack q\rbrack)D^{2}q.} & {(1.139)}
+    \end{equation}
 
     Using Lagrange's equations to rewrite the second term yields
 
-    \begin{array}{ll}
-    {D(L \circ \Gamma\lbrack q\rbrack) = (\partial_{0}L) \circ \Gamma\lbrack q\rbrack + D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)Dq + (\partial_{2}L \circ \Gamma\lbrack q\rbrack)D^{2}q.} & {(1.140)} \\
-    \end{array}
+    \begin{equation}
+    {D(L \circ \Gamma\lbrack q\rbrack) = (\partial_{0}L) \circ \Gamma\lbrack q\rbrack + D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)Dq + (\partial_{2}L \circ \Gamma\lbrack q\rbrack)D^{2}q.} & {(1.140)}
+    \end{equation}
 
     Isolating ∂_{0}/L/ and combining the other terms we get
 
@@ -3747,8 +3759,8 @@ formulation because of these advantages.
     & {= D(L \circ \Gamma\lbrack q\rbrack) - D((\partial_{2}L \circ
     \Gamma\lbrack q\rbrack)(\overset{˙}{Q} \circ \Gamma\lbrack q\rbrack))} & \\
     & {= D((L - \mathcal{P}\overset{˙}{Q}) \circ \Gamma\lbrack q\rbrack),} &
-    {(1.141)} \\
-    \end{array}
+    {(1.141)}
+    \end{equation}
 
     where, as before,
 
@@ -3756,9 +3768,9 @@ formulation because of these advantages.
 
     selects the velocity from the state. So we see that if ∂_{0}/L/ = 0 then
 
-    \begin{array}{ll}
-    {\mathcal{E} = \mathcal{P}\overset{˙}{Q} - L} & {(1.142)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E} = \mathcal{P}\overset{˙}{Q} - L} & {(1.142)}
+    \end{equation}
 
 
 
@@ -3792,15 +3804,15 @@ formulation because of these advantages.
    /q/ by writing the rectangular velocities in terms of the generalized
    velocities:
 
-   \begin{array}{ll}
-   {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q) + \partial_{1}f_{\alpha}(t,q)v.} & {(1.143)} \\
-   \end{array}
+   \begin{equation}
+   {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q) + \partial_{1}f_{\alpha}(t,q)v.} & {(1.143)}
+   \end{equation}
 
    The kinetic energy is
 
-   \begin{array}{ll}
-   {T\left( {t,q,v} \right) = \frac{1}{2}{\sum_{\alpha}{m_{\alpha}v_{\alpha}^{2},}}} & {(1.144)} \\
-   \end{array}
+   \begin{equation}
+   {T\left( {t,q,v} \right) = \frac{1}{2}{\sum_{\alpha}{m_{\alpha}v_{\alpha}^{2},}}} & {(1.144)}
+   \end{equation}
 
    where /v_{α}/ is the magnitude of *v*_{/α/}.
 
@@ -3811,22 +3823,22 @@ formulation because of these advantages.
    square of homogeneous functions of degree 1. If /T/ is a homogeneous function
    of degree 2 in the generalized velocities then
 
-   \begin{array}{ll}
-   {\mathcal{P}\overset{˙}{Q} = \left( {\partial_{2}T} \right)\overset{˙}{Q} = 2T,} & {(1.145)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{P}\overset{˙}{Q} = \left( {\partial_{2}T} \right)\overset{˙}{Q} = 2T,} & {(1.145)}
+   \end{equation}
 
    where the second equality follows from Euler's theorem on homogeneous
    functions.[fn:85] The energy state function is
 
-   \begin{array}{ll}
-   {\mathcal{E} = \mathcal{P}\overset{˙}{Q} - L = 2T - T + V.} & {(1.146)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{E} = \mathcal{P}\overset{˙}{Q} - L = 2T - T + V.} & {(1.146)}
+   \end{equation}
 
    So if /f_{α}/ is independent of time, the energy function can be rewritten
 
-   \begin{array}{ll}
-   {\mathcal{E} = 2T - T + V = T + V.} & {(1.147)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{E} = 2T - T + V = T + V.} & {(1.147)}
+   \end{equation}
 
    Notice that if /V/ depends on time the energy is still the sum of the kinetic
    energy and potential energy, but the energy is not conserved.
@@ -3909,7 +3921,7 @@ formulation because of these advantages.
 
     $$\begin{bmatrix} {m{\overset{˙}{\varphi}}^{2}r\,{(\sin\,(\theta))}^{2} +
     mr{\overset{˙}{\theta}}^{2} - DV\,(r)}
-    \\ {m{\overset{˙}{\varphi}}^{2}r^{2}\cos\,(\theta)\,\sin\,(\theta)} \\ 0
+    \\ {m{\overset{˙}{\varphi}}^{2}r^{2}\cos\,(\theta)\,\sin\,(\theta)} 0
     \\ \end{bmatrix}$$
 
     The /φ/ component of the force is zero because /φ/ does not appear in the
@@ -3922,8 +3934,8 @@ formulation because of these advantages.
     'phidot))))
      #+end_src
 
-    $$\begin{bmatrix} {m\overset{˙}{r}} \\ {mr^{2}\overset{˙}{\theta}}
-    \\ {mr^{2}\overset{˙}{\varphi}{(\sin\,(\theta))}^{2}} \\ \end{bmatrix}$$
+    $$\begin{bmatrix} {m\overset{˙}{r}} {mr^{2}\overset{˙}{\theta}}
+    \\ {mr^{2}\overset{˙}{\varphi}{(\sin\,(\theta))}^{2}} \end{bmatrix}$$
 
     The momentum conjugate to /φ/ is conserved. This is the /z/ component of the
     angular momentum
@@ -4024,17 +4036,17 @@ formulation because of these advantages.
     center of mass at the origin of the coordinate system then the distances of
     the two particles from the origin are:
 
-    \begin{array}{ll}
-    {a_{0} = \frac{M_{1}}{M_{0} + M_{1}}a\,\,\text{and}\,\, a_{1} = \frac{M_{0}}{M_{0} + M_{1}}a} & {(1.148)} \\
-    \end{array}
+    \begin{equation}
+    {a_{0} = \frac{M_{1}}{M_{0} + M_{1}}a\,\,\text{and}\,\, a_{1} = \frac{M_{0}}{M_{0} + M_{1}}a} & {(1.148)}
+    \end{equation}
 
     Each massive particle revolves in a circle about their common center of mass
     with angular frequency Ω. The radii of the circles are the distances given
     above. Kepler's law gives the angular frequency of the orbit:
 
-    \begin{array}{ll}
-    {\Omega^{2}a^{3} = G(M_{0} + M_{1})} & {(1.149)} \\
-    \end{array}
+    \begin{equation}
+    {\Omega^{2}a^{3} = G(M_{0} + M_{1})} & {(1.149)}
+    \end{equation}
 
     We choose our axes so that at /t/ = 0 the body with mass /M/_{1} is on the
     positive
@@ -4070,11 +4082,11 @@ formulation because of these advantages.
     did on [[file:chapter001.html#p48][page 48]]. The resulting Lagrangian is the Lagrangian for the free
     particle with the addition of two gravitational potential energy terms:
 
-    \begin{array}{ll}
+    \begin{equation}
     {L_{r}(t;x_{r},y_{r};{\overset{˙}{x}}_{r},{\overset{˙}{y}}_{r})} & \\
     {\,\,\,\,\,\,\,\,\,\, = \frac{1}{2}m\left( {{\overset{˙}{x}}_{r}^{2} + {\overset{˙}{y}}_{r}^{2}} \right) + \frac{1}{2}m\Omega^{2}(x_{r}^{2} + y_{r}^{2}) + m\Omega(x_{r}{\overset{˙}{y}}_{r} - {\overset{˙}{x}}_{r}y_{r})} & \\
-    {\,\,\,\,\,\,\,\,\,\,\,\,\,\, + \frac{GM_{0}m}{r_{0}} + \frac{GM_{1}m}{r_{1}}} & {(1.150)} \\
-    \end{array}
+    {\,\,\,\,\,\,\,\,\,\,\,\,\,\, + \frac{GM_{0}m}{r_{0}} + \frac{GM_{1}m}{r_{1}}} & {(1.150)}
+    \end{equation}
 
     where now
 
@@ -4125,15 +4137,15 @@ formulation because of these advantages.
     If we separate this into a velocity-dependent part and a
     velocity-independent part we get
 
-    \begin{array}{ll}
-    {\mathcal{E}(t;x_{r},y_{r};{\overset{˙}{x}}_{r},{\overset{˙}{y}}_{r}) = \frac{1}{2}m({\overset{˙}{x}}_{r}^{2} + {\overset{˙}{y}}_{r}^{2}) + mU_{r}(x_{r},y_{r})} & {(1.151)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}(t;x_{r},y_{r};{\overset{˙}{x}}_{r},{\overset{˙}{y}}_{r}) = \frac{1}{2}m({\overset{˙}{x}}_{r}^{2} + {\overset{˙}{y}}_{r}^{2}) + mU_{r}(x_{r},y_{r})} & {(1.151)}
+    \end{equation}
 
     where
 
-    \begin{array}{ll}
-    {U_{r}(x_{r},y_{r}) = - \left( {\frac{GM_{0}}{r_{0}} + \frac{GM_{1}}{r_{1}} + \frac{1}{2}\Omega^{2}(x_{r}^{2} + y_{r}^{2})} \right).} & {(1.152)} \\
-    \end{array}
+    \begin{equation}
+    {U_{r}(x_{r},y_{r}) = - \left( {\frac{GM_{0}}{r_{0}} + \frac{GM_{1}}{r_{1}} + \frac{1}{2}\Omega^{2}(x_{r}^{2} + y_{r}^{2})} \right).} & {(1.152)}
+    \end{equation}
 
     This constant of motion of the restricted three-body problem is called the
     /Jacobi constant/.[fn:86] Notice that the energy function is a positive
@@ -4182,9 +4194,9 @@ formulation because of these advantages.
 
     with parameter /s/:
 
-    \begin{array}{ll}
-    {x = \widetilde{F}(s)(t,x\prime).} & {(1.153)} \\
-    \end{array}
+    \begin{equation}
+    {x = \widetilde{F}(s)(t,x\prime).} & {(1.153)}
+    \end{equation}
 
     To this parametric coordinate transformation there corresponds a parametric
     state transformation
@@ -4193,9 +4205,9 @@ formulation because of these advantages.
 
     :
 
-    \begin{array}{ll}
-    {(t,x,v) = \widetilde{C}(s)(t,x\prime,v\prime).} & {(1.154)} \\
-    \end{array}
+    \begin{equation}
+    {(t,x,v) = \widetilde{C}(s)(t,x\prime,v\prime).} & {(1.154)}
+    \end{equation}
 
     We require that the transformation
 
@@ -4219,9 +4231,9 @@ formulation because of these advantages.
 
     if it is invariant under the transformations
 
-    \begin{array}{ll}
-    {\widetilde{L}(s) = L \circ \widetilde{C}(s) = L} & {(1.155)} \\
-    \end{array}
+    \begin{equation}
+    {\widetilde{L}(s) = L \circ \widetilde{C}(s) = L} & {(1.155)}
+    \end{equation}
 
     for any /s/. The Lagrangian /L/ is the same function as the transformed
     Lagrangian
@@ -4246,9 +4258,9 @@ formulation because of these advantages.
 
     is
 
-    \begin{array}{ll}
-    {\widetilde{L}(s)(t,x\prime,v\prime) = L(t,\widetilde{F}(s)(t,x\prime),D_{t}(\widetilde{F}(s))(t,x\prime,v\prime)),} & {(1.156)} \\
-    \end{array}
+    \begin{equation}
+    {\widetilde{L}(s)(t,x\prime,v\prime) = L(t,\widetilde{F}(s)(t,x\prime),D_{t}(\widetilde{F}(s))(t,x\prime,v\prime)),} & {(1.156)}
+    \end{equation}
 
     where we have rewritten the velocity component of
 
@@ -4264,13 +4276,13 @@ formulation because of these advantages.
     & {= \partial_{1}L(t,x,v)\,\,(D\widetilde{F})(s)(t,x\prime) +
     \partial_{2}L(t,x,v)\,\, D_{t}(D\widetilde{F}(s))(t,x\prime),} & {(1.157)}
     \\
-    \end{array}
+    \end{equation}
 
     where we have used the fact that[fn:87]
 
-    \begin{array}{ll}
-    {D_{t}(D\widetilde{F}(s)) = DG(s)\,\,\,\text{with}\,\,\, G\left( s \right) = D_{t}(\widetilde{F}(s)).} & {(1.158)} \\
-    \end{array}
+    \begin{equation}
+    {D_{t}(D\widetilde{F}(s)) = DG(s)\,\,\,\text{with}\,\,\, G\left( s \right) = D_{t}(\widetilde{F}(s)).} & {(1.158)}
+    \end{equation}
 
     On a realizable path /q/ we can use the Lagrange equations to rewrite the
     first term of equation ([[file:chapter001.html#disp_1.157][1.157]]):
@@ -4279,8 +4291,8 @@ formulation because of these advantages.
     q\rbrack)\,\,((D\widetilde{F})(s) \circ \Gamma\lbrack q\prime\rbrack)} & \\
     & {\, + (\partial_{2}L \circ \Gamma\lbrack
     q\rbrack)\,\,(D_{t}(D\widetilde{F}(s)) \circ \Gamma\lbrack q\prime\rbrack).}
-    & {(1.159)} \\
-    \end{array}
+    & {(1.159)}
+    \end{equation}
 
     For /s/ = 0 the paths /q/ and /q/′ are the same, because
 
@@ -4292,8 +4304,8 @@ formulation because of these advantages.
     (\partial_{2}L)\,\,(D_{t}(D\widetilde{F}(0)))) \circ \Gamma\lbrack q\rbrack}
     & \\
     & {= D_{t}((\partial_{2}L)\,\,(D\widetilde{F}(0))) \circ \Gamma\lbrack
-    q\rbrack.} & {(1.160)} \\
-    \end{array}
+    q\rbrack.} & {(1.160)}
+    \end{equation}
 
     Thus the state function
 
@@ -4301,9 +4313,9 @@ formulation because of these advantages.
 
     ,
 
-    \begin{array}{ll}
-    {\mathcal{I} = (\partial_{2}L)(D\widetilde{F}(0)),} & {(1.161)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{I} = (\partial_{2}L)(D\widetilde{F}(0)),} & {(1.161)}
+    \end{equation}
 
     is conserved along solution trajectories. This conserved quantity is called
     /Noether's integral/. It is the product of the momentum and a vector
@@ -4319,30 +4331,30 @@ formulation because of these advantages.
    For example, consider the central-potential Lagrangian in rectangular
    coordinates:
 
-   \begin{array}{ll}
+   \begin{equation}
    {L(t;x,y,z;v_{x}.v_{y},v_{z})} & \\
-   {\,\,\,\,\,\,\,\,\,\,\, = \frac{1}{2}m\,\left( v_{x}^{2} + v_{y}^{2} + v_{z}^{2} \right) - U\left( \sqrt{x^{2} + y^{2} + z^{2}} \right),} & {(1.162)} \\
-   \end{array}
+   {\,\,\,\,\,\,\,\,\,\,\, = \frac{1}{2}m\,\left( v_{x}^{2} + v_{y}^{2} + v_{z}^{2} \right) - U\left( \sqrt{x^{2} + y^{2} + z^{2}} \right),} & {(1.162)}
+   \end{equation}
 
    and a parametric rotation /R_{z}/(/s/) about the /z/ axis
 
    $$\begin{matrix} {\begin{pmatrix} x \\ y \\ z \\ \end{pmatrix} =
-   R_{z}(s)\,\begin{pmatrix} {x\prime} \\ {y\prime} \\ {z\prime}
+   R_{z}(s)\,\begin{pmatrix} {x\prime} {y\prime} {z\prime}
    \\ \end{pmatrix} = \begin{pmatrix} {x\prime\cos s - y\prime\sin s}
-   \\ {x\prime\sin s + y\prime\cos s} \\ {z\prime} \\ \end{pmatrix}.} &
-   {(1.163)} \\ \end{matrix}$$
+   \\ {x\prime\sin s + y\prime\cos s} {z\prime} \end{pmatrix}.} &
+   {(1.163)} \end{matrix}$$
 
    The rotation is an orthogonal transformation so
 
-   \begin{array}{ll}
-   {x^{2} + y^{2} + z^{2} = {(x\prime)}^{2} + {(y\prime)}^{2} + {(z\prime)}^{2}.} & {(1.164)} \\
-   \end{array}
+   \begin{equation}
+   {x^{2} + y^{2} + z^{2} = {(x\prime)}^{2} + {(y\prime)}^{2} + {(z\prime)}^{2}.} & {(1.164)}
+   \end{equation}
 
    Differentiating along a path, we get
 
-   \begin{array}{ll}
-   {(v_{x},v_{y},v_{z}) = R_{z}(s)(v_{x}^{\prime},v_{y}^{\prime},v_{z}^{\prime}),} & {(1.165)} \\
-   \end{array}
+   \begin{equation}
+   {(v_{x},v_{y},v_{z}) = R_{z}(s)(v_{x}^{\prime},v_{y}^{\prime},v_{z}^{\prime}),} & {(1.165)}
+   \end{equation}
 
    so the velocities also transform by an orthogonal transformation, and
 
@@ -4351,32 +4363,32 @@ formulation because of these advantages.
 
    . Thus
 
-   \begin{array}{ll}
+   \begin{equation}
    {L\prime(t;x\prime,y\prime,z\prime;v_{x}^{\prime},v_{y}^{\prime},v_{z}^{\prime})} & \\
    {\,\,\,\,\,\,\,\,\,\, = \frac{1}{2}m\,\left( {{(v_{x}^{\prime})}^{2} + {(v_{y}^{\prime})}^{2} + {(v_{z}^{\prime})}^{2}} \right)} & \\
-   {\,\,\,\,\,\,\,\,\,\,\,\,\,\, - U\left( \sqrt{{(x\prime)}^{2} + {(y\prime)}^{2} + {(z\prime)}^{2}} \right),} & {(1.166)} \\
-   \end{array}
+   {\,\,\,\,\,\,\,\,\,\,\,\,\,\, - U\left( \sqrt{{(x\prime)}^{2} + {(y\prime)}^{2} + {(z\prime)}^{2}} \right),} & {(1.166)}
+   \end{equation}
 
    and we see that /L/′ is precisely the same function as /L/.
 
    The momenta are
 
-   \begin{array}{ll}
-   {\partial_{2}L(t;x,y,z;v_{x},v_{y},v_{z}) = \lbrack mv_{x},mv_{y},mv_{z}\rbrack} & {(1.167)} \\
-   \end{array}
+   \begin{equation}
+   {\partial_{2}L(t;x,y,z;v_{x},v_{y},v_{z}) = \lbrack mv_{x},mv_{y},mv_{z}\rbrack} & {(1.167)}
+   \end{equation}
 
    and
 
-   \begin{array}{ll}
-   {D\widetilde{F}(0)(t;x,y,z) = D{\widetilde{R}}_{z}(0)(x,y,z) = (y, - x,0).} & {(1.168)} \\
-   \end{array}
+   \begin{equation}
+   {D\widetilde{F}(0)(t;x,y,z) = D{\widetilde{R}}_{z}(0)(x,y,z) = (y, - x,0).} & {(1.168)}
+   \end{equation}
 
    So the Noether integral is
 
    $$\begin{array}{lll} {\mathcal{I}(t;x,y,z;v_{x},v_{y},v_{z})} & {=
    ((\partial_{2}L)(D\widetilde{F}(0)))(t;x,y,z;v_{x},v_{y},v_{z})} & \\
-   & {= m(yv_{x} - xv_{y}),} & {(1.169)} \\
-   \end{array}
+   & {= m(yv_{x} - xv_{y}),} & {(1.169)}
+   \end{equation}
 
 
 
@@ -4497,16 +4509,16 @@ formulation because of these advantages.
   components. So /O/(/t/, /q/, /v/, ...)(/t/) = /q/, /D/(/O/(/t/, /q/, /v/,
   ...))(/t/) = /v/, and in general
 
-  \begin{array}{ll}
-  {(t,q,v,\ldots) = \Gamma\lbrack O(t,q,v,\ldots)\rbrack(t).} & {(1.170)} \\
-  \end{array}
+  \begin{equation}
+  {(t,q,v,\ldots) = \Gamma\lbrack O(t,q,v,\ldots)\rbrack(t).} & {(1.170)}
+  \end{equation}
 
   The number of components of the local tuple that are required is finite, but
   unspecified. One way of constructing /O/ is through the truncated power series
 
-  \begin{array}{ll}
-  {O(t,q,v,a,\ldots)(t\prime) = q + v(t\prime - t) + \frac{1}{2}a{(t\prime - t)}^{2} + \cdots,} & {(1.171)} \\
-  \end{array}
+  \begin{equation}
+  {O(t,q,v,a,\ldots)(t\prime) = q + v(t\prime - t) + \frac{1}{2}a{(t\prime - t)}^{2} + \cdots,} & {(1.171)}
+  \end{equation}
 
   where the number of terms is the same as the number of components of the local
   tuple that are specified.
@@ -4525,8 +4537,8 @@ formulation because of these advantages.
 
   $$\begin{array}{lll} {f(t,q,v,\ldots)} & {= (f \circ \Gamma\lbrack
   O(t,q,v,\ldots)\rbrack)(t)} & \\
-  & {= \overline{f}\lbrack O(t,q,v,\ldots)\rbrack(t).} & {(1.172)} \\
-  \end{array}
+  & {= \overline{f}\lbrack O(t,q,v,\ldots)\rbrack(t).} & {(1.172)}
+  \end{equation}
 
   Let
 
@@ -4535,15 +4547,15 @@ formulation because of these advantages.
   be the function that takes a path function and returns the corresponding
   local-tuple function:[fn:89]
 
-  \begin{array}{ll}
-  {f = \overline{\Gamma}(\overline{f}).} & {(1.173)} \\
-  \end{array}
+  \begin{equation}
+  {f = \overline{\Gamma}(\overline{f}).} & {(1.173)}
+  \end{equation}
 
   From equation ([[file:chapter001.html#disp_1.172][1.172]]) we see that
 
-  \begin{array}{ll}
-  {\overline{\Gamma}(\overline{f})(t,q,v,\ldots) = \overline{f}\lbrack O(t,q,v,\ldots)\rbrack(t).} & {(1.174)} \\
-  \end{array}
+  \begin{equation}
+  {\overline{\Gamma}(\overline{f})(t,q,v,\ldots) = \overline{f}\lbrack O(t,q,v,\ldots)\rbrack(t).} & {(1.174)}
+  \end{equation}
 
   The procedure Gamma-bar implements the function
 
@@ -4576,10 +4588,10 @@ formulation because of these advantages.
   p->r) (up 't (up 'r 'theta) (up 'rdot 'thetadot))))
    #+end_src
 
-  $$\begin{pmatrix} t \\ \begin{pmatrix} {r\cos\,(\theta)} \\ {r\sin\,(\theta)}
-  \\ \end{pmatrix} \\ \begin{pmatrix} {- r\overset{˙}{\theta}\sin\,(\theta) +
-  \overset{˙}{r}\cos\,(\theta)} \\ {r\overset{˙}{\theta}\cos\,(\theta) +
-  \overset{˙}{r}\sin\,(\theta)} \\ \end{pmatrix} \\ \end{pmatrix}$$
+  $$\begin{pmatrix} t \\ \begin{pmatrix} {r\cos\,(\theta)} {r\sin\,(\theta)}
+  \\ \end{pmatrix} \begin{pmatrix} {- r\overset{˙}{\theta}\sin\,(\theta) +
+  \overset{˙}{r}\cos\,(\theta)} {r\overset{˙}{\theta}\cos\,(\theta) +
+  \overset{˙}{r}\sin\,(\theta)} \end{pmatrix} \end{pmatrix}$$
 
 
 
@@ -4596,8 +4608,8 @@ formulation because of these advantages.
 
   $$\begin{array}{llll} {D_{t}F = \overline{\Gamma}(\overline{G}),} &
   \text{with} & {\overline{G}\lbrack q\rbrack = D(F \circ \Gamma\lbrack
-  q\rbrack).} & {(1.175)} \\
-  \end{array}
+  q\rbrack).} & {(1.175)}
+  \end{equation}
 
   The total time derivative can be expressed as a program:
 
@@ -4637,17 +4649,17 @@ formulation because of these advantages.
    [/L/] be the path-dependent function that produces the residuals of the
    Lagrange equations ([[file:chapter001.html#disp_1.12][1.12]]) for the Lagrangian /L/:
 
-   \begin{array}{ll}
-   {\overline{\mathcal{E}}\lbrack L\rbrack\lbrack q\rbrack = D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack.} & {(1.176)} \\
-   \end{array}
+   \begin{equation}
+   {\overline{\mathcal{E}}\lbrack L\rbrack\lbrack q\rbrack = D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack.} & {(1.176)}
+   \end{equation}
 
 
 
    Realizable paths /q/ satisfy the Lagrange equations
 
-   \begin{array}{ll}
-   {\overline{\mathcal{E}}\lbrack L\rbrack\lbrack q\rbrack = 0.} & {(1.177)} \\
-   \end{array}
+   \begin{equation}
+   {\overline{\mathcal{E}}\lbrack L\rbrack\lbrack q\rbrack = 0.} & {(1.177)}
+   \end{equation}
 
    The path-dependent Lagrange equations can be converted to local Lagrange
    equations using
@@ -4656,9 +4668,9 @@ formulation because of these advantages.
 
    :
 
-   \begin{array}{ll}
-   {\mathcal{E}\lbrack L\rbrack = \overline{\Gamma}(\overline{\mathcal{E}}\lbrack L\rbrack).} & {(1.178)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{E}\lbrack L\rbrack = \overline{\Gamma}(\overline{\mathcal{E}}\lbrack L\rbrack).} & {(1.178)}
+   \end{equation}
 
    The operator
 
@@ -4667,15 +4679,15 @@ formulation because of these advantages.
    is called the /Euler--Lagrange operator/. In terms of this operator the
    Lagrange equations are
 
-   \begin{array}{ll}
-   {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = 0.} & {(1.179)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = 0.} & {(1.179)}
+   \end{equation}
 
    The Euler--Lagrange operator is explicitly
 
-   \begin{array}{ll}
-   {\mathcal{E}\lbrack L\rbrack = D_{t}\partial_{2}L - \partial_{1}L.} & {(1.180)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{E}\lbrack L\rbrack = D_{t}\partial_{2}L - \partial_{1}L.} & {(1.180)}
+   \end{equation}
 
    The procedure Euler-Lagrange-operator implements
 
@@ -4756,9 +4768,9 @@ formulation because of these advantages.
   by /n/ + 1 coordinates and that configuration paths /q/ are constrained to
   satisfy some relation of the form
 
-  \begin{array}{ll}
-  {\varphi(t,q(t),Dq(t)) = 0.} & {(1.181)} \\
-  \end{array}
+  \begin{equation}
+  {\varphi(t,q(t),Dq(t)) = 0.} & {(1.181)}
+  \end{equation}
 
   How do we formulate the equations of motion? One approach would be to use the
   constraint equation to eliminate one of the coordinates in favor of the rest;
@@ -4783,26 +4795,26 @@ formulation because of these advantages.
   calculation is unaffected. The condition that the action is stationary still
   reduces to the conditions ([[file:chapter001.html#disp_1.17][1.17]]) or ([[file:chapter001.html#disp_1.34][1.34]]):
 
-  \begin{array}{ll}
-  {0 = {\int_{t_{1}}^{t_{2}}{\left\{ {(\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)} \right\}\eta.}}} & {(1.182)} \\
-  \end{array}
+  \begin{equation}
+  {0 = {\int_{t_{1}}^{t_{2}}{\left\{ {(\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)} \right\}\eta.}}} & {(1.182)}
+  \end{equation}
 
-  At this point we argued that because the variations /η/ are arbitrary (except
+  At this point we argued that because the variations $\eta$ are arbitrary (except
   for conditions at the endpoints), the only way for the integral to be zero is
-  for the integrand to be zero. Furthermore, the freedom in our choice of /η/
-  allowed us to deduce that the factor multiplying /η/ in the integrand must be
+  for the integrand to be zero. Furthermore, the freedom in our choice of $\eta$
+  allowed us to deduce that the factor multiplying $\eta$ in the integrand must be
   identically zero, thereby deriving Lagrange's equations.
 
-  Now the choice of /η/ is not completely free. We can still deduce from the
-  arbitrariness of /η/ that the integrand must be zero,[fn:91] but we can no
-  longer deduce that the factor multiplying /η/ is zero (only that the
+  Now the choice of $\eta$ is not completely free. We can still deduce from the
+  arbitrariness of $\eta$ that the integrand must be zero,[fn:91] but we can no
+  longer deduce that the factor multiplying $\eta$ is zero (only that the
   projection of this factor onto acceptable variations is zero). So we have
 
-  \begin{array}{ll}
-  {\left\{ {(\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)} \right\}\eta = 0,} & {(1.183)} \\
-  \end{array}
+  \begin{equation}
+  {\left\{ {(\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)} \right\}\eta = 0,} & {(1.183)}
+  \end{equation}
 
-  with /η/ subject to the constraints.
+  with $\eta$ subject to the constraints.
 
   A path /q/ satisfies the constraint if
 
@@ -4810,21 +4822,21 @@ formulation because of these advantages.
   0$
 
   . The constraint must be satisfied even for the varied path, so we allow only
-  variations /η/ for which the variation of the constraint is zero:
+  variations $\eta$ for which the variation of the constraint is zero:
 
-  \begin{array}{ll}
-  {\delta_{\eta}(\overline{\varphi}) = 0.} & {(1.184)} \\
-  \end{array}
+  \begin{equation}
+  {\delta_{\eta}(\overline{\varphi}) = 0.} & {(1.184)}
+  \end{equation}
 
 
 
   We can say that the variation must be “tangent” to the constraint surface.
-  Expanding this with the chain rule, a variation /η/ is tangent to the
+  Expanding this with the chain rule, a variation $\eta$ is tangent to the
   constraint surface /φ/ if
 
-  \begin{array}{ll}
-  {(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack)\,\eta + (\partial_{2}\varphi \circ \Gamma\lbrack q\rbrack)\, D\eta = 0.} & {(1.185)} \\
-  \end{array}
+  \begin{equation}
+  {(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack)\,\eta + (\partial_{2}\varphi \circ \Gamma\lbrack q\rbrack)\, D\eta = 0.} & {(1.185)}
+  \end{equation}
 
   Note that these are functions of time; the variation at a given time is
   tangent to the constraint at that time.
@@ -4840,21 +4852,21 @@ formulation because of these advantages.
 
     In this case the variation is tangent to the constraint surface if
 
-    \begin{array}{ll}
-    {(\partial_{1}\varphi \circ \Gamma)\,\,\,\eta = 0.} & {(1.186)} \\
-    \end{array}
+    \begin{equation}
+    {(\partial_{1}\varphi \circ \Gamma)\,\,\,\eta = 0.} & {(1.186)}
+    \end{equation}
 
     Together, equations ([[file:chapter001.html#disp_1.183][1.183]]) and ([[file:chapter001.html#disp_1.186][1.186]]) should determine the motion, but how
-    do we eliminate /η/? The residual of the Lagrange equations is
-    orthogonal[fn:92] to any /η/ that is orthogonal to the normal to the
+    do we eliminate $\eta$? The residual of the Lagrange equations is
+    orthogonal[fn:92] to any $\eta$ that is orthogonal to the normal to the
     constraint surface. A vector that is orthogonal to all vectors orthogonal to
     a given vector is parallel to the given vector. Thus, the residual of
     Lagrange's equations is parallel to the normal to the constraint surface;
     the two must be proportional:
 
-    \begin{array}{ll}
-    {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.187)} \\
-    \end{array}
+    \begin{equation}
+    {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.187)}
+    \end{equation}
 
     That the two vectors are parallel everywhere along the path does not
     guarantee that the proportionality factor is the same at each moment along
@@ -4874,9 +4886,9 @@ formulation because of these advantages.
    Suppose we form an augmented Lagrangian by treating /λ/ as one of the
    coordinates:
 
-   \begin{array}{ll}
-   {L\prime(t;q,\lambda;\overset{˙}{q},\overset{˙}{\lambda}) = L(t,q,\overset{˙}{q}) + \lambda\varphi(t,q,\overset{˙}{q}).} & {(1.188)} \\
-   \end{array}
+   \begin{equation}
+   {L\prime(t;q,\lambda;\overset{˙}{q},\overset{˙}{\lambda}) = L(t,q,\overset{˙}{q}) + \lambda\varphi(t,q,\overset{˙}{q}).} & {(1.188)}
+   \end{equation}
 
    The Lagrange equations associated with the coordinates /q/ are just the
    modified Lagrange equations ([[file:chapter001.html#disp_1.187][1.187]]), and the Lagrange equation associated
@@ -4905,9 +4917,9 @@ formulation because of these advantages.
    path: /λ/ = Λ ∘ Γ[/q/] then it is redundant as a degree of freedom. Consider
    the Lagrangian
 
-   \begin{array}{ll}
-   {L'' = L + \Lambda\varphi.} & {(1.189)} \\
-   \end{array}
+   \begin{equation}
+   {L'' = L + \Lambda\varphi.} & {(1.189)}
+   \end{equation}
 
    This new Lagrangian has no extra degrees of freedom. The Lagrange equations
    for /L/″ are the Lagrange equations for /L/ with additional terms arising
@@ -4921,8 +4933,8 @@ formulation because of these advantages.
    L\rbrack + \mathcal{E}\lbrack\Lambda\varphi\rbrack} & \\
    & {= \mathcal{E}\lbrack L\rbrack + \Lambda\mathcal{E}\lbrack\varphi\rbrack +
    \mathcal{E}\lbrack\Lambda\rbrack\varphi + D_{t}\Lambda\partial_{2}\varphi +
-   \partial_{2}\Lambda D_{t}\varphi.} & {(1.190)} \\
-   \end{array}
+   \partial_{2}\Lambda D_{t}\varphi.} & {(1.190)}
+   \end{equation}
 
    Composition of
 
@@ -4934,18 +4946,18 @@ formulation because of these advantages.
 
 
 
-   \begin{array}{ll} {\mathcal{E}\lbrack L''\rbrack \circ \Gamma\lbrack q\rbrack}
+   \begin{equation} {\mathcal{E}\lbrack L''\rbrack \circ \Gamma\lbrack q\rbrack}
    & \\ {\text{       } = \mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack
    q\rbrack + \lambda(\mathcal{E}\lbrack\varphi\rbrack \circ \Gamma\lbrack
    q\rbrack) + D\lambda(\partial_{2}\varphi \circ \Gamma\lbrack q\rbrack),} &
-   {(1.191)} \\ \end{array}
+   {(1.191)} \end{equation}
 
    where we have used /λ/ = Λ ∘ Γ[/q/]. If we now use the fact that we are
    dealing only with coordinate constraints, ∂_{2}/φ/ = 0, then
 
-   \begin{array}{ll}
-   {\mathcal{E}\lbrack L''\rbrack \circ \Gamma\lbrack q\rbrack = \mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack + \lambda(\mathcal{E}\lbrack\varphi\rbrack \circ \Gamma\lbrack q\rbrack).} & {(1.192)} \\
-   \end{array}
+   \begin{equation}
+   {\mathcal{E}\lbrack L''\rbrack \circ \Gamma\lbrack q\rbrack = \mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack + \lambda(\mathcal{E}\lbrack\varphi\rbrack \circ \Gamma\lbrack q\rbrack).} & {(1.192)}
+   \end{equation}
 
    The Lagrange equations are the same as those derived from the augmented
    Lagrangian /L/′. The difference is that now we see that /λ/ = Λ ∘ Γ[/q/] is
@@ -4975,75 +4987,75 @@ formulation because of these advantages.
    those of an unconstrained particle in a uniform gravitational acceleration. A
    Lagrangian for the unconstrained particle is
 
-   \begin{array}{ll}
-   {L(t;x,y;v_{x},v_{y}) = \frac{1}{2}m\left( v_{x}^{2} + v_{y}^{2} \right) - mgy.} & {(1.193)} \\
-   \end{array}
+   \begin{equation}
+   {L(t;x,y;v_{x},v_{y}) = \frac{1}{2}m\left( v_{x}^{2} + v_{y}^{2} \right) - mgy.} & {(1.193)}
+   \end{equation}
 
    The constraint that the pendulum moves in a circle of radius /l/ about the
    pivot is[fn:94]
 
-   \begin{array}{ll}
-   {x^{2} + y^{2} - l^{2} = 0.} & {(1.194)} \\
-   \end{array}
+   \begin{equation}
+   {x^{2} + y^{2} - l^{2} = 0.} & {(1.194)}
+   \end{equation}
 
 
 
    The augmented Lagrangian is
 
-   \begin{array}{ll}
-   {L\prime(t;x,y,\lambda;v_{x},v_{y},\overset{˙}{\lambda}) = \frac{1}{2}m\left( v_{x}^{2} + v_{y}^{2} \right) - mgy + \lambda\left( x^{2} + y^{2} - l^{2} \right).} & {(1.195)} \\
-   \end{array}
+   \begin{equation}
+   {L\prime(t;x,y,\lambda;v_{x},v_{y},\overset{˙}{\lambda}) = \frac{1}{2}m\left( v_{x}^{2} + v_{y}^{2} \right) - mgy + \lambda\left( x^{2} + y^{2} - l^{2} \right).} & {(1.195)}
+   \end{equation}
 
    The Lagrange equations for the augmented Lagrangian are
 
-   \begin{array}{ll}
-   {mD^{2}x - 2\lambda x = 0} & {(1.196)} \\
-   \end{array}
+   \begin{equation}
+   {mD^{2}x - 2\lambda x = 0} & {(1.196)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {mD^{2}y + mg - 2\lambda y = 0} & {(1.197)} \\
-   \end{array}
+   \begin{equation}
+   {mD^{2}y + mg - 2\lambda y = 0} & {(1.197)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {x^{2} + y^{2} - l^{2} = 0.} & {(1.198)} \\
-   \end{array}
+   \begin{equation}
+   {x^{2} + y^{2} - l^{2} = 0.} & {(1.198)}
+   \end{equation}
 
    These equations are sufficient to solve for the motion of the pendulum.
 
    It should not be surprising that these equations simplify if we switch to
    “polar” coordinates
 
-   \begin{array}{ll}
-   {x = r\sin\theta\text{       }y = - r\cos\theta.} & {(1.199)} \\
-   \end{array}
+   \begin{equation}
+   {x = r\sin\theta\text{       }y = - r\cos\theta.} & {(1.199)}
+   \end{equation}
 
    Substituting this into the constraint equation, we determine that /r/ = /l/,
    a constant. Forming the derivatives and substituting into the other two
    equations, we find
 
-   \begin{array}{ll}
-   {ml(\cos\theta\, D^{2}\theta - \sin\theta\,{(D\theta)}^{2}) - 2\lambda\sin\theta = 0} & {(1.200)} \\
-   \end{array}
+   \begin{equation}
+   {ml(\cos\theta\, D^{2}\theta - \sin\theta\,{(D\theta)}^{2}) - 2\lambda\sin\theta = 0} & {(1.200)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {ml(\sin\theta\, D^{2}\theta + \cos\theta\,{(D\theta)}^{2}) + mg + 2\lambda\cos\theta = 0.} & {(1.201)} \\
-   \end{array}
+   \begin{equation}
+   {ml(\sin\theta\, D^{2}\theta + \cos\theta\,{(D\theta)}^{2}) + mg + 2\lambda\cos\theta = 0.} & {(1.201)}
+   \end{equation}
 
    Multiplying the first by cos /θ/ and the second by sin /θ/ and adding, we
    find
 
-   \begin{array}{ll}
-   {mlD^{2}\theta + mg\sin\theta = 0,} & {(1.202)} \\
-   \end{array}
+   \begin{equation}
+   {mlD^{2}\theta + mg\sin\theta = 0,} & {(1.202)}
+   \end{equation}
 
    which we recognize as the correct equation for the pendulum. This is the same
    as the Lagrange equation for the pendulum using the unconstrained generalized
    coordinate /θ/. For completeness, we can find /λ/ in terms of the other
    variables:
 
-   \begin{array}{ll}
-   {\lambda = \frac{mD^{2}x}{2x} = - \frac{1}{2l}(mg\cos\theta + ml{(D\theta)}^{2}).} & {(1.203)} \\
-   \end{array}
+   \begin{equation}
+   {\lambda = \frac{mD^{2}x}{2x} = - \frac{1}{2l}(mg\cos\theta + ml{(D\theta)}^{2}).} & {(1.203)}
+   \end{equation}
 
    This confirms that /λ/ is really the composition of a function of the state
    with the state path. Notice that 2/lλ/ is a force---it is the sum of the
@@ -5075,9 +5087,9 @@ formulation because of these advantages.
    An alternative procedure is to break the system into several parts. In our
    spring-mass system we can choose two parts: one is a spring and mass attached
    to the wall, and the other is a spring and mass with its attachment point at
-   an additional configuration coordinate /ξ/. We can formulate a Lagrangian for
+   an additional configuration coordinate $\xi$. We can formulate a Lagrangian for
    each part separately. We can then choose a Lagrangian for the composite
-   system as the sum of the two component Lagrangians with a constraint /ξ/ =
+   system as the sum of the two component Lagrangians with a constraint $\xi$ =
    /X/_{1} + /x/_{1} to accomplish the coupling.
 
 
@@ -5085,25 +5097,25 @@ formulation because of these advantages.
    Let's see how this works. The Lagrangian for the subsystem attached to the
    wall is
 
-   \begin{array}{ll}
-   {L_{1}(t,x_{1},{\overset{˙}{x}}_{1}) = \frac{1}{2}m_{1}{\overset{˙}{x}}_{1}^{2} - \frac{1}{2}k_{1}x_{1}^{2}} & {(1.204)} \\
-   \end{array}
+   \begin{equation}
+   {L_{1}(t,x_{1},{\overset{˙}{x}}_{1}) = \frac{1}{2}m_{1}{\overset{˙}{x}}_{1}^{2} - \frac{1}{2}k_{1}x_{1}^{2}} & {(1.204)}
+   \end{equation}
 
    and the Lagrangian for the subsystem that attaches to it is
 
-   \begin{array}{ll}
-   {L_{2}(t;\xi,x_{2};\overset{˙}{\xi},{\overset{˙}{x}}_{2}) = \frac{1}{2}m_{2}{(\overset{˙}{\xi} + {\overset{˙}{x}}_{2})}^{2} - \frac{1}{2}k_{2}x_{2}^{2}.} & {(1.205)} \\
-   \end{array}
+   \begin{equation}
+   {L_{2}(t;\xi,x_{2};\overset{˙}{\xi},{\overset{˙}{x}}_{2}) = \frac{1}{2}m_{2}{(\overset{˙}{\xi} + {\overset{˙}{x}}_{2})}^{2} - \frac{1}{2}k_{2}x_{2}^{2}.} & {(1.205)}
+   \end{equation}
 
    We construct a Lagrangian for the system composed from these parts as a sum
    of the Lagrangians for each of the separate parts, with a coupling term to
    enforce the constraint:
 
-   \begin{array}{ll}
+   \begin{equation}
    {L(t;x_{1},x_{2},\xi,\lambda;{\overset{˙}{x}}_{1},{\overset{˙}{x}}_{2},\overset{˙}{\xi},\overset{˙}{\lambda})} & \\
    {\text{         } = L_{1}(t,x_{1},{\overset{˙}{x}}_{1}) + L_{2}(t;\xi,x_{2};\overset{˙}{\xi},{\overset{˙}{x}}_{2})} & \\
-   {\text{         }\text{         } + \lambda(\xi - (X_{1} + x_{1})).} & {(1.206)} \\
-   \end{array}
+   {\text{         }\text{         } + \lambda(\xi - (X_{1} + x_{1})).} & {(1.206)}
+   \end{equation}
 
    Thus we can write Lagrange's equations for the four configuration
    coordinates, in order, as follows:
@@ -5117,19 +5129,19 @@ formulation because of these advantages.
    $$\begin{aligned} {m_{2}(D^{2}\xi + D^{2}x_{2}) = \lambda} & {(1.209)}
    \\ \end{aligned}$$
 
-   $$\begin{aligned} {0 = \xi - (X_{1} + x_{1}).} & {(1.210)} \\ \end{aligned}$$
+   $$\begin{aligned} {0 = \xi - (X_{1} + x_{1}).} & {(1.210)} \end{aligned}$$
 
    Notice that in this system /λ/ is the force of constraint holding the system
-   together. We can now eliminate the “glue” coordinates /ξ/ and /λ/ to obtain
+   together. We can now eliminate the “glue” coordinates $\xi$ and /λ/ to obtain
    the equations of motion in the coordinates /x/_{1} and /x/_{2}:
 
-   \begin{array}{ll}
-   {m_{1}D^{2}x_{1} + m_{2}(D^{2}x_{1} + D^{2}x_{2}) + k_{1}x_{1} = 0} & {(1.211)} \\
-   \end{array}
+   \begin{equation}
+   {m_{1}D^{2}x_{1} + m_{2}(D^{2}x_{1} + D^{2}x_{2}) + k_{1}x_{1} = 0} & {(1.211)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {m_{2}(D^{2}x_{1} + D^{2}x_{2}) + k_{2}x_{2} = 0.} & {(1.212)} \\
-   \end{array}
+   \begin{equation}
+   {m_{2}(D^{2}x_{1} + D^{2}x_{2}) + k_{2}x_{2} = 0.} & {(1.212)}
+   \end{equation}
 
    This strategy can be generalized. We can make a library of primitive
    components. Each component may be characterized by a Lagrangian with
@@ -5197,16 +5209,16 @@ formulation because of these advantages.
     derivative means that there exists a velocity-independent function /φ/ such
     that
 
-    \begin{array}{ll}
-    {\psi \circ \Gamma\lbrack q\rbrack = D(\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.213)} \\
-    \end{array}
+    \begin{equation}
+    {\psi \circ \Gamma\lbrack q\rbrack = D(\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.213)}
+    \end{equation}
 
     That /φ/ is velocity-independent means ∂_{2}/φ/ = 0. As state functions the
     relationship between /ψ/ and /φ/ is
 
-    \begin{array}{ll}
-    {\psi = D_{t}\varphi = \partial_{0}\varphi + \partial_{1}\varphi\overset{˙}{Q}.} & {(1.214)} \\
-    \end{array}
+    \begin{equation}
+    {\psi = D_{t}\varphi = \partial_{0}\varphi + \partial_{1}\varphi\overset{˙}{Q}.} & {(1.214)}
+    \end{equation}
 
     Given a /ψ/ we can find /φ/ by solving this linear partial differential
     equation. The solution is determined up to a constant, so /ψ/ = 0 implies
@@ -5220,30 +5232,30 @@ formulation because of these advantages.
     If /L/ is a Lagrangian for the unconstrained problem, the Lagrange equations
     with the constraint /φ/ = /K/ are
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack + \lambda\,(\mathcal{E}\lbrack\varphi\rbrack \circ \Gamma\lbrack q\rbrack) = 0,} & {(1.215)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack + \lambda\,(\mathcal{E}\lbrack\varphi\rbrack \circ \Gamma\lbrack q\rbrack) = 0,} & {(1.215)}
+    \end{equation}
 
     where /λ/ is a function of time that will be eliminated during the solution
     process. The constant /K/ does not affect the Lagrange equations. The
     function /φ/ is independent of velocity, ∂_{2}/φ/ = 0, so the Lagrange
     equations become
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack - \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.216)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack - \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.216)}
+    \end{equation}
 
     From equation ([[file:chapter001.html#disp_1.214][1.214]]) we see that
 
-    \begin{array}{ll}
-    {\partial_{1}\varphi = \partial_{2}\psi,} & {(1.217)} \\
-    \end{array}
+    \begin{equation}
+    {\partial_{1}\varphi = \partial_{2}\psi,} & {(1.217)}
+    \end{equation}
 
     so the Lagrange equations with the constraint /ψ/ = 0 are
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack).} & {(1.218)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack).} & {(1.218)}
+    \end{equation}
 
     The important feature is that we can write the Lagrange equations directly
     in terms of /ψ/ without having to produce /φ/. But the validity of these
@@ -5253,15 +5265,15 @@ formulation because of these advantages.
     Lagrange equations are given if we augment the Lagrangian with the
     constraint /ψ/ multiplied by a function of time /λ/′:
 
-    \begin{array}{ll}
-    {L\prime = L + \lambda\prime\psi.} & {(1.219)} \\
-    \end{array}
+    \begin{equation}
+    {L\prime = L + \lambda\prime\psi.} & {(1.219)}
+    \end{equation}
 
     The Lagrange equations for /L/′ turn out to be
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = - D\lambda\prime(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack),} & {(1.220)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = - D\lambda\prime(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack),} & {(1.220)}
+    \end{equation}
 
     which, with the identification /λ/ = −/Dλ/′, are the same as Lagrange
     equations ([[file:chapter001.html#disp_1.218][1.218]]).
@@ -5301,9 +5313,9 @@ formulation because of these advantages.
    constraint is that the hoop does not slip. Thus a change in /θ/ is exactly
    reflected in a change in /x/; the constraint function is
 
-   \begin{array}{ll}
-   {\psi(t;x,\theta;\overset{˙}{x},\overset{˙}{\theta}) = R\overset{˙}{\theta} - \overset{˙}{x}.} & {(1.221)} \\
-   \end{array}
+   \begin{equation}
+   {\psi(t;x,\theta;\overset{˙}{x},\overset{˙}{\theta}) = R\overset{˙}{\theta} - \overset{˙}{x}.} & {(1.221)}
+   \end{equation}
 
    This constraint is phrased as a relation among generalized velocities, but it
    could be integrated to get /x/ = /Rθ/ + /c/. We may form our augmented
@@ -5316,37 +5328,37 @@ formulation because of these advantages.
    hoop decreases as the height decreases. Thus we may write the augmented
    Lagrangian:
 
-   \begin{array}{ll}
+   \begin{equation}
    {L(t;x,\theta,\lambda;\overset{˙}{x},\overset{˙}{\theta},\lambda)} & \\
-   {\,\,\,\,\,\,\,\, = \frac{1}{2}M\, R^{2}{\overset{˙}{\theta}}^{2} + \frac{1}{2}M\,{\overset{˙}{x}}^{2} + M\, gx\sin\varphi + \lambda(R\overset{˙}{\theta} - \overset{˙}{x}).} & {(1.222)} \\
-   \end{array}
+   {\,\,\,\,\,\,\,\, = \frac{1}{2}M\, R^{2}{\overset{˙}{\theta}}^{2} + \frac{1}{2}M\,{\overset{˙}{x}}^{2} + M\, gx\sin\varphi + \lambda(R\overset{˙}{\theta} - \overset{˙}{x}).} & {(1.222)}
+   \end{equation}
 
    Lagrange's equations are
 
-   \begin{array}{ll}
-   {M\, D^{2}x - D\lambda = M\, g\sin\varphi} & {(1.223)} \\
-   \end{array}
+   \begin{equation}
+   {M\, D^{2}x - D\lambda = M\, g\sin\varphi} & {(1.223)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {M\, R^{2}D^{2}\theta + R\, D\lambda = 0} & {(1.224)} \\
-   \end{array}
+   \begin{equation}
+   {M\, R^{2}D^{2}\theta + R\, D\lambda = 0} & {(1.224)}
+   \end{equation}
 
-   \begin{array}{ll}
-   {R\, D\theta - Dx = 0.} & {(1.225)} \\
-   \end{array}
+   \begin{equation}
+   {R\, D\theta - Dx = 0.} & {(1.225)}
+   \end{equation}
 
    And by differentiation of the third Lagrange equation we obtain
 
-   \begin{array}{ll}
-   {D^{2}x = RD^{2}\theta.} & {(1.226)} \\
-   \end{array}
+   \begin{equation}
+   {D^{2}x = RD^{2}\theta.} & {(1.226)}
+   \end{equation}
 
    By combining these equations we can solve for the dynamical quantities of
    interest. For this case of a rolling hoop the linear acceleration
 
-   \begin{array}{ll}
-   {D^{2}x = \frac{1}{2}g\sin\varphi} & {(1.227)} \\
-   \end{array}
+   \begin{equation}
+   {D^{2}x = \frac{1}{2}g\sin\varphi} & {(1.227)}
+   \end{equation}
 
    is just half of what it would have been if the mass had just slid down a
    frictionless plane without rotating. Note that for this hoop /D/^{2}/x/ is
@@ -5354,15 +5366,15 @@ formulation because of these advantages.
    can be interpreted as the friction force involved in enforcing the
    constraint. The frictional force of constraint is
 
-   \begin{array}{ll}
-   {D\lambda = \frac{1}{2}M\, g\sin\varphi} & {(1.228)} \\
-   \end{array}
+   \begin{equation}
+   {D\lambda = \frac{1}{2}M\, g\sin\varphi} & {(1.228)}
+   \end{equation}
 
    and the angular acceleration is
 
-   \begin{array}{ll}
-   {D^{2}\theta = \frac{1}{2}\frac{g}{R}\sin\varphi.} & {(1.229)} \\
-   \end{array}
+   \begin{equation}
+   {D^{2}\theta = \frac{1}{2}\frac{g}{R}\sin\varphi.} & {(1.229)}
+   \end{equation}
 
 
 
@@ -5387,17 +5399,17 @@ formulation because of these advantages.
     the velocities, it is widely reported[fn:98] that the equations of motion are
     as follows. Let /ψ/ have the form
 
-    \begin{array}{ll}
-    {\psi(t,q,v) = G_{1}(t,q)v + G_{2}(t,q),} & {(1.230)} \\
-    \end{array}
+    \begin{equation}
+    {\psi(t,q,v) = G_{1}(t,q)v + G_{2}(t,q),} & {(1.230)}
+    \end{equation}
 
     a state function that is linear in the velocities. We assume /ψ/ is not a
     total time derivative. If /L/ is a Lagrangian for the unconstrained system,
     then the equations of motion are asserted to be
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(G_{1} \circ \Gamma\lbrack q\rbrack) = \lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack).} & {(1.231)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(G_{1} \circ \Gamma\lbrack q\rbrack) = \lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack).} & {(1.231)}
+    \end{equation}
 
     With the constraint /ψ/ = 0, the system is completely specified and the
     evolution of the system is determined. Note that these equations are
@@ -5409,15 +5421,15 @@ formulation because of these advantages.
     constraints /φ/ = 0 with ∂_{2}/φ/ = 0 was to note that two conditions must
     be satisfied:
 
-    $$(\begin{array}{ll} {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack
-    q\rbrack)\eta = 0,} & {(1.232)} \\
-    \end{array}
+    $$(\begin{equation} {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack
+    q\rbrack)\eta = 0,} & {(1.232)}
+    \end{equation}
 
     and
 
-    $$(\begin{array}{ll} {\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack)\eta
-    = 0.} & {(1.233)} \\
-    \end{array}
+    $$(\begin{equation} {\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack)\eta
+    = 0.} & {(1.233)}
+    \end{equation}
 
 
 
@@ -5425,44 +5437,44 @@ formulation because of these advantages.
 
     $\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack$
 
-    is orthogonal to /η/ and /η/ is constrained to be orthogonal to ∂_{1}/φ/ ∘
+    is orthogonal to $\eta$ and $\eta$ is constrained to be orthogonal to ∂_{1}/φ/ ∘
     Γ[/q/], the two must be parallel at each moment:
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.234)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.234)}
+    \end{equation}
 
     The Lagrange equations for derivative constraints were derived from this.
 
     This derivation does not go through if the constraint function depends on
-    velocity. In this case, for a variation /η/ to be consistent with the
+    velocity. In this case, for a variation $\eta$ to be consistent with the
     velocity-dependent constraint function /ψ/ it must satisfy (see equation
     [[file:chapter001.html#disp_1.185][1.185]])
 
-    \begin{array}{ll}
-    {(\partial_{1}\psi \circ \Gamma\lbrack q\rbrack)\eta + (\partial_{2}\psi \circ \Gamma\lbrack q\rbrack)D\eta = 0.} & {(1.235)} \\
-    \end{array}
+    \begin{equation}
+    {(\partial_{1}\psi \circ \Gamma\lbrack q\rbrack)\eta + (\partial_{2}\psi \circ \Gamma\lbrack q\rbrack)D\eta = 0.} & {(1.235)}
+    \end{equation}
 
-    We may no longer eliminate /η/ by the same argument, because /η/ is no
+    We may no longer eliminate $\eta$ by the same argument, because $\eta$ is no
     longer orthogonal to ∂_{1}/ψ/ ∘ Γ[/q/], and we cannot rewrite the constraint
     as a coordinate constraint because /ψ/ is, by assumption, not integrable.
 
     The following is the derivation of the nonholonomic equations from Arnold et
-    al. [[[file:bibliography.html#bib_6][6]]], translated into our notation. Define a “virtual velocity” /ξ/ to be
+    al. [[[file:bibliography.html#bib_6][6]]], translated into our notation. Define a “virtual velocity” $\xi$ to be
     any velocity satisfying
 
-    $$(\begin{array}{ll} {\partial_{2}\psi \circ \Gamma\lbrack q\rbrack)\xi =
-    0.} & {(1.236)} \\
-    \end{array}
+    $$(\begin{equation} {\partial_{2}\psi \circ \Gamma\lbrack q\rbrack)\xi =
+    0.} & {(1.236)}
+    \end{equation}
 
     The “principle of d'Alembert--Lagrange,” according to Arnold, states that
 
-    \begin{array}{ll}
-    {(\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack)\xi = 0,} & {(1.237)} \\
-    \end{array}
+    \begin{equation}
+    {(\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack)\xi = 0,} & {(1.237)}
+    \end{equation}
 
-    for any virtual velocity /ξ/. Because /ξ/ is arbitrary except that it is
-    required to be orthogonal to ∂_{2}/ψ/ ∘ Γ[/q/] and any such /ξ/ is
+    for any virtual velocity $\xi$. Because $\xi$ is arbitrary except that it is
+    required to be orthogonal to ∂_{2}/ψ/ ∘ Γ[/q/] and any such $\xi$ is
     orthogonal to
 
     $\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack$
@@ -5473,20 +5485,20 @@ formulation because of these advantages.
 
     . So
 
-    \begin{array}{ll}
-    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack),} & {(1.238)} \\
-    \end{array}
+    \begin{equation}
+    {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack),} & {(1.238)}
+    \end{equation}
 
     which are the nonholonomic equations.
 
     To convert the stationary action equations to the equations of Arnold we
     must do the following. To get from equation ([[file:chapter001.html#disp_1.232][1.232]]) to equation ([[file:chapter001.html#disp_1.237][1.237]]), we
-    must replace /η/ by /ξ/. However, to get from equation ([[file:chapter001.html#disp_1.235][1.235]]) to equation
-    ([[file:chapter001.html#disp_1.236][1.236]]), we must set /η/ = 0 and replace /Dη/ by /ξ/. All “derivations” of
-    the nonholonomic equations have similar identifications. It comes down to
-    this: the nonholonomic equations do not follow from the action principle.
-    They are something else. Whether they are correct or not depends on whether
-    or not they agree with experiment.
+    must replace $\eta$ by $\xi$. However, to get from equation ([[file:chapter001.html#disp_1.235][1.235]]) to
+    equation ([[file:chapter001.html#disp_1.236][1.236]]), we must set $\eta = 0$ and replace /Dη/ by $\xi$. All
+    “derivations” of the nonholonomic equations have similar identifications. It
+    comes down to this: the nonholonomic equations do not follow from the action
+    principle. They are something else. Whether they are correct or not depends
+    on whether or not they agree with experiment.
 
     For systems with either coordinate constraints or derivative constraints, we
     have found that the Lagrange equations can be derived from a Lagrangian that
@@ -5495,22 +5507,22 @@ formulation because of these advantages.
     same as the non-holonomic system (equations [[file:chapter001.html#disp_1.231][1.231]]).[fn:99] Let /L/′ be an
     augmented Lagrangian with non-integrable constraint /ψ/:
 
-    \begin{array}{ll}
-    {L\prime(t;q,\lambda;\overset{˙}{q},\overset{˙}{\lambda}) = L(t,q,\overset{˙}{q}) + \lambda\psi(t,q,\overset{˙}{q});} & {(1.239)} \\
-    \end{array}
+    \begin{equation}
+    {L\prime(t;q,\lambda;\overset{˙}{q},\overset{˙}{\lambda}) = L(t,q,\overset{˙}{q}) + \lambda\psi(t,q,\overset{˙}{q});} & {(1.239)}
+    \end{equation}
 
     then the Lagrange equations associated with the coordinates are
 
-    \begin{array}{ll}
+    \begin{equation}
     {0 = \mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack} & \\
-    {\,\,\,\,\, + D\lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack) + \lambda D(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack) - \lambda(\partial_{1}\psi \circ \Gamma\lbrack q\rbrack).} & {(1.240)} \\
-    \end{array}
+    {\,\,\,\,\, + D\lambda(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack) + \lambda D(\partial_{2}\psi \circ \Gamma\lbrack q\rbrack) - \lambda(\partial_{1}\psi \circ \Gamma\lbrack q\rbrack).} & {(1.240)}
+    \end{equation}
 
     The Lagrange equation associated with /λ/ is just the constraint equation
 
-    \begin{array}{ll}
-    {\psi \circ \Gamma\lbrack q\rbrack = 0.} & {(1.241)} \\
-    \end{array}
+    \begin{equation}
+    {\psi \circ \Gamma\lbrack q\rbrack = 0.} & {(1.241)}
+    \end{equation}
 
     An interesting feature of these equations is that they involve both /λ/ and
     /Dλ/. Thus the usual state variables /q/ and /Dq/, with the constraint, are
