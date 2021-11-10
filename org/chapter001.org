@@ -110,16 +110,16 @@ formulation because of these advantages.
 
   Let us consider mechanical systems that can be thought of as composed of
   constituent point particles, with mass and position, but with no internal
-  structure.[fn:3] Extended bodies may be thought of as composed of a large number
-  of these constituent particles with specific spatial relationships among them.
-  Extended bodies maintain their shape because of spatial constraints among the
-  constituent particles. Specifying the position of all the constituent
-  particles of a system specifies the /configuration/ of the system. The
-  existence of constraints among parts of the system, such as those that
-  determine the shape of an extended body, means that the constituent particles
-  cannot assume all possible positions. The set of all configurations of the
-  system that can be assumed is called the /configuration space/ of the system.
-  The /dimension/ of the configuration space is the smallest number of
+  structure.[fn:3] Extended bodies may be thought of as composed of a large
+  number of these constituent particles with specific spatial relationships
+  among them. Extended bodies maintain their shape because of spatial
+  constraints among the constituent particles. Specifying the position of all
+  the constituent particles of a system specifies the /configuration/ of the
+  system. The existence of constraints among parts of the system, such as those
+  that determine the shape of an extended body, means that the constituent
+  particles cannot assume all possible positions. The set of all configurations
+  of the system that can be assumed is called the /configuration space/ of the
+  system. The /dimension/ of the configuration space is the smallest number of
   parameters that have to be given to completely specify a configuration. The
   dimension of the configuration space is also called the number of /degrees of
   freedom/ of the system.[fn:4]
@@ -228,17 +228,17 @@ formulation because of these advantages.
   $n$-dimensional configuration space can be parameterized by choosing a
   coordinate function $\chi$ that maps elements of the configuration space to
   $n$-tuples of real numbers.[fn:5] If there is more than one dimension, the
-  function $\chi$ is a tuple of $n$ independent coordinate functions[fn:6] /χ^{i}, i/
-  = 0, ..., /n/ − 1, where each /χ^{i}/ is a real-valued function defined on
-  some region of the configuration space.[fn:7] For a given configuration /m/ in
-  the configuration space /M/ the values /χ^{i}/(/m/) of the coordinate
-  functions are the generalized coordinates of the configuration. These
-  generalized coordinates permit us to identify points of the /n/-dimensional
-  configuration space with /n/-tuples of real numbers.[fn:8] For any given
-  configuration space, there are a great variety of ways to choose generalized
-  coordinates. Even for a single point moving without constraints, we can choose
-  rectangular coordinates, polar coordinates, or any other coordinate system
-  that strikes our fancy.
+  function $\chi$ is a tuple of $n$ independent coordinate functions[fn:6]
+  /χ^{i}, i/ = 0, ..., /n/ − 1, where each /χ^{i}/ is a real-valued function
+  defined on some region of the configuration space.[fn:7] For a given
+  configuration /m/ in the configuration space /M/ the values /χ^{i}/(/m/) of
+  the coordinate functions are the generalized coordinates of the configuration.
+  These generalized coordinates permit us to identify points of the
+  /n/-dimensional configuration space with /n/-tuples of real numbers.[fn:8] For
+  any given configuration space, there are a great variety of ways to choose
+  generalized coordinates. Even for a single point moving without constraints,
+  we can choose rectangular coordinates, polar coordinates, or any other
+  coordinate system that strikes our fancy.
 
   The motion of the system can be described by a configuration path /γ/ mapping
   time to configuration-space points. Corresponding to the configuration path is
@@ -285,8 +285,8 @@ formulation because of these advantages.
    juggling pin has been thrown into the air we cannot tell when it left the
    juggler's hand. The juggler could have thrown the pin from a variety of
    places at a variety of times with the same apparent result as we walk through
-   the door.[fn:12] So the motion of the pin does not depend on the details of the
-   history.
+   the door.[fn:12] So the motion of the pin does not depend on the details of
+   the history.
 
    Our ordinary experience suggests that the motion of physical systems is
    deterministic. In fact, a small number of parameters summarize the important
@@ -427,9 +427,9 @@ formulation because of these advantages.
    we can cook up a Lagrangian such that a realizable path connecting the
    configurations at two times /t/_{1} and /t/_{2} is distinguished from all
    conceivable paths by the fact that the action /S/[/q/](/t/_{1}, /t/_{2}) is
-   stationary with respect to variations of the path.[fn:21] For Lagrangians that
-   depend only on the configuration and rate of change of configuration, the
-   variations are restricted to those that preserve the configurations at
+   stationary with respect to variations of the path.[fn:21] For Lagrangians
+   that depend only on the configuration and rate of change of configuration,
+   the variations are restricted to those that preserve the configurations at
    /t/_{1} and /t/_{2}.[fn:22]
 
 *** Exercise 1.3: Fermat optics
@@ -547,7 +547,8 @@ formulation because of these advantages.
 
   #+begin_src scheme
 ((compose (L-free-particle 'm) (Gamma q)) 't)
-(+ (* 1/2 m (expt ((D x) t) 2)) (* 1/2 m (expt ((D y) t) 2)) (* 1/2 m (expt ((D z) t) 2)))
+(+ (* 1/2 m (expt ((D x) t) 2)) (* 1/2 m (expt ((D y) t) 2)) (* 1/2 m (expt ((D
+z) t) 2)))
   #+end_src
 
   The procedure =show-expression= simplifies the expression and uses T_{E}X to
@@ -598,8 +599,7 @@ formulation because of these advantages.
   as[fn:35]
 
   #+begin_src scheme
-(Lagrangian-action (L-free-particle 3.0) test-path 0.0 10.0)
-435
+(Lagrangian-action (L-free-particle 3.0) test-path 0.0 10.0) 435
   #+end_src
 
 *** Exercise 1.4: Lagrangian actions
@@ -652,16 +652,14 @@ formulation because of these advantages.
 (define ((varied-free-particle-action mass q nu t1 t2) eps)
   (let ((eta (make-eta nu t1 t2)))
     (Lagrangian-action (L-free-particle mass)
-                       (+ q (* eps eta))
-                       t1 t2)))
+                       (+ q (* eps eta)) t1 t2)))
     #+end_src
 
    The action for the varied path, with /ν/(/t/) = (sin /t,/ cos /t/, /t/^{2})
    and /ϵ/ = 0.001, is, as expected, larger than for the test path:
 
     #+begin_src scheme
-((varied-free-particle-action
-  3.0 test-path (up sin cos square) 0.0 10.0) 0.001)
+((varied-free-particle-action 3.0 test-path (up sin cos square) 0.0 10.0) 0.001)
     #+end_src
 
     #+begin_src scheme
@@ -673,8 +671,8 @@ formulation because of these advantages.
 
     #+begin_src scheme
 (minimize
- (varied-free-particle-action
-  3.0 test-path (up sin cos square) 0.0 10.0) -2.0 1.0)
+ (varied-free-particle-action 3.0 test-path (up sin cos square) 0.0 10.0) -2.0
+1.0)
     #+end_src
 
    #+begin_src scheme
@@ -683,8 +681,9 @@ formulation because of these advantages.
 
 
 
-   We find exactly what is expected---that the best value for /ϵ/ is zero,[fn:40]
-   and the minimum value of the action is the action along the straight path.
+   We find exactly what is expected---that the best value for /ϵ/ is
+   zero,[fn:40] and the minimum value of the action is the action along the
+   straight path.
 
 ** Finding trajectories that minimize the action
    :PROPERTIES:
@@ -745,7 +744,8 @@ formulation because of these advantages.
    {L(t,q,v) = \frac{1}{2}mv^{2} - \frac{1}{2}kq^{2},} & {(1.10)}
    \end{equation}
 
-   for mass /m/ and spring constant /k/. This Lagrangian is implemented by[fn:45]
+   for mass /m/ and spring constant /k/. This Lagrangian is implemented
+   by[fn:45]
 
    #+caption: *Figure 1.1* The difference between the polynomial
    approximation with minimum action and the actual trajectory taken by the
@@ -893,10 +893,9 @@ formulation because of these advantages.
    $\frac{d}{dt}\left( \left. \frac{\partial L\left( {t,w,\overset{˙}{w}}
    \right)}{\partial{\overset{˙}{w}}^{i}} \right|_{\begin{array}{l} {w = q{(t)}}
    \\
-   {\overset{˙}{w} = \frac{dq{(t)}}{dt}}
-   \end{equation}} \right) - \left. \frac{\partial L\left( {t,w,\overset{˙}{w}}
-   \right)}{\partial w^{i}} \right|_{\begin{array}{l} {w = q{(t)}}
-   {\overset{˙}{w} = \frac{dq{(t)}}{dt}}
+   {\overset{˙}{w} = \frac{dq{(t)}}{dt}} \end{equation}} \right) - \left.
+   \frac{\partial L\left( {t,w,\overset{˙}{w}} \right)}{\partial w^{i}}
+   \right|_{\begin{array}{l} {w = q{(t)}} {\overset{˙}{w} = \frac{dq{(t)}}{dt}}
    \end{equation}} = 0,$
 
    where /i/ = 0, ..., /n/ − 1. In these equations we see that the partial
@@ -924,8 +923,7 @@ formulation because of these advantages.
    $$\begin{array}{lll} {g(\mathit{\epsilon})} & {= S\lbrack q +
    \mathit{\epsilon}\eta\rbrack(t_{1},\,\, t_{2})} & \\
    & {= {\int_{t_{1}}^{t_{2}}{L(t,q(t) + \mathit{\epsilon}\eta(t),Dq(t) +
-   \mathit{\epsilon}D\eta(t))dt.}}} & {(1.13)}
-   \end{equation}
+   \mathit{\epsilon}D\eta(t))dt.}}} & {(1.13)} \end{equation}
 
    Expanding as a power series in /ϵ/
 
@@ -938,8 +936,7 @@ formulation because of these advantages.
    $$\begin{array}{lll} {Dg(0)} & {=
    {\int_{t_{1}}^{t_{2}}{(\partial_{1}L(t,q(t),Dq(t))\eta(t))\,\, dt}}} & \\
    & {+ {\int_{t_{1}}^{t_{2}}{(\partial_{2}L(t,q(t),Dq(t))D\eta(t))\,\, dt.}}} &
-   {(1.15)}
-   \end{equation}
+   {(1.15)} \end{equation}
 
    Integrating the second term by parts we obtain
 
@@ -948,8 +945,7 @@ formulation because of these advantages.
    & {+ \,\partial_{2}L(t,q(t),Dq(t)D\eta(t))\eta(t)|_{t_{1}}^{t_{2}}} & \\
    & {-
    {\int_{t_{1}}^{t_{2}}{\frac{d}{dt}(\partial_{2}L(t,q(t),Dq(t)))\eta(t)dt}}.}
-   & {(1.16)}
-   \end{equation}
+   & {(1.16)} \end{equation}
 
 
 
@@ -963,11 +959,11 @@ formulation because of these advantages.
    \end{equation}
 
    If Δ/S/ is zero the action is stationary. We retain enough freedom in the
-   choice of the variation that the factor in the integrand multiplying $\eta$ is
-   forced to be zero at each point along the path. We argue by contradiction:
+   choice of the variation that the factor in the integrand multiplying $\eta$
+   is forced to be zero at each point along the path. We argue by contradiction:
    Suppose this factor were nonzero at some particular time. Then it would have
-   to be nonzero in at least one of its components. But if we choose our $\eta$ to
-   be a bump that is nonzero only in that component in a neighborhood of that
+   to be nonzero in at least one of its components. But if we choose our $\eta$
+   to be a bump that is nonzero only in that component in a neighborhood of that
    time, and zero everywhere else, then the integral will be nonzero. So we may
    conclude that the factor in curly brackets is identically zero and thus
    obtain Lagrange's equations:[fn:48]
@@ -987,10 +983,10 @@ formulation because of these advantages.
 
    Suppose that we have a function /f/[/q/] that depends on a path /q/. How does
    the function vary as the path is varied? Let /q/ be a coordinate path and
-   /q/ + /ϵη/ be a varied path, where the function $\eta$ is a path-like function
-   that can be added to the path /q/, and the factor /ϵ/ is a scale factor. We
-   define the /variation δ_{η}f/[/q/] of the function /f/ on the path /q/
-   by[fn:49]
+   /q/ + /ϵη/ be a varied path, where the function $\eta$ is a path-like
+   function that can be added to the path /q/, and the factor /ϵ/ is a scale
+   factor. We define the /variation δ_{η}f/[/q/] of the function /f/ on the path
+   /q/ by[fn:49]
 
    \begin{equation}
    {\delta_{\eta}f\lbrack q\rbrack = \underset{\mathit{\epsilon}\rightarrow 0}{\lim}\left( \frac{f\lbrack q + \mathit{\epsilon}\eta\rbrack - f\lbrack q\rbrack}{\mathit{\epsilon}} \right).} & {(1.19)}
@@ -1052,8 +1048,7 @@ formulation because of these advantages.
 
    $$D\begin{equation} {\delta_{\eta}f\lbrack q\rbrack = \delta_{\eta}g\lbrack
    q\rbrack\,\,\,\text{with}\,\,\,\, g\lbrack q\rbrack = D(f\lbrack q\rbrack).}
-   & {(1.27)}
-   \end{equation}
+   & {(1.27)} \end{equation}
 
    Variations also commute with integration in a similar sense.
 
@@ -1061,8 +1056,8 @@ formulation because of these advantages.
    respect to small changes in that path, then it must be stationary for a
    subset of those variations that results from adding small multiples of a
    particular function $\eta$ to /q/. So the statement /δ_{η}f/[/q/] = 0 for
-   arbitrary $\eta$ implies the function /f/ is stationary for small variations of
-   the path around /q/.
+   arbitrary $\eta$ implies the function /f/ is stationary for small variations
+   of the path around /q/.
 
    *Exercise 1.7: Properties of* /δ/
 
@@ -1112,8 +1107,8 @@ formulation because of these advantages.
 
 
    For a realizable path /q/ the variation of the action with respect to any
-   variation $\eta$ that preserves the endpoints, /η/(/t/_{1}) = /η/(/t/_{2}) = 0,
-   is zero:
+   variation $\eta$ that preserves the endpoints, /η/(/t/_{1}) = /η/(/t/_{2}) =
+   0, is zero:
 
    \begin{equation}
    {\delta_{\eta}S\lbrack q\rbrack(t_{1},t_{2}) = 0.} & {(1.29)}
@@ -1139,8 +1134,7 @@ formulation because of these advantages.
    q\rbrack)\delta_{\eta}\Gamma\lbrack q\rbrack}}} & \\
    & {= {\int_{t_{1}}^{t_{2}}{((\partial_{1}L \circ \Gamma\lbrack
    q\rbrack)\eta + (\partial_{2}L \circ \Gamma\lbrack q\rbrack)D\eta).}}} &
-   {(1.32)}
-   \end{equation}
+   {(1.32)} \end{equation}
 
    Integrating the last term of equation ([[file:chapter001.html#disp_1.32][1.32]]) by parts gives
 
@@ -1148,11 +1142,10 @@ formulation because of these advantages.
    {(\partial_{2}L \circ \Gamma\lbrack q\rbrack)\eta|_{t_{1}}^{t_{2}}} & \\
    & {+ {\int_{t_{1}}^{t_{2}}{\left\{ (\partial_{1}L \circ \Gamma\lbrack
    q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) \right\}\eta.}}} &
-   {(1.33)}
-   \end{equation}
+   {(1.33)} \end{equation}
 
-   For our variation $\eta$ we have /η/(/t/_{1}) = /η/(/t/_{2}) = 0, so the first
-   term vanishes.
+   For our variation $\eta$ we have /η/(/t/_{1}) = /η/(/t/_{2}) = 0, so the
+   first term vanishes.
 
    Thus the variation of the action is zero if and only if
 
@@ -1163,9 +1156,9 @@ formulation because of these advantages.
 
 
    The variation of the action is zero because, by assumption, /q/ is a
-   realizable path. Thus ([[file:chapter001.html#disp_1.34][1.34]]) must be true for /any/ function $\eta$ that is zero
-   at the endpoints. Since $\eta$ is arbitrary, except for being zero at the
-   endpoints, the bracketed factor of the integrand is zero. So
+   realizable path. Thus ([[file:chapter001.html#disp_1.34][1.34]]) must be true for /any/ function $\eta$ that is
+   zero at the endpoints. Since $\eta$ is arbitrary, except for being zero at
+   the endpoints, the bracketed factor of the integrand is zero. So
 
    \begin{equation}
    {D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - (\partial_{1}L \circ \Gamma\lbrack q\rbrack) = 0.} & {(1.35)}
@@ -1247,8 +1240,8 @@ formulation because of these advantages.
    {L(t;\xi,\eta;v_{\xi},v_{\eta}) = \frac{1}{2}m(v_{\xi}^{2} + v_{\eta}^{2}) + \frac{\mu}{\sqrt{\xi^{2} + \eta^{2}}},} & {(1.42)}
    \end{equation}
 
-   where $\xi$ and $\eta$ are formal parameters for rectangular coordinates of the
-   particle, and /v_{ξ}/ and /v_{η}/ are formal parameters for corresponding
+   where $\xi$ and $\eta$ are formal parameters for rectangular coordinates of
+   the particle, and /v_{ξ}/ and /v_{η}/ are formal parameters for corresponding
    rectangular velocity components. Then
 
    $$\begin{array}{lll} {\partial_{1}L(t;\xi,\eta;v_{\xi},v_{\eta})} & {=
@@ -1279,8 +1272,7 @@ formulation because of these advantages.
    {(y(t))}^{2})}^{3/2}},\frac{- \mu y(t)}{{({(x(t))}^{2} +
    {(y(t))}^{2})}^{3/2}}} \right\rbrack} & \\
    {(\partial_{2}\, L \circ \Gamma\lbrack q\rbrack)(t)} & {= \lbrack
-   mDx(t),mDy(t)\rbrack} & {(1.46)}
-   \end{equation}
+   mDx(t),mDy(t)\rbrack} & {(1.46)} \end{equation}
 
    and
 
@@ -1464,8 +1456,8 @@ formulation because of these advantages.
 (define (proposed-solution t)
   (* 'A (cos (+ (* 'omega t) 'phi))))
 
-(show-expression (((Lagrange-equations (L-harmonic 'm 'k))
-                   proposed-solution) 't))
+(show-expression (((Lagrange-equations (L-harmonic 'm 'k)) proposed-solution)
+'t))
     #+end_src
 
    $$\cos\,(\omega t + \varphi)\, A\,(k - m\omega^{2})$$
@@ -1500,8 +1492,7 @@ formulation because of these advantages.
    For gravity, the potential energy function is
 
     #+begin_src scheme
-(define ((gravitational-energy G m1 m2) r) (- (/ (* G
-   m1 m2) r)))
+(define ((gravitational-energy G m1 m2) r) (- (/ (* G m1 m2) r)))
     #+end_src
 
    where r is the distance between the two particles.
@@ -1623,16 +1614,17 @@ formulation because of these advantages.
   {D(\partial_{2}L \circ \Gamma\lbrack x\rbrack) - \partial_{1}L \circ \Gamma\lbrack x\rbrack = 0.} & {(1.56)}
   \end{equation}
 
-  Observe that Newton's equations ([[file:chapter001.html#disp_1.55][1.55]]) are just the components of the Lagrange
-  equations ([[file:chapter001.html#disp_1.56][1.56]]) if we choose /L/ to have the properties
+  Observe that Newton's equations ([[file:chapter001.html#disp_1.55][1.55]]) are
+  just the components of the Lagrange equations
+  ([[file:chapter001.html#disp_1.56][1.56]]) if we choose /L/ to have the
+  properties
 
   $$\begin{array}{lll} {(\partial_{2}L \circ \Gamma\lbrack x\rbrack)(t)} & {=
   \lbrack m_{0}D\mathbf{x}_{0}(t),\ldots,m_{N - 1}D\mathbf{x}_{N - 1}(t)\rbrack}
   & \\
   {(\partial_{1}L \circ \Gamma\lbrack x\rbrack)(t)} & {= \lbrack -
   \partial_{1,0}V(t,x(t)),\ldots, - \partial_{1,N - 1}V(t,x(t))\rbrack;} &
-  {(1.57)}
-  \end{equation}
+  {(1.57)} \end{equation}
 
   here /V/ (/t/, /x/(/t/)) = /V/ (/t/; *x*_{0}(/t/), ..., *x*_{/N/−1}(/t/)) and
   ∂_{1,/α/}/V/ (/t/, /x/(/t/)) is the tuple of the components of the derivative
@@ -1655,7 +1647,9 @@ formulation because of these advantages.
   \end{equation}
 
   where /x/ = (*x*_{0}, ..., *x*_{/N/−1}). One choice for /L/ that has the
-  required properties ([[file:chapter001.html#disp_1.58][1.58]]--[[file:chapter001.html#disp_1.59][1.59]]) is
+  required properties
+  ([[file:chapter001.html#disp_1.58][1.58]]--[[file:chapter001.html#disp_1.59][1.59]])
+  is
 
   \begin{equation}
   {L(t,x,v) = \frac{1}{2}{\sum\limits_{\alpha}{m_{\alpha}v_{\alpha}^{2} - V(t,x),}}} & {(1.60)}
@@ -1755,7 +1749,7 @@ formulation because of these advantages.
    (coordinate local)) (v (velocity local))) (let ((y (ref q 1))) (- (* 1/2 m
    (square v)) (* m g y))))) (show-expression (((Lagrange-equations
    (L-uniform-acceleration 'm 'g)) (up (literal-function 'x) (literal-function
-   'y))) 't))
+'y))) 't))
     #+end_src
 
    $$\begin{bmatrix} {mD^{2}x\,(t)} {gm + mD^{2}y\,(t)} \end{bmatrix}$$
@@ -1889,8 +1883,7 @@ formulation because of these advantages.
    \widetilde{r}(t)D\widetilde{\varphi}(t)\,\sin\,\widetilde{\varphi}(t)} & \\
    {D\widetilde{y}(t)} & {= D\widetilde{r}(t)\,\sin\,\widetilde{\varphi}(t) +
    \widetilde{r}(t)D\widetilde{\varphi}(t)\,\cos\,\widetilde{\varphi}(t).} &
-   {(1.66)}
-   \end{equation}
+   {(1.66)} \end{equation}
 
    These relations are valid for any configuration path at any moment, so we can
    abstract them to relations among coordinate representations of an arbitrary
@@ -2072,8 +2065,7 @@ formulation because of these advantages.
 
     $$\begin{array}{lll} {(t,x,v,\ldots)} & {= C(t,x\prime,v\prime,\ldots)} & \\
     & {= (t,F(t,x\prime),\,\,\partial_{0}F(t,x\prime) +
-    \partial_{1}F(t,x\prime)v\prime,\ldots).} & {(1.77)}
-    \end{equation}
+    \partial_{1}F(t,x\prime)v\prime,\ldots).} & {(1.77)} \end{equation}
 
     So if we take the Lagrangian /L/′ to be
 
@@ -2094,9 +2086,9 @@ formulation because of these advantages.
     Show by direct calculation that the Lagrange equations for /L/′ are
     satisfied if the Lagrange equations for /L/ are satisfied.
 
-    Given a coordinate transformation /F/, we can use ([[file:chapter001.html#disp_1.77][1.77]]) to find the
-    function /C/ that transforms local tuples. The procedure F->C implements
-    this:[fn:63]
+    Given a coordinate transformation /F/, we can use
+    ([[file:chapter001.html#disp_1.77][1.77]]) to find the function /C/ that
+    transforms local tuples. The procedure F->C implements this:[fn:63]
 
      #+begin_src scheme
 (define ((F->C F) local) (up (time local) (F local)
@@ -2109,8 +2101,8 @@ formulation because of these advantages.
     implementation:
 
      #+begin_src scheme
-(define (p->r local) (let ((polar-tuple (coordinate
-    local))) (let ((r (ref polar-tuple 0)) (phi (ref polar-tuple 1))) (let ((x
+(define (p->r local) (let ((polar-tuple (coordinate local))) (let ((r (ref
+polar-tuple 0)) (phi (ref polar-tuple 1))) (let ((x
     (* r (cos phi))) (y (* r (sin phi)))) (up x y)))))
      #+end_src
 
@@ -2120,8 +2112,8 @@ formulation because of these advantages.
 
 
      #+begin_src scheme
-(show-expression (velocity ((F->C p->r) (up 't (up 'r
-    'phi) (up 'rdot 'phidot)))))
+(show-expression (velocity ((F->C p->r) (up 't (up 'r 'phi) (up 'rdot
+'phidot)))))
      #+end_src
 
     $$\begin{pmatrix} {- \overset{˙}{\varphi}r\sin\,(\varphi) +
@@ -2142,7 +2134,8 @@ formulation because of these advantages.
     $$\frac{1}{2}m{\overset{˙}{\varphi}}^{2}r^{2} +
     \frac{1}{2}m{\overset{˙}{r}}^{2} - U(r)$$
 
-    The result is the same as Lagrangian ([[file:chapter001.html#disp_1.69][1.69]]).
+    The result is the same as Lagrangian
+    ([[file:chapter001.html#disp_1.69][1.69]]).
 
     *Exercise 1.16: Central force motion*
 
@@ -2163,7 +2156,7 @@ formulation because of these advantages.
     #+begin_src scheme
 (define ((L-free-rectangular m) local) (let ((vx (ref
    (velocities local) 0)) (vy (ref (velocities local) 1))) (* 1/2 m (+ (square
-   vx) (square vy)))))
+vx) (square vy)))))
     #+end_src
 
    The rotation will be easy to describe in polar coordinates, so we transform
@@ -2172,8 +2165,7 @@ formulation because of these advantages.
 
 
     #+begin_src scheme
-(define (L-free-polar m) (compose (L-free-rectangular
-   m) (F->C p->r)))
+(define (L-free-polar m) (compose (L-free-rectangular m) (F->C p->r)))
     #+end_src
 
    Now we can make a simple time-dependent transformation to rotating
@@ -2196,10 +2188,10 @@ formulation because of these advantages.
    The new Lagrangian, in the rotating rectangular coordinate system is:
 
     #+begin_src scheme
-((L-rotating-rectangular 'm 'Omega) (up 't (up 'x_r
-   'y_r) (up 'xdot_r 'ydot_r))) (+ (* 1/2 (expt Omega 2) m (expt x_r 2)) (* 1/2
+((L-rotating-rectangular 'm 'Omega) (up 't (up 'x_r 'y_r) (up 'xdot_r
+'ydot_r))) (+ (* 1/2 (expt Omega 2) m (expt x_r 2)) (* 1/2
    (expt Omega 2) m (expt y_r 2)) (* -1 Omega m xdot_r y_r) (* Omega m ydot_r
-   x_r) (* 1/2 m (expt xdot_r 2)) (* 1/2 m (expt ydot_r 2)))
+x_r) (* 1/2 m (expt xdot_r 2)) (* 1/2 m (expt ydot_r 2)))
     #+end_src
 
    Although the transformation of coordinates is time dependent the resulting
@@ -2209,8 +2201,8 @@ formulation because of these advantages.
    system have force terms involving the angular velocity Ω:
 
     #+begin_src scheme
-(((Lagrange-equations (L-rotating-rectangular 'm
-   'Omega)) (up (literal-function 'x r) (literal-function 'y r))) 't) (down (+
+(((Lagrange-equations (L-rotating-rectangular 'm 'Omega)) (up (literal-function
+'x r) (literal-function 'y r))) 't) (down (+
    (* -1 (expt Omega 2) m (x_r t)) (* -2 Omega m ((D y_r) t)) (* m (((expt D 2)
    x_r) t))) (+ (* -1 (expt Omega 2) m (y_r t)) (* 2 Omega m ((D x_r) t)) (* m
    (((expt D 2) y_r) t))))
@@ -2262,15 +2254,18 @@ formulation because of these advantages.
    For irredundant coordinates /q/ all the coordinate constraints are built into
    the functions /f_{α}/. We deduce the relationship of the generalized
    velocities /v/ to the velocities of the constituent particles *v*_{/α/} by
-   inserting path functions into equation ([[file:chapter001.html#disp_1.79][1.79]]), differentiating, and
-   abstracting to arbitrary velocities (see [[file:chapter001.html#h3_1-6-1][section 1.6.1]]). We find
+   inserting path functions into equation
+   ([[file:chapter001.html#disp_1.79][1.79]]), differentiating, and abstracting
+   to arbitrary velocities (see [[file:chapter001.html#h3_1-6-1][section
+   1.6.1]]). We find
 
    \begin{equation}
    {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q) + \partial_{1}f_{\alpha}(t,q)v.} & {(1.80)}
    \end{equation}
 
-   We use equations ([[file:chapter001.html#disp_1.79][1.79]]) and ([[file:chapter001.html#disp_1.80][1.80]]) to express the kinetic energy in terms of
-   the generalized coordinates and velocities. Let
+   We use equations ([[file:chapter001.html#disp_1.79][1.79]]) and
+   ([[file:chapter001.html#disp_1.80][1.80]]) to express the kinetic energy in
+   terms of the generalized coordinates and velocities. Let
 
    $\widetilde{T}$
 
@@ -2293,11 +2288,10 @@ formulation because of these advantages.
    \widetilde{T}(t,f(t,q),\partial_{0}f(t,q) + \partial_{1}f(t,q)v)} & \\
    & {=
    {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}{(\partial_{0}f_{\alpha}(t,q) +
-   \partial_{1}f_{\alpha}(t,q)v)}^{2}.}}} & {(1.82)}
-   \end{equation}
+   \partial_{1}f_{\alpha}(t,q)v)}^{2}.}}} & {(1.82)} \end{equation}
 
-   Similarly, we use equation ([[file:chapter001.html#disp_1.79][1.79]]) to reexpress the potential energy in terms
-   of the generalized coordinates. Let
+   Similarly, we use equation ([[file:chapter001.html#disp_1.79][1.79]]) to
+   reexpress the potential energy in terms of the generalized coordinates. Let
 
    $\widetilde{V}(t,x)$
 
@@ -2317,18 +2311,18 @@ formulation because of these advantages.
    :CUSTOM_ID: a-pendulum-driven-at-the-pivot
    :CLASS:    level2
    :END:
-   Consider a pendulum (see [[file:chapter001.html#Fig_1-2][figure 1.2]]) of length /l/ and mass /m/, modeled as a
-   point mass, supported by a pivot that is driven in the vertical direction by
-   a given function of time /y_{s}/.
+   Consider a pendulum (see [[file:chapter001.html#Fig_1-2][figure 1.2]]) of
+   length /l/ and mass /m/, modeled as a point mass, supported by a pivot that
+   is driven in the vertical direction by a given function of time /y_{s}/.
 
    The dimension of the configuration space for this system is one; we choose
-   /θ/, shown in [[file:chapter001.html#Fig_1-2][figure 1.2]], as the generalized coordinate.
+   /θ/, shown in [[file:chapter001.html#Fig_1-2][figure 1.2]], as the
+   generalized coordinate.
 
    The position of the bob is given, in rectangular coordinates, by
 
    $$\begin{array}{llll} {x = l\sin\theta} & \text{and} & {y = y_{s}(t) -
-   l\cos\theta.} & {(1.84)}
-   \end{equation}
+   l\cos\theta.} & {(1.84)} \end{equation}
 
    The velocities are
 
@@ -2372,28 +2366,25 @@ formulation because of these advantages.
    $$\begin{array}{lll} {L(t,\theta,\overset{˙}{\theta})} & {=
    \frac{1}{2}m(l^{2}{\overset{˙}{\theta}}^{2} + {(Dy_{s}(t))}^{2} + 2l\,
    Dy_{s}(t)\overset{˙}{\theta}\sin\theta)} & \\
-   & {\text{   } - gm(y_{s}(t) - l\cos\theta).} & {(1.88)}
-   \end{equation}
+   & {\text{   } - gm(y_{s}(t) - l\cos\theta).} & {(1.88)} \end{equation}
 
 
 
    The Lagrangian is expressed as
 
     #+begin_src scheme
-(define ((T-pend m l g ys) local) (let ((t (time
-   local)) (theta (coordinate local)) (thetadot (velocity local))) (let ((vys (D
-   ys))) (* 1/2 m (+ (square (* l thetadot)) (square (vys t)) (* 2 l (vys t)
-   thetadot (sin theta))))))) (define ((V-pend m l g ys) local) (let ((t (time
-   local)) (theta (coordinate local))) (* m g (- (ys t) (* l (cos theta))))))
+(define ((T-pend m l g ys) local) (let ((t (time local)) (theta (coordinate
+local)) (thetadot (velocity local))) (let ((vys (D ys))) (* 1/2 m (+ (square (*
+l thetadot)) (square (vys t)) (* 2 l (vys t) thetadot (sin
+theta))))))) (define ((V-pend m l g ys) local) (let ((t (time
+local)) (theta (coordinate local))) (* m g (- (ys t) (* l (cos theta))))))
    (define L-pend (- T-pend V-pend))
     #+end_src
 
    Lagrange's equation for this system is
 
-    #+begin_src scheme
-(show-expression (((Lagrange-equations (L-pend 'm 'l
-   'g (literal-function 'y_s))) (literal-function 'theta)) 't))
-    #+end_src %}
+    #+begin_src scheme (show-expression (((Lagrange-equations (L-pend 'm 'l 'g
+(literal-function 'y_s))) (literal-function 'theta)) 't)) #+end_src %}
 
    $$D^{2}\theta\,(t)\, l^{2}m + D^{2}y_{s}\,(t)\,\,\sin\,(\theta(t))lm +
    \sin\,(\theta(t))\, glm$$
@@ -2432,21 +2423,23 @@ formulation because of these advantages.
 
    *Exercise 1.19: Two-bar linkage*
 
-   The two-bar linkage shown in [[file:chapter001.html#Fig_1-3][figure 1.3]] is constrained to move in the plane.
-   It is composed of three small massive bodies interconnected by two massless
-   rigid rods in a uniform gravitational field with vertical acceleration /g/.
-   The rods are pinned to the central body by a hinge that allows the linkage to
-   fold. The system is arranged so that the hinge is completely free: the
-   members can go through all configurations without collision. Formulate a
-   Lagrangian that describes the system and find the Lagrange equations of
-   motion. Use the computer to do this, because the equations are rather big.
+   The two-bar linkage shown in [[file:chapter001.html#Fig_1-3][figure 1.3]] is
+   constrained to move in the plane. It is composed of three small massive
+   bodies interconnected by two massless rigid rods in a uniform gravitational
+   field with vertical acceleration /g/. The rods are pinned to the central body
+   by a hinge that allows the linkage to fold. The system is arranged so that
+   the hinge is completely free: the members can go through all configurations
+   without collision. Formulate a Lagrangian that describes the system and find
+   the Lagrange equations of motion. Use the computer to do this, because the
+   equations are rather big.
 
    *Exercise 1.20: Sliding pendulum*
 
    Consider a pendulum of length /l/ attached to a support that is free to move
-   horizontally, as shown in [[file:chapter001.html#Fig_1-4][figure 1.4]]. Let the mass of the support be /m/_{1}
-   and the mass of the pendulum bob be /m/_{2}. Formulate a Lagrangian and
-   derive Lagrange's equations for this system.
+   horizontally, as shown in [[file:chapter001.html#Fig_1-4][figure 1.4]]. Let
+   the mass of the support be /m/_{1} and the mass of the pendulum bob be
+   /m/_{2}. Formulate a Lagrangian and derive Lagrange's equations for this
+   system.
 
 
 
@@ -2548,14 +2541,14 @@ formulation because of these advantages.
    \end{equation}
 
    but this is just a restatement of the constraints. The Lagrange equations for
-   the coordinates of the particles are Newton's equations ([[file:chapter001.html#disp_1.91][1.91]])
+   the coordinates of the particles are Newton's equations
+   ([[file:chapter001.html#disp_1.91][1.91]])
 
    $$\begin{array}{lll} {D(mD\mathbf{x}_{\alpha})(t)} & {= -
    \partial_{1,\alpha}V(t,x(t))} & \\
    & {\,\,\,\,\,\,\,\, +
    {\sum\limits_{\{\beta|\alpha\leftrightarrow\beta\}}{F_{\alpha\beta}(t)\frac{\mathbf{x}_{\beta}(t) -
-   \mathbf{x}_{\alpha}(t)}{l_{\alpha\beta}}}}.} & {(1.95)}
-   \end{equation}
+   \mathbf{x}_{\alpha}(t)}{l_{\alpha\beta}}}}.} & {(1.95)} \end{equation}
 
 
 
@@ -2597,7 +2590,8 @@ formulation because of these advantages.
    {\mathbf{v}_{\alpha} = \partial_{0}f_{\alpha}(t,q,c) + \partial_{1}f_{\alpha}(t,q,c)\,\,\overset{˙}{q} + \partial_{2}f_{\alpha}(t,q,c)\,\,\overset{˙}{c}.} & {(1.97)}
    \end{equation}
 
-   Substituting these into Lagrangian ([[file:chapter001.html#disp_1.93][1.93]]), and using
+   Substituting these into Lagrangian
+   ([[file:chapter001.html#disp_1.93][1.93]]), and using
 
    \begin{equation}
    {c_{\alpha\beta}^{2} = {(\mathbf{x}_{\beta} - \mathbf{x}_{\alpha})}^{2},} & {(1.98)}
@@ -2632,8 +2626,7 @@ formulation because of these advantages.
    $$\begin{array}{lll} {L''(t,q,\overset{˙}{q})} & {=
    {\sum\limits_{\alpha}{\frac{1}{2}m_{\alpha}{(\partial_{0}f_{\alpha}(t,q,l) +
    \partial_{1}f_{\alpha}(t,q,l)\,\,\overset{˙}{q})}^{2}}}} & \\
-   & {\,\,\, - V(t,f(t,q,l)),} & {(1.101)}
-   \end{equation}
+   & {\,\,\, - V(t,f(t,q,l)),} & {(1.101)} \end{equation}
 
    but this is exactly /T/ − /V/ where /T/ and /V/ are computed from the
    generalized coordinates /q/, with fixed constraints. Notice that the
@@ -2651,8 +2644,9 @@ formulation because of these advantages.
    /D/^{2}/c/ = 0.
 
    If we are not interested in the constraint forces, we can abandon the full
-   Lagrangian ([[file:chapter001.html#disp_1.99][1.99]]) in favor of Lagrangian ([[file:chapter001.html#disp_1.101][1.101]]), which is equivalent as far
-   as the evolution of the generalized coordinates /q/ is concerned.
+   Lagrangian ([[file:chapter001.html#disp_1.99][1.99]]) in favor of Lagrangian
+   ([[file:chapter001.html#disp_1.101][1.101]]), which is equivalent as far as
+   the evolution of the generalized coordinates /q/ is concerned.
 
    #+caption: *Figure 1.5* A rigid rod of length /l/ constrains two massive
    particles in a plane. [[file:images/Art_P166.jpg]]
@@ -2672,9 +2666,10 @@ formulation because of these advantages.
    constrained systems for a particular simple system.
 
    Consider two massive particles in the plane constrained by a massless rigid
-   rod to remain a distance /l/ apart, as in [[file:chapter001.html#Fig_1-5][figure 1.5]]. There are apparently
-   four degrees of freedom for two massive particles in the plane, but the rigid
-   rod reduces this number to three.
+   rod to remain a distance /l/ apart, as in
+   [[file:chapter001.html#Fig_1-5][figure 1.5]]. There are apparently four
+   degrees of freedom for two massive particles in the plane, but the rigid rod
+   reduces this number to three.
 
    We can uniquely specify the configuration with the redundant coordinates of
    the particles, say /x/_{0}(/t/), /y/_{0}(/t/) and /x/_{1}(/t/), /y/_{1}(/t/).
@@ -2711,18 +2706,20 @@ formulation because of these advantages.
 
    *Exercise 1.22: Driven pendulum*
 
-   Show that the Lagrangian ([[file:chapter001.html#disp_1.93][1.93]]) can be used to describe the driven pendulum
-   ([[file:chapter001.html#h3_1-6-2][section 1.6.2]]), where the position of the pivot is a specified function of
-   time: Derive the equations of motion using the Newtonian constraint force
-   prescription, and show that they are the same as the Lagrange equations. Be
-   sure to examine the equations for the constraint forces as well as the
-   position of the pendulum bob.
+   Show that the Lagrangian ([[file:chapter001.html#disp_1.93][1.93]]) can be
+   used to describe the driven pendulum
+   ([[file:chapter001.html#h3_1-6-2][section 1.6.2]]), where the position of the
+   pivot is a specified function of time: Derive the equations of motion using
+   the Newtonian constraint force prescription, and show that they are the same
+   as the Lagrange equations. Be sure to examine the equations for the
+   constraint forces as well as the position of the pendulum bob.
 
    *Exercise 1.23: Fill in the details*
 
-   Show that the Lagrange equations for Lagrangian ([[file:chapter001.html#disp_1.101][1.101]]) are the same as the
-   Lagrange equations for Lagrangian ([[file:chapter001.html#disp_1.99][1.99]]) with the substitution /c/(/t/) =
-   /l/, /Dc/(/t/) = /D/^{2}/c/(/t/) = 0.
+   Show that the Lagrange equations for Lagrangian
+   ([[file:chapter001.html#disp_1.101][1.101]]) are the same as the Lagrange
+   equations for Lagrangian ([[file:chapter001.html#disp_1.99][1.99]]) with the
+   substitution /c/(/t/) = /l/, /Dc/(/t/) = /D/^{2}/c/(/t/) = 0.
 
    *Exercise 1.24: Constraint forces*
 
@@ -2781,7 +2778,8 @@ formulation because of these advantages.
     view this as a coordinate transformation. What is unusual about this as a
     coordinate transformation is that the dimension of /x/ is not the same as
     the dimension of /q/. From this coordinate transformation we can find the
-    local-tuple transformation function (see [[file:chapter001.html#h3_1-6-1][section 1.6.1]])
+    local-tuple transformation function (see
+    [[file:chapter001.html#h3_1-6-1][section 1.6.1]])
 
     \begin{equation}
     {(t;\mathbf{x}_{0},\ldots,\mathbf{x}_{N - 1};\mathbf{v}_{0},\ldots,\mathbf{v}_{N - 1}) = C(t,q,v).} & {(1.103)}
@@ -2799,9 +2797,10 @@ formulation because of these advantages.
     The constraints enter only in the transformation.
 
     To illustrate this we will find a Lagrangian for the driven pendulum
-    introduced in [[file:chapter001.html#h3_1-6-2][section 1.6.2]]. As we saw on [[file:chapter001.html#p40][page 40]], the /T/ − /V/ Lagrangian
-    for a free particle of mass /m/ in a vertical plane subject to a
-    gravitational potential with acceleration /g/ is
+    introduced in [[file:chapter001.html#h3_1-6-2][section 1.6.2]]. As we saw on
+    [[file:chapter001.html#p40][page 40]], the /T/ − /V/ Lagrangian for a free
+    particle of mass /m/ in a vertical plane subject to a gravitational
+    potential with acceleration /g/ is
 
     \begin{equation}
     {L_{f}\left( {t;x,y;v_{x},v_{y}} \right) = \frac{1}{2}m(v_{x}^{2} + v_{y}^{2}) - mgy,} & {(1.105)}
@@ -2824,9 +2823,9 @@ formulation because of these advantages.
     coordinate transformation is
 
      #+begin_src scheme
-(define ((dp-coordinates l y_s) local) (let ((t (time
-    local)) (theta (coordinate local))) (let ((x (* l (sin theta))) (y (- (y_s
-    t) (* l (cos theta))))) (up x y))))
+(define ((dp-coordinates l y_s) local) (let ((t (time local)) (theta (coordinate
+local))) (let ((x (* l (sin theta))) (y (- (y_s t) (* l (cos theta))))) (up x
+y))))
      #+end_src
 
     Using F->C we can deduce the local-tuple transformation and define the
@@ -2842,8 +2841,8 @@ formulation because of these advantages.
     The Lagrangian is
 
      ,#+begin_src scheme
-(show-expression ((L-pend 'm 'l 'g (literal-function
-    'y_s)) (up 't 'theta 'thetadot)))
+(show-expression ((L-pend 'm 'l 'g (literal-function 'y_s)) (up 't 'theta
+'thetadot)))
      #+end_src
 
     $$glm\,\cos\,(\theta) - gmy_{s}\,(t) +
@@ -2851,7 +2850,9 @@ formulation because of these advantages.
     lm\overset{˙}{\theta}Dy_{s}\,(t)\sin\left( \theta \right) +
     \frac{1}{2}m{(Dy_{s}(t))}^{2}$$
 
-    This is the same as the Lagrangian of equation ([[file:chapter001.html#disp_1.88][1.88]]) on [[file:chapter001.html#p51][page 51]].
+    This is the same as the Lagrangian of equation
+    ([[file:chapter001.html#disp_1.88][1.88]]) on
+    [[file:chapter001.html#p51][page 51]].
 
     We have found a very interesting decomposition of the Lagrangian for
     constrained systems. One part consists of the difference of the kinetic and
@@ -2896,11 +2897,11 @@ formulation because of these advantages.
     This second transformation can be implemented with the following code:
 
      #+begin_src scheme
-((compose (Rz (* 'Omega 't)) (Ry 'phi)) (up 'x_0 'y_0
-    'z_0)) (up (+ (* x_0 (cos phi) (cos (* Omega t))) (* z_0 (sin phi) (cos (*
-    Omega t))) (* -1 y_0 (sin (* Omega t)))) (+ (* x_0 (cos phi) (sin (* Omega
-    t))) (* z_0 (sin phi) (sin (* Omega t))) (* y_0 (cos (* Omega t)))) (+ (* -1
-    x_0 (sin phi)) (* z_0 (cos phi))))
+((compose (Rz (* 'Omega 't)) (Ry 'phi)) (up 'x_0 'y_0 'z_0)) (up (+ (* x_0 (cos
+phi) (cos (* Omega t))) (* z_0 (sin phi) (cos (* Omega t))) (* -1 y_0 (sin (*
+Omega t)))) (+ (* x_0 (cos phi) (sin (* Omega t))) (* z_0 (sin phi) (sin (*
+Omega t))) (* y_0 (cos (* Omega t)))) (+ (* -1 x_0 (sin phi)) (* z_0 (cos
+phi))))
      #+end_src
 
     Construct a coordinate transformation F from these parts that you can use
@@ -2965,8 +2966,7 @@ formulation because of these advantages.
    \circ \Gamma\lbrack q\rbrack + (\partial_{1}F \circ \Gamma\lbrack
    q\rbrack)Dq} & \\
    & {= (\partial_{0}F + (\partial_{1}F)\overset{˙}{Q}) \circ \Gamma\lbrack
-   q\rbrack,} & {(1.111)}
-   \end{equation}
+   q\rbrack,} & {(1.111)} \end{equation}
 
    where
 
@@ -3006,8 +3006,7 @@ formulation because of these advantages.
    $$\begin{array}{lll} {D_{t}F(t,q,v,a,\ldots) =} &
    {\partial_{0}F(t,q,v,a,\ldots)} & \\
    & {+ \partial_{1}F(t,q,v,a,\ldots)v} & \\
-   & {+ \partial_{2}F(t,q,v,a,\ldots)a + \cdots,} & {(1.114)}
-   \end{equation}
+   & {+ \partial_{2}F(t,q,v,a,\ldots)a + \cdots,} & {(1.114)} \end{equation}
 
    where we take as many terms as needed to exhaust the arguments of /F/.
 
@@ -3050,8 +3049,7 @@ formulation because of these advantages.
    & {= {\int_{t_{1}}^{t_{2}}{L \circ \Gamma\lbrack q\rbrack +
    {\int_{t_{1}}^{t_{2}}{D(F \circ \Gamma\lbrack q\rbrack)}}}}} & \\
    & {= S\lbrack q\rbrack(t_{1},t_{2}) + (F \circ \Gamma\lbrack
-   q\rbrack)|_{t_{1}}^{t_{2}}.} & {(1.116)}
-   \end{equation}
+   q\rbrack)|_{t_{1}}^{t_{2}}.} & {(1.116)} \end{equation}
 
    The variational principle states that the action integral along a realizable
    trajectory is stationary with respect to variations of the trajectory that
@@ -3102,9 +3100,10 @@ formulation because of these advantages.
    equation of motion of an undriven pendulum, except that the acceleration of
    gravity /g/ is augmented by the acceleration of the pivot /D/^{2}/y_{s}/.
    This intuitive interpretation was not apparent in the Lagrangian derived as
-   the difference of the kinetic and potential energies in [[file:chapter001.html#h3_1-6-2][section 1.6.2]].
-   However, we can write an alternate Lagrangian with the same equation of
-   motion that is as easy to interpret as the equation of motion:
+   the difference of the kinetic and potential energies in
+   [[file:chapter001.html#h3_1-6-2][section 1.6.2]]. However, we can write an
+   alternate Lagrangian with the same equation of motion that is as easy to
+   interpret as the equation of motion:
 
    \begin{equation}
    {L\prime(t,\theta,\overset{˙}{\theta}) = \frac{1}{2}ml^{2}{\overset{˙}{\theta}}^{2} + ml(g + D^{2}y_{s}(t))\,\cos\theta.} & {(1.120)}
@@ -3118,8 +3117,7 @@ formulation because of these advantages.
    $$\begin{array}{lll} {\Delta L(t,\theta,\overset{˙}{\theta}) =} &
    {\frac{1}{2}m{(Dy_{s}(t))}^{2} + mlDy_{s}(t)\overset{˙}{\theta}\,\sin\theta}
    & \\
-   & {- gmy_{s}(t) - mlD^{2}y_{s}(t)\,\cos\theta.} & {(1.121)}
-   \end{equation}
+   & {- gmy_{s}(t) - mlD^{2}y_{s}(t)\,\cos\theta.} & {(1.121)} \end{equation}
 
    The two terms in Δ/L/ that depend on neither /θ/ nor
 
@@ -3143,8 +3141,8 @@ formulation because of these advantages.
    time derivative of a function /F/, with arguments (/t/, /q/), then /G/ must
    have certain properties.
 
-   From equation ([[file:chapter001.html#disp_1.112][1.112]]), we see that /G/ must be linear in the generalized
-   velocities
+   From equation ([[file:chapter001.html#disp_1.112][1.112]]), we see that /G/
+   must be linear in the generalized velocities
 
    \begin{equation}
    {G(t,q,v) = G_{0}(t,q,v) + G_{1}(t,q,v)\, v} & {(1.122)}
@@ -3329,8 +3327,8 @@ formulation because of these advantages.
   \partial_{0}\partial_{2}L \circ \Gamma\lbrack q\rbrack\rbrack} \end{equation}$
 
   where [∂_{2}∂_{2}/L/ ∘ Γ] is a structure that can be represented by a
-  symmetric square matrix, so we can compute its inverse.[fn:73] The function that
-  gives the acceleration is
+  symmetric square matrix, so we can compute its inverse.[fn:73] The function
+  that gives the acceleration is
 
   \begin{equation}
   {A = {(\partial_{2}\partial_{2}L)}^{- 1}\lbrack\partial_{1}L - \partial_{0}\partial_{2}L - (\partial_{1}\partial_{2}L)\overset{˙}{Q}\rbrack,} & {(1.130)}
@@ -3369,7 +3367,7 @@ formulation because of these advantages.
    #+begin_src scheme
 (define (Lagrangian->state-derivative L) (let
   ((acceleration (Lagrangian->acceleration L))) (lambda (state) (up 1 (velocity
-  state) (acceleration state)))))
+state) (acceleration state)))))
    #+end_src
 
   We represent a state by an up tuple of the components of that initial segment
@@ -3382,8 +3380,8 @@ formulation because of these advantages.
    #+begin_src scheme
 (define (harmonic-state-derivative m k)
   (Lagrangian->state-derivative (L-harmonic m k))) ((harmonic-state-derivative
-  'm 'k) (up 't (up 'x 'y) (up 'v_x 'v_y))) (up 1 (up v_x v_y) (up (/ (* -1 k x)
-  m) (/ (* -1 k y) m)))
+'m 'k) (up 't (up 'x 'y) (up 'v_x 'v_y))) (up 1 (up v_x v_y) (up (/ (* -1 k x)
+m) (/ (* -1 k y) m)))
    #+end_src
 
   The Lagrange equations are a second-order system of differential equations
@@ -3396,7 +3394,7 @@ formulation because of these advantages.
 (define ((Lagrange-equations-first-order L) q v) (let
   ((state-path (qv->state-path q v))) (- (D state-path) (compose
   (Lagrangian->state-derivative L) state-path)))) (define ((qv->state-path q v)
-  t) (up t (q t) (v t)))
+t) (up t (q t) (v t)))
    #+end_src
 
   For example, we can find the first-order form of the equations of motion of a
@@ -3408,8 +3406,8 @@ formulation because of these advantages.
   (literal-function 'v_x) (literal-function 'v_y))) 't))
    #+end_src
 
-  $$\begin{pmatrix} 0 \\ \begin{pmatrix} {Dx(t) - v_{x}(t)} {Dy(t) -
-  v_{y}(t)} \end{pmatrix} \begin{pmatrix} {\frac{kx(t)}{m} + Dv_{x}(t)}
+  $$\begin{pmatrix} 0 \\ \begin{pmatrix} {Dx(t) - v_{x}(t)} {Dy(t) - v_{y}(t)}
+  \end{pmatrix} \begin{pmatrix} {\frac{kx(t)}{m} + Dv_{x}(t)}
   \\ {\frac{ky(t)}{m} + Dv_{y}(t)} \end{pmatrix} \end{pmatrix}$$
 
 
@@ -3438,9 +3436,10 @@ formulation because of these advantages.
    derivative in terms of the state can be integrated to find the state path
    that emanates from a given initial state. Numerical integrators find
    approximate solutions of such differential equations by a process illustrated
-   in [[file:chapter001.html#Fig_1-6][figure 1.6]]. The state derivative produced by Lagrangian->state-derivative
-   can be used by a package that numerically integrates systems of first-order
-   ordinary differential equations.
+   in [[file:chapter001.html#Fig_1-6][figure 1.6]]. The state derivative
+   produced by Lagrangian->state-derivative can be used by a package that
+   numerically integrates systems of first-order ordinary differential
+   equations.
 
    The procedure state-advancer can be used to find the state of a system at a
    specified time, given an initial state, which includes the initial time, and
@@ -3450,8 +3449,8 @@ formulation because of these advantages.
     #+begin_src scheme
 ((state-advancer harmonic-state-derivative 2.0 1.0)
    (up 1.0 (up 1.0 2.0) (up 3.0 4.0)) 10.0 1.0e-12) (up 11.0 (up
-   3.7127916645844437 5.420620823651583) (up 1.6148030925459782
-   1.8189103724750855))
+3.7127916645844437 5.420620823651583) (up 1.6148030925459782
+1.8189103724750855))
     #+end_src
 
    The arguments to state-advancer are a parametric state derivative,
@@ -3461,14 +3460,15 @@ formulation because of these advantages.
    1.0e-12. The output is an approximation to the state at the specified final
    time.
 
-   Consider the driven pendulum described in [[file:chapter001.html#h3_1-6-2][section 1.6.2]] with a periodic
-   drive. We choose /y_{s}/(/t/) = /A/ cos /ωt/.
+   Consider the driven pendulum described in
+   [[file:chapter001.html#h3_1-6-2][section 1.6.2]] with a periodic drive. We
+   choose /y_{s}/(/t/) = /A/ cos /ωt/.
 
     #+begin_src scheme
 (define ((periodic-drive amplitude frequency phase) t)
    (* amplitude (cos (+ (* frequency t) phase)))) (define
    (L-periodically-driven-pendulum m l g A omega) (let ((ys (periodic-drive A
-   omega 0))) (L-pend m l g ys)))
+omega 0))) (L-pend m l g ys)))
     #+end_src
 
 
@@ -3478,7 +3478,7 @@ formulation because of these advantages.
     #+begin_src scheme
 (show-expression (((Lagrange-equations
    (L-periodically-driven-pendulum 'm 'l 'g 'A 'omega)) (literal-function
-   'theta)) 't))
+'theta)) 't))
     #+end_src
 
    $$D^{2}\theta(t)l^{2}m - \cos(\omega t)\,\sin\,(\theta(t))\, Alm\omega^{2} +
@@ -3489,8 +3489,8 @@ formulation because of these advantages.
     #+begin_src scheme
 (define (pend-state-derivative m l g A omega)
    (Lagrangian->state-derivative (L-periodically-driven-pendulum m l g A
-   omega))) (show-expression ((pend-state-derivative 'm 'l 'g 'A 'omega) (up 't
-   'theta 'thetadot)))
+omega))) (show-expression ((pend-state-derivative 'm 'l 'g 'A 'omega) (up 't
+'theta 'thetadot)))
     #+end_src
 
    $$\begin{pmatrix} 1 \\ \overset{˙}{\theta} {\frac{A\omega^{2}\cos\,(\omega
@@ -3516,15 +3516,15 @@ formulation because of these advantages.
    ;final time 1.0e-13) ;local error tolerance
     #+end_src
 
-   [[#Fig_1-7][Figure 1.7]] shows the angle /θ/ versus time for a couple of orbits for the
-   driven pendulum. The initial conditions for the two runs are the same except
-   that in one the bob is given a tiny velocity equal to 10^{−10}m/s, about one
-   atom width per second. The initial segments of the two orbits are
-   indistinguishable. After about 75 seconds the two orbits diverge and become
-   completely different. This extreme sensitivity to tiny changes in initial
-   conditions is characteristic of what is called /chaotic behavior/. Later, we
-   will investigate this example further, using other tools such as Lyapunov
-   exponents, phase space, and Poincaré sections.
+   [[#Fig_1-7][Figure 1.7]] shows the angle /θ/ versus time for a couple of
+   orbits for the driven pendulum. The initial conditions for the two runs are
+   the same except that in one the bob is given a tiny velocity equal to
+   10^{−10}m/s, about one atom width per second. The initial segments of the two
+   orbits are indistinguishable. After about 75 seconds the two orbits diverge
+   and become completely different. This extreme sensitivity to tiny changes in
+   initial conditions is characteristic of what is called /chaotic behavior/.
+   Later, we will investigate this example further, using other tools such as
+   Lyapunov exponents, phase space, and Poincaré sections.
 
 
 
@@ -3572,8 +3572,9 @@ formulation because of these advantages.
    the colatitude.
 
    *a.* Evolve the Foucault pendulum, using the Lagrangian you constructed in
-   [[file:chapter001.html#Exe_1-25][exercise 1.25]] on [[file:chapter001.html#p62][page 62]]. You should look at the precession angle /λ/ as a
-   function of time.
+   [[file:chapter001.html#Exe_1-25][exercise 1.25]] on
+   [[file:chapter001.html#p62][page 62]]. You should look at the precession
+   angle /λ/ as a function of time.
 
    *b.* How does the rate of precession compare to the predicted rate? You
    should expect to see an error caused by the fact that the local vertical, as
@@ -3698,7 +3699,8 @@ formulation because of these advantages.
    . For a realizable path /Dp/(/t/) = 0. For the free particle the usual linear
    momentum is conserved for realizable paths.
 
-   For a particle in a central force field ([[file:chapter001.html#h1-6a][section 1.6]]), the Lagrangian
+   For a particle in a central force field
+   ([[file:chapter001.html#h1-6a][section 1.6]]), the Lagrangian
 
    $L(t;r,\varphi;\overset{˙}{r},\overset{˙}{\varphi}) =
    \frac{1}{2}m({\overset{˙}{r}}^{2} + r^{2}{\overset{˙}{\varphi}}^{2}) - V(r)$
@@ -3759,8 +3761,7 @@ formulation because of these advantages.
     & {= D(L \circ \Gamma\lbrack q\rbrack) - D((\partial_{2}L \circ
     \Gamma\lbrack q\rbrack)(\overset{˙}{Q} \circ \Gamma\lbrack q\rbrack))} & \\
     & {= D((L - \mathcal{P}\overset{˙}{Q}) \circ \Gamma\lbrack q\rbrack),} &
-    {(1.141)}
-    \end{equation}
+    {(1.141)} \end{equation}
 
     where, as before,
 
@@ -3775,8 +3776,8 @@ formulation because of these advantages.
 
 
     is conserved along realizable paths. The function /ℰ/ is called the /energy
-    state function/.[fn:83] The energy state function for a system depends on the
-    choice of Lagrangian used to describe the system.[fn:84] Let /E/ = /ℰ/ ∘
+    state function/.[fn:83] The energy state function for a system depends on
+    the choice of Lagrangian used to describe the system.[fn:84] Let /E/ = /ℰ/ ∘
     Γ[/q/] denote the energy function on the path /q/. The energy function has a
     constant value along any realizable trajectory if the Lagrangian has no
     explicit time dependence; the energy /E/ may have a different value for
@@ -3786,8 +3787,7 @@ formulation because of these advantages.
     Given a Lagrangian procedure L, we may construct the energy function:
 
      #+begin_src scheme
-(define (Lagrangian->energy L) (let ((P ((partial
-    2) L))) (- (* P velocity) L)))
+(define (Lagrangian->energy L) (let ((P ((partial 2) L))) (- (* P velocity) L)))
      #+end_src
 
 ** Energy in terms of kinetic and potential energies
@@ -3872,8 +3872,9 @@ formulation because of these advantages.
    uniform gravitational field with acceleration /g/. If the particle starts
    close to the top of the cylinder with zero initial speed, with what angular
    velocity does it leave the cylinder? Use the method of incorporating
-   constraint forces that we introduced in [[file:chapter001.html#h3_1-6-2][section 1.6.2]], together with
-   conservation of energy.
+   constraint forces that we introduced in
+   [[file:chapter001.html#h3_1-6-2][section 1.6.2]], together with conservation
+   of energy.
 
 *** 1.8.3 Central Forces in Three Dimensions
     :PROPERTIES:
@@ -3893,8 +3894,8 @@ formulation because of these advantages.
     As a procedure:
 
      #+begin_src scheme
-(define ((T3-spherical m) state) (let ((q (coordinate
-    state)) (qdot (velocity state))) (let ((r (ref q 0)) (theta (ref q 1)) (rdot
+(define ((T3-spherical m) state) (let ((q (coordinate state)) (qdot (velocity
+state))) (let ((r (ref q 0)) (theta (ref q 1)) (rdot
     (ref qdot 0)) (thetadot (ref qdot 1)) (phidot (ref qdot 2))) (* 1/2 m (+
     (square rdot) (square (* r thetadot)) (square (* r (sin theta) phidot)))))))
 
@@ -3916,7 +3917,7 @@ formulation because of these advantages.
      #+begin_src scheme
 (show-expression (((partial 1) (L3-central 'm
     (literal-function 'V))) (up 't (up 'r 'theta 'phi) (up 'rdot 'thetadot
-    'phidot))))
+'phidot))))
      #+end_src
 
     $$\begin{bmatrix} {m{\overset{˙}{\varphi}}^{2}r\,{(\sin\,(\theta))}^{2} +
@@ -3931,7 +3932,7 @@ formulation because of these advantages.
      #+begin_src scheme
 (show-expression (((partial 2) (L3-central 'm
     (literal-function 'V))) (up 't (up 'r 'theta 'phi) (up 'rdot 'thetadot
-    'phidot))))
+'phidot))))
      #+end_src
 
     $$\begin{bmatrix} {m\overset{˙}{r}} {mr^{2}\overset{˙}{\theta}}
@@ -3959,12 +3960,12 @@ formulation because of these advantages.
     (cross-product xyz (* m v)) 2))) (define (s->r spherical-state) (let ((q
     (coordinate spherical-state))) (let ((r (ref q 0)) (theta (ref q 1)) (phi
     (ref q 2))) (let ((x (* r (sin theta) (cos phi))) (y (* r (sin theta) (sin
-    phi))) (z (* r (cos theta)))) (up x y z)))))
+phi))) (z (* r (cos theta)))) (up x y z)))))
      #+end_src
 
         #+begin_src scheme
-(show-expression ((compose (ang-mom-z 'm) (F->C
-    s->r)) (up 't (up 'r 'theta 'phi) (up 'rdot 'thetadot 'phidot)))) {%
+(show-expression ((compose (ang-mom-z 'm) (F->C s->r)) (up 't (up 'r 'theta
+'phi) (up 'rdot 'thetadot 'phidot)))) {%
 
         #+end_src
 
@@ -3984,7 +3985,8 @@ formulation because of these advantages.
 
     $\overset{˙}{\theta} = 0$
 
-    . Planar motion in a central-force field was discussed in [[file:chapter001.html#h1-6a][section 1.6]].
+    . Planar motion in a central-force field was discussed in
+    [[file:chapter001.html#h1-6a][section 1.6]].
 
     We can also see that the energy state function computed from the Lagrangian
     for a central field is in fact /T/ + /V/ :
@@ -3992,7 +3994,7 @@ formulation because of these advantages.
      #+begin_src scheme
 (show-expression ((Lagrangian->energy (L3-central 'm
     (literal-function 'V))) (up 't (up 'r 'theta 'phi) (up 'rdot 'thetadot
-    'phidot))))
+'phidot))))
      #+end_src
 
     $$\frac{1}{2}m{\overset{˙}{\varphi}}^{2}r^{2}{(\sin\,(\theta))}^{2} +
@@ -4029,7 +4031,7 @@ formulation because of these advantages.
      #+begin_src scheme
 (define ((L0 m V) local) (let ((t (time local)) (q
     (coordinates local)) (v (velocities local))) (- (* 1/2 m (square v)) (V t
-    q))))
+q))))
      #+end_src
 
     Let /a/ be the constant distance between the two bodies. If we put the
@@ -4079,8 +4081,9 @@ formulation because of these advantages.
 
     axis, and we can choose the rotating and nonrotating axes to be coincident
     at /t/ = 0. We can transform to the rotating rectangular coordinates as we
-    did on [[file:chapter001.html#p48][page 48]]. The resulting Lagrangian is the Lagrangian for the free
-    particle with the addition of two gravitational potential energy terms:
+    did on [[file:chapter001.html#p48][page 48]]. The resulting Lagrangian is
+    the Lagrangian for the free particle with the addition of two gravitational
+    potential energy terms:
 
     \begin{equation}
     {L_{r}(t;x_{r},y_{r};{\overset{˙}{x}}_{r},{\overset{˙}{y}}_{r})} & \\
@@ -4103,7 +4106,7 @@ formulation because of these advantages.
     (let ((r0 (sqrt (+ (square (+ x a0)) (square y)))) (r1 (sqrt (+ (square (- x
     a1)) (square y))))) (+ (* 1/2 m (square qdot)) (* 1/2 m (square Omega)
     (square q)) (* m Omega (- (* x ydot) (* xdot y))) (/ (* GM0 m) r0) (/ (* GM1
-    m) r1))))))
+m) r1))))))
      #+end_src
 
     Notice that the Lagrangian in rotating coordinates is independent of time.
@@ -4126,12 +4129,12 @@ formulation because of these advantages.
     simplification):
 
      #+begin_src scheme
-((Lagrangian->energy (LR3B1 'm 'a_0 'a_1 'Omega 'GM_0
-    'GM_1)) (up 't (up 'x_r 'y_r) (up 'v_r^x 'v_r^y))) (+ (* 1/2 m (expt v_r^x
-    2)) (* 1/2 m (expt v_r^y 2)) (/ (* -1 GM_0 m) (sqrt (+ (expt (+ x_r a_0) 2)
+((Lagrangian->energy (LR3B1 'm 'a_0 'a_1 'Omega 'GM_0 'GM_1)) (up 't (up 'x_r
+'y_r) (up 'v_r^x 'v_r^y))) (+ (* 1/2 m (expt v_r^x 2)) (* 1/2 m (expt v_r^y
+2)) (/ (* -1 GM_0 m) (sqrt (+ (expt (+ x_r a_0) 2)
     (expt y_r 2)))) (/ (* -1 GM_1 m) (sqrt (+ (expt (- x_r a_1) 2) (expt y_r
-    2)))) (* -1/2 m (expt Omega 2) (expt x_r 2)) (* -1/2 m (expt Omega 2) (expt
-    y_r 2)))
+2)))) (* -1/2 m (expt Omega 2) (expt x_r 2)) (* -1/2 m (expt Omega 2) (expt y_r
+2)))
      #+end_src
 
     If we separate this into a velocity-dependent part and a
@@ -4160,15 +4163,16 @@ formulation because of these advantages.
 
     ${\overset{˙}{y}}_{r}$
 
-    , although such terms appear in the Lagrangian ([[file:chapter001.html#disp_1.150][1.150]]).
+    , although such terms appear in the Lagrangian
+    ([[file:chapter001.html#disp_1.150][1.150]]).
 
 
 
     *Exercise 1.35: Restricted equations of motion*
 
     Derive the Lagrange equations for the restricted three-body problem, given
-    the Lagrangian ([[file:chapter001.html#disp_1.150][1.150]]). Identify the Coriolis and centrifugal force terms in
-    your equations of motion.
+    the Lagrangian ([[file:chapter001.html#disp_1.150][1.150]]). Identify the
+    Coriolis and centrifugal force terms in your equations of motion.
 
 *** 1.8.5 Noether's Theorem
     :PROPERTIES:
@@ -4291,8 +4295,7 @@ formulation because of these advantages.
     q\rbrack)\,\,((D\widetilde{F})(s) \circ \Gamma\lbrack q\prime\rbrack)} & \\
     & {\, + (\partial_{2}L \circ \Gamma\lbrack
     q\rbrack)\,\,(D_{t}(D\widetilde{F}(s)) \circ \Gamma\lbrack q\prime\rbrack).}
-    & {(1.159)}
-    \end{equation}
+    & {(1.159)} \end{equation}
 
     For /s/ = 0 the paths /q/ and /q/′ are the same, because
 
@@ -4304,8 +4307,7 @@ formulation because of these advantages.
     (\partial_{2}L)\,\,(D_{t}(D\widetilde{F}(0)))) \circ \Gamma\lbrack q\rbrack}
     & \\
     & {= D_{t}((\partial_{2}L)\,\,(D\widetilde{F}(0))) \circ \Gamma\lbrack
-    q\rbrack.} & {(1.160)}
-    \end{equation}
+    q\rbrack.} & {(1.160)} \end{equation}
 
     Thus the state function
 
@@ -4339,10 +4341,9 @@ formulation because of these advantages.
    and a parametric rotation /R_{z}/(/s/) about the /z/ axis
 
    $$\begin{matrix} {\begin{pmatrix} x \\ y \\ z \\ \end{pmatrix} =
-   R_{z}(s)\,\begin{pmatrix} {x\prime} {y\prime} {z\prime}
-   \\ \end{pmatrix} = \begin{pmatrix} {x\prime\cos s - y\prime\sin s}
-   \\ {x\prime\sin s + y\prime\cos s} {z\prime} \end{pmatrix}.} &
-   {(1.163)} \end{matrix}$$
+   R_{z}(s)\,\begin{pmatrix} {x\prime} {y\prime} {z\prime} \\ \end{pmatrix}
+   = \begin{pmatrix} {x\prime\cos s - y\prime\sin s} \\ {x\prime\sin s +
+   y\prime\cos s} {z\prime} \end{pmatrix}.} & {(1.163)} \end{matrix}$$
 
    The rotation is an orthogonal transformation so
 
@@ -4387,8 +4388,7 @@ formulation because of these advantages.
 
    $$\begin{array}{lll} {\mathcal{I}(t;x,y,z;v_{x},v_{y},v_{z})} & {=
    ((\partial_{2}L)(D\widetilde{F}(0)))(t;x,y,z;v_{x},v_{y},v_{z})} & \\
-   & {= m(yv_{x} - xv_{y}),} & {(1.169)}
-   \end{equation}
+   & {= m(yv_{x} - xv_{y}),} & {(1.169)} \end{equation}
 
 
 
@@ -4406,8 +4406,8 @@ formulation because of these advantages.
    F-tilde:
 
     #+begin_src scheme
-(define (F-tilde angle-x angle-y angle-z) (compose (Rx
-   angle-x) (Ry angle-y) (Rz angle-z) coordinate))
+(define (F-tilde angle-x angle-y angle-z) (compose (Rx angle-x) (Ry angle-y) (Rz
+angle-z) coordinate))
     #+end_src
 
    A Lagrangian for motion in a central potential is
@@ -4423,9 +4423,9 @@ formulation because of these advantages.
     #+begin_src scheme
 (define the-Noether-integral (let ((L
    (L-central-rectangular 'm (literal-function 'U)))) (* ((partial 2) L) ((D
-   F-tilde) 0 0 0)))) (the-Noether-integral (up 't (up 'x 'y 'z) (up 'vx 'vy
-   'vz))) (down (+ (* m vy z) (* -1 m vz y)) (+ (* m vz x) (* -1 m vx z)) (+ (*
-   m vx y) (* -1 m vy x)))
+F-tilde) 0 0 0)))) (the-Noether-integral (up 't (up 'x 'y 'z) (up 'vx 'vy
+'vz))) (down (+ (* m vy z) (* -1 m vz y)) (+ (* m vz x) (* -1 m vx z)) (+ (* m
+vx y) (* -1 m vy x)))
     #+end_src
 
    We get all three components of the angular momentum.
@@ -4584,8 +4584,8 @@ formulation because of these advantages.
    #+begin_src scheme
 (define (F->C F) (define (C local) (let ((n
   (vector-length local))) (define (f-bar q-prime) (define q (compose F (Gamma
-  q-prime))) (Gamma q n)) ((Gamma-bar f-bar) local))) C) (show-expression ((F->C
-  p->r) (up 't (up 'r 'theta) (up 'rdot 'thetadot))))
+q-prime))) (Gamma q n)) ((Gamma-bar f-bar) local))) C) (show-expression ((F->C
+p->r) (up 't (up 'r 'theta) (up 'rdot 'thetadot))))
    #+end_src
 
   $$\begin{pmatrix} t \\ \begin{pmatrix} {r\cos\,(\theta)} {r\sin\,(\theta)}
@@ -4596,8 +4596,8 @@ formulation because of these advantages.
 
 
   Notice that in this definition of F->C we do not explicitly calculate any
-  derivatives. The calculation that led up to the state transformation ([[file:chapter001.html#disp_1.77][1.77]]) is
-  not needed.
+  derivatives. The calculation that led up to the state transformation
+  ([[file:chapter001.html#disp_1.77][1.77]]) is not needed.
 
   We can also use
 
@@ -4608,15 +4608,14 @@ formulation because of these advantages.
 
   $$\begin{array}{llll} {D_{t}F = \overline{\Gamma}(\overline{G}),} &
   \text{with} & {\overline{G}\lbrack q\rbrack = D(F \circ \Gamma\lbrack
-  q\rbrack).} & {(1.175)}
-  \end{equation}
+  q\rbrack).} & {(1.175)} \end{equation}
 
   The total time derivative can be expressed as a program:
 
    #+begin_src scheme
 (define (Dt F) (define (DtF state) (let ((n
   (vector-length state))) (define (DF-on-path q) (D (compose F (Gamma q (- n
-  1))))) ((Gamma-bar DF-on-path) state))) DtF)
+1))))) ((Gamma-bar DF-on-path) state))) DtF)
    #+end_src
 
   Given a procedure F implementing a local-tuple function and a path q, we
@@ -4628,7 +4627,9 @@ formulation because of these advantages.
 
   Use the procedure Gamma-bar to construct a procedure that transforms
   velocities given a coordinate transformation. Apply this procedure to the
-  procedure p->r to deduce (again) equation ([[file:chapter001.html#disp_1.67][1.67]]) on [[file:chapter001.html#p42][page 42]].
+  procedure p->r to deduce (again) equation
+  ([[file:chapter001.html#disp_1.67][1.67]]) on [[file:chapter001.html#p42][page
+  42]].
 
 ** Lagrange equations at a moment
    :PROPERTIES:
@@ -4647,7 +4648,8 @@ formulation because of these advantages.
    $\overline{\mathcal{E}}$
 
    [/L/] be the path-dependent function that produces the residuals of the
-   Lagrange equations ([[file:chapter001.html#disp_1.12][1.12]]) for the Lagrangian /L/:
+   Lagrange equations ([[file:chapter001.html#disp_1.12][1.12]]) for the
+   Lagrangian /L/:
 
    \begin{equation}
    {\overline{\mathcal{E}}\lbrack L\rbrack\lbrack q\rbrack = D(\partial_{2}L \circ \Gamma\lbrack q\rbrack) - \partial_{1}L \circ \Gamma\lbrack q\rbrack.} & {(1.176)}
@@ -4703,18 +4705,17 @@ formulation because of these advantages.
    For example, applied to the Lagrangian for the harmonic oscillator, we have
 
     #+begin_src scheme
-((Euler-Lagrange-operator (L-harmonic 'm 'k)) (up 't
-   'x 'v 'a)) (+ (* a m) (* k x))
+((Euler-Lagrange-operator (L-harmonic 'm 'k)) (up 't 'x 'v 'a)) (+ (* a m) (* k
+x))
     #+end_src
 
    Notice that the components of the local tuple are individually specified.
-   Using equation ([[file:chapter001.html#disp_1.179][1.179]]), the Lagrange equations for the harmonic oscillator
-   are
+   Using equation ([[file:chapter001.html#disp_1.179][1.179]]), the Lagrange
+   equations for the harmonic oscillator are
 
     #+begin_src scheme
-((compose (Euler-Lagrange-operator (L-harmonic 'm
-   'k)) (Gamma (literal-function 'x) 4)) 't) (+ (* k (x t)) (* m (((expt D
-   2) x) t)))
+((compose (Euler-Lagrange-operator (L-harmonic 'm 'k)) (Gamma (literal-function
+'x) 4)) 't) (+ (* k (x t)) (* m (((expt D 2) x) t)))
     #+end_src
 
    *Exercise 1.38: Properties of* E
@@ -4799,11 +4800,11 @@ formulation because of these advantages.
   {0 = {\int_{t_{1}}^{t_{2}}{\left\{ {(\partial_{1}L \circ \Gamma\lbrack q\rbrack) - D(\partial_{2}L \circ \Gamma\lbrack q\rbrack)} \right\}\eta.}}} & {(1.182)}
   \end{equation}
 
-  At this point we argued that because the variations $\eta$ are arbitrary (except
-  for conditions at the endpoints), the only way for the integral to be zero is
-  for the integrand to be zero. Furthermore, the freedom in our choice of $\eta$
-  allowed us to deduce that the factor multiplying $\eta$ in the integrand must be
-  identically zero, thereby deriving Lagrange's equations.
+  At this point we argued that because the variations $\eta$ are arbitrary
+  (except for conditions at the endpoints), the only way for the integral to be
+  zero is for the integrand to be zero. Furthermore, the freedom in our choice
+  of $\eta$ allowed us to deduce that the factor multiplying $\eta$ in the
+  integrand must be identically zero, thereby deriving Lagrange's equations.
 
   Now the choice of $\eta$ is not completely free. We can still deduce from the
   arbitrariness of $\eta$ that the integrand must be zero,[fn:91] but we can no
@@ -4901,8 +4902,8 @@ formulation because of these advantages.
    equations that is imposed by the addition of an explicit coordinate
    constraint, at the expense of introducing extra degrees of freedom. Notice
    that this Lagrangian is of the same form as the Lagrangian (equation [[file:chapter001.html#disp_1.93][1.93]])
-   that we used in the derivation of /L/ = /T/ − /V/ for rigid systems ([[file:chapter001.html#h3_1-6-2][section
-   1.6.2]]).
+   that we used in the derivation of /L/ = /T/ − /V/ for rigid systems
+   ([[file:chapter001.html#h3_1-6-2][section 1.6.2]]).
 
 ** Alternatively
    :PROPERTIES:
@@ -4910,8 +4911,9 @@ formulation because of these advantages.
    :CLASS:    level2
    :END:
    How do we know that we have enough information to eliminate the unknown
-   function /λ/ from equations ([[file:chapter001.html#disp_1.187][1.187]]), or that the extra degree of freedom
-   introduced in Lagrangian ([[file:chapter001.html#disp_1.188][1.188]]) is purely formal?
+   function /λ/ from equations ([[file:chapter001.html#disp_1.187][1.187]]), or
+   that the extra degree of freedom introduced in Lagrangian
+   ([[file:chapter001.html#disp_1.188][1.188]]) is purely formal?
 
    If /λ/ can be written as a composition of a state-dependent function with the
    path: /λ/ = Λ ∘ Γ[/q/] then it is redundant as a degree of freedom. Consider
@@ -4927,14 +4929,14 @@ formulation because of these advantages.
 
    $\mathcal{E}$
 
-   (see [[file:chapter001.html#h1-6d][section 1.9]]) to this Lagrangian gives[fn:93]
+   (see [[file:chapter001.html#h1-6d][section 1.9]]) to this Lagrangian
+   gives[fn:93]
 
    $$\begin{array}{lll} {\mathcal{E}\lbrack L''\rbrack} & {= \mathcal{E}\lbrack
    L\rbrack + \mathcal{E}\lbrack\Lambda\varphi\rbrack} & \\
    & {= \mathcal{E}\lbrack L\rbrack + \Lambda\mathcal{E}\lbrack\varphi\rbrack +
    \mathcal{E}\lbrack\Lambda\rbrack\varphi + D_{t}\Lambda\partial_{2}\varphi +
-   \partial_{2}\Lambda D_{t}\varphi.} & {(1.190)}
-   \end{equation}
+   \partial_{2}\Lambda D_{t}\varphi.} & {(1.190)} \end{equation}
 
    Composition of
 
@@ -5087,8 +5089,8 @@ formulation because of these advantages.
    An alternative procedure is to break the system into several parts. In our
    spring-mass system we can choose two parts: one is a spring and mass attached
    to the wall, and the other is a spring and mass with its attachment point at
-   an additional configuration coordinate $\xi$. We can formulate a Lagrangian for
-   each part separately. We can then choose a Lagrangian for the composite
+   an additional configuration coordinate $\xi$. We can formulate a Lagrangian
+   for each part separately. We can then choose a Lagrangian for the composite
    system as the sum of the two component Lagrangians with a constraint $\xi$ =
    /X/_{1} + /x/_{1} to accomplish the coupling.
 
@@ -5293,9 +5295,10 @@ formulation because of these advantages.
 
     *Exercise 1.42: Augmented Lagrangian*
 
-    Show that the augmented Lagrangian ([[file:chapter001.html#disp_1.219][1.219]]) does lead to the Lagrange
-    equations ([[file:chapter001.html#disp_1.220][1.220]]), taking into account the fact that /ψ/ is a total time
-    derivative of /φ/.
+    Show that the augmented Lagrangian
+    ([[file:chapter001.html#disp_1.219][1.219]]) does lead to the Lagrange
+    equations ([[file:chapter001.html#disp_1.220][1.220]]), taking into account
+    the fact that /ψ/ is a total time derivative of /φ/.
 
 ** Goldstein's hoop
    :PROPERTIES:
@@ -5324,8 +5327,8 @@ formulation because of these advantages.
 
 
    The kinetic energy has two parts, the energy of rotation of the hoop and the
-   energy of the motion of its center of mass.[fn:97] The potential energy of the
-   hoop decreases as the height decreases. Thus we may write the augmented
+   energy of the motion of its center of mass.[fn:97] The potential energy of
+   the hoop decreases as the height decreases. Thus we may write the augmented
    Lagrangian:
 
    \begin{equation}
@@ -5396,8 +5399,8 @@ formulation because of these advantages.
 
     What are the equations of motion governing nonholonomic systems? For the
     restricted set of systems with nonholonomic constraints that are linear in
-    the velocities, it is widely reported[fn:98] that the equations of motion are
-    as follows. Let /ψ/ have the form
+    the velocities, it is widely reported[fn:98] that the equations of motion
+    are as follows. Let /ψ/ have the form
 
     \begin{equation}
     {\psi(t,q,v) = G_{1}(t,q)v + G_{2}(t,q),} & {(1.230)}
@@ -5422,14 +5425,12 @@ formulation because of these advantages.
     be satisfied:
 
     $$(\begin{equation} {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack
-    q\rbrack)\eta = 0,} & {(1.232)}
-    \end{equation}
+    q\rbrack)\eta = 0,} & {(1.232)} \end{equation}
 
     and
 
-    $$(\begin{equation} {\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack)\eta
-    = 0.} & {(1.233)}
-    \end{equation}
+    $$(\begin{equation} {\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack)\eta =
+    0.} & {(1.233)} \end{equation}
 
 
 
@@ -5437,8 +5438,8 @@ formulation because of these advantages.
 
     $\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack$
 
-    is orthogonal to $\eta$ and $\eta$ is constrained to be orthogonal to ∂_{1}/φ/ ∘
-    Γ[/q/], the two must be parallel at each moment:
+    is orthogonal to $\eta$ and $\eta$ is constrained to be orthogonal to
+    ∂_{1}/φ/ ∘ Γ[/q/], the two must be parallel at each moment:
 
     \begin{equation}
     {\mathcal{E}\lbrack L\rbrack \circ \Gamma\lbrack q\rbrack = \lambda(\partial_{1}\varphi \circ \Gamma\lbrack q\rbrack).} & {(1.234)}
@@ -5460,12 +5461,11 @@ formulation because of these advantages.
     as a coordinate constraint because /ψ/ is, by assumption, not integrable.
 
     The following is the derivation of the nonholonomic equations from Arnold et
-    al. [[[file:bibliography.html#bib_6][6]]], translated into our notation. Define a “virtual velocity” $\xi$ to be
-    any velocity satisfying
+    al. [[[file:bibliography.html#bib_6][6]]], translated into our notation. Define a “virtual velocity” $\xi$ to
+    be any velocity satisfying
 
-    $$(\begin{equation} {\partial_{2}\psi \circ \Gamma\lbrack q\rbrack)\xi =
-    0.} & {(1.236)}
-    \end{equation}
+    $$(\begin{equation} {\partial_{2}\psi \circ \Gamma\lbrack q\rbrack)\xi = 0.}
+    & {(1.236)} \end{equation}
 
     The “principle of d'Alembert--Lagrange,” according to Arnold, states that
 
@@ -5630,8 +5630,8 @@ formulation because of these advantages.
 
   Find approximations to the first few coefficients /A/_{/n/} by minimizing the
   action. You will have to write a program similar to the find-path procedure in
-  [[file:chapter001.html#h1-5][section 1.4]]. Watch out: there is more than one trajectory that minimizes the
-  action.
+  [[file:chapter001.html#h1-5][section 1.4]]. Watch out: there is more than one
+  trajectory that minimizes the action.
 
   *b.* Write a program to numerically integrate Lagrange's equations for the
   trajectories of the pendulum. The trouble with using numerical integration to
@@ -5673,7 +5673,8 @@ formulation because of these advantages.
 
   *Exercise 1.44: Double pendulum behavior*
 
-  Consider the ideal double pendulum shown in [[file:chapter001.html#Fig_1-11][figure 1.11]].
+  Consider the ideal double pendulum shown in
+  [[file:chapter001.html#Fig_1-11][figure 1.11]].
 
   *a.* Formulate a Lagrangian to describe the dynamics. Derive the equations of
   motion in terms of the given angles /θ/_{1} and /θ/_{2}. Put the equations
